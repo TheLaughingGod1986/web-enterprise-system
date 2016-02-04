@@ -7,7 +7,7 @@ module.exports = function(grunt){
 			options: {
 				reporter: require('jshint-stylish')
 			},
-			target: ['global.js']
+			target: ['js/global.js']
 		}
 
 		concat: {
@@ -18,14 +18,6 @@ module.exports = function(grunt){
 					'js/global.js' //This specific file
 				],
 				dest: 'js/build/production.js'
-			}
-		},
-
-		autoprefixer: {
-			dist: {
-				files: {
-					'build/style.css': 'style.css'
-				}
 			}
 		},
 
@@ -53,10 +45,6 @@ module.exports = function(grunt){
 		},
 
 		watch: {
-			options: {
-				livereload: true,
-			},
-
 			scripts: {
 				files: ['js/*.js'],
 				tasks: ['concat', 'uglify'],
@@ -65,22 +53,21 @@ module.exports = function(grunt){
 				}
 			},
 
-			styles: {
-				files: ['style.css'],
-				tasks: ['autoprefixer']
-			},
-
 			css: {
 				files: ['css/*.scss'],
 				tasks: ['sass'],
 				options: spawn: false,
+			},
+
+			options: {
+				livereload: true,
 			}
 		}
 
 		sass: {
 			dist: {
 				options: {
-					style: 'compress'
+					style: 'compressed'
 				},
 
 				files: {
@@ -92,12 +79,11 @@ module.exports = function(grunt){
 
 	// 3. Where we tell Grunt we plan to use this plug-in.
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into terminal.
-	grunt.registerTask('default', ['jshint', 'autoprefixer', 'watch', 'concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['jshint', 'watch', 'concat', 'uglify', 'sass', 'imagemin']);
 }
