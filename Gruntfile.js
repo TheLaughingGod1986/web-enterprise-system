@@ -3,6 +3,13 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		jshint:{
+			options: {
+				reporter: require('jshint-stylish')
+			},
+			target: ['global.js']
+		}
+
 		concat: {
 			// 2. Configuration for concatinating files goes here
 			dist: {
@@ -11,6 +18,14 @@ module.exports = function(grunt){
 					'js/global.js' //This specific file
 				],
 				dest: 'js/build/production.js'
+			}
+		},
+
+		autoprefixer: {
+			dist: {
+				files: {
+					'build/style.css': 'style.css'
+				}
 			}
 		},
 
@@ -38,7 +53,6 @@ module.exports = function(grunt){
 		},
 
 		watch: {
-
 			options: {
 				livereload: true,
 			},
@@ -49,6 +63,11 @@ module.exports = function(grunt){
 				option: {
 					spawn: false,
 				}
+			},
+
+			styles: {
+				files: ['style.css'],
+				tasks: ['autoprefixer']
 			},
 
 			css: {
@@ -72,11 +91,13 @@ module.exports = function(grunt){
 	});
 
 	// 3. Where we tell Grunt we plan to use this plug-in.
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into terminal.
-	grunt.registerTask('default', ['watch', 'concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['jshint', 'autoprefixer', 'watch', 'concat', 'uglify', 'imagemin']);
 }
