@@ -14,7 +14,7 @@ module.exports = function(grunt){
 			// 2. Configuration for concatinating files goes here
 			dist: {
 				src:[
-					'js/libs/*.js', //All JS in this libs folder
+					'js/*.js', //All JS in this libs folder
 					'js/global.js' //This specific file
 				],
 				dest: 'js/build/production.js'
@@ -28,7 +28,7 @@ module.exports = function(grunt){
 			},
 
 			build: {
-				src: 'js/build/production.js',
+				src: 'js/*.js',
 				dest: 'js/build/production.min.js'
 			}
 		},
@@ -39,7 +39,7 @@ module.exports = function(grunt){
 					expand: true,
 					cwd: 'images/',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: 'images/build/'
+					dest: 'img/build/'
 				}]
 			}
 		},
@@ -69,7 +69,7 @@ module.exports = function(grunt){
 		sass: {
 			dist: {
 				options: {
-					style: 'expanded'
+					style: 'compressed'
 				},
 
 				files: {
