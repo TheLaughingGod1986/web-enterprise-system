@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     // All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -91,6 +91,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-	//  Where we tell Grunt what to do when we type "grunt" into terminal.
-	grunt.registerTask('default', ['jshint','concat', 'uglify', 'imagemin', 'sass', 'cssmin', 'watch']);
+    //  Where we tell Grunt what to do when we type "grunt" into terminal.
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'imagemin', 'sass', 'cssmin', 'watch']);
 };
