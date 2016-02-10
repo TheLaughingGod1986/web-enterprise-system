@@ -43,9 +43,6 @@ module.exports = function (grunt) {
 
         // SASS task config
         sass: {
-            options: {
-                "sourcemap=none": ''
-            },
             dev: {
                 files: {
                     // destination         // source file
