@@ -1,13 +1,20 @@
+/*!
+ *  Ben's custom 1.0.0 by Ben Oats - http://benoats.co
+ */
+
+//Base
 @import 'base/_variables';
 @import 'base/_mixins';
 @import 'base/_normalize';
 @import 'base/_variables';
 
+//Modules
 @import 'modules/_blocks';
 @import 'modules/_buttons';
 @import 'modules/_sections';
 @import 'modules/_components';
 
+//Layout
 @import 'layout/_footer';
 @import 'layout/_header';
 @import 'layout/_nav';
