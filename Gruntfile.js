@@ -37,7 +37,7 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'images/',
+                    cwd: 'img/',
                     src: ['**/*.{png,jpg,gif}'],
                     dest: 'img/build/'
                 }]
@@ -56,6 +56,22 @@ module.exports = function(grunt) {
                 }
             }
         },
+// minify css
+        cssmin: {
+            options: {
+                sourceMap: true,
+                target: 'release/css'
+            },
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: 'css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: 'css',
+                    ext: '.min.css'
+                }]
+            }
+        },
 
         // Watch task config
         watch: {
@@ -72,8 +88,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
 	//  Where we tell Grunt what to do when we type "grunt" into terminal.
-	grunt.registerTask('default', ['jshint','concat', 'uglify', 'imagemin', 'sass', 'watch']);
+	grunt.registerTask('default', ['jshint','concat', 'uglify', 'imagemin', 'sass', 'cssmin', 'watch']);
 };
