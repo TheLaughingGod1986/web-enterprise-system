@@ -23,9 +23,6 @@ module.exports = function(grunt) {
 
         uglify: {
             // Get's the previously concatenated file to minify it into a new one
-            option: {
-                banner: '/*! <%= pkg.name %> <% grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
 
             build: {
                 src: 'js/*.js',
@@ -46,6 +43,9 @@ module.exports = function(grunt) {
 
         // SASS task config
         sass: {
+            options: {
+                "sourcemap=none": ''
+            },
             dev: {
                 files: {
                     // destination         // source file
