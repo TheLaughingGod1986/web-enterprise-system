@@ -1,92 +1,79 @@
-module.exports = function(grunt){
-	// 1. All configuration goes here
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+module.exports = function(grunt) {
+    // All configuration goes here
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
 
-		jshint:{
-			options: {
-				reporter: require('jshint-stylish')
-			},
-			target: ['js/global.js']
-		},
+        jshint: {
+            options: {
+                reporter: require('jshint-stylish')
+            },
+            target: ['js/global.js']
+        },
 
-		concat: {
-			// 2. Configuration for concatinating files goes here
-			dist: {
-				src:[
-					'js/*.js', //All JS in this libs folder
-					'js/global.js' //This specific file
-				],
-				dest: 'js/build/production.js'
-			}
-		},
+        concat: {
+            //Configuration for concatinating files goes here
+            dist: {
+                src: [
+                    'js/*.js', //All JS in this libs folder
+                    'js/global.js' //This specific file
+                ],
+                dest: 'js/build/production.js'
+            }
+        },
 
-		uglify: {
-			// Get's the previously concatenated file to minify it into a new one
-			option: {
-				banner:'/*! <%= pkg.name %> <% grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
+        uglify: {
+            // Get's the previously concatenated file to minify it into a new one
+            option: {
+                banner: '/*! <%= pkg.name %> <% grunt.template.today("yyyy-mm-dd") %> */\n'
+            },
 
-			build: {
-				src: 'js/*.js',
-				dest: 'js/build/production.min.js'
-			}
-		},
+            build: {
+                src: 'js/*.js',
+                dest: 'js/build/production.min.js'
+            }
+        },
+// run image optimization
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'images/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'img/build/'
+                }]
+            }
+        },
 
-		imagemin: {
-			dynamic: {
-				files: [{
-					expand: true,
-					cwd: 'images/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'img/build/'
-				}]
-			}
-		},
+        // SASS task config
+        sass: {
+            dev: {
+                files: {
+                    // destination         // source file
+                    "css/style.css": "scss/*.scss"
+                },
+                options: {
+                    style: 'compressed'
+                }
+            }
+        },
 
-		watch: {
-			scripts: {
-				files: ['js/*.js'],
-				tasks: ['concat', 'uglify'],
-				option: {
-					spawn: false,
-				}
-			},
+        // Watch task config
+        watch: {
+            sass: {
+                files: "scss/*.scss",
+                tasks: ['sass']
+            }
+        }
+    });
 
-			css: {
-				files: ['css/*.scss'],
-				tasks: ['sass'],
-				options: {
-					spawn: false,
-				}
-			},
+    //  Where we tell Grunt we plan to use this plug-in.
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-			options: {
-				livereload: true,
-			}
-		},
-
-		sass: {
-			dist: {
-				options: {
-					style: 'compressed'
-				},
-
-				files: {
-					'css/build/global.css': 'css/global.scss'
-				}
-			}
-		}
-	});
-
-	// 3. Where we tell Grunt we plan to use this plug-in.
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-
-	// 4. Where we tell Grunt what to do when we type "grunt" into terminal.
-	grunt.registerTask('default', ['jshint', 'watch', 'concat', 'sass', 'uglify', 'imagemin']);
-}
+	//  Where we tell Grunt what to do when we type "grunt" into terminal.
+	grunt.registerTask('default', ['jshint','concat', 'uglify', 'imagemin', 'sass', 'watch']);
+};
