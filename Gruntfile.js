@@ -60,8 +60,12 @@ module.exports = function (grunt) {
         uncss: {
             dist: {
                 files: [
-                    { src: 'index.html', dest: 'css/cleancss/tidy.css' }
+                    { src: '*.html', dest: 'css/uncss/compiled.min.css'}
                 ]
+            },
+            options: {
+                style: 'compressed',
+                report: 'min'
             }
         },
 
