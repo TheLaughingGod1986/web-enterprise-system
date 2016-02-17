@@ -3,7 +3,7 @@ class Pages extends CI_Controller{
 	public function view($page = 'home'){
 		if (! file_exists(APPPATH.'/views/pages/'.$page.'.php')) {
 			//If page doesn't exist show the 404 page stating the error
-			show404();
+			show_404();
 		}
 		$data['title'] = ucfirst($page); //Capitalize the first letter
 

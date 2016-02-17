@@ -2,13 +2,14 @@
 class Users extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('users_model');
+		$this->load->model('Users_model');
 		$this->load->helper('url_helper');
 	}
 
 	public function index(){
-		$data['userACC'] = $this->users_model->get_users();
-		$data['title'] = 'Users Registred';
+
+		$data['UserACC'] = $this->Users_model->get_users();
+		$data['title'] = 'Users Registered';
 
 		$this->load->view('templates/header', $data);
 		$this->load->view('users/index', $data);
@@ -16,7 +17,7 @@ class Users extends CI_Controller{
 	}
 
 	public function view ($userName = NULL){
-		$data['user_item'] = $this->users_model->get_users($userName);
+		$data['user_item'] = $this->Users_model->get_users($userName);
 
 		if (empty($data['user_item'])) {
 			show_404();
@@ -28,4 +29,5 @@ class Users extends CI_Controller{
 		$this->load->view('users/view', $data);
 		$this->load->view('templates/footer');
 	}
+
 }
