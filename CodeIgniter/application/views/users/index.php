@@ -4,6 +4,6 @@
 	<div class="main">
 		<?php echo $user_item['pass'] ?>
 	</div>
-	<p><a href="<?php echo site_url('users/'.$user_item['userName']); ?>">Edit user info</a></p>
+	<p><a href="<?php echo site_url('users/'.$user_item['userName']); ?>">Edit user</a></p>
 
 <?php endforeach; ?>
