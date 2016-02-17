@@ -1,5 +1,5 @@
 <h2> <?php echo $title; ?> </h2>
-<?php foreach ($userACC as $user_item): ?>
+<?php foreach ($UserACC as $user_item): ?>
 	<h3> <?php echo $user_item['userName']; ?> </h3>
 	<div class="main">
 		<?php echo $user_item['pass'] ?>

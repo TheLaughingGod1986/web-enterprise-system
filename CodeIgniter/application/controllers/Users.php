@@ -12,7 +12,7 @@ class Users extends CI_Controller{
 		$data['title'] = 'Users Registered';
 
 		$this->load->view('templates/header', $data);
-		$this->load->view('users/view', $data);
+		$this->load->view('users/index', $data);
 		$this->load->view('templates/footer');
 	}
 
