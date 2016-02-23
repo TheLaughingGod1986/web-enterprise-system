@@ -53,6 +53,6 @@ $route['insert_controller'] = 'insert_controller';
 $route['users/(:any)'] = 'users/view/$1';
 $route['users'] = 'users';
 $route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+$route['default_controller'] = 'index';
 //$route['404_override'] = '';
 //$route['translate_uri_dashes'] = FALSE;
