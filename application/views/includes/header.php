@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 
-    <html lang="en">
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>no name</title>
-    <link rel="stylesheet" href="<?php echo base_url();?>css/build/style.min.css" type="text/css" media="screen" charset="uft-8">
+    <title>PHP i love you</title>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>css/build/style.min.css" type="text/css" media="screen"
+          charset="uft-8">
 </head>
 
 <body>
-Header here
-<h2>Logged In As, <?php echo $this->session->userdata('username'); ?>!</h2> </br>
-<h4><?php echo anchor('login/index', 'Login Here'); ?></h4>
-FIX SO IF NOT LOGGED IN DO NOT SHOW
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-9" aria-expanded="false"><span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="#">Brand</a></div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
