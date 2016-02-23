@@ -13,6 +13,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-processhtml": "^0.3.11",
     "grunt-uncss": "^0.4.4",
+    "gulp-uncss": "^1.0.4",
     "jshint-stylish": "^2.1.0"
   }
 }
