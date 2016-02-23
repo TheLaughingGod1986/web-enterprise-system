@@ -56,18 +56,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-// clean up css
-        uncss: {
-            dist: {
-                files: [
-                    { src: '*.html', dest: 'css/uncss/compiled.min.css'}
-                ]
-            },
-            options: {
-                style: 'compressed',
-                report: 'min'
-            }
-        },
 
 // minify css
         cssmin: {
@@ -86,6 +74,24 @@ module.exports = function (grunt) {
             }
         },
 
+        // clean up css
+    uncss: {
+        dist: {
+            options: {
+
+                stylesheets  : ['css/clean.min.css'],
+                style: 'compressed'
+            },
+
+            files: [
+                //{ src: '*.html', dest: 'css/uncss/compiled.min.css'}
+                {
+                    'css/app.clean.css': ['**/*.php']
+                }
+            ]
+        }
+    },
+
         // Watch task config
         watch: {
             sass: {
@@ -101,10 +107,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     //  Where we tell Grunt what to do when we type "grunt" into terminal.
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'imagemin', 'sass', 'uncss', 'cssmin', 'watch']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'imagemin', 'sass', 'cssmin', 'uncss', 'watch']);
 };
