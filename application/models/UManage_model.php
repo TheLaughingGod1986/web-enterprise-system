@@ -14,7 +14,7 @@ class UManage_model extends CI_Model{
     //Select the wanted user from table UserACC
     function get_user_id($data){
         $this->db->select('*');
-        $this->db->from('Staff');
+        $this->db->from('staff');
         $this->db->where('StaffID', $data);
 
         $dbquery = $this->db->get();
@@ -26,18 +26,18 @@ class UManage_model extends CI_Model{
     //Insert data model
     function form_insert($data){
         // Inserting in Table of Database
-        $this->db->insert('Staff', $data);
+        $this->db->insert('staff', $data);
     }
 
     //Delete user with selected id
     function delete_user($id){
         $this->db->where('StaffID', $id);
-        $this->db->delete('Staff');
+        $this->db->delete('staff');
     }
 
     //Update database with new data
     function update_user($id, $data){
         $this->db->where('StaffID', $id);
-        $this->db->update('Staff', $data);
+        $this->db->update('staff', $data);
     }
 }
