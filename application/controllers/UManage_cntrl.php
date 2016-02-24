@@ -14,7 +14,7 @@ class UManage_cntrl extends CI_Controller
         $id = $this->uri->segment(3);
         $data['all_users'] = $this->UManage_model->get_users();
         $data['single_user'] = $this->UManage_model->get_user_id($id);
-        $this->load->view('includes/template', $data);
+//        $this->load->view('includes/template', $data);
         $this->load->view('UManage_view', $data);
     }
 
