@@ -69,8 +69,8 @@
                 <?php echo form_input(array('id' => 'Address', 'name' => 'Address', 'value' => $item->Address)); ?>
                 <br/>
 
-                <?php echo form_label('Post code :'); ?><?php echo form_error('Post_Code'); ?><br/>
-                <?php echo form_input(array('id' => 'Post_Code', 'name' => 'Post_Code', 'value' => $item->Post_Code)); ?>
+                <?php echo form_label('Post code :'); ?><?php echo form_error('Postcode'); ?><br/>
+                <?php echo form_input(array('id' => 'Postcode', 'name' => 'Postcode', 'value' => $item->Postcode)); ?>
                 <br/>
 
                 <?php echo form_label('Phone :'); ?><?php echo form_error('Telephone'); ?><br/>
@@ -120,8 +120,8 @@
         <?php echo form_input(array('id' => 'Address', 'name' => 'Address', 'placeholder' => 'Sesame Street')); ?>
         <br/>
 
-        <?php echo form_label('Post code :'); ?><?php echo form_error('Post_Code'); ?><br/>
-        <?php echo form_input(array('id' => 'Post_Code', 'name' => 'Post_Code', 'placeholder' => 'NW8 6IX')); ?>
+        <?php echo form_label('Post code :'); ?><?php echo form_error('Postcode'); ?><br/>
+        <?php echo form_input(array('id' => 'Postcode', 'name' => 'Postcode', 'placeholder' => 'NW8 6IX')); ?>
         <br/>
 
         <?php echo form_label('Phone :'); ?><?php echo form_error('Telephone'); ?><br/>
