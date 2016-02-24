@@ -15,11 +15,11 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-9" aria-expanded="false"><span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-            <a class="navbar-brand" href="<?php echo anchor('main/index', 'Home'); ?>">Brand</a></div>
+            <a class="navbar-brand" <?php echo anchor('main/about', 'about page'); ?>Brand</a></div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="<?php echo anchor('main/index', 'Home'); ?>"></a></li>
-                <li><a href="<?php echo anchor('main/about', 'About'); ?>"></a></li>
+                <li class="active"><?php echo anchor('main/about', 'about page'); ?></a></li>
+                <li><a <?php echo anchor('main/about', 'about page'); ?></a></li>
                 <li><a href="#">Link</a></li>
             </ul>
         </div>
