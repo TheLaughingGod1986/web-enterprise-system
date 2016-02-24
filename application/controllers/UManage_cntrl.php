@@ -10,11 +10,12 @@ class UManage_cntrl extends CI_Controller
 
     //Fetch selected user
     function index(){
+
+        $data['main_content'] = 'pages/home_view';
+        $this->load->view('includes/template', $data);
         $id = $this->uri->segment(3);
         $data['all_users'] = $this->UManage_model->get_users();
         $data['single_user'] = $this->UManage_model->get_user_id($id);
-
-        $this->load->view('UManage_view', $data);
     }
 
     //Insert users form
