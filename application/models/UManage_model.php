@@ -6,7 +6,7 @@ class UManage_model extends CI_Model{
 
     //Select every user on table UserACC
     function get_users(){
-        $dbquery = $this->db->get('Staff');
+        $dbquery = $this->db->get('staff');
         $dbresult = $dbquery->result();
         return $dbresult;
     }
