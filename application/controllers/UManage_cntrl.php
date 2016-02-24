@@ -38,7 +38,13 @@ class UManage_cntrl extends CI_Controller
             //Setting values for table columns
             $data = array(
                 'Email' => $this->input->post('Email'),
-                'Password' => $this->input->post('Password')
+                'Password' => $this->input->post('Password'),
+                'First_Name' => $this->input->post('First_Name'),
+                'Last_Name' => $this->input->post('Last_Name'),
+                'Postcode' => $this->input->post('Postcode'),
+                'Telephone' => $this->input->post('Telephone'),
+                'Address' => $this->input->post('Address'),
+                'Title' => $this->input->post('Title')
             );
             //Transfering data to Model
             $this->UManage_model->form_insert($data);
