@@ -1,0 +1,71 @@
+<?php
+
+class UManage_cntrl extends CI_Controller
+{
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('UManage_model');
+    }
+
+    //Fetch selected user
+    function index(){
+        $id = $this->uri->segment(3);
+        $data['all_users'] = $this->UManage_model->get_users();
+        $data['single_user'] = $this->UManage_model->get_user_id($id);
+
+        $this->load->view('UManage_view', $data);
+    }
+
+    //Insert users form
+    function insert_user() {
+
+        //Including validation library
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+        //Validating Name Field
+        $this->form_validation->set_rules('userName', 'Username', 'required|min_length[5]|max_length[15]');
+
+        //Validating Address Field
+        $this->form_validation->set_rules('pass', 'Password', 'required|min_length[5]|max_length[50]');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            $this->load->view('UManage_view');
+        } else {
+            //Setting values for table columns
+            $data = array(
+                'userName' => $this->input->post('userName'),
+                'pass' => $this->input->post('pass')
+            );
+            //Transfering data to Model
+            $this->UManage_model->form_insert($data);
+            $data['message'] = 'Data Inserted Successfully';
+            //Loading View
+            $this->index();
+        }
+    }
+
+    //Delete selected user from database
+    function delete_user(){
+        $id = $this->uri->segment(3);
+        $this->UManage_model->delete_user($id);
+
+        $this->index();
+    }
+
+    //Update users... fetching user from database by id
+    function update_user(){
+        $id = $this->input->post('userID');
+        $data = array(
+            'userName' => $this->input->post('userName'),
+            'pass' => $this->input->post('pass')
+        );
+
+        $this->UManage_model->update_user($id, $data);
+        $this->index();
+    }
+
+}
