@@ -5,33 +5,33 @@
 
         <ol>
             <?php
-            if(isset($all_users)){
-                foreach ($all_users as $users): ?>
-                    <li>
-                        <?php echo $users->Email; ?>
-                        <a href="<?php echo base_url() . 'index.php/UManage_cntrl/index/' . $users->StaffID; ?>">Edit</a>
-                    </li>
-                <?php endforeach; }
-            else{
-                echo 'No Records';
-            }
+                if(isset($all_users)){
+                    foreach ($all_users as $users): ?>
+                        <li>
+                            <?php echo $users->Last_Name.", ".$users->First_Name; ?>
+                            <a href="<?php echo base_url() . 'index.php/UManage_cntrl/index/' . $users->StaffID; ?>">Edit</a>
+                        </li>
+                    <?php endforeach; }
+                else{
+                    echo 'No Records';
+                }
             ?>
         </ol>
     </div>
 
     <div id="delete">
         <?php
-        if(isset($single_user)){
-            foreach ($single_user as $user): ?>
-                <h3>Sure you want to delete this user?</h3>
-                <?php echo $user->Email; ?>
-                <a href="<?php echo base_url() . 'index.php/UManage_cntrl/delete_user/' . $user->StaffID; ?>">
-                    <button>Delete</button>
-                </a>
-            <?php endforeach; }
-        else{
-            echo 'No Records';
-        }
+            if(isset($single_user)){
+                foreach ($single_user as $user): ?>
+                    <h3>Sure you want to delete this user?</h3>
+                    <?php echo $user->Email; ?>
+                    <a href="<?php echo base_url() . 'index.php/UManage_cntrl/delete_user/' . $user->StaffID; ?>">
+                        <button>Delete</button>
+                    </a>
+                <?php endforeach; }
+            else{
+                echo 'No Records';
+            }
         ?>
     </div>
 
