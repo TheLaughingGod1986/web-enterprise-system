@@ -74,7 +74,7 @@ module.exports = function (grunt) {
             }
         },
 
-        // clean up css
+         //clean up css
     //uncss: {
     //    dist: {
     //        options: {
@@ -84,7 +84,7 @@ module.exports = function (grunt) {
     //        },
     //
     //        files: [
-    //            //{ src: '*.html', dest: 'css/uncss/compiled.min.css'}
+    //            { src: '*.html', dest: 'css/uncss/compiled.min.css'}
     //            {
     //                'css/app.clean.css': ['**/*.php']
     //            }
