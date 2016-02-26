@@ -1,5 +1,3 @@
-
-<link rel="stylesheet" href="<?php echo base_url(); ?>css/build/style.min.css" type="text/css" media="screen" charset="uft-8"><!-- Sidebar -->
 <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
