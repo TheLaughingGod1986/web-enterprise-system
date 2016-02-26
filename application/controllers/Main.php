@@ -4,14 +4,14 @@ class Main extends CI_Controller
 {
     function index()
     {
-        $data['main_content'] = 'pages/home_view';
-        $this->load->view('includes/template', $data);
+        $dataContent['main_content'] = 'pages/home_view';
+        $this->load->view('includes/template', $dataContent);
     }
 
     function about()
     {
-        $data['main_content'] = 'pages/about_view';
-        $this->load->view('includes/template', $data);
+        $dataContent['main_content'] = 'pages/about_view';
+        $this->load->view('includes/template', $dataContent);
     }
 
 }
