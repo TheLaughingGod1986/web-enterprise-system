@@ -15,13 +15,12 @@ class UManage_cntrl extends CI_Controller
         $data['all_users'] = $this->UManage_model->get_users();
         $data['single_user'] = $this->UManage_model->get_user_id($id);
 
-        $this->load->view('UManage_view', $data);
-
         //Template importation
         $dataContent['main_content'] = 'UManage_view';
         $this->load->view('includes/template', $dataContent);
 
-
+        $this->load->view('UManage_view', $data);
+        
     }
 
     //Insert users form
