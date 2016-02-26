@@ -1,7 +1,6 @@
 
 <?php $this->view('includes/header'); ?>
-
-<?php $this->view('includes/sidebar'); ?>
+<?php $this->view('includes/side_bar'); ?>
 
 <?php $this->view($main_content); ?>
 
