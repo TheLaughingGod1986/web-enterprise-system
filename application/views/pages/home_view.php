@@ -1,4 +1,4 @@
-home page
+<div class="col-xs-8 col-sm-9">
+   <h2>home_view</h2>
+</div>
 
-test links
-<h4><?php echo anchor('main/about', 'about page'); ?></h4>
