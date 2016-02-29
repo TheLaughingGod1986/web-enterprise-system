@@ -2,18 +2,27 @@
 
 class Main extends CI_Controller
 {
+    var $template = array();
+    var $data = array();
+
+    public function layout () {
+        $this->template['header'] = $this->load->view('layout/header', $this->data, true);
+        $this->template['left'] = $this->load->view('layout/side_bar', $this->data, true);
+        $this->template['middle'] = $this->load->view($this->middle, $this->data, true);
+        $this->template['footer'] = $this->load->view('layout/footer', $this->data, true);
+        $this->load->view('layout/index', $this->template);
+    }
+
+
     function index()
     {
-        $dataContent['main_content'] = 'pages/home_view';
-        $this->load->view('includes/template', $dataContent);
+        $this->middle = 'pages/home_view'; // passing middle to function. change this for different views.
+        $this->layout();
     }
 
     function about()
     {
-        $dataContent['main_content'] = 'pages/about_view';
-        $this->load->view('includes/template', $dataContent);
+        $this->middle = 'pages/about_view'; // passing middle to function. change this for different views.
+        $this->layout();
     }
-
-
-
 }
