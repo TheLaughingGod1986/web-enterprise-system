@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-
-
 <body>
 <!--// container end tags in footer-->
 <div class="container">
