@@ -11,11 +11,11 @@
     <div class="row-fluid">
         <?php if ($header) echo $header; ?>
 
-        <div class="span2">
+        <div class="col-md-3 col-md-pull-9">
             <?php if ($left) echo $left; ?>
         </div>
 
-        <div class="span10">
+        <div class="col-md-9 col-md-push-3">
             <?php if ($middle) echo $middle; ?>
         </div>
 
