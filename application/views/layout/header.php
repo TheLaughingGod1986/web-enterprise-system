@@ -1,4 +1,3 @@
-<div class="col-sm-14">
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -15,5 +14,4 @@
             </ul>
         </div>
     </nav>
-</div>
 
