@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php if($header) echo $header ;?>
-<?php if($side_bar) echo $side_bar ;?>
+<?php if($left) echo $left ;?>
 <div class="col-xs-8 col-sm-9">
 <?php if($middle) echo $middle ;?>
 </div>
