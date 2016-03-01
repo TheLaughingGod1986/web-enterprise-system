@@ -1,9 +1,9 @@
 <ul class="nav navbar-inverse-light side-bar">
-    <li>grey line here</li>
+    <li class="grey_li">grey line here</li>
     <li role="presentation" class="active"><a href="#">Home</a></li>
     <li role="presentation"><a href="#">Reports</a></li>
     <li role="presentation"><a href="#">Write / View Response</a></li>
-    <li>grey line here</li>
+    <li class="grey_li">grey line here</li>
     <li role="presentation"><a href="#">Your Response</a></li>
     <li role="presentation"><a href="#">Update Personal Details</a></li>
     <li role="presentation"><a href="#">Write / View Response</a></li>
