@@ -23,6 +23,19 @@ class UManage_model extends CI_Model{
         return $dbresult;
     }
 
+    //Select user by email and pass
+    function get_login($email, $pass){
+        $this->db->select('*');
+        $this->db->from('staff');
+        $this->db->where('Email', $email);
+        $this->db->where('Password', $pass);
+
+        $dbquery = $this->db->get();
+        $dbresult = $dbquery->result();
+
+        return $dbresult;
+    }
+
     //Insert data model
     function form_insert($data){
         // Inserting in Table of Database
