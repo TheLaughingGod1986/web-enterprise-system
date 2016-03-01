@@ -2,6 +2,7 @@
 class UManage_model extends CI_Model{
     function __construct() {
         parent::__construct();
+        $this->load->helper('date');
     }
 
     //Select every user on table UserACC
@@ -20,7 +21,23 @@ class UManage_model extends CI_Model{
         $dbquery = $this->db->get();
         $dbresult = $dbquery->result();
 
+        
+
         return $dbresult;
+    }
+
+    //Set session variable
+    function populate_ses($dbresult){
+
+        $timestamp = time();
+
+        $this->session->set_userdata(array(
+                'login_state'=> TRUE,
+                'user_id' => $dbresult->StaffID,
+                'email' => $dbresult->Email,
+                'login_time' => $timestamp
+            )
+        );
     }
 
     //Select user by email and pass
