@@ -20,7 +20,7 @@ class UManage_cntrl extends CI_Controller
         $this->load->view('includes/template', $dataContent);
 
         $this->load->view('UManage_view', $data);
-        
+
     }
 
     //Insert users form
