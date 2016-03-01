@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a <?php echo anchor('main/index', 'Home'); ?></a></li>
                 <li><a <?php echo anchor('main/about', 'About'); ?></a></li>
-                <li><a href="#">Link</a></li>
+                <li><a <?php echo anchor('UManage_cntrl/index', 'Add Member'); ?></a></li>
             </ul>
         </div>
     </nav>

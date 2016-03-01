@@ -16,10 +16,13 @@ class UManage_cntrl extends CI_Controller
         $data['single_user'] = $this->UManage_model->get_user_id($id);
 
         //Template importation
-        $dataContent['main_content'] = 'UManage_view';
-        $this->load->view('includes/template', $dataContent);
+//        $dataContent['main_content'] = 'UManage_view';
+//        $this->load->view('includes/template', $dataContent);
 
-        $this->load->view('UManage_view', $data);
+        $this->middle = 'UManage_view';// passing middle to function. change this for different views.
+        $this->layout();
+
+//        $this->load->view('UManage_view', $data);
         
     }
 
