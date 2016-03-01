@@ -18,11 +18,11 @@
             <?php if ($header) echo $header; ?>
         </div>
 
-        <div class="col-sm-3 push-margin-top no-padding-left">
+        <div class="col-sm-2 push-margin-top no-padding-left">
             <?php if ($left) echo $left; ?>
         </div>
 
-        <div class="col-sm-9">
+        <div class="col-sm-10">
             <?php if ($middle) echo $middle; ?>
         </div>
 
