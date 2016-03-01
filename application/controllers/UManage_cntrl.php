@@ -6,7 +6,6 @@ class UManage_cntrl extends CI_Controller
     {
         parent::__construct();
         $this->load->model('UManage_model');
-        $this->load->controller('main');
     }
 
     var $template = array();
