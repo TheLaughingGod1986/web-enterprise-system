@@ -6,7 +6,7 @@
     echo form_input(array('id' => 'email', 'name' => 'email', 'placeholder' => 'example@gre.ac.uk'));
 
     echo form_label('Password:'); echo form_error('password');
-    echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'password'));
+    echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'password.'));
 
     echo form_submit(array('id' => 'submit', 'value' => 'Login'));
     echo form_close();
