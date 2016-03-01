@@ -1,4 +1,4 @@
-<ul class="nav navbar-inverse side-bar">
+<ul class="nav navbar-inverse-light side-bar">
     <li role="presentation" class="active"><a href="#">Home</a></li>
     <li role="presentation"><a href="#">Reports</a></li>
     <li role="presentation"><a href="#">Write / View Response</a></li>
