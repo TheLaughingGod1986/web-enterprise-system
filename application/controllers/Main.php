@@ -24,4 +24,10 @@ class Main extends CI_Controller
         $this->middle = 'pages/about_view'; // passing middle to function. change this for different views.
         $this->layout();
     }
+
+    function add()
+    {
+        $this->middle = 'UManage_view'; // passing middle to function. change this for different views.
+        $this->layout();
+    }
 }
