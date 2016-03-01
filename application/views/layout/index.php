@@ -18,7 +18,7 @@
             <?php if ($header) echo $header; ?>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-3 push-margin-top">
             <?php if ($left) echo $left; ?>
         </div>
 
