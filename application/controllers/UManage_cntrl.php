@@ -8,17 +8,6 @@ class UManage_cntrl extends CI_Controller
         $this->load->model('UManage_model');
     }
 
-    var $template = array();
-    var $data = array();
-
-    public function layout () {
-        $this->template['header'] = $this->load->view('layout/header', $this->data, true);
-        $this->template['left'] = $this->load->view('layout/left', $this->data, true);
-        $this->template['middle'] = $this->load->view($this->middle, $this->data, true);
-        $this->template['footer'] = $this->load->view('layout/footer', $this->data, true);
-        $this->load->view('layout/index', $this->template);
-    }
-
     //Fetch selected user
     function index()
     {
@@ -28,8 +17,9 @@ class UManage_cntrl extends CI_Controller
         $data['single_user'] = $this->UManage_model->get_user_id($id);
 
         //Template importation
-        $this->middle = $this->load->view('UManage_view', $data); // passing middle to function. change this for different views.
-        $this->layout();
+        $this->load->view('UManage_view', $data);
+//        $this->middle 'UManage_view' $data; // passing middle to function. change this for different views.
+//        $this->layout();
 
 
     }
