@@ -4895,7 +4895,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
     position: relative;
     display: block;
-    border: 1px solid rgba(153, 153, 153, 0.49);
+    border: 2px solid rgba(153, 153, 153, 0.49);
 }
 
 .nav > li > a {
