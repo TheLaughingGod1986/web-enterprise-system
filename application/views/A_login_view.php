@@ -1,6 +1,6 @@
 <?php
 
-    echo form_open(login_cntrl);
+    echo form_open(Login_cntrl);
 
     echo form_label('E-mail:'); echo form_error('email');
     echo form_input(array('id' => 'email', 'name' => 'email', 'placeholder' => 'example@gre.ac.uk'));
