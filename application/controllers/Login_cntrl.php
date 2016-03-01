@@ -11,9 +11,12 @@
             $email = $this->input->post('email');
             $pass = $this->input->post('password');
 
+            //check user on database
+            $userlogged = $this->UManage_model->get_login($email, $pass);
+
             // read user's credentials from db, through Login Model
-            if ($email == "Email" && $pass == "Password") {
-                $this->session->set_userdata('login_state', TRUE);
+            if (isset($userlogged)) {
+                $this->session->set_userdata('login_state', TRUE, 'user_id', $userlogged['StaffID']);
                 $this->load->view('UManage_cntrl');
             } else {
                 $this->load->view('A_login_view');    // redirect back to login page
