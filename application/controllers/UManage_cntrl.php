@@ -6,18 +6,21 @@ class UManage_cntrl extends CI_Controller
     {
         parent::__construct();
         $this->load->model('UManage_model');
+        $this->load->controller('main');
     }
 
     //Fetch selected user
     function index()
     {
+
+
         $id = $this->uri->segment(3);
         $data['all_users'] = $this->UManage_model->get_users();
         $data['single_user'] = $this->UManage_model->get_user_id($id);
 
         //Template importation
         $this->middle = $this->load->view('UManage_view', $data); // passing middle to function. change this for different views.
-        $this->layout();
+        $this->main->layout();
 
 
     }
