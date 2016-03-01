@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-inverse no-margin-bottom">
+    <nav class="navbar navbar-inverse no-margin-bottom top-menu">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-9" aria-expanded="false"><span class="sr-only">Toggle navigation</span>

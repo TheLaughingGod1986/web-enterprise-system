@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA;;GAEG,ACFH,iBACA,CACE,aAAa,CAAE,YAAY,CAG7B,gBACA,CACE,aAAa,CAAE,eAAe,CCPhC,SACA,CACE,UAAU,CAAE,IAAI,CCFlB,UAAU,CACR,KAAK,CAAE,KAAK",
+"mappings": "AAAA;;GAEG,ACFH,iBACA,CACE,aAAa,CAAE,YAAY,CAG7B,gBACA,CACE,aAAa,CAAE,eAAe,CAGhC,gBAAiB,CACf,YAAY,CAAE,YAAY,CAG5B,SAAU,CACR,MAAM,CAAE,GAAG,CACX,MAAM,CAAE,cAAsB,CAGhC,SAAU,CACR,MAAM,CAAE,CAAC,CCpBX,SACA,CACE,UAAU,CAAE,IAAI,CCFlB,UAAU,CACR,KAAK,CAAE,KAAK",
 "sources": ["../scss/main.scss","../scss/base/_normalize.scss","../scss/modules/_sections.scss","../scss/layout/_footer.scss"],
 "names": [],
 "file": "style.css"
