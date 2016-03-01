@@ -18,7 +18,7 @@
             // read user's credentials from db, through Login Model
             if (isset($userlogged)) {
                 $this->session->set_userdata('login_state', TRUE, 'user_id', $userlogged->StaffID);
-                $this->load->view('UManage_cntrl');
+                $this->load->view('UManage_view');
             } else {
                 $this->load->view('A_login_view');    // redirect back to login page
             }
