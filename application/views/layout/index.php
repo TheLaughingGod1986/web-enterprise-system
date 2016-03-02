@@ -13,21 +13,21 @@
 <body>
 
 
-        <div class="col-sm-12">
-            <?php if ($header) echo $header; ?>
-        </div>
+<div class="col-sm-12">
+    <?php if ($header) echo $header; ?>
+</div>
 
-        <div class="col-sm-2 ">
-            <?php if ($left) echo $left; ?>
-            </div>
+<div class="col-sm-2 push-top">
+    <?php if ($left) echo $left; ?>
+</div>
 
-        <div class="col-sm-10 ">
-            <?php if ($middle) echo $middle; ?>
-        </div>
+<div class="col-sm-10 push-top">
+    <?php if ($middle) echo $middle; ?>
+</div>
 
-        <div class="col-sm-12">
-        <?php if ($footer) echo $footer; ?>
-            </div>
+<div class="col-sm-12">
+    <?php if ($footer) echo $footer; ?>
+</div>
 
 </body>
 
