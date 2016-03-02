@@ -1,18 +1,11 @@
 <nav class="navbar navbar-inverse no-margin-bottom top-menu">
 
-    <div class="navbar-header col-sm-2">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-9" aria-expanded="false"><span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-        </button>
-
-        <a <?php echo anchor('main/index'); ?>
+    <div class="col-sm-2">
             <img border="0" alt="W3Schools" src="img/greenwich_logo.png" width="100" height="100">
-        </a>
     </div>
 
-    <div class="collapse navbar-collapse col-sm-12" id="bs-example-navbar-collapse-9">
-        <span><h1>text</h1></span>
+    <div class="col-sm-12">
+        <span><h1>External Examiner Portal</h1></span>
     </div>
 
 </nav>
