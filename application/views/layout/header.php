@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-sm-9">
-        <span class="text-center">
+        <span class="top-center-text">
             <h1>External Examiner Portal</h1>
         </span>
     </div>
