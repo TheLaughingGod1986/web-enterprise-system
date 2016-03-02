@@ -14,9 +14,9 @@
 <div class="container-fluid">
     <div class="row-fluid">
 
-
+        <div class="col-sm-12">
             <?php if ($header) echo $header; ?>
-
+        </div>
 
         <div class="col-sm-2 push-margin-top">
             <?php if ($left) echo $left; ?>
