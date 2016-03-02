@@ -25,11 +25,10 @@
             <?php if ($middle) echo $middle; ?>
         </div>
 
-        <footer class="footer">
-            <div class="container">
+        <div class="col-sm-12">
         <?php if ($footer) echo $footer; ?>
-                </div>
-            </footer>
+            </div>
+
 
 </body>
 
