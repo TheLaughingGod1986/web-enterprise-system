@@ -11,25 +11,28 @@
 </head>
 
 <body>
-<div id="wrap">
-    <div class="container">
+
 
         <div class="col-sm-12">
             <?php if ($header) echo $header; ?>
         </div>
 
+        <div class="container">
         <div class="col-sm-2 push-margin-top">
             <?php if ($left) echo $left; ?>
         </div>
+            </div>
 
         <div class="col-sm-10">
             <?php if ($middle) echo $middle; ?>
         </div>
 
+        <footer class="footer">
+            <div class="container">
         <?php if ($footer) echo $footer; ?>
+                </div>
+            </footer>
 
-    </div>
-</div>
 </body>
 
 </html>
