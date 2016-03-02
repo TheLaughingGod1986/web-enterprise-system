@@ -17,11 +17,11 @@
             <?php if ($header) echo $header; ?>
         </div>
 
-        <div class="container">
+        <div class="col-sm-2">
             <?php if ($left) echo $left; ?>
             </div>
 
-        <div class="container">
+        <div class="col-sm-10">
             <?php if ($middle) echo $middle; ?>
         </div>
 
