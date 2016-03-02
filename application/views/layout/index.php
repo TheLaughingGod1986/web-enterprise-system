@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<div class="wrap">
+<div id="wrap">
     <div class="container">
 
         <div class="col-sm-12">
