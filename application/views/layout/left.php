@@ -1,4 +1,4 @@
-<div class="container">
+
 <ul class="nav navbar-inverse-light side-bar">
     <li class="grey_li"></li>
     <li role="presentation" class="active"><a href="#">Home</a></li>
@@ -10,4 +10,3 @@
     <li role="presentation"><a href="#">Write / View Response</a></li>
     <li role="presentation"><a href="#">Logout</a></li>
 </ul>
-</div>
