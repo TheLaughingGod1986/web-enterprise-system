@@ -12,7 +12,6 @@
 
 <body>
 
-<div class="container">
 
         <div class="col-sm-12">
             <?php if ($header) echo $header; ?>
@@ -30,7 +29,6 @@
         <?php if ($footer) echo $footer; ?>
             </div>
 
-</div>
 </body>
 
 </html>
