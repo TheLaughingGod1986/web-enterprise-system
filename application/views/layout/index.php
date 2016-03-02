@@ -12,11 +12,11 @@
 
 <body>
 
-<div class="col-sm-2 ">
+<div class="col-sm-2 no-margin-right">
     <?php if ($left) echo $left; ?>
 </div>
 
-<div class="col-sm-10">
+<div class="col-sm-10 no-margin-left">
     <?php if ($header) echo $header; ?>
 </div>
 
