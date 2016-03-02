@@ -12,13 +12,12 @@
 
 <body>
 
-
-<div class="col-sm-12">
-    <?php if ($header) echo $header; ?>
-</div>
-
 <div class="col-sm-2 ">
     <?php if ($left) echo $left; ?>
+</div>
+
+<div class="col-sm-10">
+    <?php if ($header) echo $header; ?>
 </div>
 
 <div class="col-sm-10 ">
