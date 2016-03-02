@@ -17,13 +17,12 @@
             <?php if ($header) echo $header; ?>
         </div>
 
-        <div class="container">
+
         <div class="col-sm-2 push-margin-top">
             <?php if ($left) echo $left; ?>
-        </div>
             </div>
 
-        <div class="col-sm-10">
+        <div class="container">
             <?php if ($middle) echo $middle; ?>
         </div>
 
