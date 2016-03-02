@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top top-menu">
+<nav class="navbar navbar-inverse top-menu">
     <div class="col-sm-2">
             <img border="0" alt="W3Schools" src="img/greenwich_logo.png" width="100" height="70">
     </div>
