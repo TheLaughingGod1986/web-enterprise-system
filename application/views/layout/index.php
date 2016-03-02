@@ -11,8 +11,8 @@
 </head>
 
 <body>
-<div class="container-fluid">
-    <div class="row-fluid">
+<div class="wrap">
+    <div class="container">
 
         <div class="col-sm-12">
             <?php if ($header) echo $header; ?>
@@ -31,4 +31,5 @@
     </div>
 </div>
 </body>
+
 </html>

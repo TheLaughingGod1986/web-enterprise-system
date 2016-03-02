@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA;;GAEG,ACFH,iBACA,CACE,aAAa,CAAE,YAAY,CAG7B,gBACA,CACE,aAAa,CAAE,eAAe,CAGhC,gBAAiB,CACf,YAAY,CAAE,YAAY,CAG5B,SAAU,CACR,MAAM,CAAE,GAAG,CACX,MAAM,CAAE,cAAsB,CAGhC,SAAU,CACR,MAAM,CAAE,CAAC,CCpBX,SACA,CACE,UAAU,CAAE,IAAI,CCFlB,UAAU,CACR,KAAK,CAAE,KAAK,CCDd,QAAS,CACP,gBAAgB,CAAE,OAAO,CACzB,MAAM,CAAE,IAAI,CAGd,gBAAiB,CACf,UAAU,CAAE,MAAM,CAClB,KAAK,CAAE,KAAK",
-"sources": ["../scss/main.scss","../scss/base/_normalize.scss","../scss/modules/_sections.scss","../scss/layout/_footer.scss","../scss/layout/_nav.scss"],
+"mappings": "AAAA;;GAEG,ACFH,iBACA,CACE,aAAa,CAAE,YAAY,CAG7B,gBACA,CACE,aAAa,CAAE,eAAe,CAGhC,gBAAiB,CACf,YAAY,CAAE,YAAY,CAG5B,SAAU,CACR,MAAM,CAAE,GAAG,CACX,MAAM,CAAE,cAAsB,CAGhC,SAAU,CACR,MAAM,CAAE,CAAC,CCpBX,SACA,CACE,UAAU,CAAE,IAAI,CCFlB,OAAQ,CACN,gBAAgB,CAAE,OAAO,CACzB,MAAM,CAAE,IAAI,CCFd,gBAAiB,CACf,UAAU,CAAE,MAAM,CAClB,KAAK,CAAE,KAAK,CCFd,QAAS,CACP,gBAAgB,CAAE,OAAO,CACzB,MAAM,CAAE,IAAI",
+"sources": ["../scss/main.scss","../scss/base/_normalize.scss","../scss/modules/_sections.scss","../scss/layout/_footer.scss","../scss/layout/_header.scss","../scss/layout/_nav.scss"],
 "names": [],
 "file": "style.css"
 }
