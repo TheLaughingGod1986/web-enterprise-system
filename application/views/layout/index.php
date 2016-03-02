@@ -12,20 +12,18 @@
 
 <body>
 
-<div class="row">
         <div class="col-sm-12">
             <?php if ($header) echo $header; ?>
         </div>
-</div>
-        <div class="row">
-        <div class="col-sm-2">
+
+        <div class="col-sm-2 push-margin-top">
             <?php if ($left) echo $left; ?>
             </div>
 
-        <div class="col-sm-10">
+        <div class="col-sm-10 push-margin-top">
             <?php if ($middle) echo $middle; ?>
         </div>
-        </div>
+
         <div class="col-sm-12">
         <?php if ($footer) echo $footer; ?>
             </div>
