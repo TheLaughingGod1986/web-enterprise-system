@@ -1,7 +1,7 @@
 <div>
     <h1>Manage Users</h1><hr/>
 
-    <div id="userslist">
+    <div id="userslist" class="col-sm-5">
 
         <ol>
             <?php
@@ -85,7 +85,7 @@
         ?>
     </div>
 
-    <div id="insert">
+    <div id="insert" class="col-sm-5">
         <?php echo form_open('UManage_cntrl/insert_user'); ?>
         <h3>Create new user</h3><hr/>
         <?php if (isset($message)) { ?>
