@@ -17,8 +17,7 @@
             <?php if ($header) echo $header; ?>
         </div>
 
-
-        <div class="col-sm-2 push-margin-top">
+        <div class="container">
             <?php if ($left) echo $left; ?>
             </div>
 
