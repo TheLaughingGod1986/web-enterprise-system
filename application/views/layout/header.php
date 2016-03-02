@@ -7,7 +7,7 @@
         </button>
 
         <a <?php echo anchor('main/index'); ?>
-            <img border="0" alt="W3Schools" src="greenwich_logo.png" width="100" height="100">
+            <img border="0" alt="W3Schools" src="img/greenwich_logo.png" width="100" height="100">
         </a>
     </div>
 
