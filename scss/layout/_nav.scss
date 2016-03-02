@@ -1,9 +1,13 @@
-.grey_li {
-  background-color: #5e5e5e;
-  height: 12px;
-}
-.blue-li {
-  background-color: #3C5899;
+li {
+  .grey {
+    background-color: rgba(153,153,153,.49);
+    border: none;
+    height: 12px;
+  }
+  .blue {
+    background-color: #3C5899;
+    border: none;
+  }
 }
 .side-bar {
   height: 88%;
