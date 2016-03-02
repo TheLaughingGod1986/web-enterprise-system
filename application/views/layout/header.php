@@ -5,7 +5,7 @@
                     data-target="#bs-example-navbar-collapse-9" aria-expanded="false"><span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" <?php echo anchor('main/index'); ?> <img src="/img/greenwich.png"></a>
+            <a class="navbar-brand" <?php echo anchor('main/index'); ?> <img src="/img/greenwich_logo.png"></a>
         </div>
 
         <div class="collapse navbar-collapse col-sm-12" id="bs-example-navbar-collapse-9">
