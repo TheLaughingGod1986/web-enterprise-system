@@ -29,7 +29,7 @@ class Main extends CI_Controller
     {
 
 
-        $this->middle = '../controller/Update_cntrl.php'; // passing middle to function. change this for different views.
+        $this->middle = base_url().'controller/Update_cntrl.php'; // passing middle to function. change this for different views.
         $this->layout();
     }
 }
