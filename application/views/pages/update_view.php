@@ -1,6 +1,3 @@
-<?php
-$this->load->controller('Update_cntrl');
-?>
 
 <div>
     <h1>Update User data</h1><hr/>
