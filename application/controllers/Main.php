@@ -28,7 +28,8 @@ class Main extends CI_Controller
     function update()
     {
 
-        $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
+
+        $this->middle = '../controller/Update_cntrl.php'; // passing middle to function. change this for different views.
         $this->layout();
     }
 }

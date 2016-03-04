@@ -16,7 +16,6 @@ class Update_cntrl extends CI_Controller{
     function index(){
         $id = $this->uri->segment(3);
         $data['all_users'] = $this->Update_model->get_users();
-        echo $data ['all_users'];
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
         $this->load->view('pages/Update_view', $data);
