@@ -22,10 +22,10 @@ class Update_cntrl extends CI_Controller{
     }
 
     function update_user(){
-        $id = $this->input->post('userID');
+        $id = $this->input->post('StaffID');
         $data = array(
-            'userName' => $this->input->post('userName'),
-            'pass' => $this->input->post('pass')
+            'userName' => $this->input->post('Email'),
+            'pass' => $this->input->post('Password')
         );
 
         $this->Update_model->update_user($id, $data);
