@@ -2,6 +2,11 @@
 
 class Main extends CI_Controller
 {
+    function __construct()
+    {
+        $this->load->model('update_model');
+    }
+
     var $template = array();
     var $data = array();
 
@@ -28,8 +33,8 @@ class Main extends CI_Controller
 
     function update()
     {
-        $this->Update_model->update_user($id, $data);
-        $id = $this->uri->segment(3);
+
+        $id = 2;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
