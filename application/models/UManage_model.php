@@ -21,7 +21,7 @@ class UManage_model extends CI_Model{
         $dbquery = $this->db->get();
         $dbresult = $dbquery->result();
 
-        
+
 
         return $dbresult;
     }
