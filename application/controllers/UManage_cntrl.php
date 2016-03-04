@@ -12,7 +12,7 @@ class UManage_cntrl extends CI_Controller
     function index()
     {
 
-        $id = $this->uri->segment(3);
+        $id = $this->input->post('StaffID');
         $data['all_users'] = $this->UManage_model->get_users();
         $data['single_user'] = $this->UManage_model->get_user_id($id);
 
@@ -20,8 +20,6 @@ class UManage_cntrl extends CI_Controller
         $this->load->view('UManage_view', $data);
 //        $this->middle 'UManage_view' $data; // passing middle to function. change this for different views.
 //        $this->layout();
-
-
     }
 
     //Insert users form
@@ -84,7 +82,7 @@ class UManage_cntrl extends CI_Controller
         );
 
         $this->UManage_model->update_user($id, $data);
-        $this->index();
+        $this->load->index();
     }
 
 }
