@@ -14,14 +14,14 @@
 
             echo form_open('Update_cnrtl/update_user');?>
 
-            <?php echo form_label('Examiner ID:'); ?> <?php echo form_error('userID'); ?><br />
-            <?php echo form_input(array('id' => 'userID', 'name' => 'userID', 'value'=>$item->userID)); ?><br />
+            <?php echo form_label('Examiner ID:'); ?> <?php echo form_error('StaffID'); ?><br />
+            <?php echo form_input(array('id' => 'StaffID', 'name' => 'StaffID', 'value'=>$item->StaffID)); ?><br />
 
             <?php echo form_label('Examiner Name :'); ?> <?php echo form_error('Email'); ?><br />
-            <?php echo form_input(array('id' => 'Email', 'name' => 'userName', 'value'=>$item->userName)); ?><br />
+            <?php echo form_input(array('id' => 'Email', 'name' => 'userName', 'value'=>$item->Email)); ?><br />
 
             <?php echo form_label('Password :'); ?> <?php echo form_error('Password'); ?><br />
-            <?php echo form_input(array('id' => 'Password', 'name' => 'Password', 'value'=> $item->pass ));?>
+            <?php echo form_input(array('id' => 'Password', 'name' => 'Password', 'value'=> $item->Password ));?>
 
             <?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
             <?php echo form_close(); ?>
