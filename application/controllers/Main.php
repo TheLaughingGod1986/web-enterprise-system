@@ -6,6 +6,7 @@ class Main extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Update_model');
+        $this->load->helper('array');
     }
 
     var $template = array();
@@ -37,7 +38,7 @@ class Main extends CI_Controller
         $id = 2;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
-        echo 'data variable: '.$data['all_users']->StaffID;
+        echo 'data variable: '.random_element($data);
         $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
         $this->layout();
     }
