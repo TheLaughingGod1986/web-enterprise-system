@@ -4,7 +4,7 @@
     <div id="menu">
 
         <ol>
-            <?php foreach($all_users as $users): ?>
+            <?php foreach($all_user as $users): ?>
                 <li><a href="<?php echo base_url().'index.php/Update_cntrl/index/'.$users->userID;?>"><?php echo $users->userName; ?></a></li>
             <?php endforeach; ?>
         </ol>
