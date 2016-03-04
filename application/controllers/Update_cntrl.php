@@ -14,12 +14,11 @@ class Update_cntrl extends CI_Controller{
 
     //Fetch selected user
     function index(){
-        $id = $this->uri->segment();
-        echo $id;
+        $id = $this->uri->segment(3);
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
-        $this->load->view('Update_view', $data);
+        $this->load->view('pages/Update_view', $data);
     }
 
     function update_user(){
