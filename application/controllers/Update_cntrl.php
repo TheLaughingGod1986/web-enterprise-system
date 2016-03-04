@@ -24,8 +24,8 @@ class Update_cntrl extends CI_Controller{
     function update_user(){
         $id = $this->input->post('StaffID');
         $data = array(
-            'userName' => $this->input->post('Email'),
-            'pass' => $this->input->post('Password')
+            'Email' => $this->input->post('Email'),
+            'Password' => $this->input->post('Password')
         );
 
         $this->Update_model->update_user($id, $data);
