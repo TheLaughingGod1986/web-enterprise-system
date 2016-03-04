@@ -36,9 +36,9 @@ class Main extends CI_Controller
     function update()
     {
         $id = 2;
-        $data['all_users'] = $this->Update_model->get_users();
-        $data['single_user'] = $this->Update_model->get_user_id($id);
-        echo 'data variable: '.random_element($data['single_user']);
+        $data22['all_users'] = $this->Update_model->get_users();
+        $data22['single_user'] = $this->Update_model->get_user_id($id);
+        echo 'data variable: '.random_element($data22['single_user']);
         $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
         $this->layout();
     }
