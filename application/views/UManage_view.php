@@ -37,7 +37,7 @@
 
     <div id="update">
         <?php
-        if(isset($single_user)){
+        if(isset($single_users)){
             foreach ($single_user as $item):
                 echo form_open('UManage_cntrl/update_user'); ?>
 
