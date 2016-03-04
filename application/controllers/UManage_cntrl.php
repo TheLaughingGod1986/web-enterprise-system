@@ -39,7 +39,8 @@ class UManage_cntrl extends CI_Controller
         $this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]|max_length[50]');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->index;
+            $this->index();
+
         } else {
             //Setting values for table columns
             $data = array(
