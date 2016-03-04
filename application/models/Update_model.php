@@ -8,7 +8,7 @@
 class Update_model extends CI_Model{
     //Select every user on table UserACC
     function get_users(){
-        $dbquery = $this->db->get('UserACC');
+        $dbquery = $this->db->get('staff');
         $dbresult = $dbquery->result();
         return $dbresult;
     }
@@ -16,8 +16,8 @@ class Update_model extends CI_Model{
     //Select the wanted user from table UserACC
     function get_user_id($data){
         $this->db->select('*');
-        $this->db->from('UserACC');
-        $this->db->where('userID', $data);
+        $this->db->from('staff');
+        $this->db->where('StaffID', $data);
 
         $dbquery = $this->db->get();
         $dbresult = $dbquery->result();
@@ -27,7 +27,7 @@ class Update_model extends CI_Model{
 
     //Update database with new data
     function update_user($id, $data){
-        $this->db->where('userID', $id);
-        $this->db->update('UserACC', $data);
+        $this->db->where('StaffID', $id);
+        $this->db->update('staff', $data);
     }
 }
