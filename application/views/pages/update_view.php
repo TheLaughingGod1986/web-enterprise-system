@@ -1,8 +1,8 @@
 <div id="update">
     <?php
-    if(isset($single_user)){
+
         foreach ($single_user as $item):
-            echo form_open('UManage_cntrl/update_user'); ?>
+            echo form_open('Update_cntrl/update'); ?>
 
             <?php echo form_label('Examiner ID:'); echo form_error('StaffID'); ?><br/>
             <?php echo form_input(array('id' => 'StaffID', 'name' => 'StaffID', 'value' => $item->StaffID)); ?>
@@ -41,9 +41,8 @@
 
             <?php echo form_submit(array('id' => 'submit', 'value' => 'Update')); ?>
             <?php echo form_close();
-        endforeach; }
-    else{
-        echo 'No data found';
-    }
+        endforeach;
+
+
     ?>
 </div>
