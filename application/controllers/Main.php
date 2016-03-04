@@ -17,6 +17,7 @@ class Main extends CI_Controller
     {
         $this->middle = 'pages/home_view'; // passing middle to function. change this for different views.
         $this->layout();
+
     }
 
     function about()
@@ -27,9 +28,11 @@ class Main extends CI_Controller
 
     function update()
     {
+        $id = $this->uri->segment(3);
+        $data['all_users'] = $this->Update_model->get_users();
+        $data['single_user'] = $this->Update_model->get_user_id($id);
 
-
-        $this->middle = base_url().'controller/Update_cntrl.php'; // passing middle to function. change this for different views.
+        $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
         $this->layout();
     }
 }
