@@ -34,7 +34,7 @@ class Main extends CI_Controller
 
     function update()
     {
-
+        echo 'inside update function in main controller';
         $id = 2;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
