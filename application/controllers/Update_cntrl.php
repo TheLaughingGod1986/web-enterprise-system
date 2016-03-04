@@ -11,7 +11,7 @@ class Update_cntrl extends CI_Controller
     function index()
     {
         $data['single_user'] = $this->UManage_model->get_user_id(2);
-        $this->load->view('update_view');
+        $this->load->view('update_view', $data);
     }
 
     function update()
