@@ -67,18 +67,6 @@ class UManage_cntrl extends CI_Controller
         $this->index();
     }
 
-
-    function update(){
-        $id = $this->uri->segment(3);
-        $data['all_users'] = $this->UManage_model->get_users();
-        $data['single_user'] = $this->UManage_model->get_user_id($id);
-
-        //Template importation
-        $this->load->view('UManage_view', $data);
-//        $this->middle 'UManage_view' $data; // passing middle to function. change this for different views.
-//        $this->layout();
-
-    }
     //Update users... fetching user from database by id
     function update_user(){
         $id = $this->input->post('StaffID');
@@ -94,7 +82,7 @@ class UManage_cntrl extends CI_Controller
         );
 
         $this->UManage_model->update_user($id, $data);
-        $this->load->update();
+        $this->load->index();
     }
 
 }

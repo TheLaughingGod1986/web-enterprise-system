@@ -35,6 +35,18 @@ class Main extends CI_Controller
         $this->layout();
     }
 
+    function about()
+    {
+
+        $id = $this->uri->segment(3);
+        $data['all_users'] = $this->UManage_model->get_users();
+        $data['single_user'] = $this->UManage_model->get_user_id($id);
+
+        //Template importation
+        $this->load->view('UManage_view', $data);
+
+    }
+
     //Update users... fetching user from database by id
     function update(){
         $id = $this->input->post('StaffID');
@@ -52,5 +64,6 @@ class Main extends CI_Controller
         $this->UManage_model->update_user($id, $data);
         $this->middle = 'pages/update';
         $this->layout();
+        $this->load->about();
     }
 }
