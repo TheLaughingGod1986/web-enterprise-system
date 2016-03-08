@@ -10,8 +10,8 @@ class Main extends CI_Controller
 
 //        $this->load->model('UManage_model');
         $id = $this->uri->segment(3);
-        $data['all_users'] = $this->update_model->get_users();
-        $data['single_user'] = $this->update_model->get_user_id($id);
+        $data['all_users'] = $this->Update_model->get_users();
+        $data['single_user'] = $this->Update_model->get_user_id($id);
     }
 
     var $template = array();
