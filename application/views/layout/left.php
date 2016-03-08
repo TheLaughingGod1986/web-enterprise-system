@@ -7,7 +7,7 @@
     <li role="presentation"><a href="#">Write / View Response</a></li>
     <li class="grey"></li>
     <li role="presentation"><a href="#">Your Response</a></li>
-    <li role="presentation"><a href="#">Update Personal Details</a></li>
+    <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
     <li role="presentation"><a href="#">Write / View Response</a></li>
     <li role="presentation"><a href="#">Logout</a></li>
 </ul>
