@@ -11,7 +11,7 @@ class Main extends CI_Controller
 
       $this->load->model('Update_model');
 //        $id = $this->uri->segment(3);
-        $data['all_users'] = $this->Update_model->get_users();
+//        $data['all_users'] = $this->Update_model->get_users();
 //        $data['single_user'] = $this->UManage_model->get_user_id($id);
     }
 
