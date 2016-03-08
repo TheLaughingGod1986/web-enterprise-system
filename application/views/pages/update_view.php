@@ -9,7 +9,7 @@
                 foreach ($all_users as $users): ?>
                     <li>
                         <?php echo $users->Last_Name.", ".$users->First_Name; ?>
-                        <a href="<?php echo base_url() . 'index.php/Main/update/' . $users->StaffID; ?>">Edit</a>
+                        <a href="<?php echo base_url() . 'Main/update/' . $users->StaffID; ?>">Edit</a>
                     </li>
                 <?php endforeach; }
             else{
@@ -25,7 +25,7 @@
             foreach ($single_user as $user): ?>
                 <h3>Sure you want to delete this user?</h3>
                 <?php echo $user->Email; ?>
-                <a href="<?php echo base_url() . 'index.php/Main/update/' . $user->StaffID; ?>">
+                <a href="<?php echo base_url() . 'Main/update/' . $user->StaffID; ?>">
                     <button>Delete</button>
                 </a>
             <?php endforeach; }
