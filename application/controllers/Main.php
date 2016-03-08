@@ -2,20 +2,20 @@
 
 class Main extends CI_Controller
 {
-    //var $data = array();
-//    function __construct()
-//    {
-//        parent::__construct();
-//        $this->load->model('Update_model');
-//        $this->load->helper('array');
-//
-//      $this->load->model('Update_model');
-//        $id = $this->uri->segment(3);
-//        $data['all_users'] = $this->Update_model->get_users();
-////        $data['single_user'] = $this->UManage_model->get_user_id($id);
-//    }
-//
-//    var $template = array();
+    var $data = array();
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Update_model');
+        $this->load->helper('array');
+
+      $this->load->model('Update_model');
+        $id = $this->uri->segment(3);
+        $data['all_users'] = $this->Update_model->get_users();
+//        $data['single_user'] = $this->UManage_model->get_user_id($id);
+    }
+
+    var $template = array();
 
 
     public function layout () {
@@ -39,17 +39,17 @@ class Main extends CI_Controller
         $this->layout();
     }
 
-//    function update()
-//    {
-//        $this->middle = 'update_view'; // passing middle to function. change this for different views.
+    function update()
+    {
+        $this->middle = 'update_view'; // passing middle to function. change this for different views.
+        $this->layout();
+
+//        $id = 2;
+//        $data22['all_users'] = $this->Update_model->get_users();
+//        $data22['single_user'] = $this->Update_model->get_user_id($id);
+//        echo 'data variable: '.random_element($data22);
+//        $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
 //        $this->layout();
-//
-////        $id = 2;
-////        $data22['all_users'] = $this->Update_model->get_users();
-////        $data22['single_user'] = $this->Update_model->get_user_id($id);
-////        echo 'data variable: '.random_element($data22);
-////        $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
-////        $this->layout();
-//
-//    }
+
+    }
 }
