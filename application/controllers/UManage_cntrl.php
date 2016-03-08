@@ -12,7 +12,7 @@ class UManage_cntrl extends CI_Controller
     function index()
     {
 
-        $id = $this->input->post('StaffID');
+        $id = $this->uri->segment(3);
         $data['all_users'] = $this->UManage_model->get_users();
         $data['single_user'] = $this->UManage_model->get_user_id($id);
 
