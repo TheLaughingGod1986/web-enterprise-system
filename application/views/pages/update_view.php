@@ -15,7 +15,7 @@
             <?php endforeach; ?>
 
             <?php else : ?>
-                <h3>Smacks my bitch Up !</h3>
+                <p>Sorry, No data</p>
             <?php endif; ?>
         </ol>
     </div>
