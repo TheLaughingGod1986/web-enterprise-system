@@ -10,8 +10,8 @@ class Main extends CI_Controller
         $this->load->helper('array');
 
       $this->load->model('Update_model');
-//        $id = $this->uri->segment(3);
-//        $data['all_users'] = $this->Update_model->get_users();
+        $id = $this->uri->segment(3);
+        $data['all_users'] = $this->Update_model->get_users();
 //        $data['single_user'] = $this->UManage_model->get_user_id($id);
     }
 
@@ -43,6 +43,7 @@ class Main extends CI_Controller
     {
         $this->middle = 'update_view'; // passing middle to function. change this for different views.
         $this->layout();
+
 //        $id = 2;
 //        $data22['all_users'] = $this->Update_model->get_users();
 //        $data22['single_user'] = $this->Update_model->get_user_id($id);
