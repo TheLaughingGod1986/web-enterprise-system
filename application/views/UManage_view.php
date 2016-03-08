@@ -1,3 +1,5 @@
+
+
 <div>
     <h1>Manage Users</h1><hr/>
 
@@ -37,7 +39,7 @@
 
     <div id="update">
         <?php
-        if(isset($single_users)){
+        if(isset($single_user)){
             foreach ($single_user as $item):
                 echo form_open('UManage_cntrl/update_user'); ?>
 
