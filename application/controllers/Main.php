@@ -14,8 +14,6 @@ class Main extends CI_Controller
         $data['single_user'] = $this->UManage_model->get_user_id($id);
     }
 
-
-
     var $template = array();
     var $data = array();
 
