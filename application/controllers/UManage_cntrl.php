@@ -9,7 +9,7 @@ class UManage_cntrl extends CI_Controller
     }
 
     //Fetch selected user
-    function index()
+    /*function index()
     {
 
         $id = $this->uri->segment(3);
@@ -20,7 +20,7 @@ class UManage_cntrl extends CI_Controller
         $this->load->view('UManage_view', $data);
 //        $this->middle 'UManage_view' $data; // passing middle to function. change this for different views.
 //        $this->layout();
-    }
+    }*/
 
     //Insert users form
     function insert_user() {
@@ -37,7 +37,7 @@ class UManage_cntrl extends CI_Controller
         $this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]|max_length[50]');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->index();
+            $this->load->view('UManage_view');
 
         } else {
             //Setting values for table columns
@@ -55,7 +55,7 @@ class UManage_cntrl extends CI_Controller
             $this->UManage_model->form_insert($data);
             $data['message'] = 'Data Inserted Successfully';
             //Loading View
-            $this->index();
+            $this->load->view('UManage_view');
         }
     }
 
@@ -64,7 +64,7 @@ class UManage_cntrl extends CI_Controller
         $id = $this->uri->segment(3);
         $this->UManage_model->delete_user($id);
 
-        $this->index();
+        $this->load->view('UManage_view');
     }
 
     //Update users... fetching user from database by id
@@ -82,7 +82,7 @@ class UManage_cntrl extends CI_Controller
         );
 
         $this->UManage_model->update_user($id, $data);
-        $this->load->index();
+        $this->load->view('UManage_view');
     }
 
 }

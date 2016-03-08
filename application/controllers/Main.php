@@ -7,8 +7,6 @@ class Main extends CI_Controller
         parent::__construct();
         $this->load->model('Update_model');
         $this->load->helper('array');
-
-        $this->load->model('UManage_model');
     }
 
     var $template = array();
@@ -35,35 +33,16 @@ class Main extends CI_Controller
         $this->layout();
     }
 
-    function about()
+    function update()
     {
-
-        $id = $this->uri->segment(3);
-        $data['all_users'] = $this->UManage_model->get_users();
-        $data['single_user'] = $this->UManage_model->get_user_id($id);
-
-        //Template importation
-        $this->load->view('UManage_view', $data);
-
-    }
-
-    //Update users... fetching user from database by id
-    function update(){
-        $id = $this->input->post('StaffID');
-        $data = array(
-            'Email' => $this->input->post('Email'),
-            'Password' => $this->input->post('Password'),
-            'First_Name' => $this->input->post('First_Name'),
-            'Last_Name' => $this->input->post('Last_Name'),
-            'Postcode' => $this->input->post('Postcode'),
-            'Telephone' => $this->input->post('Telephone'),
-            'Address' => $this->input->post('Address'),
-            'Title' => $this->input->post('Title')
-        );
-
-        $this->UManage_model->update_user($id, $data);
-        $this->middle = 'pages/update';
+        $this->middle = 'UManage_view'; // passing middle to function. change this for different views.
         $this->layout();
-        $this->load->about();
+//        $id = 2;
+//        $data22['all_users'] = $this->Update_model->get_users();
+//        $data22['single_user'] = $this->Update_model->get_user_id($id);
+//        echo 'data variable: '.random_element($data22);
+//        $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
+//        $this->layout();
+
     }
 }
