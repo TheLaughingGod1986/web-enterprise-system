@@ -1,10 +1,9 @@
 <?php
-    function __construct()
-    {
+
         echo 'Enter the constructor';
-        parent::__construct();
+        
         $this->load->model('UManage_model');
-    }
+
     $id = $this->uri->segment(3);
     $data['all_users'] = $this->UManage_model->get_users();
     $data['single_user'] = $this->UManage_model->get_user_id($id);
