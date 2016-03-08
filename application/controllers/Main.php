@@ -2,6 +2,7 @@
 
 class Main extends CI_Controller
 {
+    var $data = array();
     function __construct()
     {
         parent::__construct();
@@ -15,7 +16,7 @@ class Main extends CI_Controller
     }
 
     var $template = array();
-    var $data = array();
+
 
     public function layout () {
         $this->template['header'] = $this->load->view('layout/header', $this->data, true);
