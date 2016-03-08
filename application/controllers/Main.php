@@ -3,19 +3,19 @@
 class Main extends CI_Controller
 {
     //var $data = array();
-    function __construct()
-    {
-        parent::__construct();
-        $this->load->model('Update_model');
-        $this->load->helper('array');
-
-      $this->load->model('Update_model');
-        $id = $this->uri->segment(3);
-        $data['all_users'] = $this->Update_model->get_users();
-//        $data['single_user'] = $this->UManage_model->get_user_id($id);
-    }
-
-    var $template = array();
+//    function __construct()
+//    {
+//        parent::__construct();
+//        $this->load->model('Update_model');
+//        $this->load->helper('array');
+//
+//      $this->load->model('Update_model');
+//        $id = $this->uri->segment(3);
+//        $data['all_users'] = $this->Update_model->get_users();
+////        $data['single_user'] = $this->UManage_model->get_user_id($id);
+//    }
+//
+//    var $template = array();
 
 
     public function layout () {
