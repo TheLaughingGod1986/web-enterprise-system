@@ -2,14 +2,14 @@
 
 class Main extends CI_Controller
 {
-    var $data = array();
+    //var $data = array();
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Update_model');
+        $this->load->model('UManage_model');
         $this->load->helper('array');
 
-//        $this->load->model('UManage_model');
+//      $this->load->model('UManage_model');
         $id = $this->uri->segment(3);
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
