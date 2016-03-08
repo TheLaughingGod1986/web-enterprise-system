@@ -1,6 +1,7 @@
 <?php
     function __construct()
     {
+        echo 'Enter the constructor';
         parent::__construct();
         $this->load->model('UManage_model');
     }
