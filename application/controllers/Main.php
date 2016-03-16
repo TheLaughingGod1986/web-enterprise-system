@@ -52,5 +52,5 @@ class Main extends CI_Controller
         $this->layout();
     }
 
-    }
+
 }
