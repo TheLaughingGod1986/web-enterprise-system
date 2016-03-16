@@ -12,18 +12,15 @@
 
 <body>
 
+<div class="col-sm-2 no-padding-right">
+    <?php if ($left) echo $left; ?>
+</div>
 
-<?php if ($header) echo $header; ?>
+<div class="col-sm-10 no-padding-left">
+    <?php if ($header) echo $header; ?>
+</div>
 
-<?php
-if ($this->session->userdata('id')) {
-    echo '<div class="col-sm-3 col-md-2 sidebar">';
-    if ($left) echo $left;
-    echo '</div>';
-}
-?>
-
-<div class="col-sm-9 push-top push-left">
+<div class="col-sm-10 ">
     <?php if ($middle) echo $middle; ?>
 </div>
 
