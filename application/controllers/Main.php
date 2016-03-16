@@ -15,20 +15,23 @@ class Main extends CI_Controller
     {
         $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
         $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
-        $this->template['middle'] = $this->load->view($this->middle, $this->Front_End_data, true);
+//        $this->template['middle'] = $this->load->view($this->middle, $this->Front_End_data, true);
         $this->load->view('layout/index', $this->template);
     }
 
     function index()
     {
-        $this->middle = 'pages/home_view';
+//        $this->middle = 'pages/home_view';
+//        $this->layout();
+
+        $data['main_content'] = 'pages/home_view';
+//        $this->template['middle'] = $this->load->view ($this->middle = 'login_form',$data, true);
         $this->layout();
     }
 
     function update()
     {
         $this->load->model('Update_model');
-        
         $id = 2;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
