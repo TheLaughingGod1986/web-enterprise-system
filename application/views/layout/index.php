@@ -21,7 +21,7 @@
 </div>
 
 <div class="col-sm-10 ">
-    <?php if ($middle) echo $middle; ?>
+<!--    --><?php //if ($middle) echo $middle; ?>
 </div>
 
 <!--<div class="col-sm-12">-->
