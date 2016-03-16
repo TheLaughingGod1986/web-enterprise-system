@@ -43,12 +43,10 @@ class Main extends CI_Controller
 
     function update()
     {
-//        $this->middle = 'pages/update_view'; // passing middle to function. change this for different views.
-//        $this->layout();
-
         $id = 2;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
+
 // This is a hack, naughty Ben ....but it may work ... hehehe
         $this->template['middle'] = $this->load->view ($this->middle = 'UManage_view',$data, $id, true);
         $this->layout();
