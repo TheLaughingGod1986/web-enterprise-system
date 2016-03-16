@@ -32,13 +32,13 @@ class Update_cntrl extends CI_Controller{
         return $query->result();
     }
 
-    public function layout()
-    {
-        $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
-        $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
-        $this->template['middle'] = $this->load->view($this->middle, $this->Front_End_data, true);
-        $this->load->view('layout/index', $this->template);
-    }
+//    public function layout()
+//    {
+//        $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
+//        $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
+//        $this->template['middle'] = $this->load->view($this->middle, $this->Front_End_data, true);
+//        $this->load->view('layout/index', $this->template);
+//    }
 
     function index()
     {
