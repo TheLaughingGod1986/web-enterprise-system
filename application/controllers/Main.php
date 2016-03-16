@@ -1,4 +1,13 @@
 <?php
+
+class MY_Controller extends CI_Controller
+{
+    function __construct()
+    {
+        parent::__construct();
+        // do some stuff
+    }
+}
 class Main extends Template_Controller {
 
     var $data = array();
