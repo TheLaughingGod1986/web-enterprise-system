@@ -34,6 +34,6 @@ class Main extends CI_Controller
 
 // This is a hack, naughty Ben ....but it may work ... hehehe
 //        $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
-//        $this->layout();
+        $this->layout();
     }
 }
