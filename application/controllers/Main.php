@@ -24,12 +24,8 @@ class Main extends MY_Controller {
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
-//$this->middle = 'pages/update_view';
-
-        $this->load->view($this->middle = 'pages/update_view', $data, $id);
-//        $data_tek['middle'] = 'pages/update_view';
-//        $this->load->view('layout/index', $data_tek, $id, $data);
-//        $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
+$this->middle = 'pages/update_view';
+//        $this->load->view($this->middle = 'pages/update_view', $data, $id);
         $this->layout();
     }
 }
