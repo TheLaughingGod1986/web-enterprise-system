@@ -33,7 +33,7 @@ class Main extends CI_Controller
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
 // This is a hack, naughty Ben ....but it may work ... hehehe
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
-        $this->layout();
+//        $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
+//        $this->layout();
     }
 }
