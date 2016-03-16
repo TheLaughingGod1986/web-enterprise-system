@@ -24,6 +24,10 @@
     <?php if ($middle) echo $middle; ?>
 </div>
 
+<div class="col-sm-12">
+    <?php if ($footer) echo $footer; ?>
+</div>
+
 </body>
 
 </html>
