@@ -26,6 +26,7 @@ class Main extends MY_Controller {
 
         $this->middle = 'pages/update_view';
 
+        $this->load->view($id,$data);
 //        $data_tek['middle'] = 'pages/update_view';
 //        $this->load->view('layout/index', $data_tek, $id, $data);
 //        $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
