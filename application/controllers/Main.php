@@ -1,7 +1,6 @@
 <?php
+class Main extends Template_Controller {
 
-class Main extends Template_Controller
-{
     var $data = array();
 
     function __construct()
