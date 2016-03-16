@@ -19,6 +19,12 @@ class Main extends CI_Controller
         $this->load->view('layout/index', $this->template);
     }
 
+    public function layout_custom()
+    {
+        $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
+        $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
+        $this->load->view('layout/index', $this->template);
+    }
     function index()
     {
         $this->middle = 'pages/home_view';
@@ -33,7 +39,6 @@ class Main extends CI_Controller
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
         $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
-        $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
-        $this->template['middle'] = $this->load->view($this->middle, $this->Front_End_data, true);
+        $this->layout_custom();
     }
 }
