@@ -22,10 +22,8 @@ class Update_model extends CI_Model
         $this->db->select('*');
         $this->db->from('staff');
         $this->db->where('StaffID', $data);
-
         $dbquery = $this->db->get();
         $dbresult = $dbquery->result();
-
         return $dbresult;
     }
 
