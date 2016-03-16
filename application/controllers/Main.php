@@ -11,7 +11,7 @@ class Main extends CI_Controller
 
       $this->load->model('Update_model');
         $id = $this->uri->segment(3);
-        $data['all_users'] = $this->Update_model->get_users();
+        $data['all_users'] = $this->Udpate_model->get_users();
 //        $data['single_user'] = $this->UManage_model->get_user_id($id);
     }
 
@@ -39,17 +39,19 @@ class Main extends CI_Controller
         $this->layout();
     }
 
-    function update()
-    {
-        $this->middle = 'pages/update_view'; // passing middle to function. change this for different views.
-        $this->layout();
-
-        $id = 2;
-        $data['all_users'] = $this->Update_model->get_users();
-        $data['single_user'] = $this->Update_model->get_user_id($id);
-//        echo 'data variable: '.random_element($data22);
-//        $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
+//    function update()
+//    {
+//
+////        $this->template['middle'] = $this->load->view($this->middle, $this->data, true);
+//        $this->middle = 'pages/update_view'; // passing middle to function. change this for different views.
 //        $this->layout();
-
-    }
+//
+//        $id = 2;
+//        $data['all_users'] = $this->Update_model->get_users();
+//        $data['single_user'] = $this->Update_model->get_user_id($id);
+////        echo 'data variable: '.random_element($data22);
+////        $this->middle = 'pages/update_view.php'; // passing middle to function. change this for different views.
+////        $this->layout();
+//
+//    }
 }

@@ -8,6 +8,17 @@ class UManage_cntrl extends CI_Controller
         $this->load->model('UManage_model');
     }
 
+
+    var $Front_End_data = array();
+    var $template = array();
+
+    public function layout () {
+        $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
+        $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
+        $this->load->view('layout/index', $this->template);
+
+    }
+
     //Fetch selected user
     /*function index()
     {
@@ -81,8 +92,9 @@ class UManage_cntrl extends CI_Controller
             'Title' => $this->input->post('Title')
         );
 
-        $this->UManage_model->update_user($id, $data);
-        $this->load->view('UManage_view');
+        // This is a hack, naughty Ben ....but it may work ... hehehe
+        $this->template['middle'] = $this->load->view ($this->middle = 'UManage_view',$data, $id, true);
+        $this->layout();
     }
 
 }
