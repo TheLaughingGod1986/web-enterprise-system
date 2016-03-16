@@ -1,19 +1,16 @@
 <?php
-
 class Main extends CI_Controller
 {
     var $data = array();
+    var $Front_End_data = array();
+    var $template = array();
 
     function __construct()
     {
         parent::__construct();
         $this->load->model('Update_model');
         $this->load->helper('array');
-//        $id = $this->uri->segment(3);
     }
-
-    var $Front_End_data = array();
-    var $template = array();
 
     public function layout()
     {
@@ -25,16 +22,13 @@ class Main extends CI_Controller
 
     function index()
     {
-//        $this->template['middle'] = $this->load->view($this->middle = 'pages/home_view', true);
-//        $this->layout();
-
         $this->middle = 'pages/home_view';
         $this->layout();
     }
 
     function about()
     {
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/about_view', true);
+        $this->middle = 'pages/about_view';
         $this->layout();
     }
 
@@ -45,7 +39,7 @@ class Main extends CI_Controller
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
 // This is a hack, naughty Ben ....but it may work ... hehehe
-        $this->template['middle'] = $this->load->view($this->middle = 'UManage_view', $data, $id, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'update_view', $data, $id, true);
         $this->layout();
     }
 }
