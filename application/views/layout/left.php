@@ -1,6 +1,6 @@
 
 <ul class="nav navbar-inverse-light side-bar li-change">
-    <li class="blue"> <img border="0" alt="boo" src="img/Black&WhiteGreenwich.svg"></li>
+    <li class="blue"> <img classs="logo-main" border="0" alt="" src="img/Black&WhiteGreenwich.svg"></li>
     <li class="grey"></li>
     <li role="presentation" class="active"><a href="#">Home</a></li>
     <li role="presentation"><a href="#">Reports</a></li>
