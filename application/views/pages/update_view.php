@@ -1,9 +1,5 @@
-<div>
     <h1>Manage Users</h1>
     <hr/>
-
-    <div id="userslist" class="col-sm-5">
-
 
         <?php if (isset($all_users)) : foreach ($all_users as $users) : ?>
         <ol>
@@ -18,9 +14,7 @@
                 <h3>Smacks my bitch Up !</h3>
             <?php endif; ?>
         </ol>
-    </div>
 
-    <div id="delete">
         <?php
         if (isset($single_user)) {
             foreach ($single_user as $user): ?>
@@ -33,10 +27,9 @@
         } else {
             echo 'No data found';
         }
-        ?>
-    </div>
+?>
 
-    <div id="update">
+
         <?php
         if (isset($single_user)) {
             foreach ($single_user as $item):
@@ -92,9 +85,8 @@
             echo 'No data found';
         }
         ?>
-    </div>
 
-    <div id="insert" class="col-sm-5">
+
         <?php echo form_open('UManage_cntrl/insert_user'); ?>
         <h3>Create new user</h3>
         <hr/>
@@ -143,5 +135,3 @@
         echo form_submit(array('id' => 'submit', 'value' => 'Create'));
         echo form_close();
         ?>
-    </div>
-</div>
