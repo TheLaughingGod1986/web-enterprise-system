@@ -24,7 +24,7 @@ class Main extends CI_Controller
 
     function index()
     {
-        $this->middle = 'pages/home_view'; // passing middle to function. change this for different views.
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/home_view', true);
         $this->layout();
     }
 
