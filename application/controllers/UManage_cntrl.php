@@ -92,9 +92,9 @@ class UManage_cntrl extends CI_Controller
             'Title' => $this->input->post('Title')
         );
 
-        // This is a hack, naughty Ben ....but it may work ... hehehe
-        $this->template['middle'] = $this->load->view ($this->middle = 'UManage_view',$data, $id, true);
-        $this->layout();
+//        // This is a hack, naughty Ben ....but it may work ... hehehe
+//        $this->template['middle'] = $this->load->view ($this->middle = 'UManage_view',$data, $id, true);
+//        $this->layout();
     }
 
 }
