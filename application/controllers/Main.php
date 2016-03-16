@@ -1,6 +1,6 @@
 <?php
 
-class Main extends My_Template_Controller {
+class Main extends MY_Controller {
 
     var $data = array();
 
