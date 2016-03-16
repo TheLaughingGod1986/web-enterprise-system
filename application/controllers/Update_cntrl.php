@@ -47,7 +47,7 @@ class Update_cntrl extends CI_Controller{
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
-        $this->template['middle'] = $this->load->view($this->middle = '', $data, $id, true);
+        $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
         $this->layout();
     }
 }
