@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>css/build/font-awesome.min.css" type="text/css" media="screen"
           charset="uft-8">
 </head>
-
 <body>
 
 <div class="col-sm-2 no-padding-right">
@@ -24,10 +23,5 @@
     <?php if ($middle) echo $middle; ?>
 </div>
 
-<!--<div class="col-sm-12">-->
-<!--    --><?php //if ($footer) echo $footer; ?>
-<!--</div>-->
-
 </body>
-
 </html>
