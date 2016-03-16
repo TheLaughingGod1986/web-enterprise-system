@@ -15,14 +15,13 @@ class Main extends CI_Controller
 //        $data['single_user'] = $this->UManage_model->get_user_id($id);
     }
 
+    var $Front_End_data = array();
     var $template = array();
 
-
-    public function layout () {
-        $this->template['header'] = $this->load->view('layout/header', $this->data, true);
-        $this->template['left'] = $this->load->view('layout/left', $this->data, true);
-        $this->template['middle'] = $this->load->view($this->middle, $this->data, true);
-        $this->template['footer'] = $this->load->view('layout/footer', $this->data, true);
+    public function layout ()
+    {
+        $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
+        $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
         $this->load->view('layout/index', $this->template);
     }
 
