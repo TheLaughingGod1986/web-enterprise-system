@@ -34,7 +34,10 @@ class Main extends CI_Controller
 
     function about()
     {
-        $this->middle = 'pages/about_view'; // passing middle to function. change this for different views.
+//        $this->middle = 'pages/about_view'; // passing middle to function. change this for different views.
+//        $this->layout();
+
+        $this->template['middle'] = $this->load->view ($this->middle = 'pages/about_view', true);
         $this->layout();
     }
 
