@@ -26,12 +26,6 @@ class Main extends CI_Controller
         $this->layout();
     }
 
-//    function about()
-//    {
-//        $this->middle = 'pages/about_view';
-//        $this->layout();
-//    }
-
     function update()
     {
         $id = 2;

@@ -15,25 +15,25 @@
             <?php endif; ?>
         </ol>
 
-        <?php
-        if (isset($single_user)) {
-            foreach ($single_user as $user): ?>
-                <h3>Sure you want to delete this user?</h3>
-                <?php echo $user->Email; ?>
-                <a href="<?php echo base_url() . 'index.php/update_cntrl/delete_user/' . $user->StaffID; ?>">
-                    <button>Delete</button>
-                </a>
-            <?php endforeach;
-        } else {
-            echo 'No data found';
-        }
-?>
+<!--        --><?php
+//        if (isset($single_user)) {
+//            foreach ($single_user as $user): ?>
+<!--                <h3>Sure you want to delete this user?</h3>-->
+<!--                --><?php //echo $user->Email; ?>
+<!--                <a href="--><?php //echo base_url() . 'index.php/update_cntrl/delete_user/' . $user->StaffID; ?><!--">-->
+<!--                    <button>Delete</button>-->
+<!--                </a>-->
+<!--            --><?php //endforeach;
+//        } else {
+//            echo 'No data found';
+//        }
+//?>
 
 
         <?php
         if (isset($single_user)) {
             foreach ($single_user as $item):
-                echo form_open('UManage_cntrl/update_user'); ?>
+                echo form_open('update_cntrl/update_user'); ?>
 
                 <?php echo form_label('Examiner ID:');
                 echo form_error('StaffID'); ?><br/>
