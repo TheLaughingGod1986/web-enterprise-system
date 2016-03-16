@@ -8,7 +8,6 @@ class Main extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Update_model');
         $this->load->helper('array');
     }
 
@@ -31,9 +30,10 @@ class Main extends CI_Controller
         $id = 2;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
+        $this->load->model('Update_model');
 
 // This is a hack, naughty Ben ....but it may work ... hehehe
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
+        $this->load->view($this->middle = 'pages/update_view', $data, $id, true);
         $this->layout();
     }
 }
