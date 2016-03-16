@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Template_Controller extends CI_Controller
+class My_Template_Controller extends CI_Controller
 {
     var $template = array();
     var $Front_End_data = array();
