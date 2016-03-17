@@ -41,6 +41,9 @@ class Update_cntrl extends MY_Controller{
         );
 
         $this->Update_model->update_user($id, $data);
+            $id = $this->uri->segment(3);
+            $data['all_users'] = $this->Update_model->get_users();
+            $data['single_user'] = $this->Update_model->get_user_id($id);
 //        // This is a hack, naughty Ben ....but it may work ... hehehe
         $this->template['middle'] = $this->load->view ($this->middle = 'pages/update_view',$data, true);
         $this->layout();
