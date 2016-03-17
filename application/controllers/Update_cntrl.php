@@ -43,7 +43,7 @@ class Update_cntrl extends CI_Controller{
 
         $this->Update_model->update_user($id, $data);
 //        // This is a hack, naughty Ben ....but it may work ... hehehe
-        $this->template['middle'] = $this->load->view ($this->middle = 'update_view',$data, true);
+        $this->template['middle'] = $this->load->view ($this->middle = 'pages/update_view',$data, true);
         $this->layout();
     }
 
