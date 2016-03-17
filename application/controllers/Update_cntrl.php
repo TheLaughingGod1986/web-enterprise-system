@@ -27,6 +27,26 @@ class Update_cntrl extends CI_Controller{
         return $query->result();
     }
 
+    //Update users... fetching user from database by id
+    function update_user(){
+        $id = $this->input->post('StaffID');
+        $data = array(
+            'Email' => $this->input->post('Email'),
+            'Password' => $this->input->post('Password'),
+            'First_Name' => $this->input->post('First_Name'),
+            'Last_Name' => $this->input->post('Last_Name'),
+            'Postcode' => $this->input->post('Postcode'),
+            'Telephone' => $this->input->post('Telephone'),
+            'Address' => $this->input->post('Address'),
+            'Title' => $this->input->post('Title')
+        );
+
+        $this->load->model->update_user($id, $data);
+//        // This is a hack, naughty Ben ....but it may work ... hehehe
+        $this->template['middle'] = $this->load->view ($this->middle = 'update_view',$data, true);
+        $this->layout();
+    }
+
 //    public function layout()
 //    {
 //        $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
