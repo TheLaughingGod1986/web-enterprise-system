@@ -26,6 +26,6 @@ class Main extends MY_Controller {
 //$this->middle = 'pages/update_view';
 
         $this->load->view($this->middle = 'pages/update_view', $data);
-        $this->layout();
+        //$this->layout();
     }
 }
