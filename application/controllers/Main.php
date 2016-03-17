@@ -2,7 +2,7 @@
 
 class Main extends MY_Controller {
 
-    var $data = array();
+//    var $data = array();
 
     function __construct()
     {
@@ -12,7 +12,6 @@ class Main extends MY_Controller {
 
     function index()
     {
-
         $this->middle = 'pages/home_view';
         $this->layout();
     }
@@ -23,9 +22,10 @@ class Main extends MY_Controller {
         $id = 2;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
+//
+//$this->middle = 'pages/update_view';
 
-$this->middle = 'pages/update_view';
-//        $this->load->view($this->middle = 'pages/update_view', $data, $id);
+        $this->load->view($this->middle = 'pages/update_view', $data);
         $this->layout();
     }
 }
