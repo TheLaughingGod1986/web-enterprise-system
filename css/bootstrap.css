@@ -1517,9 +1517,16 @@ h3,
 h4,
 h5,
 h6,
-.h1,
-.h2,
-.h3,
+.h1 {
+    font-size: 3vw;
+}
+
+.h2 {
+    font-size: 2vw;
+}
+.h3 {
+    font-size: 1vw;
+}
 .h4,
 .h5,
 .h6 {
@@ -5634,7 +5641,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 
 .navbar-inverse {
     background-color: #3b5998;
-    height: 12%;
+    height: 10%;
 }
 
 .navbar-inverse-light {
