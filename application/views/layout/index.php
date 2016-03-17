@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div class="col-sm-2 no-padding-right hide-all show-desktop">
+<div class="col-sm-2 no-padding-right hide-mobile">
     <?php if ($left) echo $left; ?>
 </div>
 
