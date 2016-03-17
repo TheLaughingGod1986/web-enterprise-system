@@ -29,10 +29,10 @@ if (isset($single_user)) {
 ?>
 
 
-<?php
-if (isset($single_user)) {
-    foreach ($single_user as $item):
-        echo form_open('update_cntrl/update_user'); ?>
+        <?php
+        if (isset($single_user)) {
+            foreach ($single_user as $item):
+                echo form_open('Update_cntrl/update_user'); ?>
 
         <?php echo form_label('Examiner ID:');
         echo form_error('StaffID'); ?><br/>
