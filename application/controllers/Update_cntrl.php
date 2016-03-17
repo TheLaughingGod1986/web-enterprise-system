@@ -38,7 +38,7 @@ class Update_cntrl extends MY_Controller{
         );
 
         $this->Update_model->update_user($id, $data);
-//        // This is a hack, naughty Ben ....but it may work ... hehehe
+//        // This is a hack, naughty Ben ....but it may work ... hehe
         $this->template['middle'] = $this->load->view ($this->middle = 'pages/update_view',$data, true);
         $this->layout();
     }
