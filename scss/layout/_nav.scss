@@ -9,6 +9,22 @@
     background-color: #3C5899;
     border: none;
     height: 12%;
+
+    a:link {
+      color: green;
+    }
+
+    a:visited {
+      color: green;
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    a:active {
+      color: yellow;
+    }
   }
 }
 

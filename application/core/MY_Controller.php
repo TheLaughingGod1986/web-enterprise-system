@@ -9,6 +9,7 @@ class MY_Controller extends CI_Controller
     {
         $this->template['header'] = $this->load->view('layout/header', $this->front_data, true);
         $this->template['left'] = $this->load->view('layout/left', $this->front_data, true);
+        $this->template['top_bar'] = $this->load->view('layout/top_bar', $this->front_data, true);
         $this->template['middle'] = $this->load->view($this->middle, $this->front_data, true);
         $this->load->view('layout/index', $this->template);
     }

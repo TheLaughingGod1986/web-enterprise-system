@@ -19,7 +19,11 @@
     <?php if ($header) echo $header; ?>
 </div>
 
-<div class="col-sm-10 ">
+<div class="col-sm-10">
+    <?php if ($top_bar) echo $top_bar; ?>
+</div>
+
+<div class="col-sm-10 push-left">
     <?php if ($middle) echo $middle; ?>
 </div>
 
