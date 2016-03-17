@@ -2,7 +2,7 @@
 
 class Main extends MY_Controller {
 
-    var $data = array();
+//    var $data = array();
 
     function __construct()
     {
@@ -25,7 +25,7 @@ class Main extends MY_Controller {
 //
 //$this->middle = 'pages/update_view';
 
-        $this->load->view($this->middle = 'pages/update_view', $data, $id);
+        $this->load->view($this->middle = 'pages/update_view', $data);
         $this->layout();
     }
 }
