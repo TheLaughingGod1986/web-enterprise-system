@@ -54,8 +54,7 @@
 ///////////////////////////////////////tempo store//////////////////////////
 
 /** Mobile **/
-@media only screen and (max-width: 480px)
-{
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
   .hide-all {display:none;}
   .hide-tablet-landscape {display:none;}
   .hide-tablet {display:none;}
@@ -64,8 +63,7 @@
 }
 
 /** Tablet **/
-@media only screen and (min-width : 600px)
-{
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
   .hide-all {display:none;}
   .hide-mobile {display:none;}
   .hide-tablet-landscape {display:none;}
@@ -74,7 +72,7 @@
 }
 
 /** Tablet (landscape) **/
-@media only screen and (min-device-width : 800px)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
 {
   .hide-all {display:none;}
   .hide-mobile {display:none;}
