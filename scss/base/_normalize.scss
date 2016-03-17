@@ -82,13 +82,3 @@
   .hide-desktop {display:none;}
   .hide-tablet-landscape {display:block;}
 }
-
-/** Desktop **/
-@media only screen and (min-device-width : 1280px)
-{
-  .hide-all {display:none;}
-  .hide-mobile {display:none;}
-  .hide-tablet {display:none;}
-  .hide-desktop {display:block;}
-  .hide-tablet-landscape {display:none;}
-}
