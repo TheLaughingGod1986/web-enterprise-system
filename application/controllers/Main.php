@@ -1,6 +1,7 @@
 <?php
 
-class Main extends MY_Controller {
+class Main extends MY_Controller
+{
 
     function __construct()
     {
@@ -21,7 +22,7 @@ class Main extends MY_Controller {
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
 
-        $this->template['middle'] = $this->load->view ($this->middle = 'pages/update_view',$data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, true);
         $this->layout();
     }
 }
