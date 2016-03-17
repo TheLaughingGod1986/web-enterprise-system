@@ -24,4 +24,7 @@
 
 .side-bar li.selected {
   background-color:red;
+  .active {
+    background-color:red;
+  }
 }
