@@ -1,33 +1,32 @@
     <h1>Manage Users</h1>
     <hr/>
-
+    <ul>
         <?php if (isset($all_users)) : foreach ($all_users as $users) : ?>
-        <ol>
+
             <li>
-                <?php echo $users->Last_Name; ?>
-                <!--                        --><?php //echo $users->Last_Name.", ".$users->First_Name; ?>
-                <a href="<?php echo base_url() . 'index.php/update_cntrl/index/' . $users->StaffID; ?>">Edit</a>
+                <?php echo $users->Last_Name;
+                echo $users->Last_Name.", ".$users->First_Name; ?>
+                <a href="<?php echo base_url() . 'index.php/Main/update/' . $users->StaffID; ?>">Edit</a>
             </li>
-            <?php endforeach; ?>
+        <?php endforeach;
+        else : ?>
+            <h3>Smacks my bitch Up !</h3>
+        <?php endif; ?>
+    </ul>
 
-            <?php else : ?>
-                <h3>Smacks my bitch Up !</h3>
-            <?php endif; ?>
-        </ol>
-
-<!--        --><?php
-//        if (isset($single_user)) {
-//            foreach ($single_user as $user): ?>
-<!--                <h3>Sure you want to delete this user?</h3>-->
-<!--                --><?php //echo $user->Email; ?>
-<!--                <a href="--><?php //echo base_url() . 'index.php/update_cntrl/delete_user/' . $user->StaffID; ?><!--">-->
-<!--                    <button>Delete</button>-->
-<!--                </a>-->
-<!--            --><?php //endforeach;
-//        } else {
-//            echo 'No data found';
-//        }
-//?>
+    <?php
+        if (isset($single_user)) {
+            foreach ($single_user as $user): ?>
+                <h3>Sure you want to delete this user?</h3>
+                <?php echo $user->Email; ?>
+                <a href="<?php echo base_url() . 'index.php/update_cntrl/delete_user/' . $user->StaffID; ?>">
+                    <button>Delete</button>
+                </a>
+            <?php endforeach;
+        } else {
+            echo 'No data found';
+        }
+    ?>
 
 
         <?php

@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ruifurtado
- * Date: 23/02/2016
- * Time: 11:24
- */
+
 class Update_cntrl extends CI_Controller{
 
 //    var $data = array();
