@@ -2,7 +2,6 @@
 
 class Main extends MY_Controller
 {
-
     function __construct()
     {
         parent::__construct();
@@ -15,6 +14,55 @@ class Main extends MY_Controller
         $this->layout();
     }
 
+    function externals()
+    {
+        $this->middle = 'pages/externals_view';
+        $this->layout();
+        // no page yet made
+    }
+
+    function reports()
+    {
+        $this->middle = 'pages/reports_view';
+        $this->layout();
+        // no page yet made
+    }
+
+    function responses()
+    {
+        $this->middle = 'pages/responses_view';
+        $this->layout();
+        // no page yet made
+    }
+
+    function recommendations()
+    {
+        $this->middle = 'pages/recommendations_view';
+        $this->layout();
+        // no page yet made
+    }
+
+    function psrb()
+    {
+        $this->middle = 'pages/psrb_view';
+        $this->layout();
+        // no page yet made
+    }
+
+    function analiseofdata()
+    {
+        $this->middle = 'pages/analise_of_data_view';
+        $this->layout();
+        // no page yet made
+    }
+
+    function missingreports()
+    {
+        $this->middle = 'pages/missing_reports_view';
+        $this->layout();
+        // no page yet made
+    }
+
     function update()
     {
         $this->load->model('Update_model');
@@ -24,5 +72,16 @@ class Main extends MY_Controller
 
         $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, true);
         $this->layout();
+    }
+
+    function changelogindetails()
+    {
+        $this->middle = 'pages/change_login_details_view';
+        $this->layout();
+        // no page yet made
+    }
+    function logout()
+    {
+        // no page yet made
     }
 }
