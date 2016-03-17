@@ -25,7 +25,7 @@ class Main extends MY_Controller {
         $this->middle = 'pages/update_view';
 
         $this->$data['all_users'];
-        $this->data['single_user'];
+        $this->$data['single_user'];
 //      $this->load->view($this->middle = 'pages/update_view', $data);
         //$this->template['middle'] = $this->load->view ($this->middle = 'pages/update_view',$data, true);
         $this->layout();
