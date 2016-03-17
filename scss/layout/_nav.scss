@@ -12,15 +12,12 @@
   }
 }
 
-.nav li {
+.nav  {
 
-  a:link {
-    color: green;
+  li:link {
+    color: #e6e2f0;
   }
-
-  a:visited {
-    color: green;
-  }
+  
 
   a:hover {
     color: red;
