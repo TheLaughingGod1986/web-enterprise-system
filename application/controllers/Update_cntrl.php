@@ -1,7 +1,6 @@
 <?php
 
-class Update_cntrl extends CI_Controller
-{
+class Update_cntrl extends MY_Controller{
 
     function __construct()
     {
