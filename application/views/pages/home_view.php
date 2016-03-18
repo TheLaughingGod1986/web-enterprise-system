@@ -11,7 +11,7 @@ echo form_error('password');
 echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'password'));
 
 echo form_submit(array('id' => 'submit', 'value' => 'Login'));
-echo form_close();
+echo form_close()
 
 
 
