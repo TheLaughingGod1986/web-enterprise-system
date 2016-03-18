@@ -23,8 +23,10 @@ class Login_cntrl extends CI_Controller
         if (isset($userlogged)) {
             $this->session->set_userdata('login_state', TRUE);
 //            $this->load->view('main');
-//            echo "<script>alert('You have Killed The session !!!');</script>";
-            redirect('main');
+            echo "<script>alert('You have Killed The session !!!');</script>";
+//            redirect('main');
+            $this->index();
+
 
         } else {
             $this->load->view('A_login_view');    // redirect back to login page
