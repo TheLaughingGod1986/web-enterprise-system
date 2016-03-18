@@ -12,6 +12,16 @@ class UManage_model extends CI_Model{
         return $dbresult;
     }
 
+    function get_login($email, $password){
+
+        $this->db->where('Email', $email);
+        $this->db->where('Password', $password);
+
+        $dbquery = $this->db->get('staff');
+        $dbresult = $dbquery->result();
+        return $dbresult;
+    }
+
     //Select the wanted user from table UserACC
     function get_user_id($data){
 //        $this->db->select('*');

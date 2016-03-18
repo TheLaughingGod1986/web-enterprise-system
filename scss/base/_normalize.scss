@@ -1,52 +1,43 @@
-.no-margin-bottom
-{
+.no-margin-bottom {
   margin-bottom: 0 !important;
 }
 
-.no-padding-right
-{
+.no-padding-right {
   padding-right: 0 !important;
 }
 
-.no-padding-left
-{
+.no-padding-left {
   padding-left: 0 !important;
 }
 
-.push-top
-{
+.push-top {
   margin-top: 72px;
 }
 
-.push-top-large
-{
+.push-top-large {
   padding-top: 96px !important;
 }
 
-.float-left
-{
+.float-left {
   float: left;
 }
 
-.float-right
-{
+.float-right {
   float: right;
 }
 
-.push-left
-{
+.push-left {
   padding-left: 6%;
 }
 
-.push-left-small
-{
+.push-left-small {
   padding-left: 2%;
 }
 
-.push-right-small
-{
+.push-right-small {
   padding-right: 2%;
 }
+
 .top-menu {
   border: 0;
 }
@@ -54,29 +45,51 @@
 ///////////////////////////////////////tempo store//////////////////////////
 
 /** Mobile **/
-@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+@media only screen and (max-width: 667px), only screen and (max-device-width: 667px) {
 
-  .hide-tablet-landscape {display:none;}
-  .hide-tablet {display:none;}
-  .hide-desktop {display:none;}
-  .show-mobile {display:block;}
+  .hide-tablet-landscape {
+    display: none;
+  }
+  .hide-tablet {
+    display: none;
+  }
+  .hide-desktop {
+    display: none;
+  }
+  .show-mobile {
+    display: block;
+  }
 }
 
 /** Tablet **/
-@media only screen and (min-width : 768px) and (max-width : 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 
-  .hide-mobile {display:none;}
-  .hide-tablet-landscape {display:none;}
-  .hide-desktop {display:none;}
-  .show-tablet {display:block;}
+  .hide-mobile {
+    display: none;
+  }
+  .hide-tablet-landscape {
+    display: none;
+  }
+  .hide-desktop {
+    display: none;
+  }
+  .show-tablet {
+    display: block;
+  }
 }
 
 /** Tablet (landscape) **/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
-{
-
-  .hide-mobile {display:none;}
-  .hide-tablet {display:none;}
-  .hide-desktop {display:none;}
-  .hide-tablet-landscape {display:block;}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .hide-mobile {
+    display: none;
+  }
+  .hide-tablet {
+    display: none;
+  }
+  .hide-desktop {
+    display: none;
+  }
+  .hide-tablet-landscape {
+    display: block;
+  }
 }
