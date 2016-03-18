@@ -31,7 +31,7 @@ class Login_cntrl extends CI_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('a_login_view');
+        redirect('main');
         $this->index();
     }
 }
