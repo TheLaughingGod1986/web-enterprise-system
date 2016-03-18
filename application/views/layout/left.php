@@ -27,5 +27,5 @@
 
     <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
     <li role="presentation"><a href="#">Change Login Details</a></li>
-    <li role="presentation"><a href="#">Logout</a></li>
+    <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Kill'); ?></li>
 </ul>
