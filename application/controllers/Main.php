@@ -1,6 +1,6 @@
 <?php
 //Check for is user is valid
-require_once(APPPATH.'controllers/Authenticator.php');
+require('Authenticator.php');
 
 class Main extends MY_Controller
 {

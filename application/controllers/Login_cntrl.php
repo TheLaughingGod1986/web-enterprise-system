@@ -10,6 +10,7 @@ class Login_cntrl extends CI_Controller
         $this->load->model('UManage_model');
         $this->load->library('form_validation');
         $this->load->helper(array('form', 'url'));
+        $this->load->helper('date');
     }
 
     public function index()
@@ -35,10 +36,14 @@ class Login_cntrl extends CI_Controller
             $this->index();
 
         } else {
+
+            $timer = date(DATE_COOKIE, time());
+
             $userInfo = array(
-                'logged_in' => true,
+                'logged_in' => TRUE,
                 'username' => $userlogged->Email,
-                'ID' => $userlogged->StaffID
+                'userID' => $userlogged->StaffID,
+                'timeStarted' => $timer
             );
             $this->session->set_userdata($userInfo);
             redirect('main/update');
@@ -47,6 +52,7 @@ class Login_cntrl extends CI_Controller
 
     function logout()
     {
+
         $this->session->sess_destroy();
         $this->index();
     }

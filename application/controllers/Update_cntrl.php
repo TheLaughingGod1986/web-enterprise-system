@@ -1,6 +1,6 @@
 <?php
 //Call authenticator function to check if login is valid....
-require_once ('Authenticator.php');
+require('Authenticator.php');
 
 class Update_cntrl extends MY_Controller{
 
