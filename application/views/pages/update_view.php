@@ -1,3 +1,4 @@
+<?php require(APPPATH.'controllers/Authenticator.php'); ?>
 <h1>Manage Users</h1>
 <hr/>
 <ul>
