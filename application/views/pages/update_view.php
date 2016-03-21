@@ -1,3 +1,4 @@
+<?php include'Authenticator.php'; ?>
 <h1>Manage Users</h1>
 <hr/>
 <ul>
