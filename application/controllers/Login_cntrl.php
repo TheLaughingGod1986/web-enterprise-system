@@ -8,6 +8,8 @@ class Login_cntrl extends CI_Controller
         parent::__construct();
         $this->load->library('session');
         $this->load->model('UManage_model');
+        $this->load->library('form_validation');
+        $this->load->helper(array('form', 'url'));
     }
 
     public function index()
