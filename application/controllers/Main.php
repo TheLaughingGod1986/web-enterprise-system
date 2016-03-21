@@ -1,4 +1,6 @@
 <?php
+//Check for is user is valid
+require_once(APPPATH.'controllers/Authenticator.php');
 
 class Main extends MY_Controller
 {
@@ -6,6 +8,7 @@ class Main extends MY_Controller
     {
         parent::__construct();
         $this->load->helper('array');
+
     }
 
     function index()

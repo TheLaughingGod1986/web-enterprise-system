@@ -1,5 +1,8 @@
 <?php
 
+//Check for is user is valid
+require_once(APPPATH.'controllers/Authenticator.php');
+
 class UManage_cntrl extends CI_Controller
 {
     function __construct()
