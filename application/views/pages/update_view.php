@@ -5,8 +5,7 @@
     <?php if (isset($all_users)) : foreach ($all_users as $users) : ?>
 
         <li>
-            <?php echo $users->Last_Name;
-            echo $users->Last_Name . ", " . $users->First_Name; ?>
+            <?php echo $users->Last_Name . ", " . $users->First_Name; ?>
             <a href="<?php echo base_url() . 'index.php/Main/update/' . $users->StaffID; ?>">Edit</a>
         </li>
     <?php endforeach;
