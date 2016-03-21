@@ -20,7 +20,7 @@ class UManage_model extends CI_Model{
         $dbquery = $this->db->get('staff');
         $dbresult = $dbquery->result();
 
-        if($dbresult->num_rows == 1){
+        if($dbresult->num_rows() == 1){
             return $dbresult;
         }
         else{

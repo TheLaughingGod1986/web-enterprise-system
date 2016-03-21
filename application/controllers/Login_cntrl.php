@@ -12,7 +12,8 @@ class Login_cntrl extends CI_Controller
 
     public function index()
     {
-        $this->load->view('A_login_view');//load login page
+        $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view', true);
+        $this->layout();
     }
 
     function login(){
@@ -42,7 +43,6 @@ class Login_cntrl extends CI_Controller
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('login_cntrl');
         $this->index();
     }
 }
