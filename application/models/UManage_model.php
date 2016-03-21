@@ -16,9 +16,9 @@ class UManage_model extends CI_Model{
 
         $this->db->where('Email', $email);
         $this->db->where('Password', $password);
-
         $dbquery = $this->db->get('staff');
-        $dbresult = $dbquery->result_array();
+        
+        $dbresult = $dbquery->row();
 
         if($dbquery->num_rows() == 1){
             return $dbresult;
