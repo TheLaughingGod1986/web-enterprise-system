@@ -31,8 +31,8 @@ class Login_cntrl extends CI_Controller
         } else {
             $userInfo = array(
                 'logged_in' => true,
-                'username' => $userlogged['Email'],
-                'ID' => $userlogged['StaffID']
+                'username' => $userlogged->Email,
+                'ID' => $userlogged->StaffID
             );
             $this->session->set_userdata($userInfo);
             redirect('main/update');
