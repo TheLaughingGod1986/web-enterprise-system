@@ -13,7 +13,6 @@ class Login_cntrl extends CI_Controller
     public function index()
     {
         $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view', true);
-        $this->layout();
     }
 
     function login(){
