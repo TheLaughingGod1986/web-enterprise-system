@@ -23,8 +23,12 @@ class Login_cntrl extends CI_Controller
         //check user on database
         $userlogged = $this->UManage_model->get_login($email, $pass);
 
+        //Form validation
+        $this->form_validation->set_rules('password', 'password', 'trim|required');
+        $this->form_validation->set_rules('email', 'email', 'trim|required|valid_email');
+
         //check if db returned a valid user or not
-        if ($userlogged == FALSE) {
+        if ($userlogged == FALSE || $this->form_validation->run() == FALSE) {
 
             $this->index();
 
