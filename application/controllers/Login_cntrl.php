@@ -12,6 +12,10 @@ class Login_cntrl extends CI_Controller
 
     public function index()
     {
+        $this->load->view('A_login_view');//load login page
+    }
+
+    function login(){
         //Get data from form
         $email = $this->input->post('email');
         $pass = $this->input->post('password');
@@ -19,17 +23,19 @@ class Login_cntrl extends CI_Controller
         //check user on database
         $userlogged = $this->UManage_model->get_login($email, $pass);
 
-        // read user's credentials from db, through Login Model
-        if (isset($userlogged)) {
-            $this->session->set_userdata('login_state', TRUE);
-//            $this->load->view('main');
-//            echo "<script>alert('You have Killed The session !!!');</script>";
-            redirect('main');
-//            $this->index();
+        //check if db returned a valid user or not
+        if ($userlogged == FALSE) {
 
+            $this->index();
 
         } else {
-            $this->load->view('A_login_view');    // redirect back to login page
+            $userInfo = array(
+                'logged_in' => true,
+                'username' => $userlogged['Email'],
+                'ID' => $userlogged['StaffID']
+            );
+            $this->session->set_userdata($userInfo);
+            redirect('main/update');
         }
     }
 
