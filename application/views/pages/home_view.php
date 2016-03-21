@@ -1,6 +1,6 @@
 <?php
 
-echo form_open('Login_cntrl');
+echo form_open('Login_cntrl/login');
 
 echo form_label('E-mail:');
 echo form_error('email');
