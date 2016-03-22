@@ -4,16 +4,15 @@ class Authenticator extends CI_Controller
 {
     public function __construct()
     {
-        parent::__construct();
-        $this->load->library('session');
-        $this->load->helper('helper');
+        parent::Controller();
+        $this->checkLogin();
     }
 
-    public function index()
+    public function checkLogin()
     {
 
-        if ($this->session->userdata('login_state') == FALSE) {
+        $logged = $this->session->userdata('login_state');
+        if(!isset($logged) || $logged != TRUE)
             $this->load->view('A_login_view');
-        }
     }
 }
