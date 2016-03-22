@@ -8,19 +8,19 @@ class Update_cntrl extends MY_Controller{
         $this->load->model('Update_model');
         $this->load->model('Authenticator');
 //        $this->checkLogin();
-        $this->is_logged_in();
+//        $this->is_logged_in();
     }
 
-    function is_logged_in()
-    {
-        $is_logged_in = $this->session->userdata('login_state');
-
-        if (!isset($is_logged_in) || $is_logged_in != true) {
-            echo 'lol, try again. this area is secure. MEMBERS ONLY !. please ';
-            echo anchor('login/index', 'Login');
-            die();
-        }
-    }
+//    function is_logged_in()
+//    {
+//        $is_logged_in = $this->session->userdata('login_state');
+//
+//        if (!isset($is_logged_in) || $is_logged_in != true) {
+//            echo 'lol, try again. this area is secure. MEMBERS ONLY !. please ';
+//            echo anchor('login/index', 'Login');
+//            die();
+//        }
+//    }
 
     //Select every user on table UserACC
     function get_users()

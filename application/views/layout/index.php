@@ -11,9 +11,17 @@
 </head>
 <body>
 
-<div class="col-sm-2 no-padding-right hide-mobile">
-    <?php if ($left) echo $left; ?>
-</div>
+<?php
+if ($this->session->logged_in) {
+echo '<div class="col-sm-2 no-padding-right hide-mobile">';
+    if ($left) echo $left;
+    echo '</div>';
+}
+?>
+<!---->
+<!--<div class="col-sm-2 no-padding-right hide-mobile">-->
+<!--    --><?php //if ($left) echo $left; ?>
+<!--</div>-->
 
 <div class="col-sm-10 no-padding-left">
     <?php if ($header) echo $header; ?>
