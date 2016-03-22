@@ -24,7 +24,7 @@ class UManage_model extends CI_Model{
             return $dbresult;
         }
         else{
-            return FALSE;
+            return false;
         }
 
     }
