@@ -1,7 +1,7 @@
 <?php
 if ($this->session->logged_in) {
 
- echo "Welcome back", $this->session->name;
+ echo "Hello", $this->session->name;
 }
 
 else {

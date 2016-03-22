@@ -5,8 +5,8 @@
         echo $this->session->name;
         echo "!</h4>";
     }
-    {
-        echo "Welcome, Please Login.";
+   else {
+       echo "<h4 class='float-left push-left-small'>Welcome, Please Login.";
     }
     ?>
     <h4 class="float-right push-right-small">Select date drop down</h4>
