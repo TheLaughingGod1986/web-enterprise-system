@@ -47,6 +47,7 @@ class Login_cntrl extends CI_Controller
             $userInfo = array(
                 'logged_in' => TRUE,
                 'username' => $userlogged->Email,
+                'name' => $userlogged-> First_Name,
                 'userID' => $userlogged->StaffID,
                 'timeStarted' => $timer
             );
