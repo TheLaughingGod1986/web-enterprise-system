@@ -13,32 +13,31 @@
     </li>
 
     <li class="grey"></li>
-
-    <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
-    <li role="presentation"><a href="#">Externals</a></li>
-    <li role="presentation"><a href="#">Reports</a></li>
-    <li role="presentation"><a href="#">Responses</a></li>
-    <li role="presentation"><a href="#">Recommendations</a></li>
-    <li role="presentation"><a href="#">PSRB</a></li>
-    <li role="presentation"><a href="#">Analise Of Data</a></li>
-    <li role="presentation"><a href="#">Missing Reports</a></li>
-
-    <li class="grey"></li>
-
-    <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
-    <li role="presentation"><a href="#">Change Login Details</a></li>
-
     <?php
     if ($this->session->logged_in) { ?>
+        <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
+        <li role="presentation"><a href="#">Externals</a></li>
+        <li role="presentation"><a href="#">Reports</a></li>
+        <li role="presentation"><a href="#">Responses</a></li>
+        <li role="presentation"><a href="#">Recommendations</a></li>
+        <li role="presentation"><a href="#">PSRB</a></li>
+        <li role="presentation"><a href="#">Analise Of Data</a></li>
+        <li role="presentation"><a href="#">Missing Reports</a></li>
+
+        <li class="grey"></li>
+
+        <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
+        <li role="presentation"><a href="#">Change Login Details</a></li>
+
+        <li class="grey"></li>
+
         <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
-         <li role="presentation"><?php echo "welcome back ***"; ?></li>
         <?php
     }
 
     else { ?>
-        <li role="presentation"><?php echo 'No session'; ?></li>
+        <li role="presentation"><?php echo 'Please Login'; ?></li>
         <?php
     }
     ?>
-    
 </ul>
