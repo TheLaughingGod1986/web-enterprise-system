@@ -36,7 +36,7 @@
     }
 
     else { ?>
-        <li role="presentation"><?php echo "you are not logged in"; ?></li>
+        <li role="presentation"><?php echo "no session "; ?></li>
         <?php
     }
     ?>
