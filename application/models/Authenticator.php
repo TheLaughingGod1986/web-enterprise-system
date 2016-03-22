@@ -4,7 +4,7 @@ class Authenticator extends CI_Model
 {
     public function __construct()
     {
-        parent::Model();
+        parent::__construct();
         $this->checkLogin();
     }
 
