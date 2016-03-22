@@ -24,8 +24,8 @@ class Login_cntrl extends CI_Controller
         $this->load->library('form_validation');
 
         //Form validation
-        $this->form_validation->set_rules('f_password', 'Password', 'required');
-        $this->form_validation->set_rules('f_email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {
