@@ -1,7 +1,9 @@
 <?php
 if ($this->session->logged_in) {
 
- echo "Hello" , $this->session->name , "chose a option from the menu";
+ echo "Hello";
+    echo $this->session->name;
+    echo "chose a option from the menu";
 }
 
 else {
