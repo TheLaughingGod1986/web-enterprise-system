@@ -65,8 +65,12 @@ class Main extends MY_Controller
 
     function update()
     {
+        //Validate session before loading the view
+        $this->load->model('Authenticator');
+
         $this->load->model('Update_model');
-        $id = $this->uri->segment(3);
+        //$id = $this->uri->segment(3);
+        $id = $this->session->userID;
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
 

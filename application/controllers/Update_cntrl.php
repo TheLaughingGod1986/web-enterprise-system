@@ -7,7 +7,7 @@ class Update_cntrl extends MY_Controller{
         parent::__construct();
         $this->load->model('Update_model');
         $this->load->model('Authenticator');
-//        $this->checkLogin();
+
         $this->is_logged_in();
     }
 
