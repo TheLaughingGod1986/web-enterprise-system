@@ -36,7 +36,7 @@
     }
 
     else { ?>
-        <li role="presentation"><?php echo "no session "; ?></li>
+        <li role="presentation"><?php echo $this->session->logged_in; ?></li>
         <?php
     }
     ?>
