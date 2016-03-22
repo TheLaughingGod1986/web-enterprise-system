@@ -3,7 +3,7 @@
 echo form_open('Login_cntrl/login');
 
     echo form_label('E-mail:', 'email');
-    echo form_input('email', '', 'id = "email"');
+    echo form_input('email', set_value('email'), 'id = "email"');
     echo form_error('email');
 
     echo form_label('Password:', 'password');

@@ -41,7 +41,16 @@ if (isset($single_user)) {
 
         <?php echo form_label('Title:');
         echo form_error('Title'); ?><br/>
-        <?php echo form_input(array('id' => 'Title', 'name' => 'Title', 'value' => $item->Title)); ?>
+        <?php
+                $titles = array(
+                    'Sr.'=> 'Sir',
+                    'Dr.'=> 'Dr.',
+                    'Mr.'=> 'Mr.',
+                    'Miss'=> 'Miss',
+                    'Misses'=> 'Mss.',
+                );
+                echo form_dropdown('Title', $titles, 'Title');
+                ?>
         <br/>
 
         <?php echo form_label('First Name:');
