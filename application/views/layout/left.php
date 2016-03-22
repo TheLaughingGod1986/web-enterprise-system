@@ -29,14 +29,14 @@
     <li role="presentation"><a href="#">Change Login Details</a></li>
 
     <?php
-    if ($this->session->userdata('StaffID')) { ?>
+    if ($this->session->userdata('id')) { ?>
         <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
          <li role="presentation"><?php echo "welcome back ***"; ?></li>
         <?php
     }
 
     else { ?>
-        <li><?php echo "you are not logged in"; ?></li>
+        <li role="presentation"><?php echo "you are not logged in"; ?></li>
         <?php
     }
     ?>
