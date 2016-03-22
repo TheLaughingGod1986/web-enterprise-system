@@ -29,7 +29,7 @@
     <li role="presentation"><a href="#">Change Login Details</a></li>
 
     <?php
-    if ($this->session->userdata('id')) { ?>
+    if ($this->session->userdata('StaffID')) { ?>
         <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
          <li role="presentation"><?php echo "welcome back ***"; ?></li>
         <?php
