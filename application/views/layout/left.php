@@ -15,6 +15,7 @@
     <li class="grey"></li>
     <?php
     if ($this->session->logged_in) { ?>
+        <li role="presentation"><a href="#">Admin Menu</a></li>
         <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
         <li role="presentation"><a href="#">Externals</a></li>
         <li role="presentation"><a href="#">Reports</a></li>
@@ -32,11 +33,6 @@
         <li class="grey"></li>
 
         <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
-        <?php
-    }
-
-    else { ?>
-        <li role="presentation"><?php echo 'Please Login'; ?></li>
         <?php
     }
     ?>
