@@ -13,6 +13,6 @@ class Authenticator extends CI_Model
 
         $logged = $this->session->userdata('login_state');
         if(!isset($logged) || $logged != TRUE)
-            $this->load->view('A_login_view');
+            $this->template['middle'] = $this->load->view($this->middle = 'A_login_view');
     }
 }
