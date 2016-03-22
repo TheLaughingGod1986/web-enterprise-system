@@ -14,3 +14,5 @@ echo form_open('Login_cntrl/login');
 
 echo form_close();
 
+echo $this->session->username;
+
