@@ -13,27 +13,47 @@
 
 <?php
 if ($this->session->logged_in) {
-echo '<div class="col-sm-2 no-padding-right hide-mobile">';
+    echo '<div class="col-sm-2 no-padding-right hide-mobile">';
     if ($left) echo $left;
     echo '</div>';
 }
 ?>
-<!---->
-<!--<div class="col-sm-2 no-padding-right hide-mobile">-->
-<!--    --><?php //if ($left) echo $left; ?>
-<!--</div>-->
 
-<div class="col-sm-10 no-padding-left">
-    <?php if ($header) echo $header; ?>
-</div>
+<?php
+if ($this->session->logged_in) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($header) echo $header;
+    echo '</div>';
+} else {
+    echo '<div class="col-sm-12 no-padding-right hide-mobile">';
+    if ($header) echo $header;
+    echo '</div>';
+}
+?>
 
-<div class="col-sm-10">
-    <?php if ($top_bar) echo $top_bar; ?>
-</div>
+<?php
+if ($this->session->logged_in) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($top_bar) echo $top_bar;
+    echo '</div>';
+} else {
+    echo '<div class="col-sm-12 no-padding-right hide-mobile">';
+    if ($top_bar) echo $top_bar;
+    echo '</div>';
+}
+?>
 
-<div class="col-sm-10 push-left">
-    <?php if ($middle) echo $middle; ?>
-</div>
+<?php
+if ($this->session->logged_in) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($middle) echo $middle;
+    echo '</div>';
+} else {
+    echo '<div class="col-sm-12 no-padding-right hide-mobile">';
+    if ($middle) echo $middle;
+    echo '</div>';
+}
+?>
 
 </body>
 </html>
