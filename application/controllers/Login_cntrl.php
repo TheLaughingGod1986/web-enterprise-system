@@ -52,7 +52,7 @@ class Login_cntrl extends CI_Controller
                 'timeStarted' => $timer
             );
             $this->session->set_userdata($userInfo);
-            redirect('main/update');
+            redirect('main/index');
         }
 
     }
