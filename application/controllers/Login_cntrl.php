@@ -16,43 +16,43 @@ class Login_cntrl extends CI_Controller
     }
 
     function login(){
-        $this->load->library('form_validation');
 
         //Get data from form
         $email = $this->input->post('email');
         $pass = $this->input->post('password');
 
-
+        $this->load->library('form_validation');
 
         //Form validation
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('f_password', 'Password', 'required');
+        $this->form_validation->set_rules('f_email', 'Email', 'required|valid_email');
 
         //check if db returned a valid user or not
-        if ($this->form_validation->run() == false) {
+        if ($this->form_validation->run() == FALSE) {
 
             $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
 
+        }else {
+
+            //check user on database
+            $userlogged = $this->UManage_model->get_login($email, $pass);
+
+            if (!isset($userlogged) || !$userlogged) {
+
+                $this->template['middle'] = $this->load->view($this->middle = 'A_login_view');
+            }
+
+            $timer = date(DATE_COOKIE, time());
+
+            $userInfo = array(
+                'logged_in' => TRUE,
+                'username' => $userlogged->Email,
+                'userID' => $userlogged->StaffID,
+                'timeStarted' => $timer
+            );
+            $this->session->set_userdata($userInfo);
+            redirect('main/update');
         }
-
-        //check user on database
-        $userlogged = $this->UManage_model->get_login($email, $pass);
-
-        if(!isset($userlogged) || !$userlogged){
-            
-            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
-        }
-
-        $timer = date(DATE_COOKIE, time());
-
-        $userInfo = array(
-            'logged_in' => TRUE,
-            'username' => $userlogged->Email,
-            'userID' => $userlogged->StaffID,
-            'timeStarted' => $timer
-        );
-        $this->session->set_userdata($userInfo);
-        redirect('main/update');
 
     }
 
