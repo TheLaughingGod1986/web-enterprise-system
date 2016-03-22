@@ -27,5 +27,18 @@
 
     <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
     <li role="presentation"><a href="#">Change Login Details</a></li>
-    <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
+
+    <?php
+    if ($this->session->userdata('StaffID')) { ?>
+        <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
+         <li role="presentation"><?php echo "welcome back ***"; ?></li>
+        <?php
+    }
+
+    else { ?>
+        <li><?php echo "you are not logged in"; ?></li>
+        <?php
+    }
+    ?>
+    
 </ul>
