@@ -8,19 +8,19 @@ class Update_cntrl extends MY_Controller{
         $this->load->model('Update_model');
         $this->load->model('Authenticator');
 //        $this->checkLogin();
-//        $this->is_logged_in();
+        $this->is_logged_in();
     }
 
-//    function is_logged_in()
-//    {
-//        $is_logged_in = $this->session->userdata('login_state');
-//
-//        if (!isset($is_logged_in) || $is_logged_in != true) {
-//            echo 'lol, try again. this area is secure. MEMBERS ONLY !. please ';
-//            echo anchor('login/index', 'Login');
-//            die();
-//        }
-//    }
+    function is_logged_in()
+    {
+        $is_logged_in = $this->session->userdata('login_state');
+
+        if (!isset($is_logged_in) || $is_logged_in != true) {
+            echo 'lol, try again. this area is secure. MEMBERS ONLY !. please ';
+            echo anchor('login/index', 'Login');
+            die();
+        }
+    }
 
     //Select every user on table UserACC
     function get_users()
@@ -58,7 +58,6 @@ class Update_cntrl extends MY_Controller{
         $id = $this->uri->segment(3);
         $data['all_users'] = $this->Update_model->get_users();
         $data['single_user'] = $this->Update_model->get_user_id($id);
-        // This is a hack, naughty Ben ....but it may work ... hehehe
         $this->template['middle'] = $this->load->view ($this->middle = 'pages/update_view',$data, true);
         $this->layout();
     }
