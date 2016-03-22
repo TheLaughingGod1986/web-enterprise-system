@@ -6,7 +6,7 @@ class Main extends MY_Controller
     {
         parent::__construct();
         $this->load->helper('array');
-
+        $this->load->model('Authenticator');
     }
 
     function index()
