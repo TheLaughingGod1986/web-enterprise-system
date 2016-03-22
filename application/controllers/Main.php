@@ -1,6 +1,4 @@
 <?php
-//Check for is user is valid
-require('Authenticator.php');
 
 class Main extends MY_Controller
 {
