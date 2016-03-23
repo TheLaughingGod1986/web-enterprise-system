@@ -42,18 +42,11 @@ class UManage_cntrl extends CI_Controller
         //Including validation library
         $this->load->library('form_validation');
 
-        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
-
-        //Validating Name Field
-        $this->form_validation->set_rules('Email', 'Email', 'required|min_length[5]|max_length[15]');
-
-        //Validating Address Field
-        $this->form_validation->set_rules('Password', 'Password', 'required|min_length[5]|max_length[50]');
-
+        $where = $this->input->post('role');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('UManage_view');
+            $this->load->view('createUser_view');
 
-        } else {
+        } elseif($where == 'Staff' || $where == 'Admin'){
             //Setting values for table columns
             $data = array(
                 'Email' => $this->input->post('Email'),
@@ -65,12 +58,43 @@ class UManage_cntrl extends CI_Controller
                 'Address' => $this->input->post('Address'),
                 'Title' => $this->input->post('Title')
             );
-            //Transfering data to Model
-            $this->UManage_model->form_insert($data);
-            $data['message'] = 'Data Inserted Successfully';
+
+            //Insert into table staff
+            $this->UManage_model->insert_user($data, 'staff');
+            $data['message'] = 'Staff Created Successfully';
             //Loading View
-            $this->load->view('UManage_view');
+            $this->load->view('createUser_view', $data);
+
+        } elseif($where == 'EE'){
+            $data = array(
+                'Email' => $this->input->post('Email'),
+                'Password' => $this->input->post('Password'),
+                'First_Name' => $this->input->post('First_Name'),
+                'Last_Name' => $this->input->post('Last_Name'),
+                'Postcode' => $this->input->post('Postcode'),
+                'Telephone' => $this->input->post('Telephone'),
+                'HEI' => $this->input->post('hei'),
+                'Address' => $this->input->post('Address'),
+                'Title' => $this->input->post('Title'),
+                'Faculty' => $this->input->post('faculty'),
+                'Department' => $this->input->post('depart')
+            );
+            $this->UManage_model->insert_user($data, 'external');
+            $data['message'] = 'External Examiner Created Successfully';
+            //Loading View
+            $this->load->view('createUser_view', $data);
+
+        } else{
+            $data = array(
+                'Username' => $this->input->post('username'),
+                'Password' => $this->input->post('Password')
+            );
+            $this->UManage_model->insert_user($data, 'login');
+            $data['message'] = 'Admin Created Successfully';
+            //Loading View
+            $this->load->view('createUser_view', $data);
         }
+
     }
 
     //Delete selected user from database
