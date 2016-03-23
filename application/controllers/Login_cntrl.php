@@ -19,7 +19,7 @@ class Login_cntrl extends CI_Controller
     function login_admin(){
 
         //Get data from form
-        $email = $this->input->post('email');
+        $user = $this->input->post('Username');
         $pass = $this->input->post('password');
 
         $this->load->library('form_validation');
@@ -36,7 +36,7 @@ class Login_cntrl extends CI_Controller
         }else {
 
             //check user on database
-            $userlogged = $this->Login_model->get_login_admin($email, $pass);
+            $userlogged = $this->Login_model->get_login_admin($user, $pass);
 
             if (!isset($userlogged) || !$userlogged) {
 
@@ -47,9 +47,7 @@ class Login_cntrl extends CI_Controller
 
             $userInfo = array(
                 'logged_in' => TRUE,
-                'username' => $userlogged->Email,
-                'name' => $userlogged-> First_Name,
-                'userID' => $userlogged->StaffID,
+                'username' => $userlogged->Username,
                 'timeStarted' => $timer
             );
             $this->session->set_userdata($userInfo);

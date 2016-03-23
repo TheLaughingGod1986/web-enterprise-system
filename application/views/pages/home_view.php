@@ -16,9 +16,9 @@ else {
 
     echo form_open('Login_cntrl/login_admin');
 
-    echo form_label('E-mail:');
-    echo form_error('email');
-    echo form_input(array('id' => 'email', 'name' => 'email', 'placeholder' => 'example@gre.ac.uk'));
+    echo form_label('User Name:');
+    echo form_error('user');
+    echo form_input(array('id' => 'user', 'name' => 'user', 'placeholder' => 'UserName'));
 
     echo form_label('Password:');
     echo form_error('password');

@@ -45,6 +45,23 @@ class Login_model extends CI_Model{
         }
     }
 
+    //Check given data if is a valid user to login
+    function get_login_staff($email, $password){
+
+        $this->db->where('Email', $email);
+        $this->db->where('Password', $password);
+        $dbquery = $this->db->get('external');
+
+        $dbresult = $dbquery->row();
+
+        if($dbquery->num_rows() == 1){
+            return $dbresult;
+        }
+        else{
+            return false;
+        }
+    }
+
     //Select the wanted user from table staff
     function get_user_id($data){
         $this->db->where('StaffID', $data);
