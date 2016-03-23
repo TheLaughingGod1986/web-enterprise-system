@@ -16,50 +16,6 @@ class Login_cntrl extends CI_Controller
         // why ??
     }
 
-//    function login_admin(){
-//
-//        //Get data from form
-//        $user = $this->input->post('Username');
-//        $pass = $this->input->post('Password');
-//
-//        $this->load->library('form_validation');
-//
-//        //Form validation
-////        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
-////        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|callback_username_exists');
-//        $this->form_validation->set_rules('password', 'Password', 'required');
-//
-//
-//
-//        //check if db returned a valid user or not
-//        if ($this->form_validation->run() == FALSE) {
-//
-//            // failed validation
-//            echo "validation fail";
-////            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
-//
-//        }else {
-//
-//            //check user on database
-//            $userlogged = $this->Login_model->get_login_admin($user, $pass);
-//
-//            if (!isset($userlogged) || !$userlogged) {
-//
-//                $this->template['middle'] = $this->load->view($this->middle = 'A_login_view');
-//            }
-//
-//            $timer = date(DATE_COOKIE, time());
-//
-//            $userInfo = array(
-//                'logged_in_admin' => TRUE,
-//                'username' => $userlogged->Username,
-//                'timeStarted' => $timer
-//            );
-//            $this->session->set_userdata($userInfo);
-//            redirect('main/index');
-//        }
-//
-//    }
 
     function login_external(){
 
@@ -154,7 +110,7 @@ class Login_cntrl extends CI_Controller
     function admin_login()
     {
         $this->load->model('Validate_model');
-        $query = $this->Validate_model->validate();
+        $query = $this->Validate_model->validate_admin();
 
         if ($query) // if user cred validate the user session start
         {
@@ -166,6 +122,29 @@ class Login_cntrl extends CI_Controller
 
             $this->session->set_userdata($admin_data);
             redirect('main/index');
+        } else {
+            $this->index();
+            echo 'Incorrect Password or Username';
+        }
+    }
+
+    function external_login()
+    {
+        $this->load->model('Validate_model');
+        $query = $this->Validate_model->validate_external();
+
+        if ($query) // if user cred validate the user session start
+        {
+            $external_data = array(
+                'First_Name' => $query->First_Name,
+                'Password' => $query->Password,
+                'Email' => $query->Email,
+                'ExternalID' => $query->ExternalID,
+                'is_logged_external' => true
+            );
+
+            $this->session->set_userdata($external_data);
+            echo "YOUR IN !";
         } else {
             $this->index();
             echo 'Incorrect Password or Username';
