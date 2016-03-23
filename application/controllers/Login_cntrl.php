@@ -25,12 +25,13 @@ class Login_cntrl extends CI_Controller
         $this->load->library('form_validation');
 
         //Form validation
-        $this->form_validation->set_rules('Password', 'Password', 'required');
-        $this->form_validation->set_rules('Username', 'Username', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|callback_username_exists');
 
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {
 
+            // failed validation
             $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
 
         }else {
@@ -71,9 +72,10 @@ class Login_cntrl extends CI_Controller
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {
 
-            echo "Welcome back external examiner";
-
-        }else {
+            // failed validation
+            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
+        }
+        else {
 
             //check user on database
             $userlogged = $this->Login_model->get_login_EE($email, $pass);
@@ -113,9 +115,11 @@ class Login_cntrl extends CI_Controller
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {
 
-            echo "Welcome back staff";
+            // failed validation
+            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
 
-        }else {
+        }
+        else {
 
             //check user on database
             $userlogged = $this->Login_model->get_login_staff($email, $pass);
