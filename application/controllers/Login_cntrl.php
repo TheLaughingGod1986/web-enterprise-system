@@ -167,7 +167,7 @@ class Login_cntrl extends CI_Controller
             $this->session->set_userdata($admin_data);
 
             echo "you logged in !";
-            redirect('main/index');
+//            redirect('main/index');
         } else {
             $this->index();
             echo 'Incorrect Password or Username';
