@@ -25,8 +25,8 @@ class Login_cntrl extends CI_Controller
         $this->load->library('form_validation');
 
         //Form validation
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('user', 'Username', 'required');
+        $this->form_validation->set_rules('Password', 'Password', 'required');
+        $this->form_validation->set_rules('Username', 'Username', 'required');
 
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {

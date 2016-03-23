@@ -17,12 +17,12 @@ else {
     echo form_open('Login_cntrl/login_admin');
 
     echo form_label('User Name:');
-    echo form_error('user');
-    echo form_input(array('id' => 'user', 'name' => 'user', 'placeholder' => 'UserName'));
+    echo form_error('Username');
+    echo form_input(array('id' => 'user', 'name' => 'user', 'placeholder' => 'Username'));
 
     echo form_label('Password:');
     echo form_error('password');
-    echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'password'));
+    echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'Password'));
 
     echo form_submit(array('id' => 'submit', 'value' => 'Login'));
     echo form_close();
