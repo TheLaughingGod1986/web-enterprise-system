@@ -33,7 +33,8 @@ class Login_cntrl extends CI_Controller
 
             // failed validation
             echo "validation fail";
-            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
+            redirect('main/index');
+//            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
 
         }else {
 
