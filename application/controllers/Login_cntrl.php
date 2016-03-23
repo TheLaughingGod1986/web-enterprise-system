@@ -7,7 +7,7 @@ class Login_cntrl extends CI_Controller
     {
         parent::__construct();
         $this->load->library('session');
-        $this->load->model('UManage_model');
+        $this->load->model('Login_model');
     }
 
     public function index()
@@ -16,17 +16,17 @@ class Login_cntrl extends CI_Controller
         // why ??
     }
 
-    function login(){
+    function login_admin(){
 
         //Get data from form
-        $email = $this->input->post('email');
-        $pass = $this->input->post('password');
+        $user_name = $this->input->post('Username');
+        $password = $this->input->post('Password');
 
         $this->load->library('form_validation');
 
         //Form validation
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('user', 'Username', 'required');
 
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {
@@ -36,7 +36,7 @@ class Login_cntrl extends CI_Controller
         }else {
 
             //check user on database
-            $userlogged = $this->UManage_model->get_login($email, $pass);
+            $userlogged = $this->Login_model->get_login_admin($user_name, $password);
 
             if (!isset($userlogged) || !$userlogged) {
 
@@ -46,10 +46,8 @@ class Login_cntrl extends CI_Controller
             $timer = date(DATE_COOKIE, time());
 
             $userInfo = array(
-                'logged_in' => TRUE,
-                'username' => $userlogged->Email,
-                'name' => $userlogged-> First_Name,
-                'userID' => $userlogged->StaffID,
+                'logged_in_admin' => TRUE,
+                'username' => $userlogged->Username,
                 'timeStarted' => $timer
             );
             $this->session->set_userdata($userInfo);
@@ -58,7 +56,7 @@ class Login_cntrl extends CI_Controller
 
     }
 
-    function login_EE(){
+    function login_external(){
 
         //Get data from form
         $email = $this->input->post('email');
@@ -73,12 +71,12 @@ class Login_cntrl extends CI_Controller
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {
 
-            echo "Welcome back";
+            echo "Welcome back external examiner";
 
         }else {
 
             //check user on database
-            $userlogged = $this->UManage_model->get_login($email, $pass);
+            $userlogged = $this->Login_model->get_login_EE($email, $pass);
 
             if (!isset($userlogged) || !$userlogged) {
 
@@ -87,18 +85,61 @@ class Login_cntrl extends CI_Controller
 
             $timer = date(DATE_COOKIE, time());
 
-            $userInfo = array(
+            $userInfoEE = array(
                 'logged_in' => TRUE,
                 'username' => $userlogged->Email,
                 'name' => $userlogged-> First_Name,
                 'userID' => $userlogged->StaffID,
                 'timeStarted' => $timer
             );
-            $this->session->set_userdata($userInfo);
+            $this->session->set_userdata($userInfoEE);
             redirect('main/index');
         }
 
     }
+
+    function login_staff(){
+
+        //Get data from form
+        $email = $this->input->post('email');
+        $pass = $this->input->post('password');
+
+        $this->load->library('form_validation');
+
+        //Form validation
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+
+        //check if db returned a valid user or not
+        if ($this->form_validation->run() == FALSE) {
+
+            echo "Welcome back staff";
+
+        }else {
+
+            //check user on database
+            $userlogged = $this->Login_model->get_login_staff($email, $pass);
+
+            if (!isset($userlogged) || !$userlogged) {
+
+                $this->template['middle'] = $this->load->view($this->middle = 'A_login_view');
+            }
+
+            $timer = date(DATE_COOKIE, time());
+
+            $userInfoStaff = array(
+                'logged_in' => TRUE,
+                'username' => $userlogged->Email,
+                'name' => $userlogged-> First_Name,
+                'userID' => $userlogged->StaffID,
+                'timeStarted' => $timer
+            );
+            $this->session->set_userdata($userInfoStaff);
+            redirect('main/index');
+        }
+
+    }
+
 
 
     function logout()
