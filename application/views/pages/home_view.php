@@ -14,7 +14,7 @@ else {
 ///bens start
     echo form_open('Login_cntrl/admin_login');
     echo form_input('Username', 'Username');
-    echo form_password('password', 'Password');
+    echo form_password('Password', 'Password');
     echo form_submit('submit', 'Login');
     //bens end
 
