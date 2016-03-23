@@ -16,7 +16,7 @@ class Login_model extends CI_Model{
 
         $this->db->where('Username', $user_name);
         $this->db->where('Password', $password);
-        $dbquery = $this->db->get('login');
+        $dbquery = $this->db->get('Login');
 
         $dbresult = $dbquery->row();
 
