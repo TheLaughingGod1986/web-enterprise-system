@@ -32,6 +32,7 @@ class Login_cntrl extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
 
             // failed validation
+            echo "validation fail";
             $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
 
         }else {
