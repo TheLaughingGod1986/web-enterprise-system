@@ -19,8 +19,8 @@ class Login_cntrl extends CI_Controller
     function login_admin(){
 
         //Get data from form
-        $user_name = $this->input->post('Username');
-        $password = $this->input->post('Password');
+        $user = $this->input->post('Username');
+        $pass = $this->input->post('Password');
 
         $this->load->library('form_validation');
 
@@ -28,7 +28,7 @@ class Login_cntrl extends CI_Controller
 //        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
 //        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|callback_username_exists');
         $this->form_validation->set_rules('password', 'Password', 'required');
-  
+
 
 
         //check if db returned a valid user or not
@@ -41,7 +41,7 @@ class Login_cntrl extends CI_Controller
         }else {
 
             //check user on database
-            $userlogged = $this->Login_model->get_login_admin($user_name, $password);
+            $userlogged = $this->Login_model->get_login_admin($user, $pass);
 
             if (!isset($userlogged) || !$userlogged) {
 
@@ -147,6 +147,32 @@ class Login_cntrl extends CI_Controller
         }
 
     }
+
+
+
+    //bens start
+    function validate_credentials()
+    {
+        $this->load->model('Validate_model');
+        $query = $this->Validate_model->validate();
+
+        if ($query) // if user cred validate the user session start
+        {
+            $admin_data = array(
+                'Username' => $query->Username,
+                'Password' => $query->Password,
+                'is_logged_in' => true
+            );
+
+            $this->session->set_userdata($admin_data);
+
+            echo "you logged in !";
+        } else {
+            $this->index();
+            echo 'Incorrect Password or Username';
+        }
+    }
+    // bens end
 
 
 

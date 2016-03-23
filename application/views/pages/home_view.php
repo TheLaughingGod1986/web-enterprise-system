@@ -31,8 +31,15 @@ else {
     echo "email: mail@mail.com";
     echo "pass: aaa";
 
+///bens start
     echo form_open('Login_cntrl/login_staff');
+    echo form_input('Username', 'Username');
+    echo form_password('password', 'Password');
+    echo form_submit('submit', 'Login');
 
+    //bens end
+
+    echo form_open('Login_cntrl/login_staff');
     echo form_label('E-mail:');
     echo form_error('email');
     echo form_input(array('id' => 'email', 'name' => 'email', 'placeholder' => 'example@gre.ac.uk'));

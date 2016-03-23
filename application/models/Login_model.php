@@ -12,10 +12,10 @@ class Login_model extends CI_Model{
     }
 
     //Check given data if is a valid user to login
-    function get_login_admin($user_name, $password){
+    function get_login_admin($user, $pass){
 
-        $this->db->where('Username', $user_name);
-        $this->db->where('Password', $password);
+        $this->db->where('Username', $user);
+        $this->db->where('Password', $pass);
         $dbquery = $this->db->get('Login');
 
         $dbresult = $dbquery->row();
