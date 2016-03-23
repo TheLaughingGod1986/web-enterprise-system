@@ -7,7 +7,10 @@ if ($this->session->logged_in) {
 }
 
 else {
-    echo "Admin Login";
+    echo "<h2>Choose a login</h2>";
+
+
+    echo "<h3>Admin Login</h3>";
     echo form_open('Login_cntrl/login');
 
     echo form_label('E-mail:');
@@ -21,7 +24,7 @@ else {
     echo form_submit(array('id' => 'submit', 'value' => 'Login'));
     echo form_close();
 
-    echo "Staff Login";
+    echo "<h3>Staff Login</h3>";
     echo form_open('Login_cntrl/login');
 
     echo form_label('E-mail:');
@@ -35,7 +38,7 @@ else {
     echo form_submit(array('id' => 'submit', 'value' => 'Login'));
     echo form_close();
 
-    echo "External Examiner Login";
+    echo "<h3>External Examiner Login</h3>";
     echo form_open('Login_cntrl/login');
 
     echo form_label('E-mail:');
