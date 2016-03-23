@@ -50,7 +50,7 @@ class Login_model extends CI_Model{
 
         $this->db->where('Email', $email);
         $this->db->where('Password', $password);
-        $dbquery = $this->db->get('external');
+        $dbquery = $this->db->get('staff');
 
         $dbresult = $dbquery->row();
 
