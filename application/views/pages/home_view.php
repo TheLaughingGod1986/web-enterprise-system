@@ -41,18 +41,24 @@ else {
     echo "email: mango@hotmail";
     echo "pass: pokemon";
 
-    echo form_open('Login_cntrl/login_external');
+//    echo form_open('Login_cntrl/login_external');
 
-    echo form_label('E-mail:');
-    echo form_error('email');
-    echo form_input(array('id' => 'email', 'name' => 'email', 'placeholder' => 'example@gre.ac.uk'));
-
-    echo form_label('Password:');
-    echo form_error('password');
-    echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'password'));
-
-    echo form_submit(array('id' => 'submit', 'value' => 'Login'));
+    echo form_open('Login_cntrl/external_login');
+    echo form_input('Email', 'Email');
+    echo form_password('Password', 'Password');
+    echo form_submit('submit', 'Login');
     echo form_close();
+
+//    echo form_label('E-mail:');
+//    echo form_error('email');
+//    echo form_input(array('id' => 'email', 'name' => 'email', 'placeholder' => 'example@gre.ac.uk'));
+//
+//    echo form_label('Password:');
+//    echo form_error('password');
+//    echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'password'));
+//
+//    echo form_submit(array('id' => 'submit', 'value' => 'Login'));
+//    echo form_close();
 }
 
 
