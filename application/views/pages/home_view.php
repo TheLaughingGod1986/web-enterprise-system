@@ -11,6 +11,8 @@ else {
 <hr>";
 
     echo "<h3>Admin Login</h3>";
+    echo "email: mail@mail.com";
+    echo "pass: aaa";
     echo form_open('Login_cntrl/login');
 
     echo form_label('E-mail:');
@@ -39,7 +41,9 @@ else {
     echo form_close();
 
     echo "<h3>External Examiner Login</h3>";
-    echo form_open('Login_cntrl/login');
+    echo "email: ee@mail.com";
+    echo "pass: eee";
+    echo form_open('Login_cntrl/login_EE');
 
     echo form_label('E-mail:');
     echo form_error('email');

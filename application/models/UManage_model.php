@@ -26,7 +26,23 @@ class UManage_model extends CI_Model{
         else{
             return false;
         }
+    }
 
+    //Check given data if is a valid user to login
+    function get_login_EE($email, $password){
+
+        $this->db->where('Email', $email);
+        $this->db->where('Password', $password);
+        $dbquery = $this->db->get('external');
+
+        $dbresult = $dbquery->row();
+
+        if($dbquery->num_rows() == 1){
+            return $dbresult;
+        }
+        else{
+            return false;
+        }
     }
 
     //Select the wanted user from table staff
