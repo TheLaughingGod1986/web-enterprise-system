@@ -2,7 +2,7 @@
 if ($this->session->is_logged_admin) {
 
  echo "Hello welcome back " ;
-    echo '<strong>'.htmlspecialchars ($this->session->name). ',</strong> You Are Logged in as a <strong>Admin</strong>.';
+    echo '<strong>'.htmlspecialchars ($this->session->Username). ',</strong> You Are Logged in as a <strong>Admin</strong>.';
     echo " chose a option from the menu to get started.";
 }
 
