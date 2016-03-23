@@ -165,9 +165,7 @@ class Login_cntrl extends CI_Controller
             );
 
             $this->session->set_userdata($admin_data);
-            header('Location:$url');
-            echo "<meta http-equiv='refresh' content='3;$url>";
-            echo "<body onload='window.location=$url'>";
+            redirect('main/index');
         } else {
             $this->index();
             echo 'Incorrect Password or Username';
