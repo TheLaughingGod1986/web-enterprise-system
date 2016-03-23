@@ -25,15 +25,17 @@ class Login_cntrl extends CI_Controller
         $this->load->library('form_validation');
 
         //Form validation
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|callback_username_exists');
+//        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
+//        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]|callback_username_exists');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+  
+
 
         //check if db returned a valid user or not
         if ($this->form_validation->run() == FALSE) {
 
             // failed validation
             echo "validation fail";
-            redirect('main/index');
 //            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
 
         }else {
