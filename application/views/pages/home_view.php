@@ -41,8 +41,8 @@ else {
     echo form_close();
 
     echo "<h3>External Examiner Login</h3>";
-    echo "email: ee@mail.com";
-    echo "pass: eee";
+    echo "email: mango@hotmail";
+    echo "pass: pokemon";
     echo form_open('Login_cntrl/login_EE');
 
     echo form_label('E-mail:');
