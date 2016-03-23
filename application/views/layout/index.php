@@ -12,7 +12,7 @@
 <body>
 
 <?php
-if ($this->session->logged_in_admin) {
+if ($this->session->is_logged_admin) {
     echo '<div class="col-sm-2 no-padding-right hide-mobile">';
     if ($left) echo $left;
     echo '</div>';
@@ -20,7 +20,7 @@ if ($this->session->logged_in_admin) {
 ?>
 
 <?php
-if ($this->session->logged_in_admin) {
+if ($this->session->is_logged_admin) {
     echo '<div class="col-sm-10 no-padding-right hide-mobile">';
     if ($header) echo $header;
     echo '</div>';
@@ -32,7 +32,7 @@ if ($this->session->logged_in_admin) {
 ?>
 
 <?php
-if ($this->session->logged_in_admin) {
+if ($this->session->is_logged_admin) {
     echo '<div class="col-sm-10 no-padding-right hide-mobile">';
     if ($top_bar) echo $top_bar;
     echo '</div>';
@@ -44,7 +44,7 @@ if ($this->session->logged_in_admin) {
 ?>
 
 <?php
-if ($this->session->logged_in_admin) {
+if ($this->session->is_logged_admin) {
     echo '<div class="col-sm-10 no-padding-right hide-mobile">';
     if ($middle) echo $middle;
     echo '</div>';

@@ -11,28 +11,13 @@ else {
 <hr>";
 
 
-///bens start
+    echo "<h3>Admin Login</h3>";
+    echo "user: admin <br>";
+    echo "pass: password";
     echo form_open('Login_cntrl/admin_login');
     echo form_input('Username', 'Username');
     echo form_password('Password', 'Password');
     echo form_submit('submit', 'Login');
-    //bens end
-
-    echo "<h3>Admin Login</h3>";
-    echo "user: admin";
-    echo "pass: password";
-
-    echo form_open('Login_cntrl/login_admin');
-
-    echo form_label('User Name:');
-    echo form_error('Username');
-    echo form_input(array('id' => 'user', 'name' => 'user', 'placeholder' => 'Username'));
-
-    echo form_label('Password:');
-    echo form_error('password');
-    echo form_input(array('id' => 'password', 'name' => 'password', 'placeholder' => 'Password'));
-
-    echo form_submit(array('id' => 'submit', 'value' => 'Login'));
     echo form_close();
 
     echo "<h3>Staff Login</h3>";
