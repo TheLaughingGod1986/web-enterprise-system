@@ -14,7 +14,7 @@
 
     <li class="grey"></li>
     <?php
-    if  if ($this->session->userdata('Username')) { ?>
+    if ($this->session->userdata('Username')) { ?>
         <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
         <li role="presentation"><a href="#">Externals</a></li>
         <li role="presentation"><a href="#">Reports</a></li>
