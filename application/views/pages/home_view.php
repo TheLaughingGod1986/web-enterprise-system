@@ -10,6 +10,14 @@ else {
     echo "<h2>Choose a login</h2>
 <hr>";
 
+
+///bens start
+    echo form_open('Login_cntrl/login_staff');
+    echo form_input('Username', 'Username');
+    echo form_password('password', 'Password');
+    echo form_submit('submit', 'Login');
+    //bens end
+
     echo "<h3>Admin Login</h3>";
     echo "user: admin";
     echo "pass: password";
@@ -31,13 +39,6 @@ else {
     echo "email: mail@mail.com";
     echo "pass: aaa";
 
-///bens start
-    echo form_open('Login_cntrl/login_staff');
-    echo form_input('Username', 'Username');
-    echo form_password('password', 'Password');
-    echo form_submit('submit', 'Login');
-
-    //bens end
 
     echo form_open('Login_cntrl/login_staff');
     echo form_label('E-mail:');
