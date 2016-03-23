@@ -161,7 +161,7 @@ class Login_cntrl extends CI_Controller
             $admin_data = array(
                 'Username' => $query->Username,
                 'Password' => $query->Password,
-                'is_logged_in' => true
+                'is_logged_admin' => true
             );
 
             $this->session->set_userdata($admin_data);
