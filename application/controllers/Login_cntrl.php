@@ -165,7 +165,7 @@ class Login_cntrl extends CI_Controller
             );
 
             $this->session->set_userdata($admin_data);
-
+            redirect('main/update');
             echo "you logged in !";
         } else {
             $this->index();
