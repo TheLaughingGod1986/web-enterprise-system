@@ -2,7 +2,7 @@
 if ($this->session->logged_in) {
 
  echo "Hello welcome back " ;
-    echo $this->session->name;
+    echo '<strong>'.htmlspecialchars ($this->session->name). '</strong>';
     echo " chose a option from the menu to get started.";
 }
 
