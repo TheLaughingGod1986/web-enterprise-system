@@ -151,7 +151,7 @@ class Login_cntrl extends CI_Controller
 
 
     //bens start
-    function validate_credentials()
+    function admin_login()
     {
         $this->load->model('Validate_model');
         $query = $this->Validate_model->validate();
