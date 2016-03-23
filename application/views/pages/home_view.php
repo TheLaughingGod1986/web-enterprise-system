@@ -1,5 +1,5 @@
 <?php
-if ($this->session->logged_in_admin) {
+if ($this->session->is_logged_admin) {
 
  echo "Hello welcome back " ;
     echo '<strong>'.htmlspecialchars ($this->session->name). ',</strong> You Are Logged in as a <strong>Admin</strong>.';
