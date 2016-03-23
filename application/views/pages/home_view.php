@@ -7,8 +7,8 @@ if ($this->session->logged_in) {
 }
 
 else {
-    echo "<h2>Choose a login</h2>";
-
+    echo "<h2>Choose a login</h2>
+<hr>";
 
     echo "<h3>Admin Login</h3>";
     echo form_open('Login_cntrl/login');
