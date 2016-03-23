@@ -51,4 +51,10 @@ class UManage_model extends CI_Model{
         $query = $this->db->get('staff');
         return $query->result();
     }
+
+    //Insert users
+    function insert_user($data, $table)
+    {
+        $this->db->update($table, $data);
+    }
 }
