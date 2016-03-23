@@ -154,7 +154,7 @@ class Login_cntrl extends CI_Controller
     function admin_login()
     {
         $this->load->model('Validate_model');
-        $query = $this->Validate_model->validate();
+        $query = $this->Validate_model->validate_admin();
 
         if ($query) // if user cred validate the user session start
         {

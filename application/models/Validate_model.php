@@ -2,7 +2,7 @@
 
 class Validate_model extends CI_Model {
 
-    function validate()
+    function validate_admin()
     {
         $this->db->where('Username', $this->input->post('Username'));
         $this->db->where('Password', $this->input->post('Password'));
