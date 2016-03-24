@@ -40,9 +40,9 @@ echo form_open('UManage_cntrl/insert_user');
             echo form_error('faculty');
 
 
-            $dd = array('id'=>'depDL', 'class'=>'staffItem');
+            $dd = array('id'=>'depDL');
             echo form_label('Department', 'depart', 'class="staffItem"');
-            echo form_dropdown('depart', $dep, $dd);
+            echo form_dropdown('depart', $dep, 'class="staffItem"', $dd);
             echo form_error('depart');
 
     echo form_fieldset_close();
