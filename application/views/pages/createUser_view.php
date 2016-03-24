@@ -14,6 +14,7 @@ echo form_open('UManage_cntrl/insert_user');
         $js = 'id="rForm" onChange="reloadForm();"';
 
         $opRole = array(
+            'Choose One' => 'Choose One',
             'Admin' => 'Admin',
             'EE' => 'EE',
             'Staff' => 'Staff'
@@ -82,9 +83,9 @@ echo form_open('UManage_cntrl/insert_user');
             echo form_input('hei', set_value('hei'), 'class="staffItem"');
             echo form_error('hei');
 
-        echo form_fieldset_close();
+    echo form_fieldset_close();
 
-        echo form_fieldset('Login Details', $attributes2);
+    echo form_fieldset('Login Details', $attributes2);
 
         echo form_label('Email', 'email');
         echo form_input('email',set_value('email'),'id="email"');
