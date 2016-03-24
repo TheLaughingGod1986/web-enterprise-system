@@ -25,7 +25,6 @@
        echo "<h4 class='float-left push-left-small'>Welcome, Please Login.";
     }
     ?>
-
     </div>
 </nav>
 
