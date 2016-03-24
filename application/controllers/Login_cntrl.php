@@ -12,12 +12,13 @@ class Login_cntrl extends CI_Controller
 
     public function index()
     {
-        $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view', true);
+        $this->template['middle'] = $this->load->view($this->middle = 'A_login_view', true);
         // why ??
     }
 
 
-    function login_external(){
+    function login_external()
+    {
 
         //Get data from form
         $email = $this->input->post('email');
@@ -33,9 +34,8 @@ class Login_cntrl extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
 
             // failed validation
-            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
-        }
-        else {
+            $this->template['middle'] = $this->load->view($this->middle = 'A_login_view');
+        } else {
 
             //check user on database
             $userlogged = $this->Login_model->get_login_EE($email, $pass);
@@ -50,7 +50,7 @@ class Login_cntrl extends CI_Controller
             $userInfoEE = array(
                 'logged_in' => TRUE,
                 'username' => $userlogged->Email,
-                'name' => $userlogged-> First_Name,
+                'name' => $userlogged->First_Name,
                 'userID' => $userlogged->StaffID,
                 'timeStarted' => $timer
             );
@@ -60,7 +60,8 @@ class Login_cntrl extends CI_Controller
 
     }
 
-    function login_staff(){
+    function login_staff()
+    {
 
         //Get data from form
         $email = $this->input->post('email');
@@ -76,10 +77,9 @@ class Login_cntrl extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
 
             // failed validation
-            $this->template['middle'] = $this->load->view ($this->middle = 'A_login_view');
+            $this->template['middle'] = $this->load->view($this->middle = 'A_login_view');
 
-        }
-        else {
+        } else {
 
             //check user on database
             $userlogged = $this->Login_model->get_login_staff($email, $pass);
@@ -94,7 +94,7 @@ class Login_cntrl extends CI_Controller
             $userInfoStaff = array(
                 'logged_in' => TRUE,
                 'username' => $userlogged->Email,
-                'name' => $userlogged-> First_Name,
+                'name' => $userlogged->First_Name,
                 'userID' => $userlogged->StaffID,
                 'timeStarted' => $timer
             );
@@ -104,9 +104,6 @@ class Login_cntrl extends CI_Controller
 
     }
 
-
-
-    //bens start
     function admin_login()
     {
         $this->load->model('Validate_model');
@@ -139,20 +136,38 @@ class Login_cntrl extends CI_Controller
                 'First_Name' => $query->First_Name,
                 'Password' => $query->Password,
                 'Email' => $query->Email,
-                'ExternalID' => $query->ExternalID,
                 'is_logged_external' => true
             );
 
             $this->session->set_userdata($external_data);
-            echo "YOUR IN !";
+            echo "YOUR IN EXTERNAL!";
         } else {
             $this->index();
             echo 'Incorrect Password or Username';
         }
     }
-    // bens end
 
+    function staff_login()
+    {
+        $this->load->model('Validate_model');
+        $query = $this->Validate_model->validate_staff();
 
+        if ($query) // if user cred validate the user session start
+        {
+            $staff_data = array(
+                'First_Name' => $query->First_Name,
+                'Password' => $query->Password,
+                'Email' => $query->Email,
+                'is_logged_external' => true
+            );
+
+            $this->session->set_userdata($staff_data);
+            echo "YOUR IN STAFF!";
+        } else {
+            $this->index();
+            echo 'Incorrect Password or Username';
+        }
+    }
 
     function logout()
     {
