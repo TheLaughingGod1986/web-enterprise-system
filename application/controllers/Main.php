@@ -16,11 +16,11 @@ class Main extends MY_Controller
 
     function externals()
     {
+        $this->load->helper('string');
         $this->load->model('UManage_model');
         $data['opDepartment'] = $this->UManage_model->get_depart();
         $data['opFaculty'] = $this->UManage_model->get_faculty();
-        $this->load->helper('string');
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view', $data);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view', $data, true);
         $this->layout();
         // no page yet made
     }
