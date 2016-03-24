@@ -108,6 +108,7 @@ else {
     echo '</div>';
 }
 ?>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/build/jquery.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>js/build/bootstrap.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>js/build/production.min.js"></script>
 </body>
