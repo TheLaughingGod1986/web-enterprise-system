@@ -60,7 +60,6 @@ class Login_cntrl extends CI_Controller
                 'First_Name' => $query->First_Name,
                 'Password' => $query->Password,
                 'Email' => $query->Email,
-//                'accessLevel' => $role->RoleID,
                 'is_logged_staff_1' => true
             );
 
