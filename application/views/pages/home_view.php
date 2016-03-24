@@ -5,7 +5,7 @@ if ($this->session->is_logged_admin) {
     echo " chose a option from the menu to get started.";
 } else if ($this->session->is_logged_external) {
     echo "Hello welcome back ";
-    echo '<strong>' . htmlspecialchars($this->session->First_Name) . ',</strong> You Are Logged in as a <strong>External</strong>.';
+    echo '<strong>' . htmlspecialchars($this->session->Email) . ',</strong> You Are Logged in as a <strong>External</strong>.';
     echo " chose a option from the menu to get started.";
 } else if ($this->session->is_logged_staff) {
     echo "Hello welcome back ";
