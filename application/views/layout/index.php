@@ -108,6 +108,6 @@ else {
     echo '</div>';
 }
 ?>
-<script type="text/javascript" src="/js/build/production.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/build/production.min.js"></script>
 </body>
 </html>

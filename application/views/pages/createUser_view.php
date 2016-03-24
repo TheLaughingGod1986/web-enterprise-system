@@ -92,7 +92,7 @@ echo form_open('UManage_cntrl/insert_user');
 
         $newPass = random_string('alnum', 8);
         echo form_label('Password', 'password');
-        echo form_password('password',set_value($newPass),'id="password"');
+        echo form_password('password', $newPass,'id="password"');
         echo form_error('password');
     echo form_fieldset_close();
 
