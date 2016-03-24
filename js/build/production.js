@@ -2423,7 +2423,7 @@ function  reloadForm(){
     }
 }
 
-function updateList(arg){
+function updateList(){
     var xhttp;
     xhttp = new XMLHttpRequest();
 
@@ -2433,7 +2433,9 @@ function updateList(arg){
             x.options.add(new Option(xhttp.DepartmentID, xhttp.Department_Name));
         }
     }
-    console.log(location.host);
-    xhttp.open('GET','university/web-enterprise-system/index.php/UManage_cntrl/ajaxTry/'+arg,true);
+    var e = document.getElementById("rForm");
+    var selected = e.options[e.selectedIndex].value;
+
+    xhttp.open('GET',location.host+'university/web-enterprise-system/index.php/UManage_cntrl/ajaxTry/'+selected,true);
     xhttp.send();
 }
