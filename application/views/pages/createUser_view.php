@@ -24,7 +24,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_error('role');
 
             $facul = array('Choose' => 'Choose Faculty');
-            $dep = array('Choose' => $opDepartment);
+            $dep = array('Choose' => 'Faculty first');
 
             foreach($opFaculty as $facs):
                 $facul[$facs->FacultyID] = $facs->Faculty_Name;
