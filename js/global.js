@@ -11,23 +11,23 @@ function  reloadForm(){
 
     if(selected == 'Admin'){
 
-        item1.style.display("block");
-        item2.style.display("none");
-        item3.style.display("none");
+        item1.style.display="block";
+        item2.style.display="none";
+        item3.style.display="none";
 
     }else if(selected == 'Staff'){
 
-        item1.style.display("none");
-        item2.style.display("block");
-        item3.style.display("none");
+        item1.style.display="none";
+        item2.style.display="block";
+        item3.style.display="none";
 
     }else if(selected == 'EE'){
-        item1.style.display("none");
-        item2.style.display("block");
-        item3.style.display("block");
+        item1.style.display="none";
+        item2.style.display="block";
+        item3.style.display="block";
     }else{
-        item1.style.display("none");
-        item2.style.display("none");
-        item3.style.display("none");
+        item1.style.display="none";
+        item2.style.display="none";
+        item3.style.display="none";
     }
 }
