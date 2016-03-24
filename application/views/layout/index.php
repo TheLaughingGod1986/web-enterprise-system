@@ -88,7 +88,21 @@ if ($this->session->is_logged_admin) {
     echo '<div class="col-sm-10 no-padding-right hide-mobile">';
     if ($middle) echo $middle;
     echo '</div>';
-} else {
+}
+
+else if ($this->session->is_logged_external) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($middle) echo $middle;
+    echo '</div>';
+}
+
+else if ($this->session->is_logged_staff) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($middle) echo $middle;
+    echo '</div>';
+}
+
+else {
     echo '<div class="col-sm-12 no-padding-right hide-mobile">';
     if ($middle) echo $middle;
     echo '</div>';
