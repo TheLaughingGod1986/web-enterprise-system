@@ -61,7 +61,7 @@ class Login_cntrl extends CI_Controller
                 'First_Name' => $query->First_Name,
                 'Password' => $query->Password,
                 'Email' => $query->Email,
-                'is_logged_external' => true
+                'is_logged_staff' => true
             );
 
             $this->session->set_userdata($staff_data);
