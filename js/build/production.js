@@ -2433,6 +2433,7 @@ function updateList(){
             x.options.add(new Option(xhttp.DepartmentID, xhttp.Department_Name));
         }
     }
-    xhttp.open('POST',location.host+'/UManage_cntrl/ajaxTry',true);
+    console.log(location.host);
+    xhttp.open('POST','/UManage_cntrl/ajaxTry',true);
     xhttp.send();
 }
