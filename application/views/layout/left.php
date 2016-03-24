@@ -27,6 +27,7 @@
         <li role="presentation"><a href="#">Change Login Details</a></li>
         <li class="grey"></li>
         <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
+        <?php } ?>
 
         <?php if ($this->session->is_logged_external) { ?>
             <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
@@ -43,6 +44,7 @@
             <li role="presentation"><a href="#">Change Login Details</a></li>
             <li class="grey"></li>
             <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
+        <?php } ?>
 
             <?php if ($this->session->is_logged_staffl) { ?>
                 <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
@@ -59,9 +61,5 @@
                 <li role="presentation"><a href="#">Change Login Details</a></li>
                 <li class="grey"></li>
                 <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
-                <?php
-            }
-        }
-    }
-    ?>
+            <?php } ?>
 </ul>
