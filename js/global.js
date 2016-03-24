@@ -70,6 +70,5 @@ function updateList(){
         }
     }
     xhttp.open('POST','index.php/UManage_cntrl/ajaxTry',true);
-    xhttp.run();
-
+    xhttp.send();
 }

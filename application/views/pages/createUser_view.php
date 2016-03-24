@@ -9,7 +9,7 @@ echo form_open('UManage_cntrl/insert_user');
             $opFaculty = 'empty';
 
         if(!isset($opDepartment))
-            $opDepartment = 'Chose a faculty';
+            $opDepartment = 'Choose Faculty 1st';
 
         $js = 'id="rForm" onChange="reloadForm();"';
 
@@ -24,7 +24,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_error('role');
 
             $facul = array('Choose' => 'Choose Faculty');
-            $dep = array('Choose' => 'Choose Department');
+            $dep = array('Choose' => $opDepartment);
 
             foreach($opFaculty as $facs):
                 $facul[$facs->FacultyID] = $facs->Faculty_Name;
