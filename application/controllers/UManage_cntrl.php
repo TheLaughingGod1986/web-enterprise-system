@@ -43,10 +43,129 @@ class UManage_cntrl extends CI_Controller
         $this->load->library('form_validation');
 
         $where = $this->input->post('role');
+
+        if($where == 'Admin'){
+
+            $this->form_validation->set_rules('apassword', 'Password', 'required');
+            $this->form_validation->set_rules('username', 'Username', 'required');
+
+        } elseif($where == 'Staff'){
+
+            $config = array(
+                array(
+                    'field' => 'title',
+                    'label' => 'Title',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'First_Name',
+                    'label' => 'First Name',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'Last_Name',
+                    'label' => 'Last Name',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'address',
+                    'label' => 'Address',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'postal',
+                    'label' => 'Post-Code',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'phone',
+                    'label' => 'Telephone',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'email',
+                    'label' => 'Email',
+                    'rules' => 'required|valid_email'
+                ),
+                array(
+                    'field' => 'password',
+                    'label' => 'Password',
+                    'rules' => 'required'
+                )
+            );
+
+            $this->form_validation->set_rules($config);
+
+        } elseif($where == 'EE'){
+
+            $config = array(
+                array(
+                    'field' => 'title',
+                    'label' => 'Title',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'First_Name',
+                    'label' => 'First Name',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'Last_Name',
+                    'label' => 'Last Name',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'address',
+                    'label' => 'Address',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'postal',
+                    'label' => 'Post-Code',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'phone',
+                    'label' => 'Telephone',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'hei',
+                    'label' => 'HEI',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'email',
+                    'label' => 'Email',
+                    'rules' => 'required|valid_email'
+                ),
+                array(
+                    'field' => 'password',
+                    'label' => 'Password',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'faculty',
+                    'label' => 'Faculty',
+                    'rules' => 'required'
+                ),
+                array(
+                    'field' => 'depart',
+                    'label' => 'Department',
+                    'rules' => 'required'
+                )
+            );
+
+            $this->form_validation->set_rules($config);
+
+        }else{
+
+        }
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('createUser_view');
 
-        } elseif($where == 'Staff' || $where == 'Admin'){
+        } elseif($where == 'Staff'){
             //Setting values for table columns
             $data = array(
                 'Email' => $this->input->post('Email'),

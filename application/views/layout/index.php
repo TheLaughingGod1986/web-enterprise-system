@@ -54,6 +54,6 @@ if ($this->session->logged_in_admin) {
     echo '</div>';
 }
 ?>
-
+<script type="text/javascript" src="/js/build/production.min.js"></script>
 </body>
 </html>
