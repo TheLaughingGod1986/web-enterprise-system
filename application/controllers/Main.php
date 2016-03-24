@@ -20,7 +20,7 @@ class Main extends MY_Controller
         $data['opDepartment'] = $this->UManage_model->get_depart();
         $data['opFaculty'] = $this->UManage_model->get_faculty();
         $this->load->helper('string');
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view', $data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view', $data);
         $this->layout();
         // no page yet made
     }
