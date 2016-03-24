@@ -12,12 +12,12 @@
         echo "!</h4>";
     }
 
-   else if ($this->session->is_logged_staffl) {
+   else if ($this->session->is_logged_staff) {
        echo "<h4 class='float-left push-left-small'>Welcome back, ";
        echo $this->session->Email;
        echo "!</h4>";
    }
-   
+
    else {
        echo "<h4 class='float-left push-left-small'>Welcome, Please Login.";
     }
