@@ -16,7 +16,7 @@ class Main extends MY_Controller
 
     function externals()
     {
-        $this->middle = 'pages/externals_view';
+        $this->middle = 'pages/createUser_view';
         $this->layout();
         // no page yet made
     }

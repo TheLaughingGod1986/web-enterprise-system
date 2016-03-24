@@ -108,6 +108,6 @@ else {
     echo '</div>';
 }
 ?>
-
+<script type="text/javascript" src="/js/build/production.min.js"></script>
 </body>
 </html>
