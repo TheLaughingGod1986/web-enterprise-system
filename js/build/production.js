@@ -2434,6 +2434,6 @@ function updateList(){
         }
     }
     console.log(location.host);
-    xhttp.open('POST','/UManage_cntrl/ajaxTry',true);
+    xhttp.open('POST','university/web-enterprise-system/index.php/UManage_cntrl/ajaxTry',true);
     xhttp.send();
 }
