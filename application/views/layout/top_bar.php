@@ -14,19 +14,19 @@
        echo "<h4 class='float-right push-right-small'>Select date drop down</h4>";
     }
 
-   else if ($this->session->is_logged_staff && $this->session-> == 1 {
+   else if ($this->session->is_logged_staff) {
        echo "<h4 class='float-left push-left-small'>Welcome back no 1, ";
        echo $this->session->Email;
        echo "!</h4>";
        echo "<h4 class='float-right push-right-small'>Select date drop down</h4>";
    }
-
-   else if ($this->session->is_logged_staff && roleid = 2 {
-       echo "<h4 class='float-left push-left-small'>Welcome back no 2, ";
-       echo $this->session->Email;
-       echo "!</h4>";
-       echo "<h4 class='float-right push-right-small'>Select date drop down</h4>";
-   }
+//
+//   else if ($this->session->is_logged_staff && roleid = 2 {
+//       echo "<h4 class='float-left push-left-small'>Welcome back no 2, ";
+//       echo $this->session->Email;
+//       echo "!</h4>";
+//       echo "<h4 class='float-right push-right-small'>Select date drop down</h4>";
+//   }
    else {
        echo "<h4 class='float-left push-left-small'>Welcome, Please Login.";
     }
