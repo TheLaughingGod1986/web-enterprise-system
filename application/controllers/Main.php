@@ -18,7 +18,7 @@ class Main extends MY_Controller
     {
         $this->load->helper('string');
         $this->load->model('UManage_model');
-        $data['opDepartment'] = $this->UManage_model->get_depart();
+
         $data['opFaculty'] = $this->UManage_model->get_faculty();
         $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view', $data, true);
         $this->layout();

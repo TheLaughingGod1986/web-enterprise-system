@@ -9,7 +9,7 @@ echo form_open('UManage_cntrl/insert_user');
             $opFaculty = 'empty';
 
         if(!isset($opDepartment))
-            $opDepartment = 'empty';
+            $opDepartment = 'Chose a faculty';
 
         $js = 'id="rForm" onChange="reloadForm();"';
 
@@ -23,23 +23,26 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_dropdown('role', $opRole, 'role', $js);
         echo form_error('role');
 
-            $facul = array();
-            $dep = array();
+            $facul = array('Choose' => 'Choose Faculty');
+            $dep = array('Choose' => 'Choose Department');
 
             foreach($opFaculty as $facs):
                 $facul[$facs->FacultyID] = $facs->Faculty_Name;
             endforeach;
 
-            foreach($opDepartment as $d):
-                $dep[$d->DepartmentID] = $d->Department_Name;
-            endforeach;
+            //foreach($opDepartment as $d):
+                //$dep[$d->DepartmentID] = $d->Department_Name;
+            //endforeach;
 
+            $js2 = 'onChange="updateList();"';
             echo form_label('Faculty', 'faculty', 'class="staffItem"');
-            echo form_dropdown('faculty', $facul, 'class="staffItem"');
+            echo form_dropdown('faculty', $facul, 'class="staffItem"', $js2);
             echo form_error('faculty');
 
+
+            $dd = array('id'=>'depDL', 'class'=>'staffItem');
             echo form_label('Department', 'depart', 'class="staffItem"');
-            echo form_dropdown('depart', $dep, 'class="staffItem"');
+            echo form_dropdown('depart', $dep, $dd);
             echo form_error('depart');
 
     echo form_fieldset_close();
@@ -107,5 +110,6 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_error('password');
     echo form_fieldset_close();
 
+    echo form_submit('submit', 'Create');
 echo form_close();
 
