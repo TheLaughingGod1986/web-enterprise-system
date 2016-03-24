@@ -59,7 +59,7 @@ function  reloadForm(){
     }
 }
 
-function updateList(){
+function updateList(arg){
     var xhttp;
     xhttp = new XMLHttpRequest();
 
@@ -70,6 +70,6 @@ function updateList(){
         }
     }
     console.log(location.host);
-    xhttp.open('POST','university/web-enterprise-system/index.php/UManage_cntrl/ajaxTry',true);
+    xhttp.open('GET','university/web-enterprise-system/index.php/UManage_cntrl/ajaxTry/'+arg,true);
     xhttp.send();
 }
