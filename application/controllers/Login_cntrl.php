@@ -60,6 +60,17 @@ class Login_cntrl extends CI_Controller
                 'First_Name' => $query->First_Name,
                 'Password' => $query->Password,
                 'Email' => $query->Email,
+                'is_logged_staff' => true
+            );
+
+            $this->session->set_userdata($staff_data);
+            redirect('main/index');
+        }
+
+        else if ($query) // if user cred validate the user session start
+        {
+            $staff_data = array(
+                'roll_id' => '1'
                 'is_logged_staff_1' => true
             );
 
