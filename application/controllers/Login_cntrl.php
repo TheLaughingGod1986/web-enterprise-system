@@ -44,7 +44,7 @@ class Login_cntrl extends CI_Controller
             );
 
             $this->session->set_userdata($external_data);
-            echo "YOUR IN EXTERNAL!";
+            redirect('main/index');
         } else {
             $this->index();
             echo 'Incorrect Password or Username';
@@ -65,7 +65,7 @@ class Login_cntrl extends CI_Controller
             );
 
             $this->session->set_userdata($staff_data);
-            echo "YOUR IN STAFF!";
+            redirect('main/index');
         } else {
             $this->index();
             echo 'Incorrect Password or Username';
