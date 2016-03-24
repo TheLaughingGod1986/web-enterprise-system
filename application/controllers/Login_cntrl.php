@@ -10,6 +10,10 @@ class Login_cntrl extends CI_Controller
         $this->load->model('Validate_model');
     }
 
+    function index(){
+        
+    }
+
     function admin_login()
     {
         $query = $this->Validate_model->validate_admin();
@@ -66,7 +70,7 @@ class Login_cntrl extends CI_Controller
             $this->session->set_userdata($staff_data);
             redirect('main/index');
         }
-        
+
         else {
             $this->index();
             echo 'Incorrect Password or Username';
