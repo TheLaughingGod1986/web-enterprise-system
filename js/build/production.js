@@ -2375,23 +2375,50 @@ function  reloadForm(){
 
     if(selected == 'Admin'){
 
-        item1.style.display="block";
-        item2.style.display="none";
-        item3.style.display="none";
+        for(var i = 0; i < item3.length; i++) {
+            item1[i].style.display = "block";
+        }
+        for(var x = 0; x < item3.length; x++) {
+            item2[x].style.display = "none";
+        }
+        for(var z = 0; z < item3.length; z++) {
+            item3[z].style.display = "none";
+        }
 
     }else if(selected == 'Staff'){
 
-        item1.style.display="none";
-        item2.style.display="block";
-        item3.style.display="none";
+        for(var i = 0; i < item3.length; i++) {
+            item1[i].style.display = "none";
+        }
+        for(var x = 0; x < item3.length; x++) {
+            item2[x].style.display = "block";
+        }
+        for(var z = 0; z < item3.length; z++) {
+            item3[z].style.display = "none";
+        }
 
     }else if(selected == 'EE'){
-        item1.style.display="none";
-        item2.style.display="block";
-        item3.style.display="block";
+
+        for(var i = 0; i < item3.length; i++) {
+            item1[i].style.display = "none";
+        }
+        for(var x = 0; x < item3.length; x++) {
+            item2[x].style.display = "block";
+        }
+        for(var z = 0; z < item3.length; z++) {
+            item3[z].style.display = "block";
+        }
+
     }else{
-        item1.style.display="none";
-        item2.style.display="none";
-        item3.style.display="none";
+
+        for(var i = 0; i < item3.length; i++) {
+            item1[i].style.display = "none";
+        }
+        for(var x = 0; x < item3.length; x++) {
+            item2[x].style.display = "none";
+        }
+        for(var z = 0; z < item3.length; z++) {
+            item3[z].style.display = "none";
+        }
     }
 }
