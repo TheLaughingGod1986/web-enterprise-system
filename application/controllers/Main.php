@@ -82,9 +82,4 @@ class Main extends MY_Controller
         $this->layout();
         // no page yet made
     }
-
-    function logout()
-    {
-        // no page yet made
-    }
 }

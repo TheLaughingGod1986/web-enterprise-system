@@ -1,8 +1,15 @@
 <?php
 if ($this->session->is_logged_admin) {
-
     echo "Hello welcome back ";
     echo '<strong>' . htmlspecialchars($this->session->Username) . ',</strong> You Are Logged in as a <strong>Admin</strong>.';
+    echo " chose a option from the menu to get started.";
+} else if ($this->session->is_logged_external) {
+    echo "Hello welcome back ";
+    echo '<strong>' . htmlspecialchars($this->session->First_Name) . ',</strong> You Are Logged in as a <strong>External</strong>.';
+    echo " chose a option from the menu to get started.";
+} else if ($this->session->is_logged_staff) {
+    echo "Hello welcome back ";
+    echo '<strong>' . htmlspecialchars($this->session->First_Name) . ',</strong> You Are Logged in as a <strong>Staff</strong>.';
     echo " chose a option from the menu to get started.";
 } else {
     echo "<h2>Choose A Login Level</h2>
