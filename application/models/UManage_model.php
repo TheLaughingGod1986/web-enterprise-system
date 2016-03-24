@@ -11,6 +11,20 @@ class UManage_model extends CI_Model{
         return $dbresult;
     }
 
+    //get faculty
+    function get_faculty(){
+        $dbquery = $this->db->get('faculty');
+        $dbresult = $dbquery->result();
+        return $dbresult;
+    }
+
+    //get department
+    function get_depart(){
+        $dbquery = $this->db->get('department');
+        $dbresult = $dbquery->result();
+        return $dbresult;
+    }
+
     //Check given data if is a valid user to login
     function get_login($email, $password){
 

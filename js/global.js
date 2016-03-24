@@ -11,10 +11,10 @@ function  reloadForm(){
 
     if(selected == 'Admin'){
 
-        for(var i = 0; i < item3.length; i++) {
+        for(var i = 0; i < item1.length; i++) {
             item1[i].style.display = "block";
         }
-        for(var x = 0; x < item3.length; x++) {
+        for(var x = 0; x < item2.length; x++) {
             item2[x].style.display = "none";
         }
         for(var z = 0; z < item3.length; z++) {
@@ -23,10 +23,10 @@ function  reloadForm(){
 
     }else if(selected == 'Staff'){
 
-        for(var i = 0; i < item3.length; i++) {
+        for(var i = 0; i < item1.length; i++) {
             item1[i].style.display = "none";
         }
-        for(var x = 0; x < item3.length; x++) {
+        for(var x = 0; x < item2.length; x++) {
             item2[x].style.display = "block";
         }
         for(var z = 0; z < item3.length; z++) {
@@ -35,10 +35,10 @@ function  reloadForm(){
 
     }else if(selected == 'EE'){
 
-        for(var i = 0; i < item3.length; i++) {
+        for(var i = 0; i < item1.length; i++) {
             item1[i].style.display = "none";
         }
-        for(var x = 0; x < item3.length; x++) {
+        for(var x = 0; x < item2.length; x++) {
             item2[x].style.display = "block";
         }
         for(var z = 0; z < item3.length; z++) {
@@ -47,10 +47,10 @@ function  reloadForm(){
 
     }else{
 
-        for(var i = 0; i < item3.length; i++) {
+        for(var i = 0; i < item1.length; i++) {
             item1[i].style.display = "none";
         }
-        for(var x = 0; x < item3.length; x++) {
+        for(var x = 0; x < item2.length; x++) {
             item2[x].style.display = "none";
         }
         for(var z = 0; z < item3.length; z++) {
