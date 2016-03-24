@@ -17,6 +17,18 @@ if ($this->session->is_logged_admin) {
     if ($left) echo $left;
     echo '</div>';
 }
+
+else if ($this->session->is_logged_external) {
+    echo '<div class="col-sm-2 no-padding-right hide-mobile">';
+    if ($left) echo $left;
+    echo '</div>';
+}
+
+else if ($this->session->is_logged_staff) {
+    echo '<div class="col-sm-2 no-padding-right hide-mobile">';
+    if ($left) echo $left;
+    echo '</div>';
+}
 ?>
 
 <?php
@@ -24,7 +36,21 @@ if ($this->session->is_logged_admin) {
     echo '<div class="col-sm-10 no-padding-right hide-mobile">';
     if ($header) echo $header;
     echo '</div>';
-} else {
+}
+
+else if ($this->session->is_logged_external) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($header) echo $header;
+    echo '</div>';
+}
+
+else if ($this->session->is_logged_staff) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($header) echo $header;
+    echo '</div>';
+}
+
+else {
     echo '<div class="col-sm-12 no-padding-right hide-mobile">';
     if ($header) echo $header;
     echo '</div>';
@@ -36,7 +62,21 @@ if ($this->session->is_logged_admin) {
     echo '<div class="col-sm-10 no-padding-right hide-mobile">';
     if ($top_bar) echo $top_bar;
     echo '</div>';
-} else {
+}
+
+else if ($this->session->is_logged_external) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($top_bar) echo $top_bar;
+    echo '</div>';
+}
+
+else if ($this->session->is_logged_staff) {
+    echo '<div class="col-sm-10 no-padding-right hide-mobile">';
+    if ($top_bar) echo $top_bar;
+    echo '</div>';
+}
+
+else {
     echo '<div class="col-sm-12 no-padding-right hide-mobile">';
     if ($top_bar) echo $top_bar;
     echo '</div>';
