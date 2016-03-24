@@ -114,5 +114,5 @@ module.exports = function (grunt) {
     //'uncss',
 
     //  Where we tell Grunt what to do when we type "grunt" into terminal.
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'imagemin', 'sass', 'cssmin', 'watch']);
+    grunt.registerTask('default', [ 'concat', 'uglify', 'imagemin', 'sass', 'cssmin', 'watch']);
 };

@@ -11,7 +11,7 @@ class Login_cntrl extends CI_Controller
     }
 
     function index(){
-        
+
     }
 
     function admin_login()
