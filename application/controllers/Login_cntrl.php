@@ -66,18 +66,7 @@ class Login_cntrl extends CI_Controller
             $this->session->set_userdata($staff_data);
             redirect('main/index');
         }
-
-        else if ($query) // if user cred validate the user session start
-        {
-            $staff_data = array(
-                'roll_id' => '1'
-                'is_logged_staff_1' => true
-            );
-
-            $this->session->set_userdata($staff_data);
-            redirect('main/index');
-        }
-
+        
         else {
             $this->index();
             echo 'Incorrect Password or Username';
