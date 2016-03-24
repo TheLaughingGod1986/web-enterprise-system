@@ -16,7 +16,7 @@ class Main extends MY_Controller
 
     function externals()
     {
-        $this->load->model('Update_model');
+        $this->load->model('UManage_model');
         $data['opDepartment'] = $this->UManage_model->get_depart();
         $data['opFaculty'] = $this->UManage_model->get_faculty();
         $this->load->helper('string');
