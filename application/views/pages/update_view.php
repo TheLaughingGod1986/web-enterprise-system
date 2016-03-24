@@ -10,7 +10,7 @@
         </li>
     <?php endforeach;
     else : ?>
-        <h3>Smacks my bitch Up !</h3>
+        <h3>No Data</h3>
     <?php endif; ?>
 </ul>
 

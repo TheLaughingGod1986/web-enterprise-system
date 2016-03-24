@@ -12,7 +12,6 @@ class Update_cntrl extends MY_Controller{
     //Select every user on table UserACC
     function get_users()
     {
-
         $dbquery = $this->db->get('staff');
         $dbresult = $dbquery->result();
         return $dbresult;
