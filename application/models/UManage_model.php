@@ -19,7 +19,8 @@ class UManage_model extends CI_Model{
     }
 
     //get department
-    function get_depart(){
+    function get_depart($id){
+        $this->db->where('FacultyID', $id);
         $dbquery = $this->db->get('department');
         $dbresult = $dbquery->result();
         return $dbresult;

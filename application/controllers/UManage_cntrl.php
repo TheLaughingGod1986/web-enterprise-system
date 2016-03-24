@@ -238,4 +238,9 @@ class UManage_cntrl extends CI_Controller
             'Title' => $this->input->post('Title')
         );
     }
+
+    function ajaxTry(){
+        $data = $this->UManage_model->get_depart();
+        return $data;
+    }
 }
