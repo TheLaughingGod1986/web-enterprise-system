@@ -29,7 +29,7 @@ if ($this->session->is_logged_admin) {
     echo form_close();
 
     echo "<h3>External Examiner Login</h3>";
-    echo "email: mango@hotmail <h3>";
+    echo "email: mango@hotmail<br>";
     echo "pass: pokemon";
 
     echo form_open('Login_cntrl/external_login');
