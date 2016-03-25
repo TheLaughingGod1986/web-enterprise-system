@@ -1,4 +1,5 @@
 <?php
+$this->load->helper('string');
 $attributes1 = array('class' => 'adminField');
 $attributes2 = array('class' => 'staffField');
 echo form_open('UManage_cntrl/insert_user');

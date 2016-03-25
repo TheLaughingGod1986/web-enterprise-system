@@ -1,6 +1,6 @@
 <?php
 
-class UManage_cntrl extends CI_Controller
+class UManage_cntrl extends MY_Controller
 {
     function __construct()
     {
@@ -164,6 +164,7 @@ class UManage_cntrl extends CI_Controller
 
             $data['message'] = 'Error';
             $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
+            $this->layout();
 
         } elseif($where == 'Staff'){
             //Setting values for table columns

@@ -16,7 +16,6 @@ class Main extends MY_Controller
 
     function externals()
     {
-        $this->load->helper('string');
         $this->load->model('UManage_model');
         $data['opFaculty'] = $this->UManage_model->get_faculty();
         $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view', $data, true);
