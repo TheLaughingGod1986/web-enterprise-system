@@ -115,6 +115,8 @@ echo form_close();
 ?>
 <script type="text/javascript">
     function updateList(){
+        clearDL();
+
         var xhttp;
         xhttp = new XMLHttpRequest();
 
@@ -133,10 +135,19 @@ echo form_close();
 
             }
         }
+
         var e = document.getElementById("facul");
         var selected = e.options[e.selectedIndex].value;
 
         xhttp.open('GET','<?php echo base_url(); ?>index.php/UManage_cntrl/ajaxTry/'+selected,true);
         xhttp.send();
+    }
+    
+    function clearDL(){
+        var select = document.getElementById("depDL");
+        var length = select.options.length;
+        for (i = 0; i < length; i++) {
+            select.options[i] = null;
+        }
     }
 </script>
