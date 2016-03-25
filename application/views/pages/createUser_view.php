@@ -112,6 +112,7 @@ echo form_open('UManage_cntrl/insert_user');
 
     echo form_submit('submit', 'Create');
 echo form_close();
+echo $Department;
 ?>
 <script type="text/javascript">
     function updateList(){
@@ -127,7 +128,7 @@ echo form_close();
         var e = document.getElementById("facul");
         var selected = e.options[e.selectedIndex].value;
 
-        xhttp.open('GET',<?php echo base_url(); ?>'index.php/UManage_cntrl/ajaxTry/'+selected,true);
+        xhttp.open('GET',<?php echo base_url(); ?>+'index.php/UManage_cntrl/ajaxTry/'+selected,true);
         xhttp.send();
     }
 </script>
