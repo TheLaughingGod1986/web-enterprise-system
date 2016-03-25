@@ -162,6 +162,7 @@ class UManage_cntrl extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
 
+            $data['message'] = 'Error';
             $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
 
         } elseif($where == 'Staff'){
@@ -219,7 +220,7 @@ class UManage_cntrl extends CI_Controller
     function delete_user(){
         $id = $this->uri->segment(3);
         $this->UManage_model->delete_user($id);
-
+        $data['message'] = 'User deleted';
         $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
     }
 
