@@ -239,6 +239,6 @@ class UManage_cntrl extends CI_Controller
     function ajaxTry(){
         $a = $this->uri->segment(3);
         $data = $this->UManage_model->get_depart($a);
-        return $data;
+        echo json_encode($data);
     }
 }
