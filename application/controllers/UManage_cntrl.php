@@ -1,6 +1,6 @@
 <?php
 
-class UManage_cntrl extends MY_Controller
+class UManage_cntrl extends CI_Controller
 {
     function __construct()
     {
@@ -163,8 +163,7 @@ class UManage_cntrl extends MY_Controller
         if ($this->form_validation->run() == FALSE) {
 
             $data['message'] = 'Error';
-            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
-            $this->layout();
+            redirect('main/externals');
 
         } elseif($where == 'Staff'){
             //Setting values for table columns
