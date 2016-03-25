@@ -5,45 +5,40 @@ echo form_open('UManage_cntrl/insert_user');
 
     echo form_fieldset('User Role');
 
-        if(!isset($opFaculty))
-            $opFaculty = 'empty';
-
-        if(!isset($opDepartment))
-            $opDepartment = 'Choose Faculty 1st';
-
-        $js = 'id="rForm" onChange="reloadForm();"';
-
+        //Role dropdown list
         $opRole = array(
             'Choose One' => 'Choose One',
             'Admin' => 'Admin',
             'EE' => 'EE',
             'Staff' => 'Staff'
         );
+        $js = 'id="rForm" onChange="reloadForm();"';
         echo form_label('Role', 'role');
         echo form_dropdown('role', $opRole, 'role', $js);
         echo form_error('role');
 
-            $facul = array('Choose' => 'Choose Faculty');
-            $dep = array('Choose' => 'Faculty first');
+        //Faculty dropdown list
+        $facul = array('Choose' => 'Choose Faculty');
 
-            foreach($opFaculty as $facs):
+        if(!isset($opFaculty)) {
+            $opFaculty = 'empty';
+        }else {
+            foreach ($opFaculty as $facs):
                 $facul[$facs->FacultyID] = $facs->Faculty_Name;
             endforeach;
+        }
 
-            //foreach($opDepartment as $d):
-                //$dep[$d->DepartmentID] = $d->Department_Name;
-            //endforeach;
+        $js2 = 'id="facul" onChange="updateList();"';
+        echo form_label('Faculty', 'faculty', 'class="staffItem"');
+        echo form_dropdown('faculty', $facul, 'class="staffItem"', $js2);
+        echo form_error('faculty');
 
-            $js2 = 'id="facul" onChange="updateList();"';
-            echo form_label('Faculty', 'faculty', 'class="staffItem"');
-            echo form_dropdown('faculty', $facul, 'class="staffItem"', $js2);
-            echo form_error('faculty');
-
-
-            $dd = array('id'=>'depDL');
-            echo form_label('Department', 'depart', 'class="staffItem"');
-            echo form_dropdown('depart', $dep, 'class="staffItem"', $dd);
-            echo form_error('depart');
+        //Department dropdown list
+        $dep = array();
+        $dd = array('id'=>'depDL');
+        echo form_label('Department', 'depart', 'class="staffItem"');
+        echo form_dropdown('depart', $dep, 'class="staffItem"', $dd);
+        echo form_error('depart');
 
     echo form_fieldset_close();
 
@@ -68,6 +63,7 @@ echo form_open('UManage_cntrl/insert_user');
             'Dr' => 'Dr',
             'Sir' => 'Sir'
         );
+
         echo form_label('Title', 'title');
         echo form_dropdown('Title', $options, 'title');
         echo form_error('title');
@@ -123,8 +119,6 @@ echo form_close();
         xhttp.onreadystatechange = function (){
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 var doc = JSON.parse(xhttp.responseText);
-                console.log(doc);
-                console.log(doc[0].Department_Name);
                 var x = document.getElementById("depDL");
                 var opt = document.createElement("OPTION");
                 for (var w=0; w<doc.length; w++){
@@ -142,7 +136,7 @@ echo form_close();
         xhttp.open('GET','<?php echo base_url(); ?>index.php/UManage_cntrl/ajaxTry/'+selected,true);
         xhttp.send();
     }
-    
+
     function clearDL(){
         var select = document.getElementById("depDL");
         var length = select.options.length;
