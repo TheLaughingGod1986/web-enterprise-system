@@ -112,7 +112,7 @@ echo form_open('UManage_cntrl/insert_user');
 
     echo form_submit('submit', 'Create');
 echo form_close();
-echo $Department->Faculty_ID;
+echo $Department->DepartmentID;
 ?>
 <script type="text/javascript">
     function updateList(){
