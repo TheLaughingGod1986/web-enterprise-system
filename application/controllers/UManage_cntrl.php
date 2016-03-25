@@ -164,7 +164,7 @@ class UManage_cntrl extends CI_Controller
             $this->load->library('../core/MY_Controller');
             $data['message'] = 'Error';
             $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
-            $this->MY_Controller->layout();
+            $this->layout();
 
         } elseif($where == 'Staff'){
             //Setting values for table columns
