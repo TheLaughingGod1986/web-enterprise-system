@@ -123,7 +123,7 @@ echo form_close();
                 var doc = xhttp.response;
                 var x = document.getElementById("depDL");
                 for (var w=0; w>doc.length; w++){
-                    x.options.add(new Option(doc[w].getElementsByTagName('DepartmentID'), doc[w].getElementsByTagName('Department_Name')));
+                    x.options.add(new Option(doc[w].getElementsByTagName('DepartmentID')[0].childNodes[0].nodeValue, doc[w].getElementsByTagName('Department_Name')[0].childNodes[0].nodeValue));
                 }
             }
         }
