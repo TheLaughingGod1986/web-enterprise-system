@@ -112,7 +112,6 @@ echo form_open('UManage_cntrl/insert_user');
 
     echo form_submit('submit', 'Create');
 echo form_close();
-echo $Department->DepartmentID;
 ?>
 <script type="text/javascript">
     function updateList(){
@@ -121,8 +120,11 @@ echo $Department->DepartmentID;
 
         xhttp.onreadystatechange = function (){
             if (xhttp.readyState == 4 && xhttp.status == 200) {
+                var doc = xhttp.response();
                 var x = document.getElementById("depDL");
-                x.options.add(new Option(xhttp.DepartmentID, xhttp.Department_Name));
+                for (var w=0; w>doc.length; w++){
+                    x.options.add(new Option(doc[w].getElementsByTagName(DepartmentID), doc[w].getElementsByTagName(Department_Name)));
+                }
             }
         }
         var e = document.getElementById("facul");
