@@ -124,11 +124,11 @@ echo form_close();
                 console.log(doc);
                 console.log(doc[0].Department_Name);
                 var x = document.getElementById("depDL");
-                var opt = document.createElement("Option");
-                for (var w=0; w>doc.length; w++){
+                var opt = document.createElement("OPTION");
+                for (var w=0; w<doc.length; w++){
                     opt.text = doc[w].Department_Name;
-                    opt.text = doc[w].DepartmentID;
-                    x.options.add(opt, w);
+                    opt.value = doc[w].DepartmentID;
+                    x.options.add(opt);
                 }
 
             }
