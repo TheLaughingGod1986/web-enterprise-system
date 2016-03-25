@@ -120,7 +120,7 @@ echo form_close();
 
         xhttp.onreadystatechange = function (){
             if (xhttp.readyState == 4 && xhttp.status == 200) {
-                var doc = JSON.parse(xhttp.response);
+                var doc = JSON.parse(xhttp.responseText);
                 var x = document.getElementById("depDL");
                 for (var w=0; w>doc.length; w++){
                     x.options.add(new Option(doc[w].DepartmentID, doc[w].Department_Name));
