@@ -128,7 +128,7 @@ echo $Department;
         var e = document.getElementById("facul");
         var selected = e.options[e.selectedIndex].value;
 
-        xhttp.open('GET',<?php echo base_url(); ?>+'index.php/UManage_cntrl/ajaxTry/'+selected,true);
+        xhttp.open('GET','<?php echo base_url(); ?>index.php/UManage_cntrl/ajaxTry/'+selected,true);
         xhttp.send();
     }
 </script>
