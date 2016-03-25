@@ -34,7 +34,7 @@ echo form_open('UManage_cntrl/insert_user');
                 //$dep[$d->DepartmentID] = $d->Department_Name;
             //endforeach;
 
-            $js2 = 'onChange="updateList();"';
+            $js2 = 'id="facul" onChange="updateList();"';
             echo form_label('Faculty', 'faculty', 'class="staffItem"');
             echo form_dropdown('faculty', $facul, 'class="staffItem"', $js2);
             echo form_error('faculty');
@@ -112,4 +112,22 @@ echo form_open('UManage_cntrl/insert_user');
 
     echo form_submit('submit', 'Create');
 echo form_close();
+?>
+<script type="text/javascript">
+    function updateList(){
+        var xhttp;
+        xhttp = new XMLHttpRequest();
 
+        xhttp.onreadystatechange = function (){
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                var x = document.getElementById("depDL");
+                x.options.add(new Option(xhttp.DepartmentID, xhttp.Department_Name));
+            }
+        }
+        var e = document.getElementById("facul");
+        var selected = e.options[e.selectedIndex].value;
+
+        xhttp.open('GET',<?php echo base_url(); ?>'index.php/UManage_cntrl/ajaxTry/'+selected,true);
+        xhttp.send();
+    }
+</script>
