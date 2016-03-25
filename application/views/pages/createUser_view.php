@@ -16,6 +16,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_label('Role', 'role');
         echo form_dropdown('role', $opRole, 'role', $js);
         echo form_error('role');
+        echo '<br/>';
 
         //Faculty dropdown list
         $facul = array('Choose' => 'Choose Faculty');
@@ -39,6 +40,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_label('Department', 'depart', 'class="staffItem"');
         echo form_dropdown('depart', $dep, 'class="staffItem"', $dd);
         echo form_error('depart');
+        echo '<br/>';
 
     echo form_fieldset_close();
 
@@ -46,10 +48,12 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_label('Username', 'username');
         echo form_input('username','','id="username"');
         echo form_error('username');
+        echo '<br/>';
 
         echo form_label('Password', 'apassword');
         echo form_password('password', '', 'id="apassword"');
         echo form_error('apassword');
+        echo '<br/>';
     echo form_fieldset_close();
 
     echo form_fieldset('Personal Information', $attributes2);
@@ -63,34 +67,40 @@ echo form_open('UManage_cntrl/insert_user');
             'Dr' => 'Dr',
             'Sir' => 'Sir'
         );
-
         echo form_label('Title', 'title');
         echo form_dropdown('Title', $options, 'title');
         echo form_error('title');
+        echo '<br/>';
 
         echo form_label('First Name', 'First_Name');
         echo form_input('First_Name',set_value('First_Name'),'id="First_Name"');
         echo form_error('First_Name');
+        echo '<br/>';
 
         echo form_label('Last Name', 'Last_Name');
         echo form_input('Last_Name',set_value('Last_Name'),'id="Last_Name"');
         echo form_error('Last_Name');
+        echo '<br/>';
 
         echo form_label('Address', 'address');
         echo form_input('Address',set_value('address'),'id="address"');
         echo form_error('address');
+        echo '<br/>';
 
         echo form_label('Post-Code', 'postal');
         echo form_input('postal',set_value('postal'),'id="postal"');
         echo form_error('postal');
+        echo '<br/>';
 
         echo form_label('Telephone', 'phone');
         echo form_input('phone',set_value('phone'),'id="phone"');
         echo form_error('phone');
+        echo '<br/>';
 
             echo form_label('HEI', 'hei', 'class="staffItem"');
             echo form_input('hei', set_value('hei'), 'class="staffItem"');
             echo form_error('hei');
+            echo '<br/>';
 
     echo form_fieldset_close();
 
@@ -99,6 +109,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_label('Email', 'email');
         echo form_input('email',set_value('email'),'id="email"');
         echo form_error('email');
+        echo '<br/>';
 
         $newPass = random_string('alnum', 8);
         echo form_label('Password', 'password');

@@ -156,11 +156,13 @@ class UManage_cntrl extends CI_Controller
             $this->form_validation->set_rules($config);
 
         }else{
-
+            $data['message'] = 'Choose a role';
+            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
         }
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('createUser_view');
+
+            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
 
         } elseif($where == 'Staff'){
             //Setting values for table columns
@@ -179,7 +181,7 @@ class UManage_cntrl extends CI_Controller
             $this->UManage_model->insert_user($data, 'staff');
             $data['message'] = 'Staff Created Successfully';
             //Loading View
-            $this->load->view('createUser_view', $data);
+            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
 
         } elseif($where == 'EE'){
             $data = array(
@@ -198,7 +200,7 @@ class UManage_cntrl extends CI_Controller
             $this->UManage_model->insert_user($data, 'external');
             $data['message'] = 'External Examiner Created Successfully';
             //Loading View
-            $this->load->view('createUser_view', $data);
+            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
 
         } else{
             $data = array(
@@ -208,7 +210,7 @@ class UManage_cntrl extends CI_Controller
             $this->UManage_model->insert_user($data, 'login');
             $data['message'] = 'Admin Created Successfully';
             //Loading View
-            $this->load->view('createUser_view', $data);
+            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
         }
 
     }
@@ -218,7 +220,7 @@ class UManage_cntrl extends CI_Controller
         $id = $this->uri->segment(3);
         $this->UManage_model->delete_user($id);
 
-        $this->load->view('UManage_view');
+        $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
     }
 
     //Update users... fetching user from database by id
