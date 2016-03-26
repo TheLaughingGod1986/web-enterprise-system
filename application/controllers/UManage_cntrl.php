@@ -203,7 +203,7 @@ class UManage_cntrl extends MY_Controller
     function getUser_id(){
         $id = $this->uri->segment(3);
         $data['single_user'] = $this->UManage_model->get_user_id($id);
-        $data['all_users'] = $this->Update_model->get_users();
+        $data['all_users'] = $this->UManage_model->get_users();
         $data['message']='User loaded';
 
         $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, true);
