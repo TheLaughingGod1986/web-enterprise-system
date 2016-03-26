@@ -6,7 +6,7 @@
 
         <li>
             <?php echo $users->Last_Name . ", " . $users->First_Name; ?>
-            <a href="<?php echo base_url() . 'index.php/Main/update/' . $users->StaffID; ?>">Edit</a>
+            <a href="<?php echo base_url() . 'index.php/Update_cntrl/update/' . $users->StaffID; ?>">Edit</a>
         </li>
     <?php endforeach;
     else : ?>
