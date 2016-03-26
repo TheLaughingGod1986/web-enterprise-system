@@ -5,7 +5,7 @@
 
         <li>
             <?php echo $users->Last_Name . ", " . $users->First_Name; ?>
-            <a href="<?php echo base_url() . 'index.php/update_cntrl/getUser_id/' . $users->StaffID; ?>">Edit</a>
+            <a href="<?php echo base_url() . 'index.php/UManage_cntrl/getUser_id/' . $users->StaffID; ?>">Edit</a>
         </li>
     <?php endforeach;
     else : ?>
