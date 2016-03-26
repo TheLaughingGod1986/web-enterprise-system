@@ -198,7 +198,8 @@ class UManage_cntrl extends MY_Controller
     function getUser_id(){
         $id = $this->uri->segment(3);
         $this->UManage_model->get_user_id($id);
-        $this->template['middle'] = $this->load->view('pages/createUser_view', true);
+        $this->template['middle'] = $this->load->view('pages/update_view', true);
+        $this->layout();
     }
 
     //Update users... fetching user from database by id
