@@ -192,14 +192,15 @@ class UManage_cntrl extends MY_Controller
         $id = $this->uri->segment(3);
         $this->UManage_model->delete_user($id);
         $data['message'] = 'User deleted';
-        $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+        $this->layout();
     }
 
     function getUser_id(){
         $id = $this->uri->segment(3);
         $this->UManage_model->get_user_id($id);
         $data['message']='User loaded';
-        $this->template['middle'] = $this->load->view('pages/update_view', $data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, true);
         $this->layout();
     }
 
