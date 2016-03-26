@@ -134,7 +134,8 @@ class UManage_cntrl extends MY_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $data['message'] = 'Error';
-            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
+            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+            $this->layout();
 
         } elseif($where == 'Staff'){
             //Setting values for table columns
@@ -153,7 +154,8 @@ class UManage_cntrl extends MY_Controller
             $this->UManage_model->insert_user($data, 'staff');
             $data['message'] = 'Staff Created Successfully';
             //Loading View
-            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
+            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+            $this->layout();
 
         } elseif($where == 'EE'){
             $data = array(
@@ -172,7 +174,8 @@ class UManage_cntrl extends MY_Controller
             $this->UManage_model->insert_user($data, 'external');
             $data['message'] = 'External Examiner Created Successfully';
             //Loading View
-            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
+            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+            $this->layout();
 
         } else{
             $data = array(
@@ -182,7 +185,8 @@ class UManage_cntrl extends MY_Controller
             $this->UManage_model->insert_user($data, 'login');
             $data['message'] = 'Admin Created Successfully';
             //Loading View
-            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
+            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+            $this->layout();
         }
 
     }
@@ -199,8 +203,9 @@ class UManage_cntrl extends MY_Controller
     function getUser_id(){
         $id = $this->uri->segment(3);
         $data['single_user'] = $this->UManage_model->get_user_id($id);
+        $data['all_users'] = $this->Update_model->get_users();
         $data['message']='User loaded';
-         
+
         $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, true);
         $this->layout();
     }

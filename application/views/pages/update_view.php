@@ -28,9 +28,9 @@ if (isset($single_user)) {
 
     if (isset($single_user)) {
             foreach ($single_user as $item):
-                echo form_open('UManage/update_staff'); ?>
+                echo form_open('UManage/update_staff');
 
-                <?php echo form_label('Examiner ID:');
+                echo form_label('Examiner ID:');
                 echo form_error('StaffID'); ?><br/>
                 <?php echo form_input(array('id' => 'StaffID', 'name' => 'StaffID', 'value' => $item->StaffID)); ?>
                 <br/>
@@ -93,7 +93,7 @@ if (isset($single_user)) {
         <h3>Create new user</h3>
         <hr/>
 
-        echo form_label('Title:'); ?><?php echo form_error('Title'); ?><br/>
+        <?php echo form_label('Title:');  echo form_error('Title'); ?><br/>
         <?php echo form_input(array('id' => 'Title', 'name' => 'Title', 'placeholder' => 'Mr./Ms.')); ?>
         <br/>
 
