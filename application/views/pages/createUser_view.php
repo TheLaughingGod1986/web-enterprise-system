@@ -108,7 +108,7 @@ echo form_open('UManage_cntrl/insert_user');
     echo form_fieldset('Login Details', $attributes2);
 
         echo form_label('Email', 'Email');
-        echo form_input('Email',set_value('email'),'id="email"');
+        echo form_input('Email',set_value('Email'),'id="email"');
         echo form_error('Email');
         echo '<br/>';
 
