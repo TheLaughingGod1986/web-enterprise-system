@@ -92,13 +92,6 @@ if (isset($single_user)) {
     echo form_open('UManage_cntrl/insert_user'); ?>
         <h3>Create new user</h3>
         <hr/>
-        <?php if (isset($message)) { ?>
-
-            <h3>Data inserted successfully</h3>
-            <br/>
-
-            <?php
-        }
 
         echo form_label('Title:'); ?><?php echo form_error('Title'); ?><br/>
         <?php echo form_input(array('id' => 'Title', 'name' => 'Title', 'placeholder' => 'Mr./Ms.')); ?>
