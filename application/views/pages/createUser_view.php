@@ -68,9 +68,9 @@ echo form_open('UManage_cntrl/insert_user');
             'Dr' => 'Dr',
             'Sir' => 'Sir'
         );
-        echo form_label('Title', 'title');
-        echo form_dropdown('Title', $options, 'title');
-        echo form_error('title');
+        echo form_label('Title', 'Title');
+        echo form_dropdown('Title', $options, 'Title');
+        echo form_error('Title');
         echo '<br/>';
 
         echo form_label('First Name', 'First_Name');
@@ -83,19 +83,19 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_error('Last_Name');
         echo '<br/>';
 
-        echo form_label('Address', 'address');
-        echo form_input('Address',set_value('address'),'id="address"');
-        echo form_error('address');
+        echo form_label('Address', 'Address');
+        echo form_input('Address',set_value('Address'),'id="address"');
+        echo form_error('Address');
         echo '<br/>';
 
-        echo form_label('Post-Code', 'postal');
-        echo form_input('postal',set_value('postal'),'id="postal"');
-        echo form_error('postal');
+        echo form_label('Post-Code', 'Postal');
+        echo form_input('Postal',set_value('Postal'),'id="postal"');
+        echo form_error('Postal');
         echo '<br/>';
 
-        echo form_label('Telephone', 'phone');
-        echo form_input('phone',set_value('phone'),'id="phone"');
-        echo form_error('phone');
+        echo form_label('Telephone', 'Phone');
+        echo form_input('Phone',set_value('Phone'),'id="phone"');
+        echo form_error('Phone');
         echo '<br/>';
 
             echo form_label('HEI', 'hei', 'class="staffItem"');

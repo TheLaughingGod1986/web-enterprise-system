@@ -25,7 +25,7 @@ class UManage_cntrl extends MY_Controller
 
             $config = array(
                 array(
-                    'field' => 'title',
+                    'field' => 'Title',
                     'label' => 'Title',
                     'rules' => 'required'
                 ),
@@ -40,17 +40,17 @@ class UManage_cntrl extends MY_Controller
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'address',
+                    'field' => 'Address',
                     'label' => 'Address',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'postal',
+                    'field' => 'Postal',
                     'label' => 'Post-Code',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'phone',
+                    'field' => 'Phone',
                     'label' => 'Telephone',
                     'rules' => 'required'
                 ),
