@@ -72,4 +72,9 @@ class UManage_model extends CI_Model{
     {
         $this->db->update($table, $data);
     }
+
+    function delete_user($id){
+        $this->db->where('StaffID', $id);
+        $this->db->delete('staff');
+    }
 }
