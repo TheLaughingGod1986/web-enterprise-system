@@ -28,7 +28,7 @@ if (isset($single_user)) {
 
     if (isset($single_user)) {
             foreach ($single_user as $item):
-                echo form_open('UManage/update_staff');
+                echo form_open('UManage_cntrl/update_staff');
 
                 echo form_label('Examiner ID:');
                 echo form_error('StaffID'); ?><br/>
