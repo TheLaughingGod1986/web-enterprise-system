@@ -1,37 +1,12 @@
 <?php
 
-class UManage_cntrl extends CI_Controller
+class UManage_cntrl extends MY_Controller
 {
     function __construct()
     {
         parent::__construct();
         $this->load->model('UManage_model');
     }
-
-
-//    var $Front_End_data = array();
-//    var $template = array();
-//
-//    public function layout () {
-//        $this->template['header'] = $this->load->view('layout/header', $this->Front_End_data, true);
-//        $this->template['left'] = $this->load->view('layout/left', $this->Front_End_data, true);
-//        $this->load->view('layout/index', $this->template);
-//
-//    }
-
-    //Fetch selected user
-    /*function index()
-    {
-
-        $id = $this->uri->segment(3);
-        $data['all_users'] = $this->UManage_model->get_users();
-        $data['single_user'] = $this->UManage_model->get_user_id($id);
-
-        //Template importation
-        $this->load->view('UManage_view', $data);
-//        $this->middle 'UManage_view' $data; // passing middle to function. change this for different views.
-//        $this->layout();
-    }*/
 
     //Insert users form
     function insert_user() {
@@ -220,8 +195,14 @@ class UManage_cntrl extends CI_Controller
         $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
     }
 
+    function getUser_id(){
+        $id = $this->uri->segment(3);
+        $this->UManage_model->get_user_id($id);
+        $this->template['middle'] = $this->load->view('pages/createUser_view', true);
+    }
+
     //Update users... fetching user from database by id
-    function update_user(){
+    function update_staff(){
         $id = $this->input->post('StaffID');
         $data = array(
             'Email' => $this->input->post('Email'),

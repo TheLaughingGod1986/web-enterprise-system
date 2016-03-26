@@ -18,9 +18,8 @@ class Update_cntrl extends MY_Controller{
     }
 
     //Select the wanted user from table UserACC
-    function get_user_id()
+    function get_user_id($data)
     {
-        $data = $this->uri->segment(3);
         $this->db->where('StaffID', $data);
         $query = $this->db->get('staff');
         return $query->result();

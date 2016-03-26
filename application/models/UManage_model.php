@@ -4,6 +4,13 @@ class UManage_model extends CI_Model{
         parent::__construct();
     }
 
+    //Select the wanted user from table staff
+    function get_user_id($data){
+        $this->db->where('StaffID', $data);
+        $query = $this->db->get('staff');
+        return $query->result();
+    }
+
     //Select every user on table staff
     function get_users(){
         $dbquery = $this->db->get('staff');
@@ -58,13 +65,6 @@ class UManage_model extends CI_Model{
         else{
             return false;
         }
-    }
-
-    //Select the wanted user from table staff
-    function get_user_id($data){
-        $this->db->where('StaffID', $data);
-        $query = $this->db->get('staff');
-        return $query->result();
     }
 
     //Insert users
