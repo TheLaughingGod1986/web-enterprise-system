@@ -51,16 +51,16 @@ class UManage_cntrl extends MY_Controller
                 ),
                 array(
                     'field' => 'Phone',
-                    'label' => 'Telephone',
+                    'label' => 'Phone',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'email',
+                    'field' => 'Email',
                     'label' => 'Email',
                     'rules' => 'required|valid_email'
                 ),
                 array(
-                    'field' => 'password',
+                    'field' => 'Password',
                     'label' => 'Password',
                     'rules' => 'required'
                 )
@@ -72,7 +72,7 @@ class UManage_cntrl extends MY_Controller
 
             $config = array(
                 array(
-                    'field' => 'title',
+                    'field' => 'Title',
                     'label' => 'Title',
                     'rules' => 'required'
                 ),
@@ -87,42 +87,42 @@ class UManage_cntrl extends MY_Controller
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'address',
+                    'field' => 'Address',
                     'label' => 'Address',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'postal',
+                    'field' => 'Postal',
                     'label' => 'Post-Code',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'phone',
+                    'field' => 'Phone',
                     'label' => 'Telephone',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'hei',
+                    'field' => 'Hei',
                     'label' => 'HEI',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'email',
+                    'field' => 'Email',
                     'label' => 'Email',
                     'rules' => 'required|valid_email'
                 ),
                 array(
-                    'field' => 'password',
+                    'field' => 'Password',
                     'label' => 'Password',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'faculty',
+                    'field' => 'Faculty',
                     'label' => 'Faculty',
                     'rules' => 'required'
                 ),
                 array(
-                    'field' => 'depart',
+                    'field' => 'Depart',
                     'label' => 'Department',
                     'rules' => 'required'
                 )

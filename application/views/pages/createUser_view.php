@@ -38,21 +38,21 @@ echo form_open('UManage_cntrl/insert_user');
         //Department dropdown list
         $dep = array();
         $dd = array('id'=>'depDL');
-        echo form_label('Department', 'depart', 'class="staffItem"');
-        echo form_dropdown('depart', $dep, 'class="staffItem"', $dd);
-        echo form_error('depart');
+        echo form_label('Department', 'Depart', 'class="staffItem"');
+        echo form_dropdown('Depart', $dep, 'class="staffItem"', $dd);
+        echo form_error('Depart');
         echo '<br/>';
 
     echo form_fieldset_close();
 
     echo form_fieldset('Admin Login', $attributes1);
         echo form_label('Username', 'username');
-        echo form_input('username','','id="username"');
+        echo form_input('username',set_value('username'),'id="username"');
         echo form_error('username');
         echo '<br/>';
 
         echo form_label('Password', 'apassword');
-        echo form_password('password', '', 'id="apassword"');
+        echo form_password('apassword', '', 'id="apassword"');
         echo form_error('apassword');
         echo '<br/>';
     echo form_fieldset_close();
