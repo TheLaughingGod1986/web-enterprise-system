@@ -155,9 +155,6 @@ class UManage_cntrl extends CI_Controller
 
             $this->form_validation->set_rules($config);
 
-        }else{
-            $data['message'] = 'Choose a role';
-            $this->template['middle'] = $this->load->view('pages/createUser_view',$data, true);
         }
 
         if ($this->form_validation->run() == FALSE) {
