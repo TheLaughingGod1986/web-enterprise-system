@@ -70,11 +70,18 @@ class UManage_model extends CI_Model{
     //Insert users
     function insert_user($data, $table)
     {
-        $this->db->update($table, $data);
+        $this->db->insert($table, $data);
     }
 
     function delete_user($id){
         $this->db->where('StaffID', $id);
         $this->db->delete('staff');
+    }
+
+    //Update database with new data
+    function update_user($id, $data)
+    {
+        $this->db->where('StaffID', $id);
+        $this->db->update('staff', $data);
     }
 }

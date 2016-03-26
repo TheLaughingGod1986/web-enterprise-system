@@ -213,7 +213,7 @@ class UManage_cntrl extends MY_Controller
     //Update users... fetching user from database by id
     function update_staff(){
         $id = $this->input->post('StaffID');
-        $data = array(
+        $data2 = array(
             'Email' => $this->input->post('Email'),
             'Password' => $this->input->post('Password'),
             'First_Name' => $this->input->post('First_Name'),
@@ -223,6 +223,11 @@ class UManage_cntrl extends MY_Controller
             'Address' => $this->input->post('Address'),
             'Title' => $this->input->post('Title')
         );
+        $this->UManage_model->update_user($id, $data2);
+
+        $data['all_users'] = $this->UManage_model->get_users();
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/update_view', $data, true);
+        $this->layout();
     }
 
     function ajaxTry(){
