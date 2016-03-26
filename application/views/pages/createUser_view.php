@@ -98,24 +98,24 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_error('Phone');
         echo '<br/>';
 
-            echo form_label('HEI', 'hei', 'class="staffItem"');
-            echo form_input('hei', set_value('hei'), 'class="staffItem"');
-            echo form_error('hei');
+            echo form_label('HEI', 'Hei', 'class="staffItem"');
+            echo form_input('Hei', set_value('Hei'), 'class="staffItem"');
+            echo form_error('Hei');
             echo '<br/>';
 
     echo form_fieldset_close();
 
     echo form_fieldset('Login Details', $attributes2);
 
-        echo form_label('Email', 'email');
-        echo form_input('email',set_value('email'),'id="email"');
-        echo form_error('email');
+        echo form_label('Email', 'Email');
+        echo form_input('Email',set_value('email'),'id="email"');
+        echo form_error('Email');
         echo '<br/>';
 
         $newPass = random_string('alnum', 8);
-        echo form_label('Password', 'password');
-        echo form_password('password', $newPass,'id="password"');
-        echo form_error('password');
+        echo form_label('Password', 'Password');
+        echo form_password('Password', $newPass,'id="password"');
+        echo form_error('Password');
     echo form_fieldset_close();
 
     echo form_submit('submit', 'Create');

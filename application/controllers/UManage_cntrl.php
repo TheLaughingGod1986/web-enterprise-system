@@ -144,8 +144,8 @@ class UManage_cntrl extends MY_Controller
                 'Password' => $this->input->post('Password'),
                 'First_Name' => $this->input->post('First_Name'),
                 'Last_Name' => $this->input->post('Last_Name'),
-                'Postcode' => $this->input->post('Postcode'),
-                'Telephone' => $this->input->post('Telephone'),
+                'Postcode' => $this->input->post('Postal'),
+                'Telephone' => $this->input->post('Phone'),
                 'Address' => $this->input->post('Address'),
                 'Title' => $this->input->post('Title')
             );
