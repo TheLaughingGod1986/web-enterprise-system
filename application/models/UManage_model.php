@@ -84,4 +84,9 @@ class UManage_model extends CI_Model{
         $this->db->where('StaffID', $id);
         $this->db->update('staff', $data);
     }
+
+    //insert token
+    // function insert_token($id, $table){
+    //     $this->db->insert($table, $data);        
+    // }
 }
