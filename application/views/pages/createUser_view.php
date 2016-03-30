@@ -2,6 +2,7 @@
 $this->load->helper('string');
 $attributes1 = array('class' => 'adminField');
 $attributes2 = array('class' => 'staffField');
+$attributes3 = array('class' => 'staffItem');
 echo form_open('UManage_cntrl/insert_user');
 
     echo form_fieldset('User Role');
@@ -98,7 +99,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_error('Phone');
         echo '<br/>';
 
-            echo form_label('HEI', 'Hei', 'class="staffItem"');
+            echo form_label('HEI', 'Hei', $attributes3);
             echo form_input('Hei', set_value('Hei'), 'class="staffItem"');
             echo form_error('Hei');
             echo '<br/>';
@@ -116,6 +117,16 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_label('Password', 'Password');
         echo form_password('Password', $newPass,'id="password"');
         echo form_error('Password');
+
+        $level = array(
+            'none'=>'Choose one',
+            '1'=>'Level 1',
+            '2'=>'Level 2',
+            '3'=>'Level 3'
+        );
+        echo form_label('Level', 'Level');
+        echo form_dropdown('Level', $level, 'none', $attributes3);
+        echo form_error('Level');
     echo form_fieldset_close();
 
     echo form_submit('submit', 'Create');
