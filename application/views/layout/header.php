@@ -10,13 +10,15 @@
            }
 
            else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='1') {
-               echo "<h1>Staff lvl 1 Portal - Faculty</h1>";
+               echo "<h1>Program leader Portal - Faculty</h1>";
            }
+
            else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='2') {
-               echo "<h1>Staff lvl 2 Portal - Faculty</h1>";
+               echo "<h1>Pro vice chancellery Portal - Faculty</h1>";
            }
+
            else if (!isset($this->session->is_logged_staff, $this->session->RoleID ) && $this->session->RoleID =='3') {
-               echo "<h1>Staff lvl 3 Portal - Faculty</h1>";
+               echo "<h1>Director of learning and qualit Portal - Faculty</h1>";
            }
 
            else {
