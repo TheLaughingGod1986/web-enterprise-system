@@ -25,7 +25,7 @@ class Main extends MY_Controller
 
     function reports()
     {
-        $this->middle = 'pages/reports_view';
+        $this->middle = 'pages/allusers_view';
         $this->layout();
         // no page yet made
     }

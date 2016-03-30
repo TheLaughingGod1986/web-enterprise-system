@@ -16,7 +16,7 @@
     <?php if ($this->session->is_logged_admin) { ?>
         <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
         <li role="presentation"><?php echo anchor('main/externals', 'Externals'); ?></li>
-        <li role="presentation"><a href="#">Reports</a></li>
+        <li role="presentation"><?php echo anchor('main/reports', 'Reports'); ?></li>
         <li role="presentation"><a href="#">Responses</a></li>
         <li role="presentation"><a href="#">Recommendations</a></li>
         <li role="presentation"><a href="#">PSRB</a></li>

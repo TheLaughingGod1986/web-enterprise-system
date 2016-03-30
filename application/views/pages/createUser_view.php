@@ -1,22 +1,23 @@
 <?php
 $this->load->helper('string');
 $attributes1 = array('class' => 'adminField');
-$attributes2 = array('class' => 'staffField');
+$attributes2 = array('class' => 'loginField');
 $attributes3 = array('class' => 'staffItem');
+$attributes4 = array('class' => 'eeItem');
 echo form_open('UManage_cntrl/insert_user');
 
     echo form_fieldset('User Role');
 
         //Role dropdown list
         $opRole = array(
-            'Choose One' => 'Choose One',
+            'Choose' => 'Choose One',
             'Admin' => 'Admin',
             'EE' => 'EE',
             'Staff' => 'Staff'
         );
         $js = 'id="rForm" onChange="reloadForm();"';
         echo form_label('Role', 'role');
-        echo form_dropdown('role', $opRole, 'role', $js);
+        echo form_dropdown('role', $opRole, 'Choose', $js);
         echo form_error('role');
         echo '<br/>';
 
@@ -31,7 +32,7 @@ echo form_open('UManage_cntrl/insert_user');
             endforeach;
         }
 
-        $js2 = 'id="facul" onChange="updateList();"';
+        $js2 = 'class="eeItem" id="facul" onChange="updateList();"';
         echo form_label('Faculty', 'faculty', 'class="staffItem"');
         echo form_dropdown('faculty', $facul, 'class="staffItem"', $js2);
         echo form_error('faculty');
@@ -100,7 +101,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo '<br/>';
 
             echo form_label('HEI', 'Hei', $attributes3);
-            echo form_input('Hei', set_value('Hei'), 'class="staffItem"');
+            echo form_input('Hei', set_value('Hei'), $attributes4);
             echo form_error('Hei');
             echo '<br/>';
 
@@ -139,10 +140,12 @@ echo form_close();
         var xhttp;
         xhttp = new XMLHttpRequest();
 
+        var x = document.getElementById("depDL");
+        x.style.display = "block";
+
         xhttp.onreadystatechange = function (){
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 var doc = JSON.parse(xhttp.responseText);
-                var x = document.getElementById("depDL");
                 var opt = document.createElement("OPTION");
                 for (var w=0; w<doc.length; w++){
                     opt.text = doc[w].Department_Name;

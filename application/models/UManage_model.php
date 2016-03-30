@@ -86,6 +86,15 @@ class UManage_model extends CI_Model{
         $this->db->update('staff', $data);
     }
 
+    //get them all from 3 tables
+    function get_3tables($src){
+        $query("SELECT *
+                FROM staff, external, Login
+                WHERE staff.First_Name LIKE %$src% OR staff.Last_Name LIKE %$src% OR external.First_Name LIKE %$src% OR external.Last_Name OR Login.Username");
+        $result = $this->db->query($query);
+        return $result->result();
+    }
+
     //insert token
     // function insert_token($id, $table){
     //     $this->db->insert($table, $data);        
