@@ -1,9 +1,11 @@
 <?php
+    form_open();
     $js = 'id="search" onkeyup="magicSearch()"';
     form_label('Search', 'search');
     form_input('search','',$js);
     echo '<br/>';
     echo '<hr/>';
+    form_close();
 ?>
 
 <ul id="user_list">
