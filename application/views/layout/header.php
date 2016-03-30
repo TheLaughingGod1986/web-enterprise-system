@@ -15,7 +15,7 @@
            else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='2') {
                echo "<h1>Staff lvl 2 Portal - Faculty</h1>";
            }
-           else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='3') {
+           else if (!isset($this->session->is_logged_staff, $this->session->RoleID ) && $this->session->RoleID =='3') {
                echo "<h1>Staff lvl 3 Portal - Faculty</h1>";
            }
 
