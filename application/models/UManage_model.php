@@ -88,9 +88,9 @@ class UManage_model extends CI_Model{
 
     //get them all from 3 tables
     function get_3tables($src){
-        $query("SELECT *
+        $query = "SELECT *
                 FROM staff, external, Login
-                WHERE staff.First_Name LIKE %$src% OR staff.Last_Name LIKE %$src% OR external.First_Name LIKE %$src% OR external.Last_Name OR Login.Username");
+                WHERE staff.First_Name LIKE %$src% OR staff.Last_Name LIKE %$src% OR external.First_Name LIKE %$src% OR external.Last_Name OR Login.Username";
         $result = $this->db->query($query);
         return $result->result();
     }
