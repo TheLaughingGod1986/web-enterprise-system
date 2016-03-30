@@ -31,9 +31,17 @@ else {
     echo form_submit('submit', 'Login');
     echo form_close();
 
-    echo "<h3>Staff Login</h3>";
+    echo "<h3>Staff Login LVL 1</h3>";
     echo "email: mail@mail.com<br>";
     echo "pass: aaa";
+
+    echo "<h3>Staff Login LVL 2</h3>";
+    echo "email: kotd@mail.com<br>";
+    echo "pass: asdajshdajhsd";
+
+    echo "<h3>Staff Login LVL 3</h3>";
+    echo "email: del@gmail.comm<br>";
+    echo "pass: fruititititi";
 
     echo form_open('Login_cntrl/staff_login');
     echo form_input('Email', 'Email');
