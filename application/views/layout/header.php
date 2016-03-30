@@ -9,8 +9,14 @@
                echo "<h1>External Portal - Faculty </h1>";
            }
 
-           else if ($this->session->is_logged_staff) {
-               echo "<h1>Staff Portal - Faculty</h1>";
+           else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='1') {
+               echo "<h1>Staff lvl 1 Portal - Faculty</h1>";
+           }
+           else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='2') {
+               echo "<h1>Staff lvl 2 Portal - Faculty</h1>";
+           }
+           else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='3') {
+               echo "<h1>Staff lvl 3 Portal - Faculty</h1>";
            }
 
            else {
