@@ -241,4 +241,10 @@ class UManage_cntrl extends MY_Controller
         $data = $this->UManage_model->get_depart($a);
         echo json_encode($data);
     }
+
+    function ajaxSearch(){
+        $a = $this->uri->segment(3);
+        $data = $this->UManage_model->get_3tables($a);
+        echo json_encode($data);
+    }
 }
