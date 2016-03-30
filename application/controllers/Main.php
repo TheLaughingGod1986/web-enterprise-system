@@ -25,7 +25,9 @@ class Main extends MY_Controller
 
     function reports()
     {
-        $this->middle = 'pages/allusers_view';
+        $this->load->model('UManage_model');
+        $data['all_users'] = $this->Update_model->get_users();
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/allusers_view', $data, true);
         $this->layout();
         // no page yet made
     }
