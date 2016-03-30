@@ -147,7 +147,8 @@ class UManage_cntrl extends MY_Controller
                 'Postcode' => $this->input->post('Postal'),
                 'Telephone' => $this->input->post('Phone'),
                 'Address' => $this->input->post('Address'),
-                'Title' => $this->input->post('Title')
+                'Title' => $this->input->post('Title'),
+                'RoleID'=>$this->input->post('Level')
             );
 
             //Insert into table staff
@@ -156,7 +157,7 @@ class UManage_cntrl extends MY_Controller
 
             //Insert into token table
             //$this->UManage_model->insert_token($data->Email, 'token');
-            mail($data->Email, 'Email Verification & Password Update', 'Email:' . $data->Email . '\nPassword:' . $data->Password . '\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK');
+            //mail($data->Email, 'Email Verification & Password Update', 'Email:' . $data->Email . '\nPassword:' . $data->Password . '\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK');
 
             //Loading View
             $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);

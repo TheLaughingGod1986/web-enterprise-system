@@ -67,18 +67,19 @@ class UManage_model extends CI_Model{
         }
     }
 
-    //Insert users
+    //Create EE/Admin/Staff
     function insert_user($data, $table)
     {
         $this->db->insert($table, $data);
     }
 
+    //Delete staff
     function delete_user($id){
         $this->db->where('StaffID', $id);
         $this->db->delete('staff');
     }
 
-    //Update database with new data
+    //Update staff
     function update_user($id, $data)
     {
         $this->db->where('StaffID', $id);
