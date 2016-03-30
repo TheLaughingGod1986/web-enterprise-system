@@ -1,4 +1,5 @@
 <?php
+    $this->load->helper('string');
     form_open('UManage/ajaxSearch');
     $js = 'id="search" onkeyup="magicSearch()"';
     form_label('Search', 'search');
