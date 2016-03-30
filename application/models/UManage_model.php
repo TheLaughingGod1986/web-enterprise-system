@@ -90,7 +90,7 @@ class UManage_model extends CI_Model{
     function get_3tables($src){
         $query = "SELECT *
                 FROM staff, external, Login
-                WHERE staff.First_Name LIKE %$src% OR staff.Last_Name LIKE %$src% OR external.First_Name LIKE %$src% OR external.Last_Name OR Login.Username LIKE %$src%";
+                WHERE staff.First_Name LIKE '%$src%' OR staff.Last_Name LIKE '%$src%' OR external.First_Name LIKE '%$src%' OR external.Last_Name LIKE '%$src%' OR Login.Username LIKE '%$src%'";
         $result = $this->db->query($query);
         return $result->result();
     }
