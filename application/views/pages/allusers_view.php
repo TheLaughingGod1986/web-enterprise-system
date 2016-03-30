@@ -1,5 +1,5 @@
 <?php
-    form_open();
+    form_open('UManage/ajaxSearch');
     $js = 'id="search" onkeyup="magicSearch()"';
     form_label('Search', 'search');
     form_input('search','',$js);
@@ -12,8 +12,7 @@
     <?php if (isset($all_users)) : foreach ($all_users as $users) : ?>
         <li>
             <?php echo $users->Last_Name . ", " . $users->First_Name; ?>
-            [<a href="<?php echo base_url() . 'index.php/UManage_cntrl/getUser_id/' . $users->StaffID; ?>">Edit</a>] - [
-            <a href="<?php echo base_url() . 'index.php/UManage_cntrl/delete_user/' . $user->StaffID; ?>">Delete</a>]
+            [<a href="<?php echo base_url() . 'index.php/UManage_cntrl/getUser_id/' . $users->StaffID; ?>">Edit</a>] - [ <a href="<?php echo base_url() . 'index.php/UManage_cntrl/delete_user/' . $users->StaffID; ?>">Delete</a>]
         </li>
     <?php endforeach;
     else : ?>
