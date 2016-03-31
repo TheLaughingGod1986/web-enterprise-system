@@ -138,71 +138,71 @@ class UManage_cntrl extends MY_Controller
             $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
             $this->layout();
 
-        } elseif($where == 'Staff'){
-            //Setting values for table columns
-            $data = array(
-                'Email' => $this->input->post('Email'),
-                'Password' => $this->input->post('Password'),
-                'First_Name' => $this->input->post('First_Name'),
-                'Last_Name' => $this->input->post('Last_Name'),
-                'Postcode' => $this->input->post('Postal'),
-                'Telephone' => $this->input->post('Phone'),
-                'Address' => $this->input->post('Address'),
-                'Title' => $this->input->post('Title'),
-                'RoleID'=>$this->input->post('Level')
-            );
+        } else {
+	        if($where == 'Staff'){
+	            //Setting values for table columns
+	            $data = array(
+	                'Email' => $this->input->post('Email'),
+	                'Password' => $this->input->post('Password'),
+	                'First_Name' => $this->input->post('First_Name'),
+	                'Last_Name' => $this->input->post('Last_Name'),
+	                'Postcode' => $this->input->post('Postal'),
+	                'Telephone' => $this->input->post('Phone'),
+	                'Address' => $this->input->post('Address'),
+	                'Title' => $this->input->post('Title'),
+	                'RoleID'=>$this->input->post('Level')
+	            );
 
-            //Insert into table staff
-            $this->UManage_model->insert_user($data, 'staff');
-            $data['message'] = 'Staff Created Successfully';
+	            //Insert into table staff
+	            $this->UManage_model->insert_user($data, 'staff');
+	            $data['message'] = 'Staff Created Successfully';
 
-            //Insert into token table
-            //$this->UManage_model->insert_token($data->Email, 'token');
+	            //Insert into token table
+	            //$this->UManage_model->insert_token($data->Email, 'token');
 
-            //Loading View
-            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
-            $this->layout();
+	            //Loading View
+	            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+	            $this->layout();
 
-        } elseif($where == 'EE'){
-            $data = array(
-                'Email' => $this->input->post('Email'),
-                'Password' => $this->input->post('Password'),
-                'First_Name' => $this->input->post('First_Name'),
-                'Last_Name' => $this->input->post('Last_Name'),
-                'Postcode' => $this->input->post('Postcode'),
-                'Telephone' => $this->input->post('Telephone'),
-                'HEI' => $this->input->post('hei'),
-                'Address' => $this->input->post('Address'),
-                'Title' => $this->input->post('Title'),
-                'Faculty' => $this->input->post('faculty'),
-                'Department' => $this->input->post('depart')
-            );
-            $this->UManage_model->insert_user($data, 'external');
-            $data['message'] = 'External Examiner Created Successfully';
+	        } elseif($where == 'EE'){
+	            $data = array(
+	                'Email' => $this->input->post('Email'),
+	                'Password' => $this->input->post('Password'),
+	                'First_Name' => $this->input->post('First_Name'),
+	                'Last_Name' => $this->input->post('Last_Name'),
+	                'Postcode' => $this->input->post('Postcode'),
+	                'Telephone' => $this->input->post('Telephone'),
+	                'HEI' => $this->input->post('hei'),
+	                'Address' => $this->input->post('Address'),
+	                'Title' => $this->input->post('Title'),
+	                'Faculty' => $this->input->post('faculty'),
+	                'Department' => $this->input->post('depart')
+	            );
+	            $this->UManage_model->insert_user($data, 'external');
+	            $data['message'] = 'External Examiner Created Successfully';
 
-            $this->email->from('noreply@benoats.co', 'University of Greenwich');
+	            //Loading View
+	            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+	            $this->layout();
+
+	        } else{
+	            $data = array(
+	                'Username' => $this->input->post('username'),
+	                'Password' => $this->input->post('Password')
+	            );
+	            $this->UManage_model->insert_user($data, 'login');
+	            $data['message'] = 'Admin Created Successfully';
+	            //Loading View
+	            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
+	            $this->layout();
+	        }
+	        $this->email->from('noreply@benoats.co', 'University of Greenwich');
 			$this->email->to($data->Email); 
 			$this->email->subject('Email Verification & Password Update');
 			$this->email->message('Email:' . $data->Email . '\nPassword:' . $data->Password . '\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK');	
 
 			$this->email->send();
-
-            //Loading View
-            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
-            $this->layout();
-
-        } else{
-            $data = array(
-                'Username' => $this->input->post('username'),
-                'Password' => $this->input->post('Password')
-            );
-            $this->UManage_model->insert_user($data, 'login');
-            $data['message'] = 'Admin Created Successfully';
-            //Loading View
-            $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
-            $this->layout();
-        }
-
+		}
     }
 
     //Delete selected user from database
