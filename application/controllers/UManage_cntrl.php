@@ -158,6 +158,13 @@ class UManage_cntrl extends MY_Controller
 
             //Insert into token table
             //$this->UManage_model->insert_token($data->Email, 'token');
+            $this->email->from('noreply@benoats.co', 'University of Greenwich');
+			$this->email->to($data->Email); 
+
+			$this->email->subject('Email Verification & Password Update');
+			$this->email->message('Email:' . $data->Email . '\nPassword:' . $data->Password . '\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK');	
+
+			$this->email->send();
 
             //Loading View
             $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
@@ -182,6 +189,7 @@ class UManage_cntrl extends MY_Controller
 
             $this->email->from('noreply@benoats.co', 'University of Greenwich');
 			$this->email->to($data->Email); 
+
 			$this->email->subject('Email Verification & Password Update');
 			$this->email->message('Email:' . $data->Email . '\nPassword:' . $data->Password . '\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK');	
 
