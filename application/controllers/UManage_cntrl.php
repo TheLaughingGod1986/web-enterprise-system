@@ -174,8 +174,8 @@ class UManage_cntrl extends MY_Controller
                 'HEI' => $this->input->post('hei'),
                 'Address' => $this->input->post('Address'),
                 'Title' => $this->input->post('Title'),
-                'Faculty' => $this->input->post('faculty'),
-                'Department' => $this->input->post('depart')
+                'FacultyID' => $this->input->post('faculty'),
+                'DepartmentID' => $this->input->post('depart')
             );
             $this->UManage_model->insert_user($data, 'external');
             $data['message'] = 'External Examiner Created Successfully';
