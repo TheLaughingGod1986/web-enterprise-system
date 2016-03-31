@@ -164,7 +164,7 @@ class UManage_cntrl extends MY_Controller
 			$this->email->to($email);
 
 			$this->email->subject('Email Verification & Password Update');
-			$this->email->message('Email:' . $email . '\nPassword:' . $pass . '\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK');
+			$this->email->message("Email: " . $email . "\nPassword: " . $pass . "\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK");
 
 			$this->email->send();
 
@@ -196,7 +196,7 @@ class UManage_cntrl extends MY_Controller
             $this->email->to($email);
 
             $this->email->subject('Email Verification & Password Update');
-            $this->email->message('Email:' . $email . '\nPassword:' . $pass . '\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK');
+            $this->email->message("Email: " . $email . "\nPassword: " . $pass . "\n\nThe link below will direct you to where you will be able to update your password to ensure you do not forget it\n A LINK");
 
             $this->email->send();
 
