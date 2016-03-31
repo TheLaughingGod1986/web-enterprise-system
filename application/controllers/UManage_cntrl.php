@@ -130,7 +130,6 @@ class UManage_cntrl extends MY_Controller
             );
 
             $this->form_validation->set_rules($config);
-
         }
 
         if ($this->form_validation->run() == FALSE) {
