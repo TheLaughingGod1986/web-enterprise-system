@@ -32,9 +32,9 @@ echo form_open('UManage_cntrl/insert_user');
             endforeach;
         }
 
-        $js2 = 'class="eeItem" id="facul" onChange="updateList();"';
-        echo form_label('Faculty', 'faculty', 'class="staffItem"');
-        echo form_dropdown('faculty', $facul, 'class="staffItem"', $js2);
+        $js2 = 'id="facul" onChange="updateList();"';
+        echo form_label('Faculty', 'faculty', 'class="eeItem"');
+        echo form_dropdown('faculty', $facul, 'class="eeItem"', $js2);
         echo form_error('faculty');
 
         //Department dropdown list
@@ -100,7 +100,7 @@ echo form_open('UManage_cntrl/insert_user');
         echo form_error('Phone');
         echo '<br/>';
 
-            echo form_label('HEI', 'Hei', $attributes3);
+            echo form_label('HEI', 'Hei', $attributes4);
             echo form_input('Hei', set_value('Hei'), $attributes4);
             echo form_error('Hei');
             echo '<br/>';
