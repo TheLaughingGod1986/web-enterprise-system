@@ -13,7 +13,6 @@ class Main extends MY_Controller
     {
         $data = array();
 //        $this->middle = 'pages/home_view';
-        $this->layout();
         
         if($query = $this->reports_model->get_report())
         {
