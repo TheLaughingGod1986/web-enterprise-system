@@ -28,9 +28,7 @@ class Main extends MY_Controller
 
             if ($query = $this->report_model->create_report()) {
 
-                $this->middle = '<script>alert("Congratulations, You Completed Your Report");
-window.location.href=\'admin/ahm/panel\';
-</script>';
+                $this->middle = '<script> prompt ("Congratulations, You Completed Your Report");</script>';
                 $this->layout();
 
             } else {
