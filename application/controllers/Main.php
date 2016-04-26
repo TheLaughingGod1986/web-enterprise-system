@@ -28,7 +28,9 @@ class Main extends MY_Controller
 
             if ($query = $this->report_model->create_report()) {
 
-                $this->middle = 'Congratulations, You Completed Your Report';
+                $this->middle = '<script>alert("Congratulations, You Completed Your Report");
+window.location.reload;
+</script>';
                 $this->layout();
 
             } else {
