@@ -32,14 +32,13 @@ class Main extends MY_Controller
 
             if ($query = $this->report_model->create_report())
             {
-                echo '<script>alert("yeah mother fucker! report added.");</script>';
-
+                $this->middle = '<script>alert("yeah mother fucker! report added.");</script>';
                 $this->layout();
             }
             else
             {
                 echo '<script>alert("Im sorry, something went wrong. Please Try Again.");</script>';
-                
+
                 $this->layout();
             }
         }

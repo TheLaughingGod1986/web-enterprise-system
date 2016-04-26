@@ -14,8 +14,7 @@ class Report_model extends CI_Model {
         $this->load->helper('date');
 
         $new_report = array(
-            'Report_Name' => $this->input->post('report_name'),
-          
+            'Report_Name' => $this->input->post('report_name')
         );
 
         $insert = $this->db->insert('report', $new_report);
