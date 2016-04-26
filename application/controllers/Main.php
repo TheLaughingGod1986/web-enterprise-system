@@ -20,7 +20,7 @@ class Main extends MY_Controller
             $data['reports'] = $query;
         }
 
-        $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data);
+        $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data, true);
         $this->layout();
     
     }
