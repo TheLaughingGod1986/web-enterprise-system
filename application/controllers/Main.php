@@ -28,7 +28,7 @@ class Main extends MY_Controller
 
             if ($query = $this->report_model->create_report()) {
 
-                $this->middle = '<script>alert("yeah mother fucker! report added.");</script>';
+                $this->middle = '<script>alert("Congratulations, You Completed Your Report");</script>';
                 $this->middle = 'index';
 
 
