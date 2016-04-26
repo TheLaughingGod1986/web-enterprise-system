@@ -6,7 +6,7 @@ if ($this->session->is_logged_admin) {
 ?>
 
 <div class="col-sm-4">
-        <div id="login_form">
+       
             <legend>Add New Report</legend>
             <?php
             echo form_open('main/create_report');
@@ -30,16 +30,17 @@ if ($this->session->is_logged_admin) {
             }
             ?>
 </div>
-</div>
-
+    <div class="col-sm-4">
     <?php if(isset($reports)) : foreach($reports as $row) : ?>
         <h2><?php echo $row->Report_Name; ?></h2>
         <?php endforeach; ?>
         
         <?php else : ?>
-        <h2>Piss Off</h2>
+        <h2>No Reports</h2>
         <?php endif; ?>
+    </div>
     <?php
+    
 }
 
 else if ($this->session->is_logged_external) {

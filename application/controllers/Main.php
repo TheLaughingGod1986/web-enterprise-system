@@ -31,7 +31,7 @@ class Main extends MY_Controller
         $this->form_validation->set_rules('report_name', 'report_name', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->session->set_flashdata('message', 'You fucked up');
+            $this->session->set_flashdata('message', 'Im sorry, That is not right');
             redirect('main/index');
         } else {
 
