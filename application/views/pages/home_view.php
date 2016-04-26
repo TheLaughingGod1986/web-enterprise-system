@@ -15,14 +15,8 @@ if ($this->session->is_logged_admin) {
                 'id' => 'report_name',
                 'placeholder' => 'Report Name',
             );
-            $report_message = array(
-                'name' => 'report_message',
-                'id' => 'report_message',
-                'placeholder' => 'Your report message',
-            );
            
             echo form_input($report_name);
-            echo form_input($report_message);
             echo form_submit('submit', 'Add Report')
             ?>
 <?php echo validation_errors('<p class="error"/>'); ?>
