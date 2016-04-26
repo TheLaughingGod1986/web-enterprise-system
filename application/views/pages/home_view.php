@@ -31,6 +31,14 @@ if ($this->session->is_logged_admin) {
             ?>
 </div>
 </div>
+
+    <?php if(isset($reports)) : foreach($reports as $row) : ?>
+        <h2><?php echo $row->Record_Name; ?></h2>
+        <?php endforeach; ?>
+        
+        <?php else : ?>
+        <h2>Piss Off</h2>
+        <?php endif; ?>
     <?php
 }
 
