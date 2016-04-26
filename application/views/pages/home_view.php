@@ -26,17 +26,17 @@ if ($this->session->is_logged_admin) {
             echo form_submit('submit', 'Add Report')
             ?>
 <?php echo validation_errors('<p class="error"/>'); ?>
+            <?php
+            if ($this->session->flashdata('message')) {
+                ?>
+                <div class="message flash">
+                    <?php echo $this->session->flashdata('message'); ?>
+                </div>
+                <?php
+            }
+            ?>
 </div>
 </div>
-    <script>
-        // assumes you're using jQuery
-        $(document).ready(function() {
-            $('.confirm-div').hide();
-            <?php if($this->session->flashdata('msg')){ ?>
-            $('.confirm-div').html('<?php echo $this->session->flashdata('msg'); ?>').show();
-        });
-        <?php } ?>
-    </script>
     <?php
 }
 
