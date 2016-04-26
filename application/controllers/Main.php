@@ -51,6 +51,10 @@ class Main extends MY_Controller
         }
     }
 
+    function comments()
+    {
+        echo "testing";
+    }
 
     function externals()
     {
