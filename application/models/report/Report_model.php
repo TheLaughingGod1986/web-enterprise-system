@@ -18,7 +18,7 @@ class Report_model extends CI_Model {
           
         );
 
-        $insert = $this->db->insert('main', $new_report);
+        $insert = $this->db->insert('report', $new_report);
         return $insert;
     }
 }
