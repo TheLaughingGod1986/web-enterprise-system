@@ -7,7 +7,7 @@ if ($this->session->is_logged_admin) {
 
 <div class="col-sm-4">
         <div id="login_form">
-            <legend>Account Information</legend>
+            <legend>Add New Report</legend>
             <?php
             echo form_open('main/create_report');
             $report_name = array(
