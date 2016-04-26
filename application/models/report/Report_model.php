@@ -23,7 +23,7 @@ class Report_model extends CI_Model {
     
     function get_report()
     {
-        $query = $this->db->get('reports');
+        $query = $this->db->get('report');
         return $query->result();
     }
 }
