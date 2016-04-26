@@ -21,6 +21,7 @@ class Main extends MY_Controller
         }
 
         $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data);
+        $this->layout();
     
     }
     function create_report()
