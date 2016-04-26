@@ -29,7 +29,7 @@ class Main extends MY_Controller
             if ($query = $this->report_model->create_report()) {
 
 //                $this->middle = 'add_report_successfull';
-                $this->session->set_flashdata('message', 'kevin the cunt');
+                $this->set_flashdata('message_name', 'This is my message');
                 redirect('main/index');
                 $this->layout();
 
