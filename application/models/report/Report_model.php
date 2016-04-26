@@ -21,7 +21,7 @@ class Report_model extends CI_Model {
         return $insert;
     }
     
-    function get_reports()
+    function get_report()
     {
         $query = $this->db->get('reports');
         return $query->result();
