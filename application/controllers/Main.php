@@ -21,8 +21,8 @@ class Main extends MY_Controller
         $this->form_validation->set_rules('report_name', 'report_name', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->middle = 'main'; // return page will validation error
-            $this->layout();
+            $this->session->set_flashdata('message', 'You fucked up');
+            redirect('main/index');
         } else {
             $this->load->model('report/report_model');
 
