@@ -6,14 +6,23 @@ class Main extends MY_Controller
     {
         parent::__construct();
         $this->load->helper('array');
+        $this->load->model('report/report_model');
     }
 
     function index()
     {
-        $this->middle = 'pages/home_view';
+        $data = array();
+//        $this->middle = 'pages/home_view';
         $this->layout();
-    }
+        
+        if($query = $this->reports_model->get_report())
+        {
+            $data['reports'] = $query;
+        }
 
+        $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data);
+    
+    }
     function create_report()
     {
         $this->load->library('form_validation');
@@ -24,7 +33,6 @@ class Main extends MY_Controller
             $this->session->set_flashdata('message', 'You fucked up');
             redirect('main/index');
         } else {
-            $this->load->model('report/report_model');
 
             if ($query = $this->report_model->create_report()) {
 

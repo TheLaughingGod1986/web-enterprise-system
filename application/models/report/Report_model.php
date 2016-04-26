@@ -20,4 +20,10 @@ class Report_model extends CI_Model {
         $insert = $this->db->insert('report', $new_report);
         return $insert;
     }
+    
+    function get_reports()
+    {
+        $query = $this->db->get('reports');
+        return $query->result();
+    }
 }
