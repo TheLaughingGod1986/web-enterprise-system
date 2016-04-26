@@ -29,7 +29,7 @@ class Main extends MY_Controller
             if ($query = $this->report_model->create_report()) {
 
 //                $this->middle = 'add_report_successfull';
-                $this->session->set_flashdata('message', 'Added to cart');
+                $this->session->set_flashdata('message', 'You added a Report');
                 redirect('main/index');
                 $this->layout();
 
