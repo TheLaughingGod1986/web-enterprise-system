@@ -34,7 +34,8 @@ class Main extends MY_Controller
                 $this->layout();
 
             } else {
-                echo '<script>alert("Im sorry, something went wrong. Please Try Again.");</script>';
+                $this->session->set_flashdata('message', 'You fucked up');
+                redirect('main/index');
 
                 $this->layout();
             }
