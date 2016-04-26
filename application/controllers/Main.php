@@ -20,23 +20,20 @@ class Main extends MY_Controller
 
         $this->form_validation->set_rules('report_name', 'report_name', 'trim|required');
 
-        if ($this->form_validation->run() == FALSE)
-        {
+        if ($this->form_validation->run() == FALSE) {
             $this->middle = 'main'; // return page will validation error
             $this->layout();
-        }
-
-        else
-        {
+        } else {
             $this->load->model('report/report_model');
 
-            if ($query = $this->report_model->create_report())
-            {
+            if ($query = $this->report_model->create_report()) {
+
                 $this->middle = '<script>alert("yeah mother fucker! report added.");</script>';
+                $this->middle = 'index';
+
+
                 $this->layout();
-            }
-            else
-            {
+            } else {
                 echo '<script>alert("Im sorry, something went wrong. Please Try Again.");</script>';
 
                 $this->layout();
