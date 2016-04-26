@@ -14,6 +14,38 @@ class Main extends MY_Controller
         $this->layout();
     }
 
+    function create_report()
+    {
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('report_name', 'report_name', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->middle = 'main'; // return page will validation error
+            $this->layout();
+        }
+
+        else
+        {
+            $this->load->model('report/report_model');
+
+            if ($query = $this->report_model->create_report())
+            {
+                echo '<script>alert("yeah mother fucker! report added.");</script>';
+                $this->middle = 'main';
+                $this->layout();
+            }
+            else
+            {
+                echo '<script>alert("Im sorry, something went wrong. Please Try Again.");</script>';
+                $this->middle = 'main';
+                $this->layout();
+            }
+        }
+    }
+
+
     function externals()
     {
         $this->load->model('UManage_model');
