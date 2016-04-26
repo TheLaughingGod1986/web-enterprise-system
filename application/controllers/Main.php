@@ -28,8 +28,7 @@ class Main extends MY_Controller
 
             if ($query = $this->report_model->create_report()) {
 
-                $this->middle = '<script>alert("Successful Message");</script>';
-                $this->middle = 'main';
+                $this->middle = 'confirm/add_report_successfull';
                 $this->layout();
 
             } else {
