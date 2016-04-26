@@ -33,7 +33,7 @@ if ($this->session->is_logged_admin) {
 </div>
 
     <?php if(isset($reports)) : foreach($reports as $row) : ?>
-        <h2><?php echo $row->Record_Name; ?></h2>
+        <h2><?php echo $row->Report_Name; ?></h2>
         <?php endforeach; ?>
         
         <?php else : ?>
