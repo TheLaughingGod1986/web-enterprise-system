@@ -6,13 +6,13 @@ class Main extends MY_Controller
     {
         parent::__construct();
         $this->load->helper('array');
-        $this->load->model('report/report_model');
     }
 
     function index()
     {
         $data = array();
 //        $this->middle = 'pages/home_view';
+        $this->load->model('report/report_model');
         
         if($query = $this->reports_model->get_report())
         {
