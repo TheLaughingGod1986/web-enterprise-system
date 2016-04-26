@@ -33,7 +33,7 @@ if ($this->session->is_logged_admin) {
     <div class="col-sm-4">
     <?php if(isset($reports)) : foreach($reports as $row) : ?>
         <h2><?php echo $row->Report_Name; ?></h2>
-<p><?=anchor('reports/comments/' .$row->ReportID, 'Comments' );?></p>
+<p><?=anchor('report/comments/' .$row->ReportID, 'Comments' );?></p>
         <hr>
         <?php endforeach; ?>
         
