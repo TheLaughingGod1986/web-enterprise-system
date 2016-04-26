@@ -3,6 +3,32 @@ if ($this->session->is_logged_admin) {
     echo "Hello welcome back ";
     echo '<strong>' . htmlspecialchars($this->session->Username) . ',</strong> You Are Logged in as a <strong>Admin</strong>.';
     echo " chose a option from the menu to get started.";
+?>
+
+<div class="col-sm-4">
+        <div id="login_form">
+            <legend>Account Information</legend>
+            <?php
+            echo form_open('main/create_report');
+            $report_name = array(
+                'name' => 'report_name',
+                'id' => 'report_name',
+                'placeholder' => 'Report Name',
+            );
+            $report_message = array(
+                'name' => 'report_message',
+                'id' => 'report_message',
+                'placeholder' => 'Your report message',
+            );
+           
+            echo form_input($report_name);
+            echo form_input($report_message);
+            echo form_submit('submit', 'Add Report')
+            ?>
+<?php echo validation_errors('<p class="error"/>'); ?>
+</div>
+</div>
+    <?php
 }
 
 else if ($this->session->is_logged_external) {
