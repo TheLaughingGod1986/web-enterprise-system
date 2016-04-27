@@ -1,6 +1,8 @@
 <div class="col-sm-4">
     <h1>comments</h1>
-
+    <?php
+    echo $this->session->Username;
+    ?>
 
     <?php if (isset($reports)) : foreach ($reports as $row) : ?>
         <h2><?php echo $row->Comments; ?></h2>
@@ -13,10 +15,7 @@
     <?php endif; ?>
 
     <p><?= anchor('main', 'Back home'); ?></p>
-<?php
-    echo $this->session->UserID;
-    echo $this->session->Email;
-?>
+
     <?= form_open('main/comment_add'); ?>
 
     <?= form_hidden('ReportID', $this->uri->segment(3)); ?>

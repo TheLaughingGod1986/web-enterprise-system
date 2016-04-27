@@ -1,4 +1,4 @@
-<nav class="navbar nav-second   no-margin-bottom">
+<nav class="navbar nav-second no-margin-bottom">
     <?php
     if ($this->session->is_logged_admin) {
         echo "<h4 class='float-left push-left-small'>Welcome back, ";
