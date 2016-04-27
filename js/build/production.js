@@ -2435,3 +2435,36 @@ function  reloadForm(){
         }
     }
 }
+
+var current = 0;
+function reportSections(e){
+    var btn = e.id;
+    var prev;
+    var next;
+    var total = document.getElementsByClassName('sections').length;
+
+    if(btn == 'prev' && current < 1 ){
+        e.style.display = 'none';
+        return false;
+    } else if (btn == 'prev'){
+        prev = current;
+        current--;
+        document.getElementsByClassName('section')[prev].style.display = 'none';
+        document.getElementsByClassName('section')[current].style.display = 'block';
+        document.getElementById('next').style.display = 'block';
+    }
+
+    if(btn == 'next'){
+        if( current > total - 1){
+            e.style.display = 'none';
+            return false;
+        }
+        prev = current;
+        current++;
+        document.getElementsByClassName('section')[prev].style.display = 'none';
+        document.getElementsByClassName('section')[current].style.display = 'block';
+        document.getElementById('next').style.display = 'block';
+    }
+
+
+}
