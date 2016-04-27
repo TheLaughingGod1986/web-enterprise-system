@@ -43,7 +43,7 @@
         <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
         <li role="presentation"><a href="#">Change Login Details</a></li>
         <li class="grey"></li>
-        <li role="presentation"><?php echo anchor('Profile_cntrl/user'.$this->session->Email->ExternalID, 'Profile'); ?></li>
+        <li role="presentation"><?php echo anchor('Profile_cntrl/user', 'Profile'); ?></li>
         <li role="presentation"><?php echo anchor('login_cntrl/logout', 'Log out'); ?></li>
     <?php } ?>
 
