@@ -7,6 +7,7 @@ class Main extends MY_Controller
         parent::__construct();
         $this->load->helper('array');
         $this->load->model('report/report_model');
+        $this->load->library('table');
     }
 
     function index()
