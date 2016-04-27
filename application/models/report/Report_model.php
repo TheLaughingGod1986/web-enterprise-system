@@ -26,4 +26,10 @@ class Report_model extends CI_Model {
         $query = $this->db->get('report');
         return $query->result();
     }
+
+    function get_comment()
+    {
+        $query = $this->db->get('Report_Comments');
+        return $query->result();
+    }
 }
