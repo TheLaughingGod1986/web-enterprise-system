@@ -55,14 +55,14 @@ class Main extends MY_Controller
     function comments()
     {
         $data = array();
-//        $this->middle = 'pages/home_view';
-
-
-        if($query = $this->report_model->get_report())
+        
+$this->db->where('ReportID', $this->uri->segment(3));
+        
+        if($query = $this->report_model->get_comment())
         {
             $data['reports'] = $query;
         }
-
+        
         $this->template['middle'] = $this->load->view ($this->middle = 'comments/comment_view',$data, true);
         $this->layout();
     }
@@ -71,7 +71,7 @@ class Main extends MY_Controller
     {
         $this->db->insert('Report_Comments', $_POST);
 
-        $this->session->set_flashdata('messagetwo', 'You added a Report');
+        $this->session->set_flashdata('messagetw', 'You added a Report');
         redirect('main/comments/' .$_POST['ReportID']);
     }
     function externals()
