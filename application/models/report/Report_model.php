@@ -52,15 +52,12 @@ class Report_model extends CI_Model {
         $this->load->helper('date');
 
         $new_comment = array(
-//            'Report_Name' => $this->input->post('report_name'),
-            'Comments' => $this->input->post('Comments', $_POST),
-            'ReportID' => $this->input->post('ReportID')
-//             'Report_Name' => $this->input->post('report_name')
-//         'Report_Name' => $this->input->post('report_name')
+            'Comments' => $this->input->post('Comments'),
+            'ReportID' => $this->input->post('ReportID'),
+            'UserID' => $this->session->userdata('UserID')
         );
 
         $insert = $this->db->insert('Report_Comments', $new_comment);
-//        $this->db->insert('Report_Comments', $_POST);
         return $insert;
     }
 
