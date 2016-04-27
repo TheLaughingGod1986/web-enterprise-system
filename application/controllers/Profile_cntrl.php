@@ -7,6 +7,11 @@ class Profile_cntrl extends MY_Controller
         $this->load->model('Profile_model');
     }
 
+    function profile() {
+    	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', true);
+        $this->layout();
+    }
+
     function user() {
     	$id = $this->uri->segment(3);
     	$data['single_user'] = $this->Profile_model->get_user_id($id);
