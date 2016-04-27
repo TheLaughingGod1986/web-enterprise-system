@@ -29,6 +29,8 @@
         </div>
         <?php
     }
+
+    echo $this->session->UserID;
     ?>
 
     </form>

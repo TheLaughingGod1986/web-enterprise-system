@@ -49,9 +49,6 @@ class Report_model extends CI_Model {
     
     function create_comment()
     {
-        $this->load->helper('date');
-        $this->load->library('session');
-
         $new_comment = array(
             'Comments' => $this->input->post('Comments'),
             'ReportID' => $this->input->post('ReportID'),
