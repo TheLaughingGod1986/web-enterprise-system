@@ -1,9 +1,5 @@
 <div class="col-sm-4">
     <h1>comments</h1>
-    <?php
-    echo $this->session->Username;
-    echo $this->session->LoginID;
-    ?>
     <?php if (isset($reports)) : foreach ($reports as $row) : ?>
         <h2><?php echo $row->Comments; ?></h2>
 
