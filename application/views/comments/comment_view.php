@@ -13,7 +13,10 @@
     <?php endif; ?>
 
     <p><?= anchor('main', 'Back home'); ?></p>
-
+<?php
+    echo $this->session->UserID;
+    echo $this->session->Email;
+?>
     <?= form_open('main/comment_add'); ?>
 
     <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
@@ -30,8 +33,6 @@
         <?php
     }
 
-    echo $this->session->UserID;
-    echo $this->session->Email;
     ?>
 
     </form>
