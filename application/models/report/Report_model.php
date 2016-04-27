@@ -49,6 +49,8 @@ class Report_model extends CI_Model {
 
     function create_comment()
     {
+        $this->load->helper('date');
+
         $comments = $this->input->post('Comments');
         $reportID = $this->input->post('ReportID');
         $userID = $this->session->userdata('LoginID');
@@ -57,7 +59,8 @@ class Report_model extends CI_Model {
             $new_comment = array(
                 'Comments' => isset($comments) ? $comments : "",
                 'ReportID' => $reportID,
-                'UserID' => $userID
+                'UserID' => $userID,
+                'Comment_Date' => $this->current_date()
             );
             return $this->db->insert('Report_Comments', $new_comment);
         }
