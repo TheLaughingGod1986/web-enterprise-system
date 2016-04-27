@@ -8,15 +8,9 @@ class Profile_cntrl extends MY_Controller
     }
 
     function profile() {
-    	$data['profile_my'] = true;
+    	$id = ($this->uri->segment(3))?$this->uri->segment(3):false;
+    	$data['profile'] = ($id != false)?$this->Profile_model->get_user_id($id):false;
     	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
-        $this->layout();
-    }
-
-    function user() {
-    	$id = $this->uri->segment(3);
-    	$data['profile_other'] = $this->Profile_model->get_user_id($id);
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
         $this->layout();
     }
 }

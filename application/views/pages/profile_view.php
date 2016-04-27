@@ -1,11 +1,11 @@
 <?php
-	if (isset($profile_other) && !empty($profile_other)){
+	if (isset($profile) && $profile != false){
 		//Show profile based on segment 3
 	    echo '<li>';
         echo $profile_other->Email;
         echo '</li>';
 	} 
-	else if (isset($profile_my)) {
+	else if ($this->session->is_logged_external && $profile == false){
 		//Show external profile
 	    echo $this->session->Email;
 	} else {
