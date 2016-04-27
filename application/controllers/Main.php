@@ -30,14 +30,14 @@ class Main extends MY_Controller
 
         $this->form_validation->set_rules('report_name', 'report_name', 'trim|required');
 
-        if ($this->form_validation->run() == FALSE) {
+        if ($this->form_validation->run() == FALSE)
+        {
             $this->session->set_flashdata('message', 'Im sorry, That is not right');
             redirect('main/index');
         } else {
 
             if ($query = $this->report_model->create_report()) {
-
-//                $this->middle = 'add_report_successfull';
+                
                 $this->session->set_flashdata('message', 'You added a Report');
                 redirect('main/index');
                 $this->layout();
@@ -68,10 +68,20 @@ $this->db->where('ReportID', $this->uri->segment(3));
 
     function comment_add()
     {
-        $this->db->insert('Report_Comments', $_POST);
+            if ($query = $this->report_model->create_comment()) {
 
-        $this->session->set_flashdata('messagetwo', 'You added a Report');
-        redirect('main/comments/' .$_POST['ReportID']);
+                $this->session->set_flashdata('messagetwo', 'You added a Comment');
+                redirect('main/comments/' .$_POST['ReportID']);
+
+            } else {
+                $this->session->set_flashdata('messagetwo', 'Sorry not this time');
+                redirect('main/comments/' .$_POST['ReportID']);
+            }
+//        $this->db->insert('Report_Comments', $_POST);
+//        'UserID' => $this->session->userdata('id'),
+
+//        $this->session->set_flashdata('messagetwo', 'You added a Report');
+//        redirect('main/comments/' .$_POST['ReportID']);
     }
     function externals()
     {
