@@ -78,11 +78,6 @@ $this->db->where('ReportID', $this->uri->segment(3));
                 $this->session->set_flashdata('messagetwo', 'Sorry not this time');
                 redirect('main/comments/' .$_POST['ReportID']);
             }
-//        $this->db->insert('Report_Comments', $_POST);
-//        'UserID' => $this->session->userdata('id'),
-
-//        $this->session->set_flashdata('messagetwo', 'You added a Report');
-//        redirect('main/comments/' .$_POST['ReportID']);
     }
 
     function externals()
