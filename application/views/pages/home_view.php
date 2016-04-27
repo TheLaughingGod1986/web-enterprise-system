@@ -19,28 +19,33 @@ if ($this->session->is_logged_admin) {
 
         echo form_input($report_name);
 
-        $this->table->add_row('Semester 1', form_checkbox('sm1', 'accept', TRUE));
-        $this->table->add_row('Semester 2', form_checkbox('sm2', 'accept', TRUE));
-        $this->table->add_row('Progression and board', form_checkbox('pro', 'accept', TRUE));
         $options = array(
             '1' => 'Choose',
             '2' => 'One',
             '3' => 'Or',
             '4' => 'More',
         );
-        $this->table->add_row('Partners', form_multiselect('choices', $options, '1'));
-        $this->table->add_row('Approval/Review', form_checkbox('', 'accept', TRUE));
-        $this->table->add_row('Teaching Practice', form_checkbox('', 'accept', FALSE));
-        $this->table->add_row('Clinical Assessment', form_checkbox('', 'accept', FALSE));
-        $this->table->add_row('Viva Voce Examination', form_checkbox('', 'accept', FALSE));
-        $this->table->add_row('Other', form_input('other', 'other'));
-        echo $this->table->generate();
 
-        $this->table->add_row('Question n1', form_checkbox('SA', 'q1', FALSE), form_checkbox('A', 'q1', FALSE), form_checkbox('D', 'q1', FALSE), form_checkbox('SD', 'q1', FALSE), form_checkbox('NA', 'q1', FALSE));
-        $this->table->add_row('Question n2', form_checkbox('SA', 'q2', FALSE), form_checkbox('A', 'q2', FALSE), form_checkbox('D', 'q2', FALSE), form_checkbox('SD', 'q2', FALSE), form_checkbox('NA', 'q2', FALSE));
-        $this->table->add_row('Question n3', form_checkbox('SA', 'q3', FALSE), form_checkbox('A', 'q3', FALSE), form_checkbox('D', 'q3', FALSE), form_checkbox('SD', 'q3', FALSE), form_checkbox('NA', 'q3', FALSE));
-        $this->table->add_row('Question n4', form_checkbox('SA', 'q4', FALSE), form_checkbox('A', 'q4', FALSE), form_checkbox('D', 'q4', FALSE), form_checkbox('SD', 'q4', FALSE), form_checkbox('NA', 'q4', FALSE));
-        echo $this->table->generate();
+        $fields = array(
+        array('Semester 1', form_checkbox('sm1', 'accept', TRUE)),
+        array('Semester 2', form_checkbox('sm2', 'accept', TRUE)),
+        array('Progression and board', form_checkbox('pro', 'accept', TRUE)),
+        array('Partners', form_multiselect('choices', $options, '1')),
+        array('Approval/Review', form_checkbox('', 'accept', TRUE)),
+        array('Teaching Practice', form_checkbox('', 'accept', FALSE)),
+        array('Clinical Assessment', form_checkbox('', 'accept', FALSE)),
+        array('Viva Voce Examination', form_checkbox('', 'accept', FALSE)),
+        array('Other', form_input('other', 'other'))
+        );
+        echo $this->table->generate($fields);
+
+        $fields2 = array(
+            array('Question n1', form_checkbox('SA', 'q1', FALSE), form_checkbox('A', 'q1', FALSE), form_checkbox('D', 'q1', FALSE), form_checkbox('SD', 'q1', FALSE), form_checkbox('NA', 'q1', FALSE)),
+            array('Question n2', form_checkbox('SA', 'q2', FALSE), form_checkbox('A', 'q2', FALSE), form_checkbox('D', 'q2', FALSE), form_checkbox('SD', 'q2', FALSE), form_checkbox('NA', 'q2', FALSE)),
+            array('Question n3', form_checkbox('SA', 'q3', FALSE), form_checkbox('A', 'q3', FALSE), form_checkbox('D', 'q3', FALSE), form_checkbox('SD', 'q3', FALSE), form_checkbox('NA', 'q3', FALSE)),
+            array('Question n4', form_checkbox('SA', 'q4', FALSE), form_checkbox('A', 'q4', FALSE), form_checkbox('D', 'q4', FALSE), form_checkbox('SD', 'q4', FALSE), form_checkbox('NA', 'q4', FALSE))
+        );
+        echo $this->table->generate($fields2);
 
         echo form_submit('submit', 'Add Report')
         ?>
