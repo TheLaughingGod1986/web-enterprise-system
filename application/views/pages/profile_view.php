@@ -5,7 +5,7 @@
         echo $profile_other->Email;
         echo '</li>';
 	} 
-	else if ($profile_my) {
+	else if (isset($profile_my)) {
 		//Show external profile
 	    echo $this->session->Email;
 	} else {
