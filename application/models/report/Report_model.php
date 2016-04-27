@@ -53,7 +53,7 @@ class Report_model extends CI_Model {
 
         $new_comment = array(
 //            'Report_Name' => $this->input->post('report_name'),
-            'Report_Comments' => $this->input->post('Comments', $_POST)
+            `Comments` => $this->input->post('Comments', $_POST)
 //             'Report_Name' => $this->input->post('report_name')
 //         'Report_Name' => $this->input->post('report_name')
         );
