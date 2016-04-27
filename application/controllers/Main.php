@@ -71,7 +71,7 @@ class Main extends MY_Controller
         $this->db->insert('Report_Comments', $_POST);
 
         $this->session->set_flashdata('message', 'You added a Report');
-        redirect('main/comments/' .$_POST['entry_d']);
+        redirect('main/comments/' .$_POST['ReportID']);
     }
     function externals()
     {
