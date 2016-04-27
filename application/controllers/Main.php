@@ -22,8 +22,8 @@ class Main extends MY_Controller
 
         $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data, true);
         $this->layout();
-    
     }
+    
     function create_report()
     {
         $this->load->library('form_validation');
@@ -53,7 +53,17 @@ class Main extends MY_Controller
 
     function comments()
     {
-        echo "testing";
+        $data = array();
+//        $this->middle = 'pages/home_view';
+
+
+        if($query = $this->report_model->get_report())
+        {
+            $data['reports'] = $query;
+        }
+
+        $this->template['middle'] = $this->load->view ($this->middle = 'comments/comment_view',$data, true);
+        $this->layout();
     }
 
     function externals()
