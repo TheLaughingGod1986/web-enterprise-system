@@ -31,6 +31,7 @@
     }
 
     echo $this->session->UserID;
+    echo $this->session->Email;
     ?>
 
     </form>
