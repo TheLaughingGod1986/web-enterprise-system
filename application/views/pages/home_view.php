@@ -42,7 +42,6 @@ if ($this->session->is_logged_admin) {
         <?php endif; ?>
     </div>
     <?php
-    <?php
             if ($this->session->flashdata('messagetwo')) {
                 ?>
                 <div class="message flash">
