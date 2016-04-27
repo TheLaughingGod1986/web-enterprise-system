@@ -1,12 +1,10 @@
 <?php
-	if (isset($profile_other) && !empty($profile_other)){
+	if (isset($profile) && $profile != null && $others == true){
 		//Show profile based on segment 3
-	    echo '<li>';
-        echo $profile_other->Email;
-        echo '</li>';
-	} 
-	else if ($profile_my) {
-		//Show external profile
+        echo $profile[0]->Email;
+	}
+	else if ($profile == null && $others == false){
+		//Show personal profile
 	    echo $this->session->Email;
 	} else {
 	    echo 'No Records';
