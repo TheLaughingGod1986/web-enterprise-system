@@ -68,7 +68,7 @@ class Main extends MY_Controller
 
     function comment_add()
     {
-        $this->db->insert('comments', $_POST);
+        $this->db->insert('Report_Comments', $_POST);
 
         $this->session->set_flashdata('message', 'You added a Report');
         redirect('main/comments/' .$_POST{'entry_d'});

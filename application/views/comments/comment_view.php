@@ -4,8 +4,7 @@
 
     <?=form_hidden('ReportID', $this->uri->segment(3));?>
 
-    <p><textarea name="body" rows="10"></textarea></p>
-    <p><input type="text" name="author" /> </p>
+    <p><textarea name="Comments" rows="10"></textarea></p>
     <p><input type="submit" value="add comment" /></p>
 
 
