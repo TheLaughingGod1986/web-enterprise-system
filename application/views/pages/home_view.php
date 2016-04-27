@@ -27,6 +27,7 @@ if ($this->session->is_logged_admin) {
             '4' => 'More',
         );
 
+        //Section 1 examiner attendance
         $fields = array(
             array('Label', 'Input'),
             array('Semester 1', form_checkbox('sm1', 'accept', FALSE)),
@@ -41,13 +42,49 @@ if ($this->session->is_logged_admin) {
         );
         echo $this->table->generate($fields);
 
+        //comments
+        echo form_textarea('comments','comments');
+
+        //section 2 process of assessment
         $fields2 = array(
-            array('Question n1', form_checkbox('SA', 'q1', FALSE), form_checkbox('A', 'q1', FALSE), form_checkbox('D', 'q1', FALSE), form_checkbox('SD', 'q1', FALSE), form_checkbox('NA', 'q1', FALSE)),
-            array('Question n2', form_checkbox('SA', 'q2', FALSE), form_checkbox('A', 'q2', FALSE), form_checkbox('D', 'q2', FALSE), form_checkbox('SD', 'q2', FALSE), form_checkbox('NA', 'q2', FALSE)),
-            array('Question n3', form_checkbox('SA', 'q3', FALSE), form_checkbox('A', 'q3', FALSE), form_checkbox('D', 'q3', FALSE), form_checkbox('SD', 'q3', FALSE), form_checkbox('NA', 'q3', FALSE)),
-            array('Question n4', form_checkbox('SA', 'q4', FALSE), form_checkbox('A', 'q4', FALSE), form_checkbox('D', 'q4', FALSE), form_checkbox('SD', 'q4', FALSE), form_checkbox('NA', 'q4', FALSE))
+            array('Question n1', form_radio('SA', 'q1', FALSE), form_radio('A', 'q1', FALSE), form_radio('D', 'q1', FALSE), form_radio('SD', 'q1', FALSE), form_radio('NA', 'q1', FALSE)),
+            array('Question n2', form_radio('SA', 'q2', FALSE), form_radio('A', 'q2', FALSE), form_radio('D', 'q2', FALSE), form_radio('SD', 'q2', FALSE), form_radio('NA', 'q2', FALSE)),
+            array('Question n3', form_radio('SA', 'q3', FALSE), form_radio('A', 'q3', FALSE), form_radio('D', 'q3', FALSE), form_radio('SD', 'q3', FALSE), form_radio('NA', 'q3', FALSE)),
+            array('Question n4', form_radio('SA', 'q4', FALSE), form_radio('A', 'q4', FALSE), form_radio('D', 'q4', FALSE), form_radio('SD', 'q4', FALSE), form_radio('NA', 'q4', FALSE))
         );
         echo $this->table->generate($fields2);
+
+        //additional text area
+        echo form_textarea('additional','additional');
+
+        //section 3 appropriateness of standards
+        $sec3 = array(
+          array('Section 3', form_radio('Yes', 's1', FALSE), form_radio('No', 's1', FALSE))
+        );
+        echo $this->table->generate($sec3);
+
+        //additional commentary
+        echo form_textarea('addComment3','addComment3');
+
+        //section 4 appropriateness of standards
+        $sec3 = array(
+            array('Section 4', form_radio('Yes', 's2', FALSE), form_radio('No', 's2', FALSE))
+        );
+        echo $this->table->generate($sec3);
+
+        //programme examiner
+        echo form_textarea('addComment4','addComment4');
+
+        //course examiner
+        echo form_textarea('course examiner', 'courseExam');
+
+        //section 5 professional statuary and regulatory bodies
+        echo form_textarea('section5', 'section5');
+
+        //Section 6 Action, points and recommendations
+        echo form_textarea('section6', 'section6');
+        echo form_textarea('Good Practice', 'GoodPractice');
+        echo form_textarea('Recommendations for action','recommendation');
 
         echo form_submit('submit', 'Add Report')
         ?>
