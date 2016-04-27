@@ -12,7 +12,7 @@ class Profile_model extends CI_Model{
     }
 
     function get_staff_id($data){
-		$this->db->where('StafflID', $data);
+		$this->db->where('StaffID', $data);
         $query = $this->db->get('staff');
         return $query->result();
     }
