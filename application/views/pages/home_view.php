@@ -1,4 +1,5 @@
 <?php
+$this->load->helper('form');
 $this->load->library('table');
 if ($this->session->is_logged_admin) {
     echo "Hello welcome back ";
@@ -27,15 +28,16 @@ if ($this->session->is_logged_admin) {
         );
 
         $fields = array(
-        array('Semester 1', form_checkbox('sm1', 'accept', TRUE)),
-        array('Semester 2', form_checkbox('sm2', 'accept', TRUE)),
-        array('Progression and board', form_checkbox('pro', 'accept', TRUE)),
-        array('Partners', form_multiselect('choices', $options, '1')),
-        array('Approval/Review', form_checkbox('', 'accept', TRUE)),
-        array('Teaching Practice', form_checkbox('', 'accept', FALSE)),
-        array('Clinical Assessment', form_checkbox('', 'accept', FALSE)),
-        array('Viva Voce Examination', form_checkbox('', 'accept', FALSE)),
-        array('Other', form_input('other', 'other'))
+            array('Label', 'Input'),
+            array('Semester 1', form_checkbox('sm1', 'accept', FALSE)),
+            array('Semester 2', form_checkbox('sm2', 'accept', FALSE)),
+            array('Progression and board', form_checkbox('pro', 'accept', FALSE)),
+            array('Partners', form_multiselect('choices', $options, '1')),
+            array('Approval/Review', form_checkbox('', 'accept', FALSE)),
+            array('Teaching Practice', form_checkbox('', 'accept', FALSE)),
+            array('Clinical Assessment', form_checkbox('', 'accept', FALSE)),
+            array('Viva Voce Examination', form_checkbox('', 'accept', FALSE)),
+            array('Other', form_input('other', 'other'))
         );
         echo $this->table->generate($fields);
 
