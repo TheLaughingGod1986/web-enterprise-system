@@ -79,10 +79,11 @@ function reportSections(e){
     var next;
     var total = document.getElementsByClassName('sections').length;
 
-    if(btn == 'prev' && current < 1 ){
-        e.style.display = 'none';
-        return false;
-    } else if (btn == 'prev'){
+    if(btn == 'prev'){
+        if(current < 1){
+            e.style.display = 'none';
+            return false;
+        }
         prev = current;
         current--;
         document.getElementsByClassName('section')[prev].style.display = 'none';

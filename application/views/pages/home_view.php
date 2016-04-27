@@ -108,7 +108,7 @@ if ($this->session->is_logged_admin) {
             'onClick'=>'reportSections(this)'
         );
         echo form_button('next','Next', $nn);
-        echo form_button('next','Prev', $pp);
+        echo form_button('prev','Prev', $pp);
 
         ?>
 

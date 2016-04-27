@@ -2421,8 +2421,8 @@ function  reloadForm(){
 
     }else{
 
-        for(var f = 0; f < item1.length; f++) {
-            item1[f].style.display = "none";
+        for(var h = 0; h < item1.length; h++) {
+            item1[h].style.display = "none";
         }
         for(var v = 0; v < loginfields.length; v++) {
             loginfields[v].style.display = "none";
@@ -2443,10 +2443,11 @@ function reportSections(e){
     var next;
     var total = document.getElementsByClassName('sections').length;
 
-    if(btn == 'prev' && current < 1 ){
-        e.style.display = 'none';
-        return false;
-    } else if (btn == 'prev'){
+    if(btn == 'prev'){
+        if(current < 1){
+            e.style.display = 'none';
+            return false;
+        }
         prev = current;
         current--;
         document.getElementsByClassName('section')[prev].style.display = 'none';
