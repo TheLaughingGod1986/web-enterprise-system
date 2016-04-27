@@ -1,13 +1,10 @@
 <?php
-	if (isset($profile) && $profile != false){
+	if (isset($profile) && $personal == false){
 		//Show profile based on segment 3
-	    echo '<li>';
         echo $profile[0]->Email;
-        //print_r($profile);
-        echo '</li>';
-	} 
-	else if ($this->session->is_logged_external && $profile == false){
-		//Show external profile
+	}
+	else if ($personal == true){
+		//Show personal profile
 	    echo $this->session->Email;
 	} else {
 	    echo 'No Records';
