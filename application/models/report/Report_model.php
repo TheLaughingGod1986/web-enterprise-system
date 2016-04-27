@@ -52,7 +52,7 @@ class Report_model extends CI_Model {
         $this->load->helper('date');
 
         $comments = $this->input->post('Comments');
-        $date = $this->current_date();
+        $date = $this->now();
         $reportID = $this->input->post('ReportID');
         $userID = $this->session->userdata('LoginID');
         if(isset($reportID) && isset($userID))
