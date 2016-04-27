@@ -1,24 +1,49 @@
 <?php
+$this->load->library('table');
 if ($this->session->is_logged_admin) {
     echo "Hello welcome back ";
     echo '<strong>' . htmlspecialchars($this->session->Username) . ',</strong> You Are Logged in as a <strong>Admin</strong>.';
     echo " chose a option from the menu to get started.";
-?>
+    ?>
 
-<div class="col-sm-4">
-       
-            <legend>Add New Report</legend>
-            <?php
-            echo form_open('main/create_report');
-            $report_name = array(
-                'name' => 'report_name',
-                'id' => 'report_name',
-                'placeholder' => 'Report Name',
-            );
-           
-            echo form_input($report_name);
-            echo form_submit('submit', 'Add Report')
-            ?>
+    <div class="col-sm-4">
+
+        <legend>Add New Report</legend>
+        <?php
+        echo form_open('main/create_report');
+        $report_name = array(
+            'name' => 'report_name',
+            'id' => 'report_name',
+            'placeholder' => 'Report Name',
+        );
+
+        echo form_input($report_name);
+
+        $this->table->add_row('Semester 1', form_checkbox('sm1', 'accept', TRUE));
+        $this->table->add_row('Semester 2', form_checkbox('sm2', 'accept', TRUE));
+        $this->table->add_row('Progression and board', form_checkbox('pro', 'accept', TRUE));
+        $options = array(
+            '1' => 'Choose',
+            '2' => 'One',
+            '3' => 'Or',
+            '4' => 'More',
+        );
+        $this->table->add_row('Partners', form_multiselect('choices', $options, '1'));
+        $this->table->add_row('Approval/Review', form_checkbox('', 'accept', TRUE));
+        $this->table->add_row('Teaching Practice', form_checkbox('', 'accept', FALSE));
+        $this->table->add_row('Clinical Assessment', form_checkbox('', 'accept', FALSE));
+        $this->table->add_row('Viva Voce Examination', form_checkbox('', 'accept', FALSE));
+        $this->table->add_row('Other', form_input('other', 'other'));
+        echo $this->table->generate();
+
+        $this->table->add_row('Question n1', form_checkbox('SA', 'q1', FALSE), form_checkbox('A', 'q1', FALSE), form_checkbox('D', 'q1', FALSE), form_checkbox('SD', 'q1', FALSE), form_checkbox('NA', 'q1', FALSE));
+        $this->table->add_row('Question n2', form_checkbox('SA', 'q2', FALSE), form_checkbox('A', 'q2', FALSE), form_checkbox('D', 'q2', FALSE), form_checkbox('SD', 'q2', FALSE), form_checkbox('NA', 'q2', FALSE));
+        $this->table->add_row('Question n3', form_checkbox('SA', 'q3', FALSE), form_checkbox('A', 'q3', FALSE), form_checkbox('D', 'q3', FALSE), form_checkbox('SD', 'q3', FALSE), form_checkbox('NA', 'q3', FALSE));
+        $this->table->add_row('Question n4', form_checkbox('SA', 'q4', FALSE), form_checkbox('A', 'q4', FALSE), form_checkbox('D', 'q4', FALSE), form_checkbox('SD', 'q4', FALSE), form_checkbox('NA', 'q4', FALSE));
+        echo $this->table->generate();
+
+        echo form_submit('submit', 'Add Report')
+        ?>
 <?php echo validation_errors('<p class="error"/>'); ?>
             <?php
             if ($this->session->flashdata('message')) {
