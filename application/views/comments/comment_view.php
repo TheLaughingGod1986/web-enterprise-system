@@ -2,7 +2,7 @@
     <h1>comments</h1>
     <?php
     echo $this->session->Username;
-    echo $this->session->UserID;
+    echo $this->session->LoginID;
     ?>
 
     <?php if (isset($reports)) : foreach ($reports as $row) : ?>
