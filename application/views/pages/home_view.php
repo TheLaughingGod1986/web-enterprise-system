@@ -101,11 +101,11 @@ if ($this->session->is_logged_admin) {
 
         $nn = array(
             'id'=>'next',
-            'onClick'=>'reportSections()'
+            'onClick'=>'reportSections(this)'
         );
         $pp = array(
             'id'=>'prev',
-            'onClick'=>'reportSections()'
+            'onClick'=>'reportSections(this)'
         );
         echo form_button('next','Next', $nn);
         echo form_button('next','Prev', $pp);
