@@ -2,7 +2,7 @@
 	if (isset($profile) && $profile != false){
 		//Show profile based on segment 3
 	    echo '<li>';
-        echo $profile_other->Email;
+        echo $profile->Email;
         echo '</li>';
 	} 
 	else if ($this->session->is_logged_external && $profile == false){
