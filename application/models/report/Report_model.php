@@ -46,17 +46,22 @@ class Report_model extends CI_Model {
         $insert = $this->db->insert('report', $new_report);
         return $insert;
     }
-    
+
     function create_comment()
     {
-        $new_comment = array(
-            'Comments' => $this->input->post('Comments'),
-            'ReportID' => $this->input->post('ReportID'),
-            'UserID' => $this->session->userdata('LoginID')
-        );
-
-        $insert = $this->db->insert('Report_Comments', $new_comment);
-        return $insert;
+        $comments = $this->input->post('Comments');
+        $reportID = $this->input->post('ReportID');
+        $userID = $this->session->userdata('LoginID');
+        if(isset($reportID) && isset($userID))
+        {
+            $new_comment = array(
+                'Comments' => isset($comments) ? $comments : "",
+                'ReportID' => $reportID,
+                'UserID' => $userID
+            );
+            return $this->db->insert('Report_Comments', $new_comment);
+        }
+        return FALSE;
     }
 
 
