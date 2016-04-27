@@ -47,12 +47,17 @@ class Report_model extends CI_Model {
         return $insert;
     }
 
+    function current_date() {
+        date_default_timezone_set ("Europe/London"); // What timezone you want to be the default value for your current date.
+        return date('Y-m-d H:i:s');
+    }
+
     function create_comment()
     {
         $this->load->helper('date');
 
         $comments = $this->input->post('Comments');
-        $date = $this->now();
+        $date = $this->current_date();
         $reportID = $this->input->post('ReportID');
         $userID = $this->session->userdata('LoginID');
         if(isset($reportID) && isset($userID))
