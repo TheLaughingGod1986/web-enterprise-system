@@ -30,61 +30,64 @@ if ($this->session->is_logged_admin) {
         //Section 1 examiner attendance
         $fields = array(
             array('Label', 'Input'),
-            array('Semester 1', form_checkbox('sm1', 'accept', FALSE)),
-            array('Semester 2', form_checkbox('sm2', 'accept', FALSE)),
-            array('Progression and board', form_checkbox('pro', 'accept', FALSE)),
-            array('Partners', form_multiselect('choices', $options, '1')),
-            array('Approval/Review', form_checkbox('', 'accept', FALSE)),
-            array('Teaching Practice', form_checkbox('', 'accept', FALSE)),
-            array('Clinical Assessment', form_checkbox('', 'accept', FALSE)),
-            array('Viva Voce Examination', form_checkbox('', 'accept', FALSE)),
-            array('Other', form_input('other', 'other'))
+            array('Semester 1', form_checkbox('1_1', 'accept', FALSE)),
+            array('Semester 2', form_checkbox('1_2', 'accept', FALSE)),
+            array('Progression and board', form_checkbox('1_3', 'accept', FALSE)),
+            array('Partners', form_multiselect('1_4', $options, '1')),
+            array('Approval/Review', form_checkbox('1_5', 'accept', FALSE)),
+            array('Teaching Practice', form_checkbox('1_6', 'accept', FALSE)),
+            array('Clinical Assessment', form_checkbox('1_7', 'accept', FALSE)),
+            array('Viva Voce Examination', form_checkbox('1_8', 'accept', FALSE)),
+            array('Other', form_input('1_9', 'other'))
         );
         echo $this->table->generate($fields);
 
         //comments
-        echo form_textarea('comments','comments');
+        echo form_textarea('1_10','comments');
 
         //section 2 process of assessment
         $fields2 = array(
-            array('Question n1', form_radio('SA', 'q1', FALSE), form_radio('A', 'q1', FALSE), form_radio('D', 'q1', FALSE), form_radio('SD', 'q1', FALSE), form_radio('NA', 'q1', FALSE)),
-            array('Question n2', form_radio('SA', 'q2', FALSE), form_radio('A', 'q2', FALSE), form_radio('D', 'q2', FALSE), form_radio('SD', 'q2', FALSE), form_radio('NA', 'q2', FALSE)),
-            array('Question n3', form_radio('SA', 'q3', FALSE), form_radio('A', 'q3', FALSE), form_radio('D', 'q3', FALSE), form_radio('SD', 'q3', FALSE), form_radio('NA', 'q3', FALSE)),
-            array('Question n4', form_radio('SA', 'q4', FALSE), form_radio('A', 'q4', FALSE), form_radio('D', 'q4', FALSE), form_radio('SD', 'q4', FALSE), form_radio('NA', 'q4', FALSE))
+            array('Question n1', form_radio('2_1', 'SA', FALSE), form_radio('2_1', 'A', FALSE), form_radio('2_1', 'D', FALSE), form_radio('2_1', 'SD', FALSE), form_radio('2_1', 'NA', FALSE)),
+            array('Question n2', form_radio('2_2', 'SA', FALSE), form_radio('2_2', 'A', FALSE), form_radio('2_2', 'D', FALSE), form_radio('2_2', 'SD', FALSE), form_radio('2_2', 'NA', FALSE)),
+            array('Question n3', form_radio('2_3', 'SA', FALSE), form_radio('2_3', 'A', FALSE), form_radio('2_3', 'D', FALSE), form_radio('2_3', 'SD', FALSE), form_radio('2_3', 'NA', FALSE)),
+            array('Question n4', form_radio('2_4', 'SA', FALSE), form_radio('2_4', 'A', FALSE), form_radio('2_4', 'D', FALSE), form_radio('2_4', 'SD', FALSE), form_radio('2_4', 'NA', FALSE)),
+            array('Question n5', form_radio('2_5', 'SA', FALSE), form_radio('2_5', 'A', FALSE), form_radio('2_5', 'D', FALSE), form_radio('2_5', 'SD', FALSE), form_radio('2_5', 'NA', FALSE)),
+            array('Question n6', form_radio('2_6', 'SA', FALSE), form_radio('2_6', 'A', FALSE), form_radio('2_6', 'D', FALSE), form_radio('2_6', 'SD', FALSE), form_radio('2_6', 'NA', FALSE)),
+            array('Question n7', form_radio('2_7', 'SA', FALSE), form_radio('2_7', 'A', FALSE), form_radio('2_7', 'D', FALSE), form_radio('2_7', 'SD', FALSE), form_radio('2_7', 'NA', FALSE))
         );
         echo $this->table->generate($fields2);
 
         //additional text area
-        echo form_textarea('additional','additional');
+        echo form_textarea('2_8','additional');
 
         //section 3 appropriateness of standards
         $sec3 = array(
-          array('Section 3', form_radio('Yes', 's1', FALSE), form_radio('No', 's1', FALSE))
+          array('Section 3', form_radio('3_1', 'Yes', FALSE), form_radio('3_1', 'No', FALSE))
         );
         echo $this->table->generate($sec3);
 
         //additional commentary
-        echo form_textarea('addComment3','addComment3');
+        echo form_textarea('3_2','addComment3');
 
         //section 4 appropriateness of standards
         $sec3 = array(
-            array('Section 4', form_radio('Yes', 's2', FALSE), form_radio('No', 's2', FALSE))
+            array('Section 4', form_radio('4_1', 'Yes', FALSE), form_radio('4_1', 'No', FALSE))
         );
         echo $this->table->generate($sec3);
 
         //programme examiner
-        echo form_textarea('addComment4','addComment4');
+        echo form_textarea('4_2','addComment4');
 
         //course examiner
-        echo form_textarea('course examiner', 'courseExam');
+        echo form_textarea('4_3', 'course Examiner');
 
         //section 5 professional statuary and regulatory bodies
-        echo form_textarea('section5', 'section5');
+        echo form_textarea('5_1', 'section5');
 
         //Section 6 Action, points and recommendations
-        echo form_textarea('section6', 'section6');
-        echo form_textarea('Good Practice', 'GoodPractice');
-        echo form_textarea('Recommendations for action','recommendation');
+        echo form_textarea('6_1', 'section6');
+        echo form_textarea('6_2', 'Good Practice');
+        echo form_textarea('6_3','Recommendation');
 
         echo form_submit('submit', 'Add Report')
         ?>
