@@ -9,8 +9,8 @@ class Profile_cntrl extends MY_Controller
 
     function profile() {
     	$id = $this->uri->segment(3);
+    	$data['others'] = ($id != null) ? true : false;
     	$data['profile'] = $this->Profile_model->get_user_id($id);
-    	$data['personal'] = ($data['profile'] != null) ? false : true ;
     	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
         $this->layout();
     }
