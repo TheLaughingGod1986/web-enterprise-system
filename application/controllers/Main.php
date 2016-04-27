@@ -66,6 +66,13 @@ class Main extends MY_Controller
         $this->layout();
     }
 
+    function comment_add()
+    {
+        $this->db->insert('comments', $_POST);
+
+        $this->session->set_flashdata('message', 'You added a Report');
+        redirect('main/comments/' .$_POST{'entry_d'});
+    }
     function externals()
     {
         $this->load->model('UManage_model');
