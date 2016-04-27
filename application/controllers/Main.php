@@ -70,7 +70,7 @@ $this->db->where('ReportID', $this->uri->segment(3));
     {
         $this->db->insert('Report_Comments', $_POST);
 
-        $this->session->set_flashdata('messagetw', 'You added a Report');
+        $this->session->set_flashdata('messagetwo', 'You added a Report');
         redirect('main/comments/' .$_POST['ReportID']);
     }
     function externals()
