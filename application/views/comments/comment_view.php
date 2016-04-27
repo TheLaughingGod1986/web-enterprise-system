@@ -3,6 +3,8 @@
     <?php
     echo $this->session->Username;
     echo $this->session->LoginID;
+    echo $this->session->Password;
+    echo $this->session->Email;
     ?>
 
     <?php if (isset($reports)) : foreach ($reports as $row) : ?>
