@@ -83,6 +83,7 @@ $this->db->where('ReportID', $this->uri->segment(3));
 //        $this->session->set_flashdata('messagetwo', 'You added a Report');
 //        redirect('main/comments/' .$_POST['ReportID']);
     }
+
     function externals()
     {
         $this->load->model('UManage_model');
