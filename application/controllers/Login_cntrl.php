@@ -23,6 +23,7 @@ class Login_cntrl extends CI_Controller
             $admin_data = array(
                 'Username' => $query->Username,
                 'Password' => $query->Password,
+                'UserID' => $query->UserID,
                 'is_logged_admin' => true
             );
 

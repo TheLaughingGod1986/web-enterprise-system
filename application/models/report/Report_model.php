@@ -7,8 +7,7 @@
  */
 class Report_model extends CI_Model {
 
-
-
+    
     function create_report()
     {
         $this->load->helper('date');
@@ -48,6 +47,23 @@ class Report_model extends CI_Model {
         return $insert;
     }
     
+    function create_comment()
+    {
+        $this->load->helper('date');
+
+        $new_comment = array(
+//            'Report_Name' => $this->input->post('report_name'),
+            'Report_Comments', $_POST,
+//             'Report_Name' => $this->input->post('report_name')
+//         'Report_Name' => $this->input->post('report_name')
+        );
+
+        $insert = $this->db->insert('Report_Comments', $new_comment);
+        $this->db->insert('Report_Comments', $_POST);
+        return $insert;
+    }
+
+
     function get_report()
     {
         $query = $this->db->get('report');
