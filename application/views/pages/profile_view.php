@@ -1,12 +1,13 @@
 <?php
-	if (isset($single_user)){
+	if (isset($profile_other)){
 		//Show profile based on segment 3
 	    echo '<li>';
         echo $single_user->First_Name;
         echo '</li>';
 	} 
-	else if ($this->session->is_logged_external) {
+	else if ($profile_my) {
 		//Show external profile
+	    echo $this->session->Email;
 	} else {
 	    echo 'No Records';
 	}
