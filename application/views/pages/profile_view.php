@@ -3,7 +3,7 @@
 		//Show profile based on segment 3
 	    echo '<li>';
         //echo $profile_other->First_Name;
-        echo $profile_other;
+        print_r($profile_other);
         echo '</li>';
 	} 
 	else if ($profile_my) {
