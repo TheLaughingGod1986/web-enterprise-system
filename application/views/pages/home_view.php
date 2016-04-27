@@ -42,6 +42,9 @@ if ($this->session->is_logged_admin) {
         <?php endif; ?>
     </div>
     <?php
+}
+?>
+<?php
             if ($this->session->flashdata('messagetwo')) {
                 ?>
                 <div class="message flash">
@@ -49,9 +52,7 @@ if ($this->session->is_logged_admin) {
                 </div>
                 <?php
             }
-            ?>
-    
-}
+           
 
 else if ($this->session->is_logged_external) {
     echo "Hello welcome back ";
