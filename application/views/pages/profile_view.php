@@ -7,7 +7,7 @@
 	} 
 	else if ($this->session->is_logged_external) {
 		//Show external profile
-	    echo $this->session->Email->ExternalID;
+	    echo $this->session->Email;
 	} else {
 	    echo 'No Records';
 	}
