@@ -2,7 +2,7 @@
 	if (isset($profile_other)){
 		//Show profile based on segment 3
 	    echo '<li>';
-        echo $single_user->First_Name;
+        echo $profile_other->First_Name;
         echo '</li>';
 	} 
 	else if ($profile_my) {
