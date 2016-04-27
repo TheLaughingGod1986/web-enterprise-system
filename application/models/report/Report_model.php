@@ -59,7 +59,7 @@ class Report_model extends CI_Model {
         );
 
         $insert = $this->db->insert('Report_Comments', $new_comment);
-        $this->db->insert('Report_Comments', $_POST);
+//        $this->db->insert('Report_Comments', $_POST);
         return $insert;
     }
 
