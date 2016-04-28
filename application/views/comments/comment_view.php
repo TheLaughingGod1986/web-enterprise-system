@@ -1,17 +1,31 @@
 <div class="col-sm-4">
+    <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1>comments</h1>
-    <?php if (isset($reports)) : foreach ($reports as $row) : ?>
-        <h2><?php echo $row->Comments; ?></h2>
+    <?php if (isset($reports)) :
+        foreach ($reports as $row) : ?>
 
-        <hr>
-    <?php endforeach; ?>
+            <table>
+                <tfoot>
+                <tr>
+                    <td><h4>Comment</h4></td>
+                    <td><h4>Date</h4></td>
+                    <td><?php echo $row->Comments; ?></td>
+                    <td><?php echo $row->Comment_Date; ?></td>
+                </tr>
+                </tfoot>
+            </table>
+
+            <hr>
+        <?php endforeach; ?>
 
     <?php else : ?>
-        <h2>No Reports</h2>
+        <p>No Reports</p>
     <?php endif; ?>
 
     <p><?= anchor('main', 'Back home'); ?></p>
+    <!--    /////////////////////END SHOW COMMENTS//////////////////-->
 
+    <!--    /////////////////////START ADD COMMENT FORM//////////////////-->
     <?= form_open('main/comment_add'); ?>
 
     <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
@@ -27,9 +41,8 @@
         </div>
         <?php
     }
-
     ?>
-
     </form>
+    <!--    /////////////////////END ADD COMMENT FORM//////////////////-->
 </div>
 
