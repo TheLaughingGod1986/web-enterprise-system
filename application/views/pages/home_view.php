@@ -222,41 +222,14 @@ if ($this->session->is_logged_admin) {
         <h2>No Reports</h2>
     <?php endif; ?>
 </div>
+    <div class="col-sm-6">
+        <h2>My Comments and replies</h2>
 
-    <table border="1" style="width:50%">
-    <thead>
-    <tr>
-        <th><h3>UserName</h3></th>
-        <th><h3>Date Made</h3></th>
-    </tr>
-    </thead>
-    <tbody>
-<div class="col-sm-6">
-    <h2>my comments and replies</h2>
-    <?php if (isset($reports)) :
-        foreach ($reports as $row) : ?>
-            </tbody>
-            <tr>
-            <tr>
-                <td><b>
-                        <?php
-                        echo $row->Username;
-                        echo $row->Staff_Username;
-                        ?>
-                    </b></td>
-                <td><b><?php echo $row->Comment_Date; ?></b></td>
-            </tr>
-            <tr>
-                <td colspan="2"><p><?php echo $row->Comments; ?></p></td>
-            </tr>
-
-        <?php endforeach; ?>
-        </table>
-
-    <?php else : ?>
-        <p>No Comments</p>
-    <?php endif; ?>
     </div>
+
+
+
+
 <?php
 } else {
     echo "<h2>Choose A Login Level</h2>
