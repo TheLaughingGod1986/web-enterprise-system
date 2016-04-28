@@ -81,7 +81,7 @@ class Report_model extends CI_Model {
 
     function get_comment()
     {
-        $query = $this->db->get('Report_Comments.Comments, Report_Comments.Comment_Date, Login.Username\')
+        $query = $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date, Login.Username\')
             ->from(\'Report_Comments\')
             ->join(\'Login\', \'Report_Comments.UserID = Login.LoginID');
 //        return $query->result();
