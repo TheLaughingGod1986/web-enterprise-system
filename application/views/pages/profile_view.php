@@ -1,7 +1,8 @@
 <?php
 	if (isset($profile) && $profile != null && $others == true){
 		//Show profile based on segment 3
-        echo $profile[0]->Email;
+        //echo $profile[0]->Email;
+        echo "other records";
 
 	}
 	else if ($profile == null && $others == false){
