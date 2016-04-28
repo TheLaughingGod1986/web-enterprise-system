@@ -3,8 +3,8 @@
     <table border="1" style="width:50%">
         <thead>
         <tr>
-            <th>UserName</th>
-            <th>Date Made</th>
+            <th><h3>UserName</h3></th>
+            <th><h3>Date Made</h3></th>
         </tr>
         </thead>
         <tbody>
@@ -14,11 +14,11 @@
         </tbody>
         <tr>
         <tr>
-            <td><?php echo $row->Username; ?></td>
-            <td><?php echo $row->Comment_Date; ?></td>
+            <td><b><?php echo $row->Username; ?></b></td>
+            <td><b><?php echo $row->Comment_Date; ?></b></td>
             </tr>
         <tr>
-            <td colspan="2"><?php echo $row->Comments; ?></td>
+            <td colspan="2"><p><?php echo $row->Comments; ?></p></td>
         </tr>
 
 
