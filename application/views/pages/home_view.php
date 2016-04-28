@@ -142,7 +142,7 @@ if ($this->session->is_logged_admin) {
 
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
-            <td>Date here</td>
+            <td><b>Date here</b></td>
             <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
         </tr>
 
