@@ -129,8 +129,8 @@ if ($this->session->is_logged_admin) {
         <table border="1" style="width:50%">
             <thead>
             <tr>
-                <th><h3>Report Name</h3></th>
-                <th><h3>See Report</h3></th>
+                <th><h3>Report Title</h3></th>
+                <th><h3>See Full Report</h3></th>
             </tr>
             </thead>
             <tbody>
