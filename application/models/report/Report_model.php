@@ -47,12 +47,17 @@ class Report_model extends CI_Model {
         return $insert;
     }
 
+    function current_date() {
+        date_default_timezone_set ("Europe/London"); // What timezone you want to be the default value for your current date.
+        return date('Y-m-d H:i:s');
+    }
+
     function create_comment()
     {
         $this->load->helper('date');
 
         $comments = $this->input->post('Comments');
-        $date = $this->now();
+        $date = $this->current_date();
         $reportID = $this->input->post('ReportID');
         $userID = $this->session->userdata('LoginID');
         if(isset($reportID) && isset($userID))
@@ -68,7 +73,6 @@ class Report_model extends CI_Model {
         return FALSE;
     }
 
-
     function get_report()
     {
         $query = $this->db->get('report');
@@ -77,7 +81,11 @@ class Report_model extends CI_Model {
 
     function get_comment()
     {
-        $query = $this->db->get('Report_Comments');
-        return $query->result();
+//        $query = $this->db->get('Report_Comments');
+//        return $query->result();
+         $this->db->select('Report_Comments.Comment, Report_Comments.Date, Login.Username')
+            ->from('Report_Comments')
+            ->join('Login', 'Report_Comments.UserID = Login.LoginID');
+        return $result = $this->db->get();
     }
 }
