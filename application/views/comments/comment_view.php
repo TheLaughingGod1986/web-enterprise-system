@@ -1,4 +1,3 @@
-<div class="col-sm-4">
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1>comments</h1>
     <table style="width:100%">
@@ -30,6 +29,7 @@
     <!--    /////////////////////END SHOW COMMENTS//////////////////-->
 
     <!--    /////////////////////START ADD COMMENT FORM//////////////////-->
+    <div class="col-sm-4">
     <?= form_open('main/comment_add'); ?>
 
     <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
