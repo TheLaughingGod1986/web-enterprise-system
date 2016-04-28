@@ -6,12 +6,16 @@
 	}
 	else if ($profile == null && $others == false){
 		//Show personal profile
-	    echo '<div style="border:1px solid #BFBFBF;padding:15px;position:relative;">';
+	    echo '<div style="border-bottom:1px solid #BFBFBF;padding:15px;padding-bottom:20px;position:relative;">';
 		echo '<img src="http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png" width="100"/>';
 		echo '<div style="display:inline-block;padding-left:10px;position:absolute;top:15px;">';
 		echo '<div>' . $this->session->First_Name . ', ' . $this->session->Last_Name . '</div>';
 		echo '<div>' . $this->session->Email . '</div>';
 		echo '</div>';	
+		echo '</div>';
+
+		echo '<div style="border-bottom:1px solid #BFBFBF;position:relative;text-align:center;">';
+		echo '<div>My Messages</div><div>Comments</div>';
 		echo '</div>';
 	} else {
 	    echo 'No Records';
