@@ -16,6 +16,8 @@
         <tr>
             <td><?php echo $row->Username; ?></td>
             <td><?php echo $row->Comment_Date; ?></td>
+            </tr>
+        <tr>
             <td colspan="2"><?php echo $row->Comments; ?></td>
         </tr>
 
