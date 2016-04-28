@@ -143,9 +143,7 @@ if ($this->session->is_logged_admin) {
             <td><b><?php echo $row->Report_Name; ?></b></td>
             <td><b><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></b></td>
         </tr>
-
-
-            <hr>
+            
         <?php endforeach; ?>
         </table>
         <?php else : ?>
