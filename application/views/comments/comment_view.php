@@ -1,21 +1,26 @@
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1>comments</h1>
     <table border="1" style="width:50%">
+        <thead>
         <tr>
             <th><?php echo $row->Username; ?></th>
             <th><?php echo $row->Comment_Date; ?></th>
         </tr>
+        </thead>
+        <tbody>
+
         <?php if (isset($reports)) :
         foreach ($reports as $row) : ?>
-
+        </tbody>
         <tr>
         <tr>
             <td colspan="2"><?php echo $row->Comments; ?></td>
         </tr>
-    </table>
-    <hr>
-    <?php endforeach; ?>
 
+
+    <?php endforeach; ?>
+    </table>
+    
     <?php else : ?>
         <p>No Comments</p>
     <?php endif; ?>
