@@ -126,17 +126,18 @@ if ($this->session->is_logged_admin) {
     </div>
     <div class="col-sm-6">
         <h2>Latest Reports</h2>
+
         <table style="width:100%">
             <tr>
-                <th><h3>Report Title</h3></th>
-                <th><h3>See Report</h3></th>
+                <th>Report</th>
+                <th>Report Link</th>
             </tr>
-        <?php if (isset($reports)) : foreach ($reports as $row) : ?>
-                <tr>
-                    <td><?php echo $row->Report_Name; ?></td>
-                    <td><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></td>
-                </tr>
-            </table>
+            <tr>
+            <tr>
+                <td><?php echo $row->Report_Name; ?></td>
+                <td><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></td>
+            </tr>
+        </table>
             <hr>
         <?php endforeach; ?>
         <?php else : ?>
