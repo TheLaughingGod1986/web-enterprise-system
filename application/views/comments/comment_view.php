@@ -15,21 +15,9 @@
         </tbody>
         <tr>
         <tr>
-<!--            <td><b>-->
-<!--                    --><?php
-//                    if ($this->session->is_logged_admin) {
-//                        echo $row->Username;
-//                    }
-//
-//                    else if ($this->session->is_logged_staff) {
-//                        echo $row->First_Name;
-//                    }
-//                    ?>
-<!--                </b></td>-->
             <td><b>
                    <?php
                         echo $row->Username;
-
                         echo $row->Staff_Username;
                    ?>
                 </b></td>
@@ -38,7 +26,6 @@
         <tr>
             <td colspan="2"><p><?php echo $row->Comments; ?></p></td>
         </tr>
-
 
     <?php endforeach; ?>
     </table>
