@@ -70,16 +70,17 @@ class Report_model extends CI_Model {
             );
             return $this->db->insert('Report_Comments', $new_comment);
         }
-        else(isset($reportID) && isset($userID_staff));
+        else if(isset($reportID) && isset($userID_staff));
         {
             $new_comment = array(
                 'Comments' => isset($comments) ? $comments : "",
                 'ReportID' => $reportID,
-                'UserID_Staff' =>$userID_staff,
+                'UserID_Staff' => $userID_staff,
                 'Comment_Date' => $date
             );
             return $this->db->insert('Report_Comments', $new_comment);
         }
+        
         return FALSE;
     }
 
