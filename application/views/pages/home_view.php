@@ -141,9 +141,9 @@ if ($this->session->is_logged_admin) {
 
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
-            <td><b><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></b></td>
+            <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
         </tr>
-            
+
         <?php endforeach; ?>
         </table>
         <?php else : ?>
