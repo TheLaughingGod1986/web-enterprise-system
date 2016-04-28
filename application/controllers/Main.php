@@ -13,7 +13,6 @@ class Main extends MY_Controller
     function index()
     {
         $data = array();
-        $talk = array();
 //        $this->middle = 'pages/home_view';
 
 
@@ -22,14 +21,7 @@ class Main extends MY_Controller
             $data['reports'] = $query;
         }
 
-        $query = $this->report_model->get_comment($this->uri->segment(3));
-        if($query->num_rows() > 0)
-        {
-            $talk['reports'] = $query->result();
-        }
-
-
-        $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data,$talk, true);
+        $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data, true);
         $this->layout();
     }
 

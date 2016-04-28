@@ -194,7 +194,11 @@ if ($this->session->is_logged_admin) {
     echo '<strong>' . htmlspecialchars($this->session->First_Name) . ',</strong> You Are Logged in as a <strong>Staff</strong>.';
     echo " chose a option from the menu to get started.";
     ?>
-<div class="col-sm-6">
+    <div class="col-sm-4">
+        <h2>title</h2>
+        <p>content here</p>
+    </div>
+<div class="col-sm-8">
     <h2>Latest Reports</h2>
     <table border="1" style="width:50%">
         <thead>
@@ -212,7 +216,7 @@ if ($this->session->is_logged_admin) {
 
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
-            <td><b>Date here</b></td>
+            <td><b><?php echo $row->ReportDate; ?>/b></td>
             <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
         </tr>
 
@@ -222,40 +226,6 @@ if ($this->session->is_logged_admin) {
         <h2>No Reports</h2>
     <?php endif; ?>
 </div>
-    <div class="col-sm-6">
-        <h2>My Comments and replies</h2>
-        <thead>
-        <tr>
-            <th><h3>UserName</h3></th>
-            <th><h3>Date Made</h3></th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <?php if (isset($reports)) :
-        foreach ($reports as $row) : ?>
-        </tbody>
-        <tr>
-        <tr>
-            <td><b>
-                    <?php
-                    echo $row->Username;
-                    echo $row->Staff_Username;
-                    ?>
-                </b></td>
-            <td><b><?php echo $row->Comment_Date; ?></b></td>
-        </tr>
-        <tr>
-            <td colspan="2"><p><?php echo $row->Comments; ?></p></td>
-        </tr>
-
-        <?php endforeach; ?>
-        </table>
-
-        <?php else : ?>
-            <p>No Comments</p>
-        <?php endif; ?>
-    </div>
 
 
 
