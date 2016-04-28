@@ -3,8 +3,8 @@
     <table border="1" style="width:50%">
         <thead>
         <tr>
-            <th>nme</th>
-            <th>date</th>
+            <th>UserName</th>
+            <th>Date Made</th>
         </tr>
         </thead>
         <tbody>
