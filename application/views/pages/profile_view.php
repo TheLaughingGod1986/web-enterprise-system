@@ -15,8 +15,8 @@
 		echo '</div>';
 
 		echo '<div style="text-align:center;">';
-		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active->messages . 'float:left;" onclick="window.open(\'Profile_cntrl/profile/messages\');">My Messages</div>';
-		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active->comments . '" onclick="window.open(\'Profile_cntrl/profile/comments\');">Comments</div>';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active->messages . 'float:left;" onclick="window.open(\'profile/messages\');">My Messages</div>';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active->comments . '" onclick="window.open(\'profile/comments\');">Comments</div>';
 		echo '</div>';
 
 		if ($active->messages != null){
