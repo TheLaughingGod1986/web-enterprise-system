@@ -55,7 +55,6 @@ class Report_model extends CI_Model {
     function create_comment()
     {
         $this->load->helper('date');
-
         $comments = $this->input->post('Comments');
         $date = $this->current_date();
         $reportID = $this->input->post('ReportID');

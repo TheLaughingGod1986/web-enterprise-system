@@ -68,6 +68,8 @@ class Main extends MY_Controller
 
     function comment_add()
     {
+        if ($this->session->is_logged_admin) {
+
             if ($query = $this->report_model->create_comment()) {
 
                 $this->session->set_flashdata('messagetwo', 'You added a Comment');
@@ -77,6 +79,20 @@ class Main extends MY_Controller
                 $this->session->set_flashdata('messagetwo', 'Sorry not this time');
                 redirect('main/comments/' .$_POST['ReportID']);
             }
+        }
+
+        else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='1') {
+            if ($query = $this->report_model->create_comment_staff()) {
+
+                $this->session->set_flashdata('messagetwo', 'You added a Comment');
+                redirect('main/comments/' .$_POST['ReportID']);
+
+            } else {
+                $this->session->set_flashdata('messagetwo', 'Sorry not this time');
+                redirect('main/comments/' .$_POST['ReportID']);
+            }
+        }
+
     }
 
     function externals()
