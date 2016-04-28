@@ -135,7 +135,7 @@ if ($this->session->is_logged_admin) {
         <?php if (isset($reports)) : foreach ($reports as $row) : ?>
                 <tr>
                     <td><?php echo $row->Report_Name; ?></td>
-                    <td>$<?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></td>
+                    <td><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></td>
                 </tr>
             </table>
             <hr>
