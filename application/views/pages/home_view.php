@@ -126,6 +126,7 @@ if ($this->session->is_logged_admin) {
     </div>
     <div class="col-sm-6">
         <h2>Latest Reports</h2>
+        <table border="1" style="width:50%">
             <thead>
             <tr>
                 <th><h3>Report Name</h3></th>
@@ -137,7 +138,7 @@ if ($this->session->is_logged_admin) {
         <?php if (isset($reports)) :
         foreach ($reports as $row) : ?>
 </tbody>
-                
+
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
             <td><b><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></b></td>
