@@ -15,7 +15,7 @@
 		echo '</div>';
 
 		echo '<div style="border-bottom:1px solid #BFBFBF;position:relative;text-align:center;">';
-		echo '<div style="display:inline-block;">My Messages</div><div style="display:inline-block;">Comments</div>';
+		echo '<div>My Messages</div><div>Comments</div>';
 		echo '</div>';
 	} else {
 	    echo 'No Records';
