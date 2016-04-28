@@ -1,22 +1,22 @@
 <div class="col-sm-4">
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1>comments</h1>
-    <?php if (isset($reports)) :
+    <table style="width:100%">
+        <tr>
+            <th><h3>Comment</h3></th>
+            <th><h3>Date</h3></th>
+        </tr>
+        <?php if (isset($reports)) :
         foreach ($reports as $row) : ?>
-
-            <table>
-                <tfoot>
-                <tr>
-                    <td><h4>Comment</h4></td>
-                    <td><h4>Date</h4></td>
-                    <td><?php echo $row->Comments; ?></td>
-                    <td><?php echo $row->Comment_Date; ?></td>
-                </tr>
-                </tfoot>
-            </table>
-
-            <hr>
-        <?php endforeach; ?>
+        <tr>
+            <td><?php echo $row->Comments; ?></td>
+        </tr>
+        <tr>
+            <td><?php echo $row->Comment_Date; ?></td>
+        </tr>
+    </table>
+    <hr>
+    <?php endforeach; ?>
 
     <?php else : ?>
         <p>No Reports</p>
