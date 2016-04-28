@@ -73,38 +73,39 @@ function  reloadForm(){
 }
 
 var current = 0;
-function reportSections(e){
+
+function reportSections(e) {
     var btn = e.id;
     var prev;
-    var next;
-    var total = 5;
+    var total = 4;
 
-    console.log('totall: '+total);
-    console.log('button: '+btn);
+    if (btn == 'prev') {
 
-    if(btn == 'prev'){
-        if(current < 1){
-            e.style.display = 'none';
-            return false;
-        }
         prev = current;
+
         current--;
+        if(current < 0) current = 0;
+
         document.getElementsByClassName('section')[prev].style.display = 'none';
         document.getElementsByClassName('section')[current].style.display = 'block';
         document.getElementById('next').style.display = 'block';
+
+        if (current < 1) {
+            document.getElementById('prev').style.display = 'none';
+        }
     }
 
-    if(btn == 'next'){
-        if( current > total){
-            e.style.display = 'none';
-            return false;
-        }
+    if (btn == 'next') {
         prev = current;
         current++;
+
+        if(current > 2) current = 2;
         document.getElementsByClassName('section')[prev].style.display = 'none';
         document.getElementsByClassName('section')[current].style.display = 'block';
-        document.getElementById('next').style.display = 'block';
+        document.getElementById('prev').style.display = 'block';
+
+        if (current > total) {
+            document.getElementById('next').style.display = 'none';
+        }
     }
-
-
 }
