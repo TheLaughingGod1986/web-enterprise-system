@@ -42,6 +42,7 @@ class Login_cntrl extends CI_Controller
         {
             $external_data = array(
                 'First_Name' => $query->First_Name,
+                'Last_Name' => $query->Last_Name,
                 'Password' => $query->Password,
                 'Email' => $query->Email,
                 'is_logged_external' => true
@@ -62,6 +63,7 @@ class Login_cntrl extends CI_Controller
         {
             $staff_data = array(
                 'First_Name' => $query->First_Name,
+                'Last_Name' => $query->Last_Name,
                 'Password' => $query->Password,
                 'Email' => $query->Email,
                 'RoleID' => $query->RoleID,
