@@ -18,7 +18,7 @@ class Profile_cntrl extends MY_Controller
 
         //Verifying whether its personal profile or others
         $other = ($id != null) ? true : false;
-        $profile = ($type == 'ee') ? $this->Profile_model->get_ee_id($id) : ($type == 'staff') ? $this->Profile_model->get_staff_id($id) : "test";
+        $profile = ($type == 'ee') ? $this->Profile_model->get_ee_id($id) : ($type == 'staff') ? $this->Profile_model->get_staff_id($id) : null;
 
         //Adding data and styling to the comments and messages
         $messages['data'] = ($type == 'messages' || $type != 'comments') ? $this->Profile_model->get_messages($personal_type, $personal_id) : null;
