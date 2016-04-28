@@ -5,8 +5,7 @@
  * Date: 26/04/2016
  * Time: 14:55
  */
-class Report_model extends CI_Model
-{
+class Report_model extends CI_Model {
 
 
     function create_report()
@@ -48,14 +47,11 @@ class Report_model extends CI_Model
         return $insert;
     }
 
-    function current_date()
-    {
-        date_default_timezone_set("Europe/London"); // What timezone you want to be the default value for your current date.
+    function current_date() {
+        date_default_timezone_set ("Europe/London"); // What timezone you want to be the default value for your current date.
         return date('Y-m-d H:i:s');
     }
-}
 
-if ($this->session->is_logged_admin) {
     function create_comment()
     {
         $this->load->helper('date');
@@ -76,28 +72,6 @@ if ($this->session->is_logged_admin) {
         }
         return FALSE;
     }
-}
-
-else if ($this->session->is_logged_external) {
-    echo "<h1>External Portal - Faculty </h1>";
-}
-
-else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='1') {
-    echo "<h1>Program leader Portal - Faculty</h1>";
-}
-
-else if (!isset($this->session->is_logged_staff) && $this->session->RoleID =='2') {
-    echo "<h1>Pro vice chancellery Portal - Faculty</h1>";
-}
-
-else if (!isset($this->session->is_logged_staff, $this->session->RoleID ) && $this->session->RoleID =='3') {
-    echo "<h1>Director of learning and qualit Portal - Faculty</h1>";
-}
-
-else {
-    echo "<h1>Please Login</h1>";
-}
-
 
     function get_report()
     {
@@ -115,3 +89,4 @@ else {
             ->join('Login', 'Report_Comments.UserID = Login.LoginID');
         return  $result = $this->db->get();
     }
+}
