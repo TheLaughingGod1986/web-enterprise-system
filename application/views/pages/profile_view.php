@@ -30,10 +30,6 @@
 			echo "comments";
 		}
 	} else {
-		print_r($profile);
-		echo "\n\n";
-		print_r($others);
-		echo "\n\n";
 	    echo 'No Records';
 	}
 	//If not logged in and on this page without segment 3, then incorrect url
