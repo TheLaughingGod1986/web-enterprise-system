@@ -56,15 +56,13 @@ class Main extends MY_Controller
     {
         $data = array();
 
-$this->db->where('ReportID', $this->uri->segment(3));
+        $this->db->where('ReportID', $this->uri->segment(3));
 
-        if($result = $this->report_model->get_comment())
-        {
-            $data['reports'] = $result;
+        if ($query = $this->report_model->get_comment()) {
+            $data['reports'] = $query;
         }
 
-        $this->template['middle'] = $this->load->view ($this->middle = 'comments/comment_view',$data, true);
-        $this->layout();
+        $this->template['middle'] = $this->load->view($this->middle = 'comments/comment_view', $data, true);
     }
 
     function comment_add()
