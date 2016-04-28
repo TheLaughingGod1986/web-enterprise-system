@@ -60,6 +60,8 @@ class Main extends MY_Controller
 
         if ($result = $this->report_model->get_comment()) {
             $data['reports'] = $result;
+
+
         }
 
         $this->template['middle'] = $this->load->view($this->middle = 'comments/comment_view', $data, true);
