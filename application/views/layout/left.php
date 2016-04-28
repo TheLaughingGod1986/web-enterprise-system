@@ -31,15 +31,10 @@
 
     <?php if ($this->session->is_logged_external) { ?>
         <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
-        <!--        <li role="presentation"><a href="#">Externals</a></li>-->
         <li role="presentation"><a href="#">Reports</a></li>
         <li role="presentation"><a href="#">Write/ View Responses</a></li>
         <li class="grey"></li>
         <li role="presentation"><a href="#">Your Resposes</a></li>
-        <!--        <li role="presentation"><a href="#">PSRB</a></li>-->
-        <!--        <li role="presentation"><a href="#">Analise Of Data</a></li>-->
-        <!--        <li role="presentation"><a href="#">Missing Reports</a></li>-->
-        <!--        <li class="grey"></li>-->
         <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
         <li role="presentation"><a href="#">Change Login Details</a></li>
         <li class="grey"></li>
@@ -49,15 +44,7 @@
 
     <?php if ($this->session->is_logged_staff) { ?>
         <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
-        <!--        <li role="presentation"><a href="#">Externals</a></li>-->
-        <!--                <li role="presentation"><a href="#">Reports</a></li>-->
-        <!--                <li role="presentation"><a href="#">Write/ View Responses</a></li>-->
-        <!--                <li class="grey"></li>-->
-        <!--                <li role="presentation"><a href="#">Your Resposes</a></li>-->
-        <!--        <li role="presentation"><a href="#">PSRB</a></li>-->
-        <!--        <li role="presentation"><a href="#">Analise Of Data</a></li>-->
-        <!--        <li role="presentation"><a href="#">Missing Reports</a></li>-->
-        <!--        <li class="grey"></li>-->
+        <li role="presentation"><?php echo anchor('main/responses', 'Your Responses'); ?></li>
         <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
         <li role="presentation"><a href="#">Change Login Details</a></li>
         <li class="grey"></li>

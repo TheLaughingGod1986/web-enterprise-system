@@ -28,6 +28,8 @@
 			echo "mesages";
 		} else {
 			echo "comments";
+			echo $row->Username;
+			echo $row->Staff_Username;
 		}
 	} else {
 	    echo 'No Records';
