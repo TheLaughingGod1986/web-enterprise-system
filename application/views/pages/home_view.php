@@ -224,7 +224,7 @@ if ($this->session->is_logged_admin) {
 </div>
     <div class="col-sm-6">
         <h2>My Comments and replies</h2>
-
+here
     </div>
 
 
