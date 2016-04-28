@@ -11,8 +11,14 @@ class Profile_cntrl extends MY_Controller
     	$type = $this->uri->segment(3);
     	$id = $this->uri->segment(4);
 
+        $personal_type = $this->session->Type;
+        $personal_id = $this->session->ID;
+
     	$data['others'] = ($id != null) ? true : false;
-    	$data['profile'] = ($type == 'ee') ? $this->Profile_model->get_ee_id($id) : ($type == 'staff') ? $this->Profile_model->get_staff_id($id) : null;
+    	$data['profile'] = ($type == 'ee') ? $this->Profile_model->get_ee_id($id) : ($type == 'staff') ? $this->Profile_model->get_staff_id($id) : ($type == 'messages') ? $this->Profile_model->get_messages($personal_type, $personal_id) : ($type == 'comments') ? $this->Profile_model->get_comments($personal_type, $personal_id) : null;
+        $data['active']['messages'] = ($type == 'messages') ? 'border-bottom:3px solid #8b9dc3;' : ($type != 'comments') ? 'border-bottom:3px solid #8b9dc3;' : null;
+        $data['active']['comments'] = ($type == 'comments') ? 'border-bottom:3px solid #8b9dc3;' : null;
+
     	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
         $this->layout();
     }

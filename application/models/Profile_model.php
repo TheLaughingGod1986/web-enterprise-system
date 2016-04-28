@@ -16,5 +16,13 @@ class Profile_model extends CI_Model{
         $query = $this->db->get('staff');
         return $query->result();
     }
+
+    function get_messages($type, $id){
+        
+    }
+
+    function get_comments($type, $id){
+
+    }
 }
 ?>

@@ -14,9 +14,19 @@
 		echo '</div>';	
 		echo '</div>';
 
-		echo '<div style="border-bottom:1px solid #BFBFBF;position:relative;text-align:center;">';
-		echo '<div style="display:inline-block;">My Messages</div><div style="display:inline-block;">Comments</div>';
+		echo '<div style="text-align:center;">';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active->messages . 'float:left;" onclick="window.open(\'Profile_cntrl/profile/messages\');">My Messages</div>';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active->comments . '" onclick="window.open(\'Profile_cntrl/profile/comments\');">Comments</div>';
 		echo '</div>';
+
+		if ($active->messages != null){
+			echo "mesages";
+		} else {
+			echo "comments";
+		}
+		// echo '<div>';
+		// echo 
+		// echo '</div>';
 	} else {
 	    echo 'No Records';
 	}
