@@ -140,8 +140,7 @@ if ($this->session->is_logged_admin) {
                     <td><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></td>
                 </tr>
             </table>
-                    <td><?php echo $row->Report_Name; ?></td>
-                    <td><?= anchor('main/comments/' . $row->ReportID, 'Comments'); ?></td>
+                   
 
 
             <hr>
