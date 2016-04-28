@@ -107,9 +107,9 @@ if ($this->session->is_logged_admin) {
             'id' => 'prev',
             'onClick' => 'reportSections(this)'
         );
-        echo form_button('next', 'Next', $nn);
-        echo form_button('next', 'Prev', $pp);
 
+        echo form_button('prev', 'Prev', $pp);
+        echo form_button('next', 'Next', $nn);
         ?>
 
         <?php echo validation_errors('<p class="error"/>'); ?>
@@ -123,7 +123,6 @@ if ($this->session->is_logged_admin) {
         }
         ?>
 
-        <!--        /////////////////REPORT QUERY START////////////////////////-->
     </div>
     <div class="col-sm-6">
         <h2>Latest Reports</h2>
@@ -144,7 +143,7 @@ if ($this->session->is_logged_admin) {
             <h2>No Reports</h2>
         <?php endif; ?>
     </div>
-    <!--    /////////////////REPORT QUERY END////////////////////////-->
+
     <?php
 
 } else if ($this->session->is_logged_external) {

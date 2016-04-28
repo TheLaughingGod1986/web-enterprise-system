@@ -77,8 +77,10 @@ function reportSections(e){
     var btn = e.id;
     var prev;
     var next;
-    var total = document.getElementsByClassName('sections').length;
+    var total = 5;
 
+    console.log('total: '+total);
+    console.log('button: '+btn);
     if(btn == 'prev'){
         if(current < 1){
             e.style.display = 'none';
@@ -92,7 +94,7 @@ function reportSections(e){
     }
 
     if(btn == 'next'){
-        if( current > total - 1){
+        if( current > total){
             e.style.display = 'none';
             return false;
         }
