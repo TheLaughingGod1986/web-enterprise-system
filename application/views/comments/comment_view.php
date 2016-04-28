@@ -30,7 +30,7 @@
                    <?php
                         echo $row->Username;
 
-                        echo $row->First_Name;
+                        echo $row->Staff_Username;
                    ?>
                 </b></td>
             <td><b><?php echo $row->Comment_Date; ?></b></td>
