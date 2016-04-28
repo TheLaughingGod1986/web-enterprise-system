@@ -70,7 +70,7 @@ class Main extends MY_Controller
     {
         if ($this->session->is_logged_admin) {
 
-            if ($query = $this->report_model->create_comment()) {
+            if ($query = $this->report_model->create_comment_admin()) {
 
                 $this->session->set_flashdata('messagetwo', 'You added a Comment');
                 redirect('main/comments/' .$_POST['ReportID']);
