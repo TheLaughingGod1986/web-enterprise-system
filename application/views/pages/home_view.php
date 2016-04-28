@@ -193,6 +193,36 @@ if ($this->session->is_logged_admin) {
     echo "Hello welcome back ";
     echo '<strong>' . htmlspecialchars($this->session->First_Name) . ',</strong> You Are Logged in as a <strong>Staff</strong>.';
     echo " chose a option from the menu to get started.";
+    ?>
+<div class="col-sm-6">
+    <h2>Latest Reports</h2>
+    <table border="1" style="width:50%">
+        <thead>
+        <tr>
+            <th><h3>Report Title</h3></th>
+            <th><h3>Report Date</h3></th>
+            <th><h3>See Full Report</h3></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <?php if (isset($reports)) :
+        foreach ($reports as $row) : ?>
+        </tbody>
+
+        <tr>
+            <td><b><?php echo $row->Report_Name; ?></b></td>
+            <td><b>Date here</b></td>
+            <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
+        </tr>
+
+        <?php endforeach; ?>
+    </table>
+    <?php else : ?>
+        <h2>No Reports</h2>
+    <?php endif; ?>
+</div>
+<?php
 } else {
     echo "<h2>Choose A Login Level</h2>
 <hr>";
