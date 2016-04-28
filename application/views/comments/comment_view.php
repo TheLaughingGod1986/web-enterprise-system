@@ -15,17 +15,17 @@
         </tbody>
         <tr>
         <tr>
-            <td><b>
-                    <?php
-                    if ($this->session->is_logged_admin) {
-                        echo $row->Username;
-                    }
-
-                    else if ($this->session->is_logged_staff) {
-                        echo $row->First_Name;
-                    }
-                    ?>
-                </b></td>
+<!--            <td><b>-->
+<!--                    --><?php
+//                    if ($this->session->is_logged_admin) {
+//                        echo $row->Username;
+//                    }
+//
+//                    else if ($this->session->is_logged_staff) {
+//                        echo $row->First_Name;
+//                    }
+//                    ?>
+<!--                </b></td>-->
             <td><b>
                    <?php
                         echo $row->Username;
