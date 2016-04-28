@@ -1,11 +1,13 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Ben
  * Date: 26/04/2016
  * Time: 14:55
  */
-class Report_model extends CI_Model {
+class Report_model extends CI_Model
+{
 
 
     function create_report()
@@ -47,8 +49,9 @@ class Report_model extends CI_Model {
         return $insert;
     }
 
-    function current_date() {
-        date_default_timezone_set ("Europe/London"); // What timezone you want to be the default value for your current date.
+    function current_date()
+    {
+        date_default_timezone_set("Europe/London"); // What timezone you want to be the default value for your current date.
         return date('Y-m-d H:i:s');
     }
 
@@ -59,9 +62,8 @@ class Report_model extends CI_Model {
         $date = $this->current_date();
         $reportID = $this->input->post('ReportID');
         $userID = $this->session->userdata('LoginID');
-        $userID_staff =$this->session->userdata('StaffID');
-        if(isset($reportID) && isset($userID))
-        {
+        $userID_staff = $this->session->userdata('StaffID');
+        if (isset($reportID) && isset($userID)) {
             $new_comment = array(
                 'Comments' => isset($comments) ? $comments : "",
                 'ReportID' => $reportID,
@@ -69,8 +71,7 @@ class Report_model extends CI_Model {
                 'Comment_Date' => $date
             );
             return $this->db->insert('Report_Comments', $new_comment);
-        }
-        else if(isset($reportID) && isset($userID_staff));
+        } else if (isset($reportID) && isset($userID_staff)) ;
         {
             $new_comment = array(
                 'Comments' => isset($comments) ? $comments : "",
@@ -80,7 +81,7 @@ class Report_model extends CI_Model {
             );
             return $this->db->insert('Report_Comments', $new_comment);
         }
-        
+
         return FALSE;
     }
 
@@ -99,7 +100,7 @@ class Report_model extends CI_Model {
             ->from('Report_Comments')
             ->join('Login', 'Report_Comments.UserID = Login.LoginID', 'left')
             ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID', 'left');
-        return  $result = $this->db->get();
+        return $result = $this->db->get();
     }
 
     function get_responses($report_id = null)
@@ -107,10 +108,10 @@ class Report_model extends CI_Model {
         if (isset($report_id)) {
             $this->db->where('ReportID', $report_id);
         }
-        $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date, Login.Username, staff.Staff_Username')
+        $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date staff.Staff_Username')
             ->from('Report_Comments')
-            ->join('Login', 'Report_Comments.UserID = Login.LoginID', 'left')
-            ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID', 'left');
-        return  $result = $this->db->get();
+            ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID', 'left')
+            ->where('UserID_Staff', $this->session->userdata("StaffID"));
+        return $result = $this->db->get();
     }
 }
