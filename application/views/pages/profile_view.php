@@ -20,7 +20,7 @@
 		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['comments']['style'] . '" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/comments\';">Comments</div>';
 		echo '</div>';
 
-		if ( $active['messages']['data'] != null){
+		if ( $active['messages']['style'] != null){
 			echo "mesages";
 		} else {
 			echo "comments";
