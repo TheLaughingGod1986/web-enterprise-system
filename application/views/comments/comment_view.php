@@ -3,8 +3,8 @@
     <table border="1" style="width:50%">
         <thead>
         <tr>
-            <th><?php echo $row->Username; ?></th>
-            <th><?php echo $row->Comment_Date; ?></th>
+            <th>nme</th>
+            <th>date</th>
         </tr>
         </thead>
         <tbody>
@@ -14,13 +14,15 @@
         </tbody>
         <tr>
         <tr>
+            <td><?php echo $row->Username; ?></td>
+            <td><?php echo $row->Comment_Date; ?></td>
             <td colspan="2"><?php echo $row->Comments; ?></td>
         </tr>
 
 
     <?php endforeach; ?>
     </table>
-    
+
     <?php else : ?>
         <p>No Comments</p>
     <?php endif; ?>
