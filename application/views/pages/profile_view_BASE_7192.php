@@ -15,8 +15,8 @@
 		echo '</div>';
 
 		echo '<div style="border-bottom:1px solid #BFBFBF;position:relative;">';
--		echo '<i class="fa fa-sticky-note" aria-hidden="true"></i>';
--		echo '</div>';
+		echo '<i class="fa fa-sticky-note" aria-hidden="true"></i>';
+		echo '</div>';
 	} else {
 	    echo 'No Records';
 	}

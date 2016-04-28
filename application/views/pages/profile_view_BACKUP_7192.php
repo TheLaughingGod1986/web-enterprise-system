@@ -14,9 +14,15 @@
 		echo '</div>';	
 		echo '</div>';
 
+<<<<<<< HEAD
 		echo '<div style="border-bottom:1px solid #BFBFBF;position:relative;">';
 -		echo '<i class="fa fa-sticky-note" aria-hidden="true"></i>';
 -		echo '</div>';
+=======
+		echo '<div style="border-bottom:1px solid #BFBFBF;position:relative;text-align:center;">';
+		echo '<div>My Messages</div><div>Comments</div>';
+		echo '</div>';
+>>>>>>> master
 	} else {
 	    echo 'No Records';
 	}
