@@ -79,8 +79,9 @@ function reportSections(e){
     var next;
     var total = 5;
 
-    console.log('total: '+total);
+    console.log('totall: '+total);
     console.log('button: '+btn);
+
     if(btn == 'prev'){
         if(current < 1){
             e.style.display = 'none';
