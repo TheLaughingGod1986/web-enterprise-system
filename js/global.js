@@ -99,7 +99,7 @@ function reportSections(e) {
         prev = current;
         current++;
 
-        if(current > 2) current = 2;
+        if(current > 5) current = 5;
         document.getElementsByClassName('section')[prev].style.display = 'none';
         document.getElementsByClassName('section')[current].style.display = 'block';
         document.getElementById('prev').style.display = 'block';
