@@ -26,6 +26,13 @@
                     }
                     ?>
                 </b></td>
+            <td><b>
+                   <?php
+                        echo $row->Username;
+
+                        echo $row->First_Name;
+                   ?>
+                </b></td>
             <td><b><?php echo $row->Comment_Date; ?></b></td>
             </tr>
         <tr>
