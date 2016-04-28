@@ -13,6 +13,7 @@
 		echo '<div>' . $this->session->Email . '</div>';
 		echo '</div>';	
 		echo '</div>';
+		echo '';
 
 	} else {
 	    echo 'No Records';
