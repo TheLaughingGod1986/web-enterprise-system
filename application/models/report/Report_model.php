@@ -95,11 +95,10 @@ class Report_model extends CI_Model {
         if (isset($report_id)) {
             $this->db->where('ReportID', $report_id);
         }
-        $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date, Login.Username,
-    staff.First_Name')
+        $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date, Login.Username,staff.First_Name')
             ->from('Report_Comments')
             ->join('Login', 'Report_Comments.UserID = Login.LoginID')
-            ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID')
+            ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID');
         return  $result = $this->db->get();
     }
 }
