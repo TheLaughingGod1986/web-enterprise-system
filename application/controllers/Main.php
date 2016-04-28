@@ -58,8 +58,8 @@ class Main extends MY_Controller
 
         $this->db->where('ReportID', $this->uri->segment(3));
 
-        if ($result = $this->report_model->get_comment()) {
-            $data['reports'] = $result;
+        if ($query = $this->report_model->get_comment()) {
+            $data['reports'] = $query;
 
 
         }
