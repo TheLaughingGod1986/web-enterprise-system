@@ -101,7 +101,7 @@ class Main extends MY_Controller
             $data['reports'] = $query->result();
         }
 
-        $this->template['middle'] = $this->load->view($this->middle = 'comments/responses_view', $data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/responses_view', $data, true);
         $this->layout();
     }
 
