@@ -16,29 +16,27 @@ class Main extends MY_Controller
 //        $this->middle = 'pages/home_view';
 
 
-        if($query = $this->report_model->get_report())
-        {
+        if ($query = $this->report_model->get_report()) {
             $data['reports'] = $query;
         }
 
-        $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/home_view', $data, true);
         $this->layout();
     }
-    
+
     function create_report()
     {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('report_name', 'report_name', 'trim|required');
 
-        if ($this->form_validation->run() == FALSE)
-        {
+        if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('message', 'Im sorry, That is not right');
             redirect('main/index');
         } else {
 
             if ($query = $this->report_model->create_report()) {
-                
+
                 $this->session->set_flashdata('message', 'You added a Report');
                 redirect('main/index');
                 $this->layout();
@@ -46,8 +44,6 @@ class Main extends MY_Controller
             } else {
                 $this->session->set_flashdata('message', 'You fucked up');
                 redirect('main/index');
-
-                $this->layout();
             }
         }
     }
@@ -55,29 +51,27 @@ class Main extends MY_Controller
     function comments()
     {
         $data = array();
-        
-$this->db->where('ReportID', $this->uri->segment(3));
-        
-        if($query = $this->report_model->get_comment())
-        {
+
+        $this->db->where('ReportID', $this->uri->segment(3));
+
+        if ($query = $this->report_model->get_comment()) {
             $data['reports'] = $query;
         }
-        
-        $this->template['middle'] = $this->load->view ($this->middle = 'comments/comment_view',$data, true);
-        $this->layout();
+
+        $this->template['middle'] = $this->load->view($this->middle = 'comments/comment_view', $data, true);
     }
 
     function comment_add()
     {
-            if ($query = $this->report_model->create_comment()) {
+        if ($query = $this->report_model->create_comment()) {
 
-                $this->session->set_flashdata('messagetwo', 'You added a Comment');
-                redirect('main/comments/' .$_POST['ReportID']);
+            $this->session->set_flashdata('messagetwo', 'You added a Comment');
+            redirect('main/comments/' . $_POST['ReportID']);
 
-            } else {
-                $this->session->set_flashdata('messagetwo', 'Sorry not this time');
-                redirect('main/comments/' .$_POST['ReportID']);
-            }
+        } else {
+            $this->session->set_flashdata('messagetwo', 'Sorry not this time');
+            redirect('main/comments/' . $_POST['ReportID']);
+        }
     }
 
     function externals()

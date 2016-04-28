@@ -5,6 +5,7 @@
         <tr>
             <th><h3>Comment</h3></th>
             <th><h3>Date</h3></th>
+            <th><h3>User Name</h3></th>
         </tr>
         <?php if (isset($reports)) :
         foreach ($reports as $row) : ?>
@@ -14,12 +15,15 @@
         <tr>
             <td><?php echo $row->Comment_Date; ?></td>
         </tr>
+        <tr>
+            <td><?php echo $row->Username; ?></td>
+        </tr>
     </table>
     <hr>
     <?php endforeach; ?>
 
     <?php else : ?>
-        <p>No Reports</p>
+        <p>No Comments</p>
     <?php endif; ?>
 
     <p><?= anchor('main', 'Back home'); ?></p>
