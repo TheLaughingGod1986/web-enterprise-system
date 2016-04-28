@@ -19,10 +19,8 @@ class Profile_cntrl extends MY_Controller
 
     	$data['others'] = ($id != null) ? true : false;
     	$data['profile'] = ($type == 'ee') ? $this->Profile_model->get_ee_id($id) : ($type == 'staff') ? $this->Profile_model->get_staff_id($id) : ($type == 'messages') ? $this->Profile_model->get_messages($personal_type, $personal_id) : ($type == 'comments') ? $this->Profile_model->get_comments($personal_type, $personal_id) : null;
-        $data['active'] = stdClass Object (
-            ['messages'] => $messages
-            ['comments'] => $comments
-        );
+        $data['active']['messages'] => $messages;
+        $data['active']['comments'] => $comments;
 
     	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
         $this->layout();
