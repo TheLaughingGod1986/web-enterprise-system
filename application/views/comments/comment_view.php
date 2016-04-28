@@ -1,12 +1,13 @@
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1>comments</h1>
-        <?php if (isset($reports)) :
-        foreach ($reports as $row) : ?>
-            <table border="1" style="width:50%">
+    <table border="1" style="width:50%">
         <tr>
             <th><?php echo $row->Username; ?></th>
             <th><?php echo $row->Comment_Date; ?></th>
         </tr>
+        <?php if (isset($reports)) :
+        foreach ($reports as $row) : ?>
+
         <tr>
         <tr>
             <td colspan="2"><?php echo $row->Comments; ?></td>

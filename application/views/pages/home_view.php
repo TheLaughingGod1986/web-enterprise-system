@@ -132,7 +132,8 @@ if ($this->session->is_logged_admin) {
                 <th>Link</th>
             </tr>
 
-        <?php if (isset($reports)) : foreach ($reports as $row) : ?>
+        <?php if (isset($reports)) :
+        foreach ($reports as $row) : ?>
 
                 <tr>
                 <tr>
