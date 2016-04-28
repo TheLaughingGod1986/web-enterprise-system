@@ -130,6 +130,7 @@ if ($this->session->is_logged_admin) {
             <thead>
             <tr>
                 <th><h3>Report Title</h3></th>
+                <th><h3>Report Date</h3></th>
                 <th><h3>See Full Report</h3></th>
             </tr>
             </thead>
@@ -141,6 +142,7 @@ if ($this->session->is_logged_admin) {
 
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
+            <td>Date here</td>
             <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
         </tr>
 
