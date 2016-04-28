@@ -105,13 +105,16 @@ class Report_model extends CI_Model
 
     function get_responses($report_id = null)
     {
-        if (isset($report_id)) {
-            $this->db->where('ReportID', $report_id);
-        }
-        $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date staff.Staff_Username')
-            ->from('Report_Comments')
-            ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID')
-            ->where('UserID_Staff', $this->session->userdata("staff.StaffID"));
+//        if (isset($report_id)) {
+//            $this->db->where('ReportID', $report_id);
+//        }
+//        $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date staff.Staff_Username')
+//            ->from('Report_Comments')
+//            ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID')
+//            ->where('UserID_Staff', $this->session->userdata("staff.StaffID"));
+
+        $this->db->where('UserID_Staff', $this->session->userdata("StaffID"));
+        $this->db->get('Report_Comments');
         return $result = $this->db->get();
     }
 }
