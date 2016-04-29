@@ -199,32 +199,8 @@ if ($this->session->is_logged_admin) {
         <p>This system is for staff to ......................</p>
     </div>
 <div class="col-sm-5">
-    <h2>Latest Reports In</h2>
-    <table border="1" style="width:90%">
-        <thead>
-        <tr>
-            <th><h3>Report Title</h3></th>
-            <th><h3>Report Date</h3></th>
-            <th><h3>See Full Report</h3></th>
-        </tr>
-        </thead>
-        <tbody>
-
-        <?php if (isset($reports)) :
-        foreach ($reports as $row) : ?>
-        </tbody>
-
-        <tr>
-            <td><b><?php echo $row->Report_Name; ?></b></td>
-            <td><b><?php echo $row->ReportDate; ?></</td>
-            <td><b><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></b></td>
-        </tr>
-
-        <?php endforeach; ?>
-    </table>
-    <?php else : ?>
-        <h2>No Reports</h2>
-    <?php endif; ?>
+    <h2>Latest</h2>
+   <p>news....</p>
 </div>
 
 
