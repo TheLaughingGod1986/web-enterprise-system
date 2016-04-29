@@ -18,7 +18,7 @@
         <td><b><?php echo $row->Report_Name; ?></b></td>
         <td><b><?php echo $row->ReportDate; ?></b></td>
         <td><b><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></b></td>
-        <td><button type="button" class="btn btn-danger">Already Seen</button></td>
+        <td><button type="submit" name="update" value="Update" class="btn btn-danger">Already Seen</button></td>
     </tr>
 
     <?php endforeach; ?>
