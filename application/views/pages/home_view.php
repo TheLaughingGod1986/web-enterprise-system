@@ -200,7 +200,7 @@ if ($this->session->is_logged_admin) {
     </div>
 <div class="col-sm-4">
     <h2>Latest Reports</h2>
-    <table border="1" style="width:100%">
+    <table border="1" style="width:80%">
         <thead>
         <tr>
             <th><h3>Report Title</h3></th>
