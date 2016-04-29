@@ -21,11 +21,11 @@ class Profile_cntrl extends MY_Controller
         $profile = ($type == 'ee') ? $this->Profile_model->get_ee_id($id) : ($type == 'staff') ? $this->Profile_model->get_staff_id($id) : null;
 
         //Adding data and styling to the comments and messages
-        $messages['data'] = ($type == 'messages' || $type != 'comments') ? $this->Profile_model->get_messages($personal_type, $personal_id) : null;
-        $comments['data'] = ($type == 'comments') ? $this->Profile_model->get_comments($personal_type, $personal_id) : null;
+        $messages['data'] = ($type == 'messages' || $type != 'update') ? $this->Profile_model->get_messages($personal_type, $personal_id) : null;
+        //$update['data'] = ($type == 'update') ? $this->Profile_model->get_comments($personal_type, $personal_id) : null;
 
-        $messages['style'] = ($type == 'messages' || $type != 'comments') ? 'border-bottom:3px solid #8b9dc3;' : null;
-        $comments['style'] = ($type == 'comments') ? 'border-bottom:3px solid #8b9dc3;' : null;
+        $messages['style'] = ($type == 'messages' || $type != 'update') ? 'border-bottom:3px solid #8b9dc3;' : null;
+        $update['style'] = ($type == 'update') ? 'border-bottom:3px solid #8b9dc3;' : null;
 
 
         //applying the variables to the array
@@ -33,10 +33,10 @@ class Profile_cntrl extends MY_Controller
     	$data['profile'] = $profile;
 
         $data['active']['messages']['data'] = $messages['data'];
-        $data['active']['comments']['data'] = $comments['data'];
+        $data['active']['update']['data'] = $update['data'];
 
         $data['active']['messages']['style'] = $messages['style'];
-        $data['active']['comments']['style'] = $comments['style'];
+        $data['active']['update']['style'] = $update['style'];
 
 
         //Loading the view
