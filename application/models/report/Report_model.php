@@ -87,11 +87,11 @@ class Report_model extends CI_Model
     {
         $userID_staff = $this->session->userdata('StaffID');
         if (isset($reportID) && isset($userID)) {
-            $new_comment = array(
+            $new_read = array(
                 'ReportID' => $reportID,
                 'StaffID' => $userID_staff,
             );
-            return $this->db->insert('Report_Comments', $new_comment);
+            return $this->db->insert('Read_Report', $new_read);
         }
         return FALSE;
     }

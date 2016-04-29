@@ -60,7 +60,7 @@
     ?>
     </form>
     <!--    /////////////////////END ADD COMMENT FORM//////////////////-->
-
+        <?= form_open('main/add_old_report'); ?>
         <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
 
         <p><input type="submit" value="Read Report"/></p>
