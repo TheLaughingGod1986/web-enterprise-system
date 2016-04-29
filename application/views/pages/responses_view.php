@@ -1,7 +1,7 @@
 <h2>Responses I Have Made</h2>
-<table border="1" style="width:50%">
+<table class="table table-hover">
         <thead>
-        <tr>
+        <tr style="background: #F7F2D9; text-align: center;">
             <th><h3>UserName</h3></th>
             <th><h3>Date Made</h3></th>
             <th><h3>See Report</h3></th>
@@ -13,8 +13,7 @@
     foreach ($reports as $row) : ?>
 
         </tbody>
-        <tr>
-        <tr>
+    <tr style="background-color: rgba(152, 18, 18, 0.39); text-align: center;">
             <td><b><?php echo $row->Staff_Username; ?></b></td>
             <td><b><?php echo $row->Comment_Date; ?></b></td>
         <td><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></td>

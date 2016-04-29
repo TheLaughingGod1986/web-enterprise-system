@@ -17,9 +17,9 @@
     }
     ?>
     <h2>comments</h2>
-    <table border="1" style="width:50%">
+    <table class="table table-hover">
         <thead>
-        <tr>
+        <tr style="background: #F7F2D9; text-align: center;">
             <th><h4>UserName</h4></th>
             <th><h4>Date Made</h4></th>
         </tr>
@@ -29,8 +29,7 @@
         <?php if (isset($reports)) :
         foreach ($reports as $row) : ?>
         </tbody>
-        <tr>
-        <tr>
+        <tr style="background-color: rgba(152, 18, 18, 0.39); text-align: center;">
             <td><b>
                    <?php
                         echo $row->Username;
