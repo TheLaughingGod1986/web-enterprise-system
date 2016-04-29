@@ -194,13 +194,13 @@ if ($this->session->is_logged_admin) {
     echo '<strong>' . htmlspecialchars($this->session->First_Name) . ',</strong> You Are Logged in as a <strong>Staff</strong>.';
     echo " chose a option from the menu to get started.";
     ?>
-    <div class="col-sm-8">
+    <div class="col-sm-7">
         <h1>title</h1>
         <p>This system is for staff to ......................</p>
     </div>
-<div class="col-sm-4">
+<div class="col-sm-5">
     <h2>Latest Reports</h2>
-    <table border="1" style="width:80%">
+    <table border="1" style="width:90%">
         <thead>
         <tr>
             <th><h3>Report Title</h3></th>
