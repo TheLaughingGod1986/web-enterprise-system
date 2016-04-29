@@ -106,7 +106,7 @@ class Report_model extends CI_Model
                 'UserID_Staff' => $userID_staff,
                 'Comment_Date' => $date
             );
-            return $this->db->insert('Report_Comments', $new_comment);
+            return $this->db->insert('Read_Report', $new_comment);
         }
 
         return FALSE;
