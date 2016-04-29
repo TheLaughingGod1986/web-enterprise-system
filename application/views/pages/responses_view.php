@@ -11,6 +11,7 @@
         <tr>
             <th><h3>UserName</h3></th>
             <th><h3>Date Made</h3></th>
+            <th><h3>See Report</h3></th>
         </tr>
         </thead>
         <tbody>
@@ -20,15 +21,12 @@
         </tbody>
         <tr>
         <tr>
-            <td><b>
-                    <?php
-                    echo $row->Staff_Username;
-                    ?>
-                </b></td>
+            <td><b><?php echo $row->Staff_Username; ?></b></td>
             <td><b><?php echo $row->Comment_Date; ?></b></td>
+        <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
         </tr>
         <tr>
-            <td colspan="2"><p><?php echo $row->Comments; ?></p></td>
+            <td colspan="3"><p><?php echo $row->Comments; ?></p></td>
         </tr>
 
     <?php endforeach; ?>
