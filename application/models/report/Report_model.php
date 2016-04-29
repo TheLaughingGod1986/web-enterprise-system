@@ -97,7 +97,7 @@ class Report_model extends CI_Model
         $this->db->select('SELECT report.Report_name, report.ReportDate, report.ReportId')
             ->from('report')
             ->join('report LEFT JOIN Read_Report ON report.ReportId=Read_Report.ReportId')
-            ->where('Read_Report.ReportId IS NULL', $this->session->userdata("StaffID"));
+            ->where('Read_Report.ReportId IS NULL');
 
         $result = $this->db->get();
         return $result->result();
