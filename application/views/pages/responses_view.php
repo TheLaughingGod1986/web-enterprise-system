@@ -23,7 +23,7 @@
         <tr>
             <td><b><?php echo $row->Staff_Username; ?></b></td>
             <td><b><?php echo $row->Comment_Date; ?></b></td>
-        <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
+        <td><b>LINK TO REPORT(FIX)</b></td>
         </tr>
         <tr>
             <td colspan="3"><p><?php echo $row->Comments; ?></p></td>
