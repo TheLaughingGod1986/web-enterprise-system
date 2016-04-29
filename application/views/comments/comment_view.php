@@ -24,6 +24,9 @@
             <td><b><?php echo $row->Comment_Date; ?></b></td>
             </tr>
         <tr>
+            <td colspan="2"><h4>Comment</h4></td>
+        </tr>
+        <tr>
             <td colspan="2"><p><?php echo $row->Comments; ?></p></td>
         </tr>
 
