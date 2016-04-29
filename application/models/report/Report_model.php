@@ -85,6 +85,7 @@ class Report_model extends CI_Model
 
     function old_report_create()
     {
+        $reportID = $this->input->post('ReportID');
         $userID_staff = $this->session->userdata('StaffID');
         if (isset($reportID) && isset($userID)) {
             $new_read = array(
