@@ -94,10 +94,10 @@ class Report_model extends CI_Model
 
     function get_unread_report()
     {
-        $this->db->select('report.Report_Name, report.ReportDate, report.ReportID')
+        $this->db->select('report.Report_name, report.ReportDate, report.ReportId')
             ->from('report')
-            ->join('Read_Report !=', 'report.ReportID = Read_Report.ReportID')
-            ->where('Read_Report.StaffID ', $this->session->userdata("StaffID"));
+            ->leftjoin('Read_Report ON report.ReportId=Read_Report.ReportId')
+            ->where('Read_Report.ReportId IS NULL ', $this->session->userdata("StaffID"));
         $result = $this->db->get();
         return $result->result();
 
