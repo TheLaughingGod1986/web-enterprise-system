@@ -3,7 +3,7 @@
 <h1>THIS IS NOT YET WORKING, IS CORRECTLY SHOWING READ REPORTS</h1>
 <table border="1" style="width:50%">
     <thead>
-    <tr>
+    <tr style="background: rgba(134, 240, 133, 0.31); text-align: center;">
         <th><h3>Report Title</h3></th>
         <th><h3>Report Date</h3></th>
         <th><h3>See Full Report</h3></th>
@@ -16,7 +16,7 @@
     foreach ($reports as $row) : ?>
     </tbody>
 
-    <tr>
+    <tr style="background-color: rgba(94, 101, 255, 0.29); text-align: center;">
         <td><b><?php echo $row->Report_Name; ?></b></td>
         <td><b><?php echo $row->ReportDate; ?></b></td>
         <td><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></td>
