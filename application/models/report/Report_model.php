@@ -91,7 +91,16 @@ class Report_model extends CI_Model
         $result = $this->db->get();
         return $result->result();// fetch data then return
     }
-        
+
+    function get_unread_report()
+    {
+        $this->db->select('report.Report_Name, report.ReportDate, report.ReportID')
+            ->from('report')
+            ->join('Read_Report', 'report.ReportID = Read_Report.ReportID')
+            ->where('Read_Report.StaffID !=', $this->session->userdata("StaffID"));
+        $result = $this->db->get();
+        return $result->result();
+    }
     function get_report()
     {
         $query = $this->db->get('report');

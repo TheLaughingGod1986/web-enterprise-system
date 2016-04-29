@@ -45,6 +45,17 @@ class Main extends MY_Controller
         $this->template['middle'] = $this->load->view($this->middle = 'pages/read_reports_view', $data, true);
         $this->layout();
     }
+    function my_unread_reports()
+    {
+        $data = array();
+
+        if ($query = $this->report_model->get_unread_report()) {
+            $data['reports'] = $query;
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/unread_reports_view', $data, true);
+        $this->layout();
+    }
     function responses()
     {
         $data = array();
