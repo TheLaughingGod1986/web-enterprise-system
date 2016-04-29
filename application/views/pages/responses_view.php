@@ -17,7 +17,7 @@
         <tr>
             <td><b><?php echo $row->Staff_Username; ?></b></td>
             <td><b><?php echo $row->Comment_Date; ?></b></td>
-        <td><b>LINK TO REPORT(FIX)</b></td>
+        <td><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></td>
         </tr>
     <tr>
         <th colspan="3">My Response</th>
