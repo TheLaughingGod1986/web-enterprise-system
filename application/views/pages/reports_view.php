@@ -1,4 +1,5 @@
-<h2>Reports Related To Me</h2>
+<h2>Reports Related To Me</h2>#
+<p>change this query so it only hows reports if the user has matching departments</p>
 <table border="1" style="width:50%">
     <thead>
     <tr>
