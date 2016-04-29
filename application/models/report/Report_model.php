@@ -94,7 +94,7 @@ class Report_model extends CI_Model
                 'StaffID' => $userID_staff,
             );
             return $this->db->insert('Report_Comments', $new_comment);
-
+        }
         return FALSE;
     }
         
