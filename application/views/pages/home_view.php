@@ -217,7 +217,7 @@ if ($this->session->is_logged_admin) {
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
             <td><b><?php echo $row->ReportDate; ?></</td>
-            <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
+            <td><b><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></b></td>
         </tr>
 
         <?php endforeach; ?>
