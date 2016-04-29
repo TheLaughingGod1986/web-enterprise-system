@@ -1,5 +1,5 @@
-<h2>Old Reports</h2>#
-<p>These are reports ive already marked as read</p>
+<h2>New Reports</h2>
+<p>These are reports ive not yet read</p>
 <table border="1" style="width:50%">
     <thead>
     <tr>

@@ -1,4 +1,4 @@
-<h2>Old Reports</h2>#
+<h2>Old Reports</h2>
 <p>These are reports ive already marked as read</p>
 <table border="1" style="width:50%">
     <thead>
