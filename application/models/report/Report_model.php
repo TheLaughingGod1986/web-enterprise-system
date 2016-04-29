@@ -92,7 +92,7 @@ class Report_model extends CI_Model
         $userID_staff = $this->session->userdata('StaffID');
         if (isset($reportID) && isset($userID)) {
             $new_comment = array(
-                'Comments' => isset($comments) ? $comments : "",
+                
                 'ReportID' => $reportID,
                 'UserID' => $userID,
                 'Comment_Date' => $date
