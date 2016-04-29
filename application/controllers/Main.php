@@ -98,6 +98,21 @@ class Main extends MY_Controller
         }
     }
 
+    function add_old_report()
+    {
+        if ($query = $this->report_model->old_report_create()) {
+
+            $this->session->set_flashdata('messagetwo', 'You marked report as read');
+            redirect('main/comments/' . $_POST['ReportID']);
+
+        } else {
+            $this->session->set_flashdata('messagetwo', 'Sorry not this time');
+            redirect('main/comments/' . $_POST['ReportID']);
+        }
+    }
+
+
+
     function externals()
     {
         $this->load->model('UManage_model');
