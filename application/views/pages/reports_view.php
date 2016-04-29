@@ -18,7 +18,7 @@
         <td><b><?php echo $row->Report_Name; ?></b></td>
         <td><b><?php echo $row->ReportDate; ?></b></td>
         <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
-        <td><input type="checkbox"name="businessType1" value="1"></td>
+        <td><button type="button" class="btn btn-primary">Read</button></td>
     </tr>
 
     <?php endforeach; ?>
