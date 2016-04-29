@@ -6,6 +6,9 @@
             <th><h3>Date Made</h3></th>
             <th><h3>See Report</h3></th>
         </tr>
+        <tr>
+            <th colspan="3">My Response</th>
+        </tr>
         </thead>
         <tbody>
 
