@@ -8,6 +8,7 @@ class Main extends MY_Controller
         $this->load->helper('array');
         $this->load->model('report/report_model');
         $this->load->library('table');
+        $this->load->helper('url');
     }
 
     function index()
