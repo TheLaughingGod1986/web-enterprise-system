@@ -60,5 +60,11 @@
     ?>
     </form>
     <!--    /////////////////////END ADD COMMENT FORM//////////////////-->
+
+        <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
+
+        <p><input type="submit" value="Read Report"/></p>
+
+        </form>
 </div>
 

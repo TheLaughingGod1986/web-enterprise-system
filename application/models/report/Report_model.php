@@ -8,8 +8,6 @@
  */
 class Report_model extends CI_Model
 {
-
-
     function create_report()
     {
         $this->load->helper('date');
