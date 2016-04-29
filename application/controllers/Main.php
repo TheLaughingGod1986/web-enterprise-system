@@ -94,16 +94,30 @@ class Main extends MY_Controller
 
     function responses()
     {
-        $data = array();
+//        $data = array();
+//
+//        $query = $this->report_model->get_responses($this->uri->segment(3));
+//        if ($query->num_rows() > 0) {
+//            $data['reports'] = $query->result();
+//        }
+//
+//        $this->template['middle'] = $this->load->view($this->middle = 'pages/responses_view', $data, true);
+//        $this->layout();
 
-        $query = $this->report_model->get_responses($this->uri->segment(3));
-        if ($query->num_rows() > 0) {
-            $data['reports'] = $query->result();
+            $data = array();
+            $this->load->model('report_model');
+            $query = $this->get_responses();
+
+
+            if(!empty($query))
+            {
+                $data['reports'] = $query;
+            }
+        
+        $this->template['middle'] = $this->load->view($this->middle = 'profile_view', $data);
+        $this->layout();
         }
 
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/responses_view', $data, true);
-        $this->layout();
-    }
 
     function recommendations()
     {
