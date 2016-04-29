@@ -44,7 +44,7 @@
 
     <?php if ($this->session->is_logged_staff) { ?>
         <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
-        <li role="presentation"><?php echo anchor('main/reports', 'Reports'); ?></li>
+        <li role="presentation"><?php echo anchor('main/my_reports', 'Reports'); ?></li>
         <li role="presentation"><?php echo anchor('main/responses', 'Your Resposes'); ?></li>
         <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>
         <li role="presentation"><a href="#">Change Login Details</a></li>

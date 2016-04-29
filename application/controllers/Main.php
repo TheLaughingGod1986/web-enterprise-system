@@ -22,6 +22,18 @@ class Main extends MY_Controller
         $this->layout();
     }
 
+    function my_reports()
+    {
+        $data = array();
+
+        if ($query = $this->report_model->get_report()) {
+            $data['reports'] = $query;
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/reports_view', $data, true);
+        $this->layout();
+    }
+
     function create_report()
     {
         $this->load->library('form_validation');
