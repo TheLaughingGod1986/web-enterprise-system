@@ -22,7 +22,6 @@
         <tr>
             <td><b>
                     <?php
-                    echo $row->Username;
                     echo $row->Staff_Username;
                     ?>
                 </b></td>
