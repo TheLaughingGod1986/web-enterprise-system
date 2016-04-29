@@ -86,7 +86,7 @@ class Report_model extends CI_Model
     {
         $this->load->helper('date');
 
-        $date = $this->current_date();
+     
         $reportID = $this->input->post('ReportID');
 
         $userID_staff = $this->session->userdata('StaffID');
@@ -95,7 +95,7 @@ class Report_model extends CI_Model
                 
                 'ReportID' => $reportID,
 
-                'Comment_Date' => $date
+
             );
             return $this->db->insert('Read_Report', $new_comment);
         } else if (isset($reportID) && isset($userID_staff)) ;
@@ -104,7 +104,7 @@ class Report_model extends CI_Model
 
                 'ReportID' => $reportID,
                 'StaffID' => $userID_staff,
-                'Comment_Date' => $date
+
             );
             return $this->db->insert('Read_Report', $new_comment);
         }
