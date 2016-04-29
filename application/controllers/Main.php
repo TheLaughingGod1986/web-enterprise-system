@@ -106,14 +106,14 @@ class Main extends MY_Controller
 
             $data = array();
             $this->load->model('report_model');
-            $query = $this->get_responses();
+            $query = $this->report_model->get_responses();
 
 
             if(!empty($query))
             {
                 $data['reports'] = $query;
             }
-        
+
         $this->template['middle'] = $this->load->view($this->middle = 'profile_view', $data);
         $this->layout();
         }
