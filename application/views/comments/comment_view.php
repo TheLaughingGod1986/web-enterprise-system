@@ -63,8 +63,7 @@
         <?= form_open('main/add_old_report'); ?>
 
         <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
-
-        <p><textarea name="Comments" rows="10"></textarea></p>
+        
         <p><input type="submit" value="read report"/></p>
 
         </form>
