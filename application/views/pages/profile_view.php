@@ -21,15 +21,14 @@
 
 		echo '<div style="text-align:center;">';
 		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['messages']['style'] . 'float:left;" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/messages\';">My Messages</div>';
-		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['comments']['style'] . '" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/comments\';">Comments</div>';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['update']['style'] . '" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/comments\';">Update Details</div>';
 		echo '</div>';
 
 		if ( $active['messages']['style'] != null){
 			echo "mesages";
-		} else {
-			echo "comments";
-			echo $row->Username;
-			echo $row->Staff_Username;
+		} 
+		else if ($active['messages']['style'] != null){
+			echo "details update";
 		}
 	} else {
 	    echo 'No Records';
