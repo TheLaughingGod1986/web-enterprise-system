@@ -4,8 +4,8 @@
     <table border="1" style="width:50%">
         <thead>
         <tr>
-            <th><h3>UserName</h3></th>
-            <th><h3>Date Made</h3></th>
+            <th><h4>UserName</h4></th>
+            <th><h4>Date Made</h4></th>
         </tr>
         </thead>
         <tbody>
