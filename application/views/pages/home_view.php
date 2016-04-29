@@ -199,7 +199,7 @@ if ($this->session->is_logged_admin) {
         <p>This system is for staff to ......................</p>
     </div>
 <div class="col-sm-5">
-    <h2>Latest Reports</h2>
+    <h2>Latest Reports In</h2>
     <table border="1" style="width:90%">
         <thead>
         <tr>
