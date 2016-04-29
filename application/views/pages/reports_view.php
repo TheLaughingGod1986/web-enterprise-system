@@ -18,7 +18,7 @@
         <td><b><?php echo $row->Report_Name; ?></b></td>
         <td><b><?php echo $row->ReportDate; ?></b></td>
         <td><b><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></b></td>
-        <td><button type="submit" name="old" value="old" class="btn btn-danger">Old Report</button></td>
+        <td><button type="submit" name="old" value="old" class="btn btn-danger" onclick="<?php echo base_url()?>main/add_old_report">Old Report</button></td>
     </tr>
 
     <?php endforeach; ?>
