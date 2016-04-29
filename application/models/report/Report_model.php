@@ -16,7 +16,7 @@ class Report_model extends CI_Model
             'Report_Name' => $this->input->post('report_name'),
             'Semester1SubjectPanel' => $this->input->post('1_1'),
             'Semester2SubjectPanel' => $this->input->post('1_2'),
-            'ProgressionandAwardBoard' => $this->input->post('1_3'),
+            'ProgressionandAwardBoards' => $this->input->post('1_3'),
             'Approval/ReviewPanel' => $this->input->post('1_4'),
             'TeachingPractise' => $this->input->post('1_5'),
             'ClinicalAssessment' => $this->input->post('1_6'),
