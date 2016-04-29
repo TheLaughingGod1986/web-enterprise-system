@@ -115,7 +115,7 @@ class Report_model extends CI_Model
         if (isset($report_id)) {
             $this->db->where('ReportID', $report_id);
         }
-        $this->db->select('Report_Comments.Comments, Report_Comments.Comment_Date ,staff.Staff_Username')
+        $this->db->select('Report_Comments.Comments, Report_Comments.ReportID, Report_Comments.Comment_Date ,staff.Staff_Username')
             ->from('Report_Comments')
             ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID')
             ->where('UserID_Staff', $this->session->userdata("StaffID"));
