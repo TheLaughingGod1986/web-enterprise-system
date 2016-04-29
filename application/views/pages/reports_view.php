@@ -17,7 +17,7 @@
     <tr>
         <td><b><?php echo $row->Report_Name; ?></b></td>
         <td><b><?php echo $row->ReportDate; ?></b></td>
-        <td><b><button type="button" class="btn btn-secondary"><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></b></td>
+        <td><b><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></b></td>
         <td><button type="button" class="btn btn-danger">Read Report</button></td>
     </tr>
 
