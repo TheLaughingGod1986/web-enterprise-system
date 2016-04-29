@@ -63,8 +63,9 @@
         <?= form_open('main/add_old_report'); ?>
 
         <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
-        
-        <p><input type="submit" value="read report"/></p>
+
+<!--        <p><input type="submit" value="read report"/></p>-->
+        <button type="submit" value="read report" class="btn btn-success"></button>
 
         </form>
 </div>
