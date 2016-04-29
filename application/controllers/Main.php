@@ -106,7 +106,7 @@ class Main extends MY_Controller
             redirect('main/comments/' . $_POST['ReportID']);
 
         } else {
-            $this->session->set_flashdata('messagetwo', 'Sorry not this time');
+            $this->session->set_flashdata('messagetwo', 'Sorry nnooo luck');
             redirect('main/comments/' . $_POST['ReportID']);
         }
     }
