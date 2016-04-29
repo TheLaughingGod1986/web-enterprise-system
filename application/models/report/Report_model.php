@@ -82,7 +82,7 @@ class Report_model extends CI_Model
         return FALSE;
     }
 
-    function old_report_create()
+    function get_read_report()
     {
         $this->db->select('*')
             ->from('reports')
