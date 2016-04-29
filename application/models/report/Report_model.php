@@ -85,7 +85,7 @@ class Report_model extends CI_Model
     function old_report_create()
     {
         $this->load->helper('date');
-        $comments = $this->input->post('Comments');
+
         $date = $this->current_date();
         $reportID = $this->input->post('ReportID');
         $userID = $this->session->userdata('LoginID');
