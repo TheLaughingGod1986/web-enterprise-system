@@ -1,5 +1,12 @@
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1>Full Report Place Here</h1>
+    <?= form_open('main/add_old_report'); ?>
+
+    <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
+
+    <button type="submit" value="read report" class="btn btn-success">Read This Report</button>
+
+    </form>
     <h2>comments</h2>
     <table border="1" style="width:50%">
         <thead>
@@ -60,13 +67,6 @@
     ?>
     </form>
     <!--    /////////////////////END ADD COMMENT FORM//////////////////-->
-        <?= form_open('main/add_old_report'); ?>
 
-        <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
-
-<!--        <p><input type="submit" value="read report"/></p>-->
-        <button type="submit" value="read report" class="btn btn-success"></button>
-
-        </form>
 </div>
 
