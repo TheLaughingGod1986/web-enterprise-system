@@ -1,11 +1,27 @@
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1>Full Report Place Here</h1>
+    <?= form_open('main/add_old_report'); ?>
+
+    <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
+
+    <button type="submit" value="read report" class="btn btn-danger">Old Report/Mark as Read</button>
+
+    </form>
+    <?php
+    if ($this->session->flashdata('messagethree')) {
+        ?>
+        <div class="message flash">
+            <?php echo $this->session->flashdata('messagethree'); ?>
+        </div>
+        <?php
+    }
+    ?>
     <h2>comments</h2>
     <table border="1" style="width:50%">
         <thead>
         <tr>
-            <th><h3>UserName</h3></th>
-            <th><h3>Date Made</h3></th>
+            <th><h4>UserName</h4></th>
+            <th><h4>Date Made</h4></th>
         </tr>
         </thead>
         <tbody>
@@ -15,13 +31,20 @@
         </tbody>
         <tr>
         <tr>
-            <td><b><?php echo $row->Username; ?></b></td>
+            <td><b>
+                   <?php
+                        echo $row->Username;
+                        echo $row->Staff_Username;
+                   ?>
+                </b></td>
             <td><b><?php echo $row->Comment_Date; ?></b></td>
             </tr>
         <tr>
+            <td colspan="2"><h4>Comment</h4></td>
+        </tr>
+        <tr>
             <td colspan="2"><p><?php echo $row->Comments; ?></p></td>
         </tr>
-
 
     <?php endforeach; ?>
     </table>
@@ -53,5 +76,6 @@
     ?>
     </form>
     <!--    /////////////////////END ADD COMMENT FORM//////////////////-->
+
 </div>
 

@@ -8,20 +8,64 @@ class Main extends MY_Controller
         $this->load->helper('array');
         $this->load->model('report/report_model');
         $this->load->library('table');
+        $this->load->helper('url');
     }
 
     function index()
     {
         $data = array();
-//        $this->middle = 'pages/home_view';
-
-
-        if($query = $this->report_model->get_report())
-        {
+        
+        if ($query = $this->report_model->get_report()) {
             $data['reports'] = $query;
         }
 
-        $this->template['middle'] = $this->load->view ($this->middle = 'pages/home_view',$data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/home_view', $data, true);
+        $this->layout();
+    }
+
+    function my_reports()
+    {
+        $data = array();
+
+        if ($query = $this->report_model->get_report()) {
+            $data['reports'] = $query;
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/reports_view', $data, true);
+        $this->layout();
+    }
+    function my_read_reports()
+    {
+        $data = array();
+
+        if ($query = $this->report_model->get_read_report()) {
+            $data['reports'] = $query;
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/read_reports_view', $data, true);
+        $this->layout();
+    }
+    function my_unread_reports()
+    {
+        $data = array();
+
+        if ($query = $this->report_model->get_unread_report()) {
+            $data['reports'] = $query;
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/unread_reports_view', $data, true);
+        $this->layout();
+    }
+    function responses()
+    {
+        $data = array();
+
+        $query = $this->report_model->get_responses($this->uri->segment(3));
+        if ($query->num_rows() > 0) {
+            $data['reports'] = $query->result();
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/responses_view', $data, true);
         $this->layout();
     }
 
@@ -31,8 +75,7 @@ class Main extends MY_Controller
 
         $this->form_validation->set_rules('report_name', 'report_name', 'trim|required');
 
-        if ($this->form_validation->run() == FALSE)
-        {
+        if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('message', 'Im sorry, That is not right');
             redirect('main/index');
         } else {
@@ -51,33 +94,47 @@ class Main extends MY_Controller
             }
         }
     }
-
+    
     function comments()
     {
         $data = array();
 
         $query = $this->report_model->get_comment($this->uri->segment(3));
-        if($query->num_rows() > 0)
-        {
+        if ($query->num_rows() > 0) {
             $data['reports'] = $query->result();
         }
 
-        $this->template['middle'] = $this->load->view ($this->middle = 'comments/comment_view',$data, true);
+        $this->template['middle'] = $this->load->view($this->middle = 'comments/comment_view', $data, true);
         $this->layout();
     }
 
     function comment_add()
     {
-            if ($query = $this->report_model->create_comment()) {
+        if ($query = $this->report_model->create_comment()) {
 
-                $this->session->set_flashdata('messagetwo', 'You added a Comment');
-                redirect('main/comments/' .$_POST['ReportID']);
+            $this->session->set_flashdata('messagetwo', 'You added a Comment');
+            redirect('main/comments/' . $_POST['ReportID']);
 
-            } else {
-                $this->session->set_flashdata('messagetwo', 'Sorry not this time');
-                redirect('main/comments/' .$_POST['ReportID']);
-            }
+        } else {
+            $this->session->set_flashdata('messagetwo', 'Sorry not this time');
+            redirect('main/comments/' . $_POST['ReportID']);
+        }
     }
+
+    function add_old_report()
+    {
+        if ($query = $this->report_model->old_report_create()) {
+
+            $this->session->set_flashdata('messagethree', 'You marked report as read, you will no longer see this as unread.');
+            redirect('main/comments/' . $_POST['ReportID']);
+
+        } else {
+            $this->session->set_flashdata('messagethree', 'Sorry no luck');
+            redirect('main/comments/' . $_POST['ReportID']);
+        }
+    }
+
+
 
     function externals()
     {
@@ -97,12 +154,7 @@ class Main extends MY_Controller
         // no page yet made
     }
 
-    function responses()
-    {
-        $this->middle = 'pages/responses_view';
-        $this->layout();
-        // no page yet made
-    }
+    
 
     function recommendations()
     {
