@@ -7,6 +7,15 @@
     <button type="submit" value="read report" class="btn btn-success">Read This Report</button>
 
     </form>
+    <?php
+    if ($this->session->flashdata('messagethree')) {
+        ?>
+        <div class="message flash">
+            <?php echo $this->session->flashdata('messagethree'); ?>
+        </div>
+        <?php
+    }
+    ?>
     <h2>comments</h2>
     <table border="1" style="width:50%">
         <thead>
