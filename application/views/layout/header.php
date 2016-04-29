@@ -25,6 +25,6 @@
                echo "<h1>Please Login</h1>";
            } ?>
             </span>
-    
+
 </nav>
 
