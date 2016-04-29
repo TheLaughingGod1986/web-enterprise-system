@@ -91,7 +91,7 @@ class Report_model extends CI_Model
             $new_comment = array(
 
                 'ReportID' => $reportID,
-                'UserID_Staff' => $userID_staff,
+                'StaffID' => $userID_staff,
 
             );
             return $this->db->insert('Report_Comments', $new_comment);
