@@ -87,8 +87,9 @@ class Report_model extends CI_Model
         $this->db->select('report.Report_Name, report.ReportDate, report.ReportID')
             ->from('report')
             ->join('Read_Report', 'report.ReportID = Read_Report.ReportID')
-            ->where('StaffID', $this->session->userdata("StaffID"));
-        return $result = $this->db->get();
+            ->where('Read_Report.StaffID', $this->session->userdata("StaffID"));
+        $result = $this->db->get();
+        return $result->result();// fetch data then return
     }
         
     function get_report()
