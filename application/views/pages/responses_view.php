@@ -6,14 +6,14 @@
             <th><h3>Date Made</h3></th>
             <th><h3>See Report</h3></th>
         </tr>
-        <tr>
-            <th colspan="3">My Response</th>
-        </tr>
         </thead>
         <tbody>
 
         <?php if (isset($reports)) :
     foreach ($reports as $row) : ?>
+        <tr>
+            <th colspan="3">My Response</th>
+        </tr>
         </tbody>
         <tr>
         <tr>
