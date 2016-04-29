@@ -99,9 +99,14 @@ class Report_model extends CI_Model
         
     function get_report()
     {
-        $query = $this->db->get('report');
-        return $query->result();
+        $this->db->select('*')
+            ->from('reports')
+            ->join('Read_Report', 'report.ReportID = Read_Report.ReportID')
+            ->where('StaffID', $this->session->userdata("StaffID"));
+        return $result = $this->db->get();
     }
+
+
     function get_comment($report_id = null)
     {
         if (isset($report_id)) {
