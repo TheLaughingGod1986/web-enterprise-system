@@ -21,13 +21,13 @@
 
 		echo '<div style="text-align:center;">';
 		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['messages']['style'] . 'float:left;" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/messages\';">My Messages</div>';
-		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['update']['style'] . '" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/comments\';">Update Details</div>';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['update']['style'] . '" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/update\';">Update Details</div>';
 		echo '</div>';
 
 		if ( $active['messages']['style'] != null){
 			echo "mesages";
 		} 
-		else if ($active['messages']['style'] != null){
+		else if ($active['update']['style'] != null){
 			echo "details update";
 		}
 	} else {
