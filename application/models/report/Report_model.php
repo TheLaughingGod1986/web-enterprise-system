@@ -90,7 +90,6 @@ class Report_model extends CI_Model
         $query = $this->db->get('report');
         return $query->result();
     }
-
     function get_comment($report_id = null)
     {
         if (isset($report_id)) {
@@ -102,7 +101,6 @@ class Report_model extends CI_Model
             ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID', 'left');
         return $result = $this->db->get();
     }
-
     function get_responses($report_id = null)
     {
         if (isset($report_id)) {

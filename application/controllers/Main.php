@@ -33,6 +33,18 @@ class Main extends MY_Controller
         $this->template['middle'] = $this->load->view($this->middle = 'pages/reports_view', $data, true);
         $this->layout();
     }
+    function responses()
+    {
+        $data = array();
+
+        $query = $this->report_model->get_responses($this->uri->segment(3));
+        if ($query->num_rows() > 0) {
+            $data['reports'] = $query->result();
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/responses_view', $data, true);
+        $this->layout();
+    }
 
     function create_report()
     {
@@ -59,6 +71,8 @@ class Main extends MY_Controller
             }
         }
     }
+
+    
 
     function comments()
     {
@@ -104,18 +118,7 @@ class Main extends MY_Controller
         // no page yet made
     }
 
-    function responses()
-    {
-        $data = array();
-
-        $query = $this->report_model->get_responses($this->uri->segment(3));
-        if ($query->num_rows() > 0) {
-            $data['reports'] = $query->result();
-        }
-
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/responses_view', $data, true);
-        $this->layout();
-    }
+    
 
     function recommendations()
     {
