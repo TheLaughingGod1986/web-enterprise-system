@@ -1,11 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Ben
- * Date: 29/04/2016
- * Time: 00:33
- */
-?>
+<h2>Responses I Have Made</h2>
 <table border="1" style="width:50%">
         <thead>
         <tr>
