@@ -100,9 +100,6 @@ class Report_model extends CI_Model
             ->where('Read_Report.ReportId IS NULL ', $this->session->userdata("StaffID"));
         $result = $this->db->get();
         return $result->result();
-
-        $result = $this->db->get();
-        return $result->result();
     }
     function get_report()
     {
