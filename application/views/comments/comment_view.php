@@ -4,7 +4,7 @@
 
     <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
 
-    <button type="submit" value="read report" class="btn btn-success">Read This Report</button>
+    <button type="submit" value="read report" class="btn btn-danger">Old Report/Mark as Read</button>
 
     </form>
     <?php
