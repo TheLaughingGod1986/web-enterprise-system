@@ -9,7 +9,7 @@
 		echo '</div>';	
 		echo '</div>';
 	}
-	else if ($profile == null && $others == false){
+	else if ($profile == null && $others == false && ($this->sesssion->is_logged_external || $this->sesssion->is_logged_staff)){
 		//Show personal profile
 	    echo '<div style="border-bottom:1px solid #BFBFBF;padding:15px;padding-bottom:20px;position:relative;">';
 		echo '<img src="http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png" width="100"/>';
