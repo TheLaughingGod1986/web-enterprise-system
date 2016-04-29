@@ -18,7 +18,14 @@
         <td><b><?php echo $row->Report_Name; ?></b></td>
         <td><b><?php echo $row->ReportDate; ?></b></td>
         <td><button type="button" class="btn btn-success"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></td>
-        <td><button type="button" class="btn btn-danger"><?= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?></button></td>
+<!--        <td><button type="button" class="btn btn-danger">--><?//= anchor('main/comments/' . $row->ReportID, 'Read Full Report'); ?><!--</button></td>-->
+        <?= form_open('main/add_old_report'); ?>
+
+        <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
+
+        <p><input type="submit" value="read report"/></p>
+
+        </form>
     </tr>
 
     <?php endforeach; ?>
