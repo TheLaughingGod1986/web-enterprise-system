@@ -88,20 +88,20 @@ class Report_model extends CI_Model
 
         $date = $this->current_date();
         $reportID = $this->input->post('ReportID');
-        $userID = $this->session->userdata('LoginID');
+       
         $userID_staff = $this->session->userdata('StaffID');
         if (isset($reportID) && isset($userID)) {
             $new_comment = array(
                 
                 'ReportID' => $reportID,
-                'UserID' => $userID,
+
                 'Comment_Date' => $date
             );
             return $this->db->insert('Read_Report', $new_comment);
         } else if (isset($reportID) && isset($userID_staff)) ;
         {
             $new_comment = array(
-    
+
                 'ReportID' => $reportID,
                 'UserID_Staff' => $userID_staff,
                 'Comment_Date' => $date
