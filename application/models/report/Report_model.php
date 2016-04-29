@@ -96,17 +96,18 @@ class Report_model extends CI_Model
     {
         $this->db->select('report.Report_name, report.ReportDate, report.ReportId')
             ->from('report')
-            ->join('Read_Report ON report.ReportId=Read_Report.ReportId', 'left')
+            ->join('Read_Report.ReportID ON report.ReportId = Read_Report.ReportId', 'left')
             ->where('Read_Report.ReportId IS NULL ', $this->session->userdata("StaffID"));
         $result = $this->db->get();
         return $result->result();
     }
+
     function get_report()
     {
         $query = $this->db->get('report');
         return $query->result();
     }
-    
+
     function old_report_create()
     {
         $reportID = $this->input->post('ReportID');
@@ -133,6 +134,7 @@ class Report_model extends CI_Model
             ->join('staff', 'Report_Comments.UserID_Staff = staff.StaffID', 'left');
         return $result = $this->db->get();
     }
+
     function get_responses($report_id = null)
     {
         if (isset($report_id)) {
