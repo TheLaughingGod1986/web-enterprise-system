@@ -33,7 +33,7 @@ class Profile_cntrl extends MY_Controller
     	$data['profile'] = $profile;
 
         $data['active']['messages']['data'] = $messages['data'];
-        $data['active']['update']['data'] = $update['data'];
+        //$data['active']['update']['data'] = $update['data'];
 
         $data['active']['messages']['style'] = $messages['style'];
         $data['active']['update']['style'] = $update['style'];
