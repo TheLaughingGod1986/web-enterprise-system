@@ -84,31 +84,16 @@ class Report_model extends CI_Model
 
     function old_report_create()
     {
-        $this->load->helper('date');
-
-     
         $reportID = $this->input->post('ReportID');
-
-        $userID_staff = $this->session->userdata('StaffID');
+        $userID = $this->session->userdata('StaffID');
         if (isset($reportID) && isset($userID)) {
-            $new_comment = array(
-                
+            $new_read = array(
                 'ReportID' => $reportID,
-
-
+                'StaffID' => $userID,
             );
-            return $this->db->insert('Read_Report', $new_comment);
-        } else if (isset($reportID) && isset($userID_staff)) ;
-        {
-            $new_comment = array(
-
-                'ReportID' => $reportID,
-                'StaffID' => $userID_staff,
-
-            );
-            return $this->db->insert('Read_Report', $new_comment);
+            $this->db->insert('Read_Report', $new_read);
+            return $this->db->insert_id();
         }
-
         return FALSE;
     }
         
