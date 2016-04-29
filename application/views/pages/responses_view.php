@@ -11,9 +11,7 @@
 
         <?php if (isset($reports)) :
     foreach ($reports as $row) : ?>
-        <tr>
-            <th colspan="3">My Response</th>
-        </tr>
+
         </tbody>
         <tr>
         <tr>
@@ -21,6 +19,9 @@
             <td><b><?php echo $row->Comment_Date; ?></b></td>
         <td><b>LINK TO REPORT(FIX)</b></td>
         </tr>
+    <tr>
+        <th colspan="3">My Response</th>
+    </tr>
         <tr>
             <td colspan="3"><p><?php echo $row->Comments; ?></p></td>
         </tr>
