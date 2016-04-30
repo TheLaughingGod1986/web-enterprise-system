@@ -38,6 +38,9 @@ class Profile_cntrl extends MY_Controller
         $data['active']['messages']['style'] = $messages['style'];
         $data['active']['update']['style'] = $update['style'];
 
+        $data['debug']['personal_id'] = $personal_id;
+        $data['debug']['personal_type'] = $personal_type;
+
 
         //Loading the view
     	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
