@@ -1,5 +1,5 @@
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
-    <h1><?php $realReport->Report_Name; ?></h1>
+    <h1><?php $realReport['Report_Name']; ?></h1>
     <h3><?php $realReport->ReportDate; ?></h3>
     <span>External Examiner: </span>
     <table>
