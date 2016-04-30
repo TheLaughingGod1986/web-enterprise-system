@@ -25,7 +25,7 @@ class Profile_model extends CI_Model{
     }
 
     function post_messages($data){
-
+        $this->db->insert('message', $data);
     }
 
     function update($id, $type, $user){

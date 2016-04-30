@@ -74,5 +74,25 @@ class Profile_cntrl extends MY_Controller
 
         $this->profile();
     }
+
+    function send(){
+        $personal_id = $this->session->ID;
+        $personal_type = $this->session->Type;
+
+        $type = $this->uri->segment(3);
+        $id = $this->uri->segment(4);
+
+        $message = array(
+            'From' => $personal_id,
+            'From_Type' => $personal_type,
+            'To' => $id,
+            'To_Type' => $type,
+            'Title' => $this->input->post('Title'),
+            'Message' => $this->input->post('Message')
+        );
+        $this->Profile_model->post_messages($message);
+
+        $this->profile();
+    }
 }
 ?>
