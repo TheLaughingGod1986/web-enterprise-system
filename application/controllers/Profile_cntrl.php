@@ -72,7 +72,7 @@ class Profile_cntrl extends MY_Controller
         $this->session->First_Name = $user['First_Name'];
         $this->session->Last_Name = $user['Last_Name'];
 
-        profile();
+        $this->profile();
     }
 }
 ?>
