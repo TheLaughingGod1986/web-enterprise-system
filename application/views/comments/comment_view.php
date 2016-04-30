@@ -1,5 +1,136 @@
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
-    <h1>Full Report Place Here</h1>
+    <h1><?php $realReport->Report_Name; ?></h1>
+    <h3><?php $realReport->ReportDate; ?></h3>
+    <span>External Examiner: </span>
+    <table>
+        <tr>
+            <th>Section 1 - Examiner's attendance and portfolio of work</th>
+        </tr>
+        <tr>
+            <td>Semester 2 Subject Assessment Panel</td>
+            <td><?php $realReport->Semester1SubjectPanel; ?></td>
+        </tr>
+        <tr>
+            <td>Semester 2 Subject Assessment Panel</td>
+            <td><?php $realReport->Semester2SubjectPanel; ?></td>
+        </tr>
+        <tr>
+            <td>Progression and Award Board(s)</td>
+            <td><?php $realReport->ProgressionAwardBoards; ?></td>
+        </tr>
+        <tr>
+            <td>Partner College(s)</td>
+            <td><?php $realReport->PartnerCollege; ?></td>
+        </tr>
+        <tr>
+            <td>Approval/Review Panel(s)</td>
+            <td><?php $realReport->ApprovalReviewPanel; ?></td>
+        </tr>
+        <tr>
+            <td>Teaching Practice(s)</td>
+            <td><?php $realReport->TeachingPractise; ?></td>
+        </tr>
+        <tr>
+            <td>Clinical Assessment(s)</td>
+            <td><?php $realReport->ClinicalAssessment; ?></td>
+        </tr>
+        <tr>
+            <td>Viva Voce Examination</td>
+            <td><?php $realReport->VivaVoceExamination; ?></td>
+        </tr>
+        <tr>
+            <td>Other</td>
+            <td><?php $realReport->Other; ?></td>
+        </tr>
+        <tr><td>Comments</td></tr>
+        <tr><td><?php $realReport->Section_1_Comments; ?></td></tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Section 2 - Process of Assessment and Determination of Award</th>
+        </tr>
+        <tr>
+            <td>Assessment processes were appropriate to examining learning outcomes</td>
+            <td><?php $realReport->Section2_Checkbox_1; ?></td>
+        </tr>
+        <tr>
+            <td>Assessments contained clear feedback to students (where applicable)</td>
+            <td><?php $realReport->Section2_Checkbox_2; ?></td>
+        </tr>
+        <tr>
+            <td>Assessments were marked consistently to an appropriate standard</td>
+            <td><?php $realReport->Section2_Checkbox_3; ?></td>
+        </tr>
+        <tr>
+            <td>Assessments evidenced second marking to an appropriate standard</td>
+            <td><?php $realReport->Section2_Checkbox_4; ?></td>
+        </tr>
+        <tr>
+            <td>Assessment level was appropriate</td>
+            <td><?php $realReport->Section2_Checkbox_5; ?></td>
+        </tr>
+        <tr>
+            <td>Awards conferred were appropriate to the level of achievement</td>
+            <td><?php $realReport->Section2_Checkbox_6; ?></td>
+        </tr>
+        <tr>
+            <td>The decision of the PAB was fair, equitable and consistent</td>
+            <td><?php $realReport->Section2_Checkbox_7; ?></td>
+        </tr>
+        <tr><td>Additional commentary</td></tr>
+        <tr><td><?php $realReport->Section2_Comments; ?></td></tr>
+    </table>
+
+    <table>
+        <tr><th>Section 3 - The Appropiateness of Standards</th></tr>
+        <tr>
+            <td>Standards set for the award(s) are appropriate for qualifications at this level in this subject</td>
+            <td><?php $realReport->Section3_Checkbox1; ?></td>
+        </tr>
+        <tr><td>Additional commentary</td></tr>
+        <tr><td><?php $realReport->Section3_Comments; ?></td></tr>
+    </table>
+
+    <table>
+        <tr><th>Section 4 - The Comparability of Student Performance</th></tr>
+        <tr>
+            <td>The standards of student performance are comparable with similar programmes or subjects in other UK institutions with which I am familiar</td>
+            <td><?php $realReport->Section4_Checkbox1; ?></td>
+        </tr>
+        <tr>
+            <td>Course Examiners</td>
+            <td><?php $realReport->CourseExaminer; ?></td>
+        </tr>
+        <tr>
+            <td>Programme Examiners</td>
+            <td><?php $realReport->ProgrammeExaminers; ?></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr><th>Section 5 - Professional, Statutory and Regulatory Bodies (PSRB)</th></tr>
+        <tr>
+            <td><?php $realReport->Section5_PSRB; ?></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr><th>Section 6 - Action Points and Recommendations</th></tr>
+        <tr>
+            <td>Commentary</td>
+            <td><?php $realReport->AP_Recommendations; ?></td>
+        </tr>
+        <tr>
+            <td>Good Practice and Innovation</td>
+            <td><?php $realReport->GoodPractice_Innovation; ?></td>
+        </tr>
+        <tr>
+            <td>Recommendations for Action</td>
+            <td><?php $realReport->Recomendations_Action; ?></td>
+        </tr>
+    </table>
+
     <?= form_open('main/add_old_report'); ?>
 
     <?= form_hidden('ReportID', $this->uri->segment(3)); ?>
