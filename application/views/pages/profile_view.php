@@ -25,10 +25,13 @@
 		echo '</div>';
 
 		if ( $active['messages']['style'] != null){
-			echo "mesages\n";
-			print_r($active['messages']['data']);
-			echo "\n";
-			echo $debug['personal_id'] . "\n" . $debug['personal_type'];
+			//echo "mesages\n";
+			//print_r($active['messages']['data']);
+			foreach($active['messages']['data'] in $message){
+				echo $message['Title'];
+				echo $message['Message'];
+				echo "<br/>";
+			}
 		} 
 		else if ($active['update']['style'] != null){
 			echo "details update";
