@@ -98,12 +98,13 @@ class Main extends MY_Controller
     function comments()
     {
         $data = array();
+        $reportID = $this->uri->segment(3);
 
-        $query = $this->report_model->get_comment($this->uri->segment(3));
+        $query = $this->report_model->get_comment($reportID);
         if ($query->num_rows() > 0) {
             $data['reports'] = $query->result();
         }
-
+        $data['realReport'] = $this->report_model->get_report_id($reportID);
         $this->template['middle'] = $this->load->view($this->middle = 'comments/comment_view', $data, true);
         $this->layout();
     }
