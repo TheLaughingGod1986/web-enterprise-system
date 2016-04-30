@@ -106,7 +106,7 @@ class Main extends MY_Controller
         }
 
         $qReport = $this->report_model->get_report_id($reportID);
-        $data['realReport'] = $qReport->result();
+        $data['realReport'] = $qReport->row();
 
         $this->template['middle'] = $this->load->view($this->middle = 'comments/comment_view', $data, true);
         $this->layout();
