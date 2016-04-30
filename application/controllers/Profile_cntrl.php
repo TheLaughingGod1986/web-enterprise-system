@@ -55,5 +55,21 @@ class Profile_cntrl extends MY_Controller
     	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
         $this->layout();
     }
+
+    function update(){
+        $id = $this->session->ID;
+        $type = $this->session->Type;
+        $user = array(
+            'Email' => $this->input->post('Email'),
+            'Password' => $this->input->post('Password'),
+            'First_Name' => $this->input->post('First_Name'),
+            'Last_Name' => $this->input->post('Last_Name')
+        );
+        $this->Profile_model->update($id, $type, $user);
+
+        $data['submitted'] = true;
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
+        $this->layout();
+    }
 }
 ?>
