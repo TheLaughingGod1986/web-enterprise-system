@@ -21,7 +21,20 @@
 		}
 		else if ($active['send']['style'] != null){
 			echo '<div style="padding:10px 10px 15px 10px;">';
-			echo "send message";
+
+			echo form_open('Profile_cntrl/update/' . $url['type'] . '/' . $url['id']);
+
+            echo form_label('Title: '); echo form_error('Title');
+            echo form_input(array('id' => 'Title', 'name' => 'Title', 'value' => ''));
+            echo '<br/>';
+
+            echo form_label('Message: '); echo form_error('Message');
+            echo form_input(array('id' => 'Message', 'name' => 'Message', 'value' => ''));
+            echo '<br/>';
+            
+            echo form_submit(array('id' => 'submit', 'value' => 'Send'));
+            echo form_close();
+
 			echo '</div>';
 		}
 	}
@@ -60,22 +73,22 @@
 
 			echo form_open('Profile_cntrl/update');
 
-          	echo form_label('First Name:'); echo form_error('First_Name');
+          	echo form_label('First Name: '); echo form_error('First_Name');
             echo form_input(array('id' => 'First_Name', 'name' => 'First_Name', 'value' => $this->session->First_Name));
             echo '<br/>';
 
-            echo form_label('Last Name:'); echo form_error('Last_Name');
+            echo form_label('Last Name: '); echo form_error('Last_Name');
             echo form_input(array('id' => 'Last_Name', 'name' => 'Last_Name', 'value' => $this->session->Last_Name));
             echo '<br/>';
 
-            echo form_label('Email :'); echo form_error('Email');
+            echo form_label('Email: '); echo form_error('Email');
             echo form_input(array('id' => 'Email', 'name' => 'Email', 'value' => $this->session->Email));
             echo '<br/>';
 
-            echo form_label('Password :'); ?><?php echo form_error('Password');
+            echo form_label('Password: '); ?><?php echo form_error('Password');
             echo form_input(array('id' => 'Password', 'name' => 'Password', 'value' => ''));
             echo '<br/>';
-            
+
             echo form_submit(array('id' => 'submit', 'value' => 'Update'));
             echo form_close();
 
