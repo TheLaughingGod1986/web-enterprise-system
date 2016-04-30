@@ -27,7 +27,7 @@
 		if ( $active['messages']['style'] != null){
 			//echo "mesages\n";
 			//print_r($active['messages']['data']);
-			foreach($active['messages']['data'] in $message){
+			foreach($active['messages']['data'] as $message){
 				echo $message['Title'];
 				echo $message['Message'];
 				echo "<br/>";
