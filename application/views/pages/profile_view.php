@@ -8,6 +8,20 @@
 		echo '<div>' . $profile[0]->Email . '</div>';
 		echo '</div>';	
 		echo '</div>';
+
+		echo '<div style="text-align:center;">';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['main']['style'] . 'float:left;" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/' . $url['type'] . '/' . $url['id'] . '/main\';">Main</div>';
+		echo '<div style="width:50%;padding: 10px 0 10px 0;display:inline-block;cursor:pointer;' . $active['send']['style'] . '" onclick="window.location.href=\'' . base_url() . 'index.php/Profile_cntrl/profile/' . $url['type'] . '/' . $url['id'] . '/send\';">Send Message</div>';
+		echo '</div>';
+
+		if ( $active['main']['style'] != null){
+			echo '<div style="padding:10px 10px 15px 10px;border:1px solid #BFBFBF;border-top:0;">';
+			echo 'Welcome to my profile';
+			echo '</div>';
+		}
+		else if ($active['send']['style'] != null){
+			echo "send message";
+		}
 	}
 	else if ($profile == null && $others == false && ($this->session->is_logged_external || $this->session->is_logged_staff)){
 		//Show personal profile
@@ -25,10 +39,8 @@
 		echo '</div>';
 
 		if ( $active['messages']['style'] != null){
-			//echo "mesages\n";
-			//print_r($active['messages']['data']);
 			foreach($active['messages']['data'] as $message){
-				echo '<div style="padding:10px 10px 15px 10px;border:1px solid #BFBFBF;">';
+				echo '<div style="padding:10px 10px 15px 10px;border:1px solid #BFBFBF;border-top:0;">';
 				echo '<div><b>Title:&nbsp;</b>' . $message->Title . '</div>';
 				echo '<div style="padding-top:5px;"><b>Message:&nbsp;</b></div>';
 				echo '<p style="margin:0;">' . $message->Message . '</p>';
@@ -36,7 +48,9 @@
 			}
 
 			if ($active['messages']['data'] == null){
+				echo '<div style="padding:10px 10px 15px 10px;border:1px solid #BFBFBF;border-top:0;">';
 				echo 'No messages';
+				echo '</div>';
 			}
 		} 
 		else if ($active['update']['style'] != null){
