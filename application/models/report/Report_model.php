@@ -17,29 +17,31 @@ class Report_model extends CI_Model
             'Semester1SubjectPanel' => $this->input->post('1_1'),
             'Semester2SubjectPanel' => $this->input->post('1_2'),
             'ProgressionandAwardBoards' => $this->input->post('1_3'),
-            'Approval/ReviewPanel' => $this->input->post('1_4'),
-            'TeachingPractise' => $this->input->post('1_5'),
-            'ClinicalAssessment' => $this->input->post('1_6'),
-            'VivaVoceExamination' => $this->input->post('1_7'),
-            'Other' => $this->input->post('1_8'),
-            'Section_1_Comments' => $this->input->post('1_9'),
-            'Section2_Checkbox_1' => $this->input->post('1_10'),
-            'Section2_Checkbox_2' => $this->input->post('2_1'),
-            'Section2_Checkbox_3' => $this->input->post('2_2'),
-            'Section2_Checkbox_4' => $this->input->post('2_3'),
-            'Section2_Checkbox_5' => $this->input->post('2_4'),
-            'Section2_Checkbox_6' => $this->input->post('2_5'),
-            'Section2_Checkbox_7' => $this->input->post('2_6'),
-            'Section2_Comments' => $this->input->post('2_7'),
-            'Section3_Checkbox1' => $this->input->post('2_8'),
-            'Section3_Comments' => $this->input->post('3_1'),
-            'Section4_Checkbox1' => $this->input->post('3_2'),
-            'CourseExaminers' => $this->input->post('4_1'),
-            'ProgrammeExaminers' => $this->input->post('4_2'),
-            'Section5_PSRB' => $this->input->post('4_3'),
-            'AP_Recommendations' => $this->input->post('5_1'),
+            'PartnerCollege' => $this->input->post('1_4'),
+            'ApprovalReviewPanel' => $this->input->post('1_5'),
+            'TeachingPractise' => $this->input->post('1_6'),
+            'ClinicalAssessment' => $this->input->post('1_7'),
+            'VivaVoceExamination' => $this->input->post('1_8'),
+            'Other' => $this->input->post('1_9'),
+            'Section_1_Comments' => $this->input->post('1_10'),
+            'Section2_Checkbox_1' => $this->input->post('2_1'),
+            'Section2_Checkbox_2' => $this->input->post('2_2'),
+            'Section2_Checkbox_3' => $this->input->post('2_3'),
+            'Section2_Checkbox_4' => $this->input->post('2_4'),
+            'Section2_Checkbox_5' => $this->input->post('2_5'),
+            'Section2_Checkbox_6' => $this->input->post('2_6'),
+            'Section2_Checkbox_7' => $this->input->post('2_7'),
+            'Section2_Comments' => $this->input->post('2_8'),
+            'Section3_Checkbox1' => $this->input->post('3_1'),
+            'Section3_Comments' => $this->input->post('3_2'),
+            'Section4_Checkbox1' => $this->input->post('4_1'),
+            'CourseExaminers' => $this->input->post('4_2'),
+            'ProgrammeExaminers' => $this->input->post('4_3'),
+            'Section5_PSRB' => $this->input->post('5_1'),
+            'AP_Recommendations' => $this->input->post('6_1'),
             'GoodPractice_Innovation' => $this->input->post('6_2'),
-            'Recommendations_Action' => $this->input->post('6_3')
+            'Recommendations_Action' => $this->input->post('6_3'),
+            'ReportDate' => $this->current_date()
         );
 
         $insert = $this->db->insert('report', $new_report);
@@ -68,7 +70,8 @@ class Report_model extends CI_Model
                 'Comment_Date' => $date
             );
             return $this->db->insert('Report_Comments', $new_comment);
-        } else if (isset($reportID) && isset($userID_staff)) ;
+        }
+        else if (isset($reportID) && isset($userID_staff))
         {
             $new_comment = array(
                 'Comments' => isset($comments) ? $comments : "",
@@ -107,6 +110,16 @@ class Report_model extends CI_Model
     {
         $query = $this->db->get('report');
         return $query->result();
+    }
+
+    function get_report_id($id)
+    {
+        $this->db->select('*')
+            ->from('report')
+            ->where('ReportID', $id);
+        $result = $this->db->get();
+
+        return $result;
     }
 
 
