@@ -92,51 +92,49 @@ if (isset($single_user)) {
         <h3>Create new user</h3>
         <hr/>
 <form>
-    <div class="form-group">
+
         <?php echo form_label('Title:');  echo form_error('Title'); ?><br/>
         <?php echo form_input(array('id' => 'Title', 'name' => 'Title', 'placeholder' => 'Mr./Ms.')); ?>
-        </div>
+
         <br/>
-        <div class="form-group">
+
 
         <?php echo form_label('First Name:'); ?><?php echo form_error('First_Name'); ?><br/>
         <?php echo form_input(array('id' => 'First_Name', 'name' => 'First_Name', 'placeholder' => 'Name')); ?>
         <br/>
-            <div class="form-group">
+
 
         <?php echo form_label('Last Name:'); ?><?php echo form_error('Last_Name'); ?><br/>
         <?php echo form_input(array('id' => 'Last_Name', 'name' => 'Last_Name', 'placeholder' => 'Surname')); ?>
-                </div>
+
         <br/>
-                <div class="form-group">
+
 
         <?php echo form_label('Email :'); ?><?php echo form_error('Email'); ?><br/>
         <?php echo form_input(array('id' => 'Email', 'name' => 'Email', 'placeholder' => 'example@mail.com')); ?>
-                    </div>
+
         <br/>
-                    <div class="form-group">
+
 
         <?php echo form_label('Password :'); ?><?php echo form_error('Password'); ?><br/>
         <?php echo form_input(array('id' => 'Password', 'name' => 'Password', 'placeholder' => 'p@s$word')); ?>
-                        </div>
+
         <br/>
-                        <div class="form-group">
+
 
         <?php echo form_label('Address :'); ?><?php echo form_error('Address'); ?><br/>
         <?php echo form_input(array('id' => 'Address', 'name' => 'Address', 'placeholder' => 'Sesame Street')); ?>
-                            </div>
+
         <br/>
-                            <div class="form-group">
 
         <?php echo form_label('Post code :'); ?><?php echo form_error('Postcode'); ?><br/>
         <?php echo form_input(array('id' => 'Postcode', 'name' => 'Postcode', 'placeholder' => 'NW8 6IX')); ?>
-                                </div>
+
         <br/>
-                                <div class="form-group">
 
         <?php echo form_label('Phone :'); ?><?php echo form_error('Telephone'); ?><br/>
         <?php echo form_input(array('id' => 'Telephone', 'name' => 'Telephone', 'placeholder' => '070XXXXXXX')); ?>
-    </div>
+
         <br/>
 
         <?php
