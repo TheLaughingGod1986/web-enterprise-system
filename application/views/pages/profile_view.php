@@ -86,7 +86,7 @@
             echo '<br/>';
 
             echo form_label('Password: '); ?><?php echo form_error('Password');
-            echo form_input(array('id' => 'Password', 'name' => 'Password', 'value' => ''));
+            echo form_input(array('id' => 'Password', 'name' => 'Password', 'value' => $this->session->Password));
             echo '<br/>';
 
             echo form_submit(array('id' => 'submit', 'value' => 'Update'));
