@@ -1,5 +1,5 @@
 <?php
-	if ($profile != null && $others == true){
+	if ($profile != null && $others == true && ($this->session->is_logged_external || $this->session->is_logged_staff || $this->session->is_logged_admin)){
 		//Show profile based on segment 3
         echo '<div style="border-bottom:1px solid #BFBFBF;padding:15px;padding-bottom:20px;position:relative;">';
 		echo '<img src="http://cumbrianrun.co.uk/wp-content/uploads/2014/02/default-placeholder.png" width="100"/>';
