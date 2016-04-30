@@ -28,7 +28,12 @@ class Profile_model extends CI_Model{
 
     }
 
-    function update($data){
-
+    function update($id, $type, $data){
+        $value = ($type == 'ee') ? 'ExternalID' : ($type == 'staff') ? 'StaffID' : null;
+        $table = ($type == 'ee') ? 'external' : ($type == 'staff') ? 'staff' : null;
+        $data = $value "= '$id'";
+        
+        $this->db->where($data);
+        $this->db->update($table, $data);
     }
 }
