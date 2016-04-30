@@ -25,7 +25,7 @@
 		echo '</div>';
 
 		if ( $active['messages']['style'] != null){
-			echo "mesages";
+			echo "mesages\n";
 			print_r($active['messages']['data']);
 		} 
 		else if ($active['update']['style'] != null){
