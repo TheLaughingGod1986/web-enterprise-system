@@ -3,4 +3,21 @@
   display: none;
 }
 
+.repTB {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.repTB th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+.repTB tr:nth-child(even){background-color: #dde3e9}
+
+.repTB th {
+  background-color: #3b5998;
+  color: white;
+}
+
 
