@@ -27,6 +27,8 @@
 		if ( $active['messages']['style'] != null){
 			echo "mesages\n";
 			print_r($active['messages']['data']);
+			echo "\n";
+			echo $debug['personal_id'] . "\n" . $debug['personal_type'];
 		} 
 		else if ($active['update']['style'] != null){
 			echo "details update";
