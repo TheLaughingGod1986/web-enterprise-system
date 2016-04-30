@@ -104,7 +104,9 @@ class Main extends MY_Controller
         if ($query->num_rows() > 0) {
             $data['reports'] = $query->result();
         }
-        $data['realReport'] = $this->report_model->get_report_id($reportID);
+
+        $qReport = $this->report_model->get_report_id($reportID);
+        $data['realReport'] = $qReport->result();
         $this->template['middle'] = $this->load->view($this->middle = 'comments/comment_view', $data, true);
         $this->layout();
     }
