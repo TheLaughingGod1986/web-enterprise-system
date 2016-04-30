@@ -27,4 +27,8 @@ class Profile_model extends CI_Model{
     function post_messages($data){
 
     }
+
+    function update($data){
+
+    }
 }
