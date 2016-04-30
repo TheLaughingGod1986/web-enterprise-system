@@ -18,7 +18,7 @@ class Profile_model extends CI_Model{
     }
 
     function get_messages($type, $id){
-        $data = "To = '$id' AND To_Type = '$type'";
+        $data = "`To` = '$id' AND To_Type = '$type'";
         $this->db->where($data, NULL, FALSE);
         $query = $this->db->get('message');
         return $query->result();
