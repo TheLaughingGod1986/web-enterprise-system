@@ -64,6 +64,7 @@ class Login_cntrl extends CI_Controller
         if ($query) // if user cred validate the user session start
         {
             $staff_data = array(
+                'ID' => $query->StaffID,
                 'First_Name' => $query->First_Name,
                 'Last_Name' => $query->Last_Name,
                 'Password' => $query->Password,
