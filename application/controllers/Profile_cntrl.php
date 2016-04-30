@@ -59,6 +59,7 @@ class Profile_cntrl extends MY_Controller
     function update(){
         $id = $this->session->ID;
         $type = $this->session->Type;
+        
         $user = array(
             'Email' => $this->input->post('Email'),
             'Password' => $this->input->post('Password'),
