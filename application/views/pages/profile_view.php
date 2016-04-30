@@ -26,6 +26,7 @@
 
 		if ( $active['messages']['style'] != null){
 			echo "mesages";
+			print_r($active['messages']['data'])
 		} 
 		else if ($active['update']['style'] != null){
 			echo "details update";
