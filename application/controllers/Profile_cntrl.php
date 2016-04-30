@@ -59,7 +59,7 @@ class Profile_cntrl extends MY_Controller
     function update(){
         $id = $this->session->ID;
         $type = $this->session->Type;
-        
+
         $user = array(
             'Email' => $this->input->post('Email'),
             'Password' => $this->input->post('Password'),
@@ -68,9 +68,9 @@ class Profile_cntrl extends MY_Controller
         );
         $this->Profile_model->update($id, $type, $user);
 
-        $data['submitted'] = true;
-        $this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
-        $this->layout();
+        $this->session->Email = $user->Email;
+        $this->session->First_Name = $user->First_Name;
+        $this->session->Last_Name = $user->Last_Name;
     }
 }
 ?>
