@@ -46,7 +46,7 @@ class Login_cntrl extends CI_Controller
                 'Last_Name' => $query->Last_Name,
                 'Password' => $query->Password,
                 'Email' => $query->Email,
-                'Type' => 'EE',
+                'Type' => 'ee',
                 'is_logged_external' => true
             );
 
@@ -64,13 +64,14 @@ class Login_cntrl extends CI_Controller
         if ($query) // if user cred validate the user session start
         {
             $staff_data = array(
+                'ID' => $query->StaffID,
                 'First_Name' => $query->First_Name,
                 'Last_Name' => $query->Last_Name,
                 'Password' => $query->Password,
                 'StaffID' => $query->StaffID,
                 'Email' => $query->Email,
                 'RoleID' => $query->RoleID,
-                'Type' => 'Staff',
+                'Type' => 'staff',
                 'is_logged_staff' => true
             );
 

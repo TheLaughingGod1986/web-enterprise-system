@@ -11,6 +11,7 @@ class Profile_cntrl extends MY_Controller
         //Obtaining URL segments as data
     	$type = $this->uri->segment(3);
     	$id = $this->uri->segment(4);
+        $tabs = $this->uri->segment(5);
 
         //Obtaining personal Data if logged in
         $personal_type = $this->session->Type;
@@ -26,22 +27,72 @@ class Profile_cntrl extends MY_Controller
 
         $messages['style'] = ($type == 'messages' || $type != 'update') ? 'border-bottom:3px solid #8b9dc3;' : null;
         $update['style'] = ($type == 'update') ? 'border-bottom:3px solid #8b9dc3;' : null;
+        
+        $main['style'] = ($tabs == 'main' || $tabs != 'send') ? 'border-bottom:3px solid #8b9dc3;' : null;
+        $send['style'] = ($tabs == 'send') ? 'border-bottom:3px solid #8b9dc3;' : null;
 
 
         //applying the variables to the array
         $data['others'] = $other;
     	$data['profile'] = $profile;
 
+        $data['url']['type'] = $type;
+        $data['url']['id'] = $id;
+
         $data['active']['messages']['data'] = $messages['data'];
-        //$data['active']['update']['data'] = $update['data'];
 
         $data['active']['messages']['style'] = $messages['style'];
         $data['active']['update']['style'] = $update['style'];
+
+        $data['active']['main']['style'] = $main['style'];
+        $data['active']['send']['style'] = $send['style'];
+
+        $data['debug']['personal_id'] = $personal_id;
+        $data['debug']['personal_type'] = $personal_type;
 
 
         //Loading the view
     	$this->template['middle'] = $this->load->view($this->middle = 'pages/profile_view', $data, true);
         $this->layout();
+    }
+
+    function update(){
+        $id = $this->session->ID;
+        $type = $this->session->Type;
+
+        $user = array(
+            'Email' => $this->input->post('Email'),
+            'Password' => $this->input->post('Password'),
+            'First_Name' => $this->input->post('First_Name'),
+            'Last_Name' => $this->input->post('Last_Name')
+        );
+        $this->Profile_model->update($id, $type, $user);
+
+        $this->session->Email = $user['Email'];
+        $this->session->First_Name = $user['First_Name'];
+        $this->session->Last_Name = $user['Last_Name'];
+
+        $this->profile();
+    }
+
+    function send(){
+        $personal_id = $this->session->ID;
+        $personal_type = $this->session->Type;
+
+        $type = $this->uri->segment(3);
+        $id = $this->uri->segment(4);
+
+        $message = array(
+            'From' => $personal_id,
+            'From_Type' => $personal_type,
+            'To' => $id,
+            'To_Type' => $type,
+            'Title' => $this->input->post('Title'),
+            'Message' => $this->input->post('Message')
+        );
+        $this->Profile_model->post_messages($message);
+
+        $this->profile();
     }
 }
 ?>

@@ -18,10 +18,22 @@ class Profile_model extends CI_Model{
     }
 
     function get_messages($type, $id){
-        
+        $data = "`To` = '$id' AND To_Type = '$type'";
+        $this->db->where($data);
+        $query = $this->db->get('message');
+        return $query->result();
     }
 
-    function get_comments($type, $id){
+    function post_messages($data){
+        $this->db->insert('message', $data);
+    }
 
+    function update($id, $type, $user){
+        $value = ($type == 'ee') ? 'ExternalID' : ($type == 'staff') ? 'StaffID' : null;
+        $table = ($type == 'ee') ? 'external' : ($type == 'staff') ? 'staff' : null;
+        $data = $value . "= '$id'";
+
+        $this->db->where($data);
+        $this->db->update($table, $user);
     }
 }

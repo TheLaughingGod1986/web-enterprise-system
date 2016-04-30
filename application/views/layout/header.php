@@ -1,4 +1,5 @@
 <nav class="navbar navbar-inverse top-menu no-margin-bottom">
+    <div>
         <span class="top-center-text">
            <?php
            if ($this->session->is_logged_admin) {
