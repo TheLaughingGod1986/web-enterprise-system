@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <td>Progression and Award Board(s)</td>
-            <td><?php $realReport->ProgressionAwardBoards; ?></td>
+            <td><?php $realReport->ProgressionandAwardBoards; ?></td>
         </tr>
         <tr>
             <td>Partner College(s)</td>
@@ -100,7 +100,7 @@
         </tr>
         <tr>
             <td>Course Examiners</td>
-            <td><?php $realReport->CourseExaminer; ?></td>
+            <td><?php $realReport->CourseExaminers; ?></td>
         </tr>
         <tr>
             <td>Programme Examiners</td>
@@ -127,7 +127,7 @@
         </tr>
         <tr>
             <td>Recommendations for Action</td>
-            <td><?php $realReport->Recomendations_Action; ?></td>
+            <td><?php $realReport->Recommendations_Action; ?></td>
         </tr>
     </table>
 
