@@ -68,9 +68,9 @@ class Profile_cntrl extends MY_Controller
         );
         $this->Profile_model->update($id, $type, $user);
 
-        $this->session->Email = $user->Email;
-        $this->session->First_Name = $user->First_Name;
-        $this->session->Last_Name = $user->Last_Name;
+        $this->session->Email = $user['Email'];
+        $this->session->First_Name = $user['First_Name'];
+        $this->session->Last_Name = $user['Last_Name'];
     }
 }
 ?>
