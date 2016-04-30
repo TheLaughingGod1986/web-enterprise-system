@@ -28,9 +28,15 @@
 			//echo "mesages\n";
 			//print_r($active['messages']['data']);
 			foreach($active['messages']['data'] as $message){
-				echo $message->Title;
-				echo $message->Message;
-				echo "<br/>";
+				echo '<div style="padding:10px 10px 15px 10px;border:1px solid #BFBFBF;">';
+				echo '<div><b>Title:&nbsp;</b>' . $message->Title . '</div>';
+				echo '<div style="padding-top:5px;"><b>Message:&nbsp;</b></div>';
+				echo '<p style="margin:0;">' . $message->Message . '</p>';
+				echo '</div>';
+			}
+
+			if ($active['messages']['data'] == null){
+				echo 'No messages';
 			}
 		} 
 		else if ($active['update']['style'] != null){
