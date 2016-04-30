@@ -70,49 +70,49 @@ echo '<form>';
             'Dr' => 'Dr',
             'Sir' => 'Sir'
         );
-echo '<div class="form-group">';
+
         echo form_label('Title', 'Title');
         echo form_dropdown('Title', $options, 'Title');
         echo form_error('Title');
-echo '</div>';
+
         echo '<br/>';
-echo '<div class="form-group">';
+
         echo form_label('First Name', 'First_Name');
         echo form_input('First_Name',set_value('First_Name'),'id="First_Name"');
         echo form_error('First_Name');
-echo '</div>';
+
 
         echo '<br/>';
-echo '<div class="form-group">';
+
         echo form_label('Last Name', 'Last_Name');
         echo form_input('Last_Name',set_value('Last_Name'),'id="Last_Name"');
         echo form_error('Last_Name');
-echo '</div>';
+
         echo '<br/>';
-echo '<div class="form-group">';
+
         echo form_label('Address', 'Address');
         echo form_input('Address',set_value('Address'),'id="address"');
         echo form_error('Address');
-echo '</div>';
+
         echo '<br/>';
-echo '<div class="form-group">';
+
         echo form_label('Post-Code', 'Postal');
         echo form_input('Postal',set_value('Postal'),'id="postal"');
         echo form_error('Postal');
-echo '</div>';
+
         echo '<br/>';
-echo '<div class="form-group">';
+
         echo form_label('Telephone', 'Phone');
         echo form_input('Phone',set_value('Phone'),'id="phone"');
         echo form_error('Phone');
-echo '</div>';
+
         echo '<br/>';
-echo '<div class="form-group">';
+
             echo form_label('HEI', 'Hei', $attributes4);
             echo form_input('Hei', set_value('Hei'), $attributes4);
             echo form_error('Hei');
             echo '<br/>';
-echo '</div>';
+
     echo form_fieldset_close();
 echo '</form>';
     echo form_fieldset('Login Details', $attributes2);
