@@ -22,7 +22,7 @@
 		else if ($active['send']['style'] != null){
 			echo '<div style="padding:10px 10px 15px 10px;">';
 
-			echo form_open('Profile_cntrl/update/' . $url['type'] . '/' . $url['id']);
+			echo form_open('Profile_cntrl/send/' . $url['type'] . '/' . $url['id']);
 
             echo form_label('Title: '); echo form_error('Title');
             echo form_input(array('id' => 'Title', 'name' => 'Title', 'value' => ''));
