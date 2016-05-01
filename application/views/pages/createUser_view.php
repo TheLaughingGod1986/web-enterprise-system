@@ -114,7 +114,7 @@ echo '<form>';
             echo '<br/>';
 
     echo form_fieldset_close();
-echo '</form>';
+
     echo form_fieldset('Login Details', $attributes2);
 
         echo form_label('Email', 'Email');
