@@ -6,10 +6,11 @@
   border-collapse: collapse;
   width: 100%;
   max-width: 700px;
+  border: 0;
 }
 
 .repTB th, td {
-  padding: 8px;
+  padding: 9px;
   text-align: left;
   border-left: 0;
   border-right: 0;
@@ -19,11 +20,15 @@
 
 .repTB th {
   background-color: #dde3e9;
-  color: white;
+  color: black;
+}
+
+.repTB td:nth-child(even){
+  border-left: 1px solid black;
 }
 
 .repTB tr:hover{
-  background-color:#dde3e9;
+  background-color: #dde3e9;
 }
 
 
