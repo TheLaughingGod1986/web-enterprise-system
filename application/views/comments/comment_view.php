@@ -2,7 +2,7 @@
     <h1><?php echo $realReport->Report_Name; ?></h1>
     <h3><?php echo $realReport->ReportDate; ?></h3>
     <span>External Examiner: </span>
-    <table class="repTB">
+    <table class="repTB" cellpadding="10">
         <tr>
             <th colspan="2">Section 1 - Examiner's attendance and portfolio of work </th>
         </tr>
@@ -46,7 +46,7 @@
         <tr><td colspan="2"><?php echo $realReport->Section_1_Comments; ?></td></tr>
     </table>
 
-    <table class="repTB">
+    <table class="repTB" cellpadding="10">
         <tr>
             <th colspan="2">Section 2 - Process of Assessment and Determination of Award</th>
         </tr>
@@ -82,7 +82,7 @@
         <tr><td colspan="2"><?php echo $realReport->Section2_Comments; ?></td></tr>
     </table>
 
-    <table class="repTB">
+    <table class="repTB" cellpadding="10">
         <tr><th colspan="2">Section 3 - The Appropiateness of Standards</th></tr>
         <tr>
             <td>Standards set for the award(s) are appropriate for qualifications at this level in this subject</td>
@@ -92,7 +92,7 @@
         <tr><td colspan="2"><?php echo $realReport->Section3_Comments; ?></td></tr>
     </table>
 
-    <table class="repTB">
+    <table class="repTB" cellpadding="10">
         <tr><th colspan="2">Section 4 - The Comparability of Student Performance</th></tr>
         <tr>
             <td>The standards of student performance are comparable with similar programmes or subjects in other UK institutions with which I am familiar</td>
@@ -108,14 +108,14 @@
         </tr>
     </table>
 
-    <table class="repTB">
+    <table class="repTB" cellpadding="10">
         <tr><th colspan="2">Section 5 - Professional, Statutory and Regulatory Bodies (PSRB)</th></tr>
         <tr>
             <td colspan="2"><?php echo $realReport->Section5_PSRB; ?></td>
         </tr>
     </table>
 
-    <table class="repTB">
+    <table class="repTB" cellpadding="10">
         <tr><th colspan="2">Section 6 - Action Points and Recommendations</th></tr>
         <tr>
             <td>Commentary</td>
