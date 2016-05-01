@@ -4,7 +4,7 @@
     <span>External Examiner: </span>
     <table class="repTB">
         <tr>
-            <th>Section 1 - Examiner's attendance and portfolio of work</th>
+            <th colspan="2">Section 1 - Examiner's attendance and portfolio of work </th>
         </tr>
         <tr>
             <td>Semester 2 Subject Assessment Panel</td>
@@ -42,8 +42,8 @@
             <td>Other</td>
             <td><?php echo $realReport->Other; ?></td>
         </tr>
-        <tr><td>Comments</td></tr>
-        <tr><td><?php echo $realReport->Section_1_Comments; ?></td></tr>
+        <tr><th colspan="2">Comments</th></tr>
+        <tr><td colspan="2"><?php echo $realReport->Section_1_Comments; ?></td></tr>
     </table>
 
     <table class="repTB">
