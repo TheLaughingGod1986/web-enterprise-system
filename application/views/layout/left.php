@@ -32,7 +32,7 @@
     <?php if ($this->session->is_logged_external) { ?>
         <li role="presentation" class="active"><?php echo anchor('main/index', 'Home'); ?></li>
         <li role="presentation"><a href="#">Reports</a></li>
-        <li role="presentation"><a href="#">Write/ View Responses</a></li>
+        <li role="presentation"><?php echo anchor('main/writeResponse', 'Write/ View Responses'); ?></li>
         <li class="grey"></li>
         <li role="presentation"><a href="#">Your Resposes</a></li>
         <li role="presentation"><?php echo anchor('main/update', 'Update Personal Details'); ?></li>

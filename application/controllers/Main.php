@@ -161,6 +161,17 @@ class Main extends MY_Controller
         // no page yet made
     }
 
+    function writeResponse(){
+        $data = array();
+
+        if ($query = $this->report_model->get_report()) {
+            $data['reports'] = $query;
+        }
+
+        $this->template['middle'] = $this->load->view($this->middle = 'pages/fill_report', $data, true);
+        $this->layout();
+    }
+
     
 
     function recommendations()
