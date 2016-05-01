@@ -9,15 +9,18 @@
 }
 
 .repTB th, td {
-  text-align: left;
+  transition: background-color 0.5s ease;
   padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
-
-.repTB tr:nth-child(even){background-color: #dde3e9}
 
 .repTB th {
   background-color: #3b5998;
   color: white;
 }
+
+.repTB tr:hover{background-color:#dde3e9}
+
 
 
