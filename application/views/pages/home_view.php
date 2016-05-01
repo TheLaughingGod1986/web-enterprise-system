@@ -25,7 +25,7 @@ if ($this->session->is_logged_admin) {
     </div>
     <div class="col-sm-6">
         <h2>Latest Reports</h2>
-        <table >
+        <table border="1" style="width:50%">
             <thead>
             <tr>
                 <th><h4>Title</h4></th>
@@ -41,7 +41,7 @@ if ($this->session->is_logged_admin) {
 
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
-            <td><b><?php $row->ReportDate ?></b></td>
+            <td><b><?php echo $row->ReportDate ?></b></td>
             <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
         </tr>
 
@@ -61,12 +61,12 @@ if ($this->session->is_logged_admin) {
     ?>
 <div class="col-sm-6">
     <h2>Latest Reports</h2>
-    <table border="1" style="width:50%">
+    <table border="0" style="padding:10px;">
         <thead>
         <tr>
-            <th><h3>Report Title</h3></th>
-            <th><h3>Report Date</h3></th>
-            <th><h3>See Full Report</h3></th>
+            <th><h3>Title</h3></th>
+            <th><h3>Date</h3></th>
+            <th><h3>See Report</h3></th>
         </tr>
         </thead>
         <tbody>
@@ -77,7 +77,7 @@ if ($this->session->is_logged_admin) {
 
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
-            <td><b>Date here</b></td>
+            <td><b><?php echo $row->ReportDate; ?></b></td>
             <td><b><?= anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></b></td>
         </tr>
 
