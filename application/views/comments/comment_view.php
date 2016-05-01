@@ -78,8 +78,8 @@
             <td>The decision of the PAB was fair, equitable and consistent</td>
             <td><?php echo $realReport->Section2_Checkbox_7; ?></td>
         </tr>
-        <tr><td>Additional commentary</td></tr>
-        <tr><td><?php echo $realReport->Section2_Comments; ?></td></tr>
+        <tr><th colspan="2">Additional commentary</th></tr>
+        <tr><td colspan="2"><?php echo $realReport->Section2_Comments; ?></td></tr>
     </table>
 
     <table class="repTB">
@@ -88,7 +88,7 @@
             <td>Standards set for the award(s) are appropriate for qualifications at this level in this subject</td>
             <td><?php echo $realReport->Section3_Checkbox1; ?></td>
         </tr>
-        <tr><td colspan="2">Additional commentary</td></tr>
+        <tr><th colspan="2">Additional commentary</th></tr>
         <tr><td colspan="2"><?php echo $realReport->Section3_Comments; ?></td></tr>
     </table>
 
