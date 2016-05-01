@@ -48,7 +48,7 @@
 
     <table class="repTB">
         <tr>
-            <th>Section 2 - Process of Assessment and Determination of Award</th>
+            <th colspan="2">Section 2 - Process of Assessment and Determination of Award</th>
         </tr>
         <tr>
             <td>Assessment processes were appropriate to examining learning outcomes</td>
@@ -83,7 +83,7 @@
     </table>
 
     <table class="repTB">
-        <tr><th>Section 3 - The Appropiateness of Standards</th></tr>
+        <tr><th colspan="2">Section 3 - The Appropiateness of Standards</th></tr>
         <tr>
             <td>Standards set for the award(s) are appropriate for qualifications at this level in this subject</td>
             <td><?php echo $realReport->Section3_Checkbox1; ?></td>
@@ -93,7 +93,7 @@
     </table>
 
     <table class="repTB">
-        <tr><th>Section 4 - The Comparability of Student Performance</th></tr>
+        <tr><th colspan="2">Section 4 - The Comparability of Student Performance</th></tr>
         <tr>
             <td>The standards of student performance are comparable with similar programmes or subjects in other UK institutions with which I am familiar</td>
             <td><?php echo $realReport->Section4_Checkbox1; ?></td>
@@ -109,14 +109,14 @@
     </table>
 
     <table class="repTB">
-        <tr><th>Section 5 - Professional, Statutory and Regulatory Bodies (PSRB)</th></tr>
+        <tr><th colspan="2">Section 5 - Professional, Statutory and Regulatory Bodies (PSRB)</th></tr>
         <tr>
-            <td><?php echo $realReport->Section5_PSRB; ?></td>
+            <td colspan="2"><?php echo $realReport->Section5_PSRB; ?></td>
         </tr>
     </table>
 
     <table class="repTB">
-        <tr><th>Section 6 - Action Points and Recommendations</th></tr>
+        <tr><th colspan="2">Section 6 - Action Points and Recommendations</th></tr>
         <tr>
             <td>Commentary</td>
             <td><?php echo $realReport->AP_Recommendations; ?></td>
