@@ -80,21 +80,27 @@
         echo form_textarea('5_1', 'section5');
         echo form_fieldset_close();
 
+        $sub = array (
+          'class' => 'btn btn-success'
+        );
+
         echo form_fieldset('Section 6', $style);
         //Section 6 Action, points and recommendations
         echo form_textarea('6_1', 'section6');
         echo form_textarea('6_2', 'Good Practice');
         echo form_textarea('6_3', 'Recommendation');
-        echo form_submit('submit', 'Add Report');
+        echo form_submit('submit', 'Add Report', $sub);
         echo form_fieldset_close();
 
         $nn = array(
             'id' => 'next',
-            'onClick' => 'reportSections(this)'
+            'onClick' => 'reportSections(this)',
+            'class' => 'btn btn-primary'
         );
         $pp = array(
             'id' => 'prev',
-            'onClick' => 'reportSections(this)'
+            'onClick' => 'reportSections(this)',
+            'class' => 'btn btn-info'
         );
 
         echo form_button('prev', 'Prev', $pp);
