@@ -209,7 +209,7 @@ class UManage_cntrl extends MY_Controller
                 'Username' => $this->input->post('username'),
                 'Password' => $this->input->post('Password')
             );
-            $this->UManage_model->insert_user($data, 'login');
+            $this->UManage_model->insert_user($data, 'Login');
             $data['message'] = 'Admin Created Successfully';
             //Loading View
             $this->template['middle'] = $this->load->view($this->middle = 'pages/createUser_view',$data, true);
