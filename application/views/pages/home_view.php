@@ -30,6 +30,7 @@ if ($this->session->is_logged_admin) {
             <tr>
                 <th border="0">Title</th>
                 <th border="0">Date</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -65,6 +66,7 @@ if ($this->session->is_logged_admin) {
         <tr>
             <th border="0">Title</th>
             <th border="0">Date</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
