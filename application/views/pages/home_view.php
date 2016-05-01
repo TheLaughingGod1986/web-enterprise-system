@@ -28,7 +28,7 @@ if ($this->session->is_logged_admin) {
         <table border="0" style="padding:10px;">
             <thead>
             <tr>
-                <th><h5>Title</h5></th>
+                <th border="0"><h5>Title</h5></th>
                 <th><h5>Date</h5></th>
             </tr>
             </thead>
