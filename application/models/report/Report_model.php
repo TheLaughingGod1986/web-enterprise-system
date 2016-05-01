@@ -41,7 +41,8 @@ class Report_model extends CI_Model
             'AP_Recommendations' => $this->input->post('6_1'),
             'GoodPractice_Innovation' => $this->input->post('6_2'),
             'Recommendations_Action' => $this->input->post('6_3'),
-            'ReportDate' => $this->current_date()
+            'ReportDate' => $this->current_date(),
+            'StaffID' => $this->session->userdata('StaffID')
         );
 
         $insert = $this->db->insert('report', $new_report);
@@ -100,8 +101,8 @@ class Report_model extends CI_Model
         $this->db->select('report.Report_Name, report.ReportDate, report.ReportID')
             ->from('report')
             ->join('Read_Report', 'report.ReportID = Read_Report.ReportID', 'left')
-            ->where('Read_Report.ReportID IS NULL');
-//            ->where('Read_Report.StaffID',$this->session->userdata("StaffID"));
+            ->where('Read_Report.ReportID IS NULL')
+            ->where('Read_Report.StaffID',$this->session->userdata("StaffID"));
         $result = $this->db->get();
         return $result->result();
     }

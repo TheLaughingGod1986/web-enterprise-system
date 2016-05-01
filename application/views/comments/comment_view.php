@@ -1,7 +1,7 @@
     <!--    /////////////////////START SHOW COMMENTS//////////////////-->
     <h1><?php echo $realReport->Report_Name; ?></h1>
     <h3><?php echo $realReport->ReportDate; ?></h3>
-    <span>External Examiner: </span>
+    <h5>External Examiner: </h5>
     <table class="repTB">
         <tr>
             <th colspan="2">Section 1 - Examiner's attendance and portfolio of work </th>
