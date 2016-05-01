@@ -25,12 +25,11 @@ if ($this->session->is_logged_admin) {
     </div>
     <div class="col-sm-6">
         <h2>Latest Reports</h2>
-        <table border="1" style="width:50%">
+        <table border="0" style="padding:10px;">
             <thead>
             <tr>
                 <th><h5>Title</h5></th>
                 <th><h5>Date</h5></th>
-                <th><h5>See Report</h5></th>
             </tr>
             </thead>
             <tbody>
@@ -42,7 +41,7 @@ if ($this->session->is_logged_admin) {
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
             <td><b><?php echo $row->ReportDate ?></b></td>
-            <td><button type="button" class="btn btn-success"><?php anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></td>
+            <td><b><button type="button" class="btn btn-success">View<?php anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></b></td>
         </tr>
 
         <?php endforeach; ?>
@@ -66,7 +65,6 @@ if ($this->session->is_logged_admin) {
         <tr>
             <th><h3>Title</h3></th>
             <th><h3>Date</h3></th>
-            <th><h3>See Report</h3></th>
         </tr>
         </thead>
         <tbody>
