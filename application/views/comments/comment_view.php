@@ -88,8 +88,8 @@
             <td>Standards set for the award(s) are appropriate for qualifications at this level in this subject</td>
             <td><?php echo $realReport->Section3_Checkbox1; ?></td>
         </tr>
-        <tr><td>Additional commentary</td></tr>
-        <tr><td><?php echo $realReport->Section3_Comments; ?></td></tr>
+        <tr><td colspan="2">Additional commentary</td></tr>
+        <tr><td colspan="2"><?php echo $realReport->Section3_Comments; ?></td></tr>
     </table>
 
     <table class="repTB">
