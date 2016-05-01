@@ -42,7 +42,7 @@ if ($this->session->is_logged_admin) {
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
             <td><b><?php echo $row->ReportDate ?></b></td>
-            <td><b><button type="button" class="btn btn-success">View<?php anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></b></td>
+            <td><button type="button" class="btn btn-success">View<?php anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></td>
         </tr>
 
         <?php endforeach; ?>
@@ -78,7 +78,7 @@ if ($this->session->is_logged_admin) {
         <tr>
             <td><b><?php echo $row->Report_Name; ?></b></td>
             <td><b><?php echo $row->ReportDate; ?></b></td>
-            <td><b><button type="button" class="btn btn-success">View<?php anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></b></td>
+            <td><button type="button" class="btn btn-success">View<?php anchor('main/comments/' . $row->ReportID, 'Full Report'); ?></button></td>
         </tr>
 
         <?php endforeach; ?>
